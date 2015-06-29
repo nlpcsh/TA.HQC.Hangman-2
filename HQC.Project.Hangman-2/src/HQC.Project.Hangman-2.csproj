@@ -7,8 +7,8 @@
     <ProjectGuid>{1DAFE987-45A7-4DFF-B573-5538715DA755}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HQC.Project.Hangman_2___Src</RootNamespace>
-    <AssemblyName>HQC.Project.Hangman-2 - Src</AssemblyName>
+    <RootNamespace>HQC.Project.Hangman_2</RootNamespace>
+    <AssemblyName>src</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Hangman.WordSelector</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HQC.Project.Hangman-2 - Src", "HQC.Project.Hangman-2 - Src\HQC.Project.Hangman-2 - Src.csproj", "{1DAFE987-45A7-4DFF-B573-5538715DA755}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HQC.Project.Hangman-2", "src\HQC.Project.Hangman-2.csproj", "{1DAFE987-45A7-4DFF-B573-5538715DA755}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HQC.Project.Hangman-2 - Before", "HQC.Project.Hangman-2 - Before\HQC.Project.Hangman-2 - Before.csproj", "{EA943C2B-2C9E-4E67-B3D7-B61C5A2620DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "before", "before\before.csproj", "{EA943C2B-2C9E-4E67-B3D7-B61C5A2620DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
