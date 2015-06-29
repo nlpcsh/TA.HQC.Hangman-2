@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HQC.Project.Hangman-2")]
+[assembly: AssemblyTitle("HQC.Project.Hangman-2 - Before")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HQC.Project.Hangman-2")]
+[assembly: AssemblyProduct("HQC.Project.Hangman-2 - Before")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ff2df5be-942c-4339-8f05-c92072892a87")]
+[assembly: Guid("5b78c312-d294-4f71-9c0c-21db046043ea")]
 
 // Version information for an assembly consists of the following four values:
 //
