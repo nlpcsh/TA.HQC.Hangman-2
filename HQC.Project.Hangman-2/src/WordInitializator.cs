@@ -7,7 +7,7 @@ namespace Hangman
 {
 
 	// kojto mu se padne tozi kod da go opravya, moze da mi prati pozdravi na bate_goshko86@abv.bg. hahahaha@!@@!
-
+    // TODO:
     public class WordInitializator
     {
         //public string Word{get; set;}
@@ -22,7 +22,7 @@ namespace Hangman
             Console.WriteLine("Use 'top' to view the top scoreboard, 'restart' to start a new game,'help' to cheat and 'exit' to quit the game.");
             allGuessedLettersOrderedByPositionInTheWord = new char[word.Length];
 
-            StringBuilder hiddenWord = new StringBuilder();
+            StringBuilder hiddenWord = new StringBuilder() ;
 
             for (int i = 0; i < word.Length; i++)
             {
