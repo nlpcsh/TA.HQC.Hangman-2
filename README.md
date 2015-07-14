@@ -1,13 +1,16 @@
-Sample Refactoring Documentation for Project “Game 15”
+Refactoring Documentation for Project “Hangman 2”
 ------------------------------------------------------
 
-1.  Redesigned the project structure: Team “…”
-	-   Renamed the project to `Game-15`.
-	-   Renamed the main class `Program` to `GameFifteen`.
-	-   Extracted each class in a separate file with a good name: `GameFifteen.cs`, `Board.cs`, `Point.cs`.
-	-   …
+1.  Redesigned the project structure: Team “Hangman-2”
+	-   Added class Hangman and moved Main() inside
+	-   ...
+	-   ...
 2.  Reformatted the source code:
-	-   Removed all unneeded empty lines, e.g. in the method `PlayGame()`.
+	-   General refractoring of class `WorldInitializator`
+		- Removed all unneeded empty lines, e.g. in the method all methods inside.
+		- placed curly braces **{** and **}** in `for` anf `if` statements 
+	-   ....
+	-   ....
 	-   Inserted empty lines between the methods.
 	-   Split the lines containing several statements into several simple lines, e.g.:
 	
@@ -28,9 +31,11 @@ Sample Refactoring Documentation for Project “Game 15”
 	-   Formatted all other elements of the source code according to the best practices introduced in the course “[High-Quality Programming Code](http://telerikacademy.com/Courses/Courses/Details/244)”.
 	-   …
 3.  Renamed variables:
+	-   ....
 	-   In class `Fifteen`: `number` to `numberOfMoves`.
 	-   In `Main(string\[\] args)`: `g` to `gameFifteen`.
 4.  Introduced constants:
+	-   ....
 	-   `GAME\_BOARD\_SIZE = 4`
 	-   `SCORE\_BOARD\_SIZE = 5`. 
 5.  Extracted the method `GenerateRandomGame()` from the method `Main()`.
