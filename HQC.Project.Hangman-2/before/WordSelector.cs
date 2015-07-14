@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 namespace Hangman
 {
+    using System.Text;
+
     class WordSelector
     {
         //why public

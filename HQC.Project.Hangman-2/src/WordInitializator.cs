@@ -7,21 +7,21 @@
     public class WordInitializator
     {
         public static bool flag = false;
-        public static int num1 = 0;
-        static int num2 = 0;
-        public static char[] allGuessedLettersOrderedByPositionInTheWord;
+        public static int guessedLetters = 0;
+        public static char[] allGuessedLetters;
+        private static int mistakes = 0;
 
         public static void BegginingOfTheGameInitialization(string word)
         {
             Console.WriteLine("Welcome to “Hangman” game. Please try to guess my secret word.");
             Console.WriteLine("Use 'top' to view the top scoreboard, 'restart' to start a new game,'help' to cheat and 'exit' to quit the game.");
-            allGuessedLettersOrderedByPositionInTheWord = new char[word.Length];
+            allGuessedLetters = new char[word.Length];
 
             StringBuilder hiddenWord = new StringBuilder();
 
             for (int i = 0; i < word.Length; i++)
             {
-                allGuessedLettersOrderedByPositionInTheWord[i] = '$';
+                allGuessedLetters[i] = '$';
                 hiddenWord.Append("_ ");
             }
 
@@ -31,19 +31,20 @@
             Console.WriteLine();
         }
 
-        public static void RevealGuessedLetters(string word) // helper of the next function
+        // helper of the next function
+        public static void RevealGuessedLetters(string word) 
         {
             StringBuilder partiallyHiddenWord = new StringBuilder();
 
             for (int i = 0; i < word.Length; i++)
             {
-                if (allGuessedLettersOrderedByPositionInTheWord[i].Equals('$'))
+                if (allGuessedLetters[i].Equals('$'))
                 {
                     partiallyHiddenWord.Append("_ ");
                 }
                 else
                 {
-                    partiallyHiddenWord.Append(allGuessedLettersOrderedByPositionInTheWord[i].ToString() + " ");
+                    partiallyHiddenWord.Append(allGuessedLetters[i].ToString() + " ");
                 }
             }
 
@@ -55,7 +56,7 @@
             StringBuilder wordInitailized = new StringBuilder();
             int numberOfTheAppearancesOfTheSupposedChar = 0;
 
-            if (allGuessedLettersOrderedByPositionInTheWord.Contains<char>(charSupposed))
+            if (allGuessedLetters.Contains<char>(charSupposed))
             {
                 Console.WriteLine("You have already revelaed the letter {0}", charSupposed);
                 return;
@@ -65,7 +66,7 @@
             {
                 if (word[i].Equals(charSupposed))
                 {
-                    allGuessedLettersOrderedByPositionInTheWord[i] = word[i];
+                    allGuessedLetters[i] = word[i];
                     numberOfTheAppearancesOfTheSupposedChar++;
                 }
             }
@@ -73,30 +74,31 @@
             if (numberOfTheAppearancesOfTheSupposedChar == 0)
             {
                 Console.WriteLine("Sorry! There are no unrevealed letters {0}", charSupposed);
-                num2++;
+                mistakes++;
             }
             else
             {
                 Console.WriteLine("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar);
-                num1 += numberOfTheAppearancesOfTheSupposedChar;
+                guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
             }
 
             Console.WriteLine();
 
-            if (num1 == word.Length) //check if the word is guessed
+            //// check if the word is guessed
+            if (guessedLetters == word.Length) 
             {
                 EndOfTheGameInitialization(word);
-                CommandExecuter.Restart();
+                CommandExecuter.Start();
             }
 
             Console.WriteLine("The secret word is:");
             RevealGuessedLetters(word);
         }
 
-        //clear()
+        //// clear()
         public static void EndOfTheGameInitialization(string word)
         {
-            Console.WriteLine("You won with {0} mistakes.", num2);
+            Console.WriteLine("You won with {0} mistakes.", mistakes);
             RevealGuessedLetters(word);
             Console.WriteLine();
             int positionOfTheFirstFreePositionInTheScoereboard = 4;
@@ -110,30 +112,30 @@
                 }
             }
 
-            if ((CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard] == null //for free position
-                  || num2 <= CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard].NumberOfMistakes) //when the 4th pos is not free)
+            //// for free position
+            if ((CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard] == null 
+                  || mistakes <= CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard].Mistakes) //// when the 4th pos is not free)
                   && flag == false)
             {
-
                 Console.WriteLine("Please enter your name for the top scoreboard:");
                 string playerName = Console.ReadLine();
-                CommandExecuter.PlayerMistakes newResult = new CommandExecuter.PlayerMistakes(playerName, num2);
+               Player newResult = new Player(playerName, mistakes);
                 CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard] = newResult;
 
                 for (int i = positionOfTheFirstFreePositionInTheScoereboard; i > 0; i--)
                 {
                     if (CommandExecuter.scoreboard[i].Compare(CommandExecuter.scoreboard[i - 1]) < 0)
                     {
-                        //swap
-                        CommandExecuter.PlayerMistakes temp = CommandExecuter.scoreboard[i];
+                        //// swap
+                        Player temp = CommandExecuter.scoreboard[i];
                         CommandExecuter.scoreboard[i] = CommandExecuter.scoreboard[i - 1];
                         CommandExecuter.scoreboard[i - 1] = temp;
                     }
                 }
             }
 
-            num1 = 0;
-            num2 = 0;
+            guessedLetters = 0;
+            mistakes = 0;
             flag = false;
         }
     }

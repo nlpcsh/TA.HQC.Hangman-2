@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Hangman.WordSelector</StartupObject>
+    <StartupObject>HQC.Project.Hangman2.HangmanStartPoint</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,7 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandExecuter.cs" />
-    <Compile Include="Hangman.cs" />
+    <Compile Include="HangmanStartPoint.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordGuesser.cs" />
     <Compile Include="WordInitializator.cs" />
