@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Hangman
+﻿namespace HQC.Project.Hangman2
 {
+    using System;
+    using System.Linq;
+
     class WordSelector
     {
         //why public
@@ -16,19 +14,13 @@ namespace Hangman
             Random random = new Random();
             return random.Next(min, max);
         }
+
         public static string SelectRandomWord()
         {
-            int randomPositionOfTheWordToBeSelected = RandomNumber(0, words.Length);//including 0, exluding word.Length
+            int randomPositionOfTheWordToBeSelected = RandomNumber(0, words.Length);
             string randomlySelectedWord = words.ElementAt(randomPositionOfTheWordToBeSelected);
+            
             return randomlySelectedWord;
-        
-        }
-        
-
-        static void Main(string[] args)
-        {
-            CommandExecuter.Restart();
-                     
         }
     }
 }

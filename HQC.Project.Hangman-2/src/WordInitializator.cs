@@ -1,4 +1,4 @@
-﻿namespace Hangman
+﻿namespace HQC.Project.Hangman2
 {
     using System;
     using System.Linq;
