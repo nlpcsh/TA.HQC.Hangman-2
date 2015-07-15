@@ -41,4 +41,7 @@ Refactoring Documentation for Project “Hangman 2”
 5.  Extracted the method `GenerateRandomGame()` from the method `Main()`.
 6.  Introduced class `ScoreBoard` and moved all related functionality in it.
 7.  Moved method `GenerateRandomNumber(int start, int end)` to separate class `RandomUtils`.
-8.  …
+8.  Renamed class 'Hangman' to 'HangmanStartPoint'.
+9.  Created class 'Player'(replaced class 'PlayerMistakes').
+10. Put curly braces after all conditionals and loops.
+11. Renamed variables 'num1' and 'num2' to 'guessedLetters' and 'mistakes'(class WordInitializator).
