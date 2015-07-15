@@ -5,23 +5,16 @@
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
-    <NestedTypes>
-      <Class Name="HQC.Project.Hangman2.CommandExecuter.PlayerMistakes">
-        <TypeIdentifier>
-          <NewMemberFileName>CommandExecuter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAAAAAIAAAAAAABBAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAIAAAAAAABBAIAAAAAAAAAA=</HashCode>
       <FileName>CommandExecuter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HQC.Project.Hangman2.Hangman2">
+  <Class Name="HQC.Project.Hangman2.HangmanStartPoint">
     <Position X="3" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Hangman.cs</FileName>
+      <FileName>HangmanStartPoint.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HQC.Project.Hangman2.WordGuesser">
@@ -34,15 +27,22 @@
   <Class Name="HQC.Project.Hangman2.WordInitializator">
     <Position X="5.25" Y="2.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAAgIAAgAAAAAAAAAAAAADAAAEABAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAIgIAAgAAAAAAAAAAAAAAAAAEABAQ=</HashCode>
       <FileName>WordInitializator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HQC.Project.Hangman2.WordSelector">
     <Position X="3" Y="1.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAACAAAAAAAAQ=</HashCode>
+      <HashCode>AAAAAAAAAAABQAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>WordSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Player">
+    <Position X="3" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAIAAAAQAAAAEAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
