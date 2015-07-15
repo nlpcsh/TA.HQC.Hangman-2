@@ -46,4 +46,4 @@ Refactoring Documentation for Project “Hangman 2”
 10. Put curly braces after all conditionals and loops.
 11. Renamed variables 'num1' and 'num2' to 'guessedLetters' and 'mistakes'(class WordInitializator).
 
-PS Добавям клас ScoreBoard и го имплементирам и още клас само с константи и там да ги редим всички
+PS!!! Добавил съм ScoreBoard, но съм го направил статичен, защото в момента нямам много време, като намеря ще го пренапиша или ако някой иска да го разцъка, но според мен първо по - добре да покрием повече от задачите.
