@@ -7,8 +7,6 @@
 
     public class CommandExecuter
     {
-        public static Player[] scoreboard = new Player[5];
-
         public static void RevealTheNextLetter(string word)
         {
             char firstUnrevealedLetter = '$';
@@ -42,19 +40,19 @@
             }
         }
 
-        public static void TopResults()
-        {
-            Console.WriteLine();
-            for (int i = 0; i < 5; i++)
-            {
-                if (scoreboard[i] != null)
-                {
-                    Console.WriteLine("{0}. {1} ---> {2}", i + 1, scoreboard[i].Name, scoreboard[i].Mistakes);
-                }
-            }
+        //public static void TopResults()
+        //{
+        //    Console.WriteLine();
+        //    for (int i = 0; i < 5; i++)
+        //    {
+        //        if (scoreboard[i] != null)
+        //        {
+        //            Console.WriteLine("{0}. {1} ---> {2}", i + 1, scoreboard[i].Name, scoreboard[i].Mistakes);
+        //        }
+        //    }
 
-            Console.WriteLine();
-        }
+        //    Console.WriteLine();
+        //}
 
         public static void Exit()
         {

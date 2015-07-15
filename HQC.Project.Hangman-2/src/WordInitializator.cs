@@ -1,5 +1,6 @@
 ﻿namespace HQC.Project.Hangman2
 {
+    using HQC.Project.Hangman_2;
     using System;
     using System.Linq;
     using System.Text;
@@ -101,38 +102,43 @@
             Console.WriteLine("You won with {0} mistakes.", mistakes);
             RevealGuessedLetters(word);
             Console.WriteLine();
-            int positionOfTheFirstFreePositionInTheScoereboard = 4;
+            //int positionOfTheFirstFreePositionInTheScoereboard = 4;
 
-            for (int i = 0; i < 4; i++)
-            {
-                if (CommandExecuter.scoreboard[i] == null)
-                {
-                    positionOfTheFirstFreePositionInTheScoereboard = i;
-                    break;
-                }
-            }
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    if (CommandExecuter.scoreboard[i] == null)
+            //    {
+            //        positionOfTheFirstFreePositionInTheScoereboard = i;
+            //        break;
+            //    }
+            //}
 
-            //// for free position
-            if ((CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard] == null 
-                  || mistakes <= CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard].Mistakes) //// when the 4th pos is not free)
-                  && flag == false)
-            {
-                Console.WriteLine("Please enter your name for the top scoreboard:");
-                string playerName = Console.ReadLine();
-               Player newResult = new Player(playerName, mistakes);
-                CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard] = newResult;
+            ////// for free position
+            //if ((CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard] == null 
+            //      || mistakes <= CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard].Mistakes) //// when the 4th pos is not free)
+            //      && flag == false)
+            //{
+            //    Console.WriteLine("Please enter your name for the top scoreboard:");
+            //    string playerName = Console.ReadLine();
+            //   Player newResult = new Player(playerName, mistakes);
+            //    CommandExecuter.scoreboard[positionOfTheFirstFreePositionInTheScoereboard] = newResult;
 
-                for (int i = positionOfTheFirstFreePositionInTheScoereboard; i > 0; i--)
-                {
-                    if (CommandExecuter.scoreboard[i].Compare(CommandExecuter.scoreboard[i - 1]) < 0)
-                    {
-                        //// swap
-                        Player temp = CommandExecuter.scoreboard[i];
-                        CommandExecuter.scoreboard[i] = CommandExecuter.scoreboard[i - 1];
-                        CommandExecuter.scoreboard[i - 1] = temp;
-                    }
-                }
-            }
+            //    for (int i = positionOfTheFirstFreePositionInTheScoereboard; i > 0; i--)
+            //    {
+            //        if (CommandExecuter.scoreboard[i].Compare(CommandExecuter.scoreboard[i - 1]) < 0)
+            //        {
+            //            //// swap
+            //            Player temp = CommandExecuter.scoreboard[i];
+            //            CommandExecuter.scoreboard[i] = CommandExecuter.scoreboard[i - 1];
+            //            CommandExecuter.scoreboard[i - 1] = temp;
+            //        }
+            //    }
+            //}
+
+            Console.WriteLine("Please enter your name for the top scoreboard:");
+            string playerName = Console.ReadLine();
+            Player currentPlayer = new Player(playerName, mistakes);
+            ScoreBoard.PlacePlayerInScoreBoard(currentPlayer);
 
             guessedLetters = 0;
             mistakes = 0;

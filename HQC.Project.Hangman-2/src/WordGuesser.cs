@@ -1,5 +1,6 @@
 ﻿namespace HQC.Project.Hangman2
 {
+    using HQC.Project.Hangman_2;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -38,7 +39,7 @@
             }
             else if (supposedCharOrCommand.Equals("top"))
             {
-                CommandExecuter.TopResults();
+                ScoreBoard.PrintTopResults();
             }
         }
     }
