@@ -1,56 +1,80 @@
-namespace HQC.Project.Hangman_2
+namespace HQC.Project.Hangman2
 {
     using System;
-    using HQC.Project.Hangman2;
+    using System.IO;
+    using System.Linq;
 
     public class ScoreBoard
     {
-        private static Player[] scoreBoardTable = new Player[Globals.ScoreBoardSize];
+        private Player[] scoreBoardTable;
 
-        public static void PlacePlayerInScoreBoard(Player player)
+        public ScoreBoard()
         {
-            int emptyPosition = GetFirstFreePosition();
+            this.scoreBoardTable = this.ReadScoresFromTxtFile();
+        }
 
-            if (scoreBoardTable[emptyPosition] == null || player.Mistakes <= scoreBoardTable[emptyPosition].Mistakes)
+        public void PlacePlayerInScoreBoard(Player player)
+        {
+            int emptyPosition = this.GetFirstFreePosition();
+
+            if (emptyPosition > -1 || player.Mistakes <= this.scoreBoardTable[Globals.ScoreBoardSize - 1].Mistakes)
             {
-                scoreBoardTable[emptyPosition] = player;
+                if (emptyPosition > -1)
+                {
+                    this.scoreBoardTable[emptyPosition] = player;
+                }
+                else
+                {
+                    this.scoreBoardTable[Globals.ScoreBoardSize - 1] = player;
+                }
 
                 for (int i = emptyPosition; i > 0; i--)
                 {
-                    Player firstPlayer = scoreBoardTable[i];
-                    Player secondPlayer = scoreBoardTable[i - 1];
+                    Player firstPlayer = this.scoreBoardTable[i];
+                    Player secondPlayer = this.scoreBoardTable[i - 1];
 
                     if (firstPlayer.Compare(secondPlayer) < 0)
                     {
                         //// swap
-                        scoreBoardTable[i] = secondPlayer;
-                        scoreBoardTable[i - 1] = firstPlayer;
+                        this.scoreBoardTable[i] = secondPlayer;
+                        this.scoreBoardTable[i - 1] = firstPlayer;
                     }
                 }
             }
+
+            this.SaveScoresToTxtFile();
         }
 
-        public static void PrintTopResults()
+        public void PrintTopResults()
         {
             Console.WriteLine();
             for (int i = 0; i < Globals.ScoreBoardSize; i++)
             {
-                if (scoreBoardTable[i] != null)
+                if (this.scoreBoardTable[i] != null && this.scoreBoardTable[i].Name != Globals.NoPlayer)
                 {
-                    Console.WriteLine("{0}. {1} ---> {2}", i + 1, scoreBoardTable[i].Name, scoreBoardTable[i].Mistakes);
+                    Console.WriteLine("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes);
+                }
+                else
+                {
+                    if (i == 0)
+                    {
+                        Console.WriteLine("No Scores");
+                    }
+
+                    break;
                 }
             }
 
             Console.WriteLine();
         }
 
-        private static int GetFirstFreePosition()
+        private int GetFirstFreePosition()
         {
             int freePosition = Globals.LastPositionInScoreBoard;
 
             for (int i = 0; i < Globals.ScoreBoardSize; i++)
             {
-                if (scoreBoardTable[i] == null)
+                if (this.scoreBoardTable[i].Name == Globals.NoPlayer)
                 {
                     freePosition = i;
                     break;
@@ -58,6 +82,68 @@ namespace HQC.Project.Hangman_2
             }
 
             return freePosition;
+        }
+
+        private void SaveScoresToTxtFile()
+        {
+            using (var writer = new StreamWriter(@"..\..\bestScores.txt"))
+            {
+                var sortedScores = this.scoreBoardTable.OrderBy(x => x.Mistakes);
+
+                foreach (var score in sortedScores)
+                {
+                    if (score == null)
+                    {
+                        writer.WriteLine(Globals.FreePositionInScoreBoars);
+                    }
+                    else
+                    {
+                        writer.WriteLine(score.Name + "-" + score.Mistakes);
+                    }
+                }
+            }
+        }
+
+        private Player[] ReadScoresFromTxtFile()
+        {
+            var scoreBoardTable = new Player[Globals.ScoreBoardSize];
+            using (var reader = new StreamReader(@"..\..\bestScores.txt"))
+            {
+                var score = reader.ReadLine();
+                var index = 0;
+
+                while (score != null)
+                {
+                    string playerName;
+                    int playerScore;
+
+                    if (score == Globals.FreePositionInScoreBoars)
+                    {
+                        playerName = "No Player";
+                        playerScore = int.MaxValue;
+                    }
+                    else
+                    {
+                        var separateScore = score.Split('-');
+                        playerName = separateScore[0].Trim();
+                        playerScore = int.Parse(separateScore[1]);
+                    }
+
+                    scoreBoardTable[index] = new Player(playerName, playerScore);
+                    score = reader.ReadLine();
+                    index++;
+                }
+            }
+
+            for (int i = 0; i < Globals.ScoreBoardSize; i++)
+            {
+                if (scoreBoardTable[i] == null)
+                {
+                    scoreBoardTable[i] = new Player(Globals.NoPlayer, int.MaxValue);
+                }
+            }
+
+            return scoreBoardTable;
         }
     }
 }

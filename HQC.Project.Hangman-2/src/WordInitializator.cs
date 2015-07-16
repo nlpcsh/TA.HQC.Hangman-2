@@ -1,6 +1,5 @@
 ﻿namespace HQC.Project.Hangman2
 {
-    using HQC.Project.Hangman_2;
     using System;
     using System.Linq;
     using System.Text;
@@ -11,6 +10,7 @@
         public static int guessedLetters = 0;
         public static char[] allGuessedLetters;
         private static int mistakes = 0;
+        private static WordGuesser wordGuesser = new WordGuesser();
 
         public static void BegginingOfTheGameInitialization(string word)
         {
@@ -138,7 +138,7 @@
             Console.WriteLine("Please enter your name for the top scoreboard:");
             string playerName = Console.ReadLine();
             Player currentPlayer = new Player(playerName, mistakes);
-            ScoreBoard.PlacePlayerInScoreBoard(currentPlayer);
+            wordGuesser.Scores.PlacePlayerInScoreBoard(currentPlayer);
 
             guessedLetters = 0;
             mistakes = 0;
