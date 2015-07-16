@@ -51,3 +51,6 @@ Refactoring Documentation for Project “Hangman 2”
 13. Changed class ScoreBoard non-static
 14. Added methods SaveScoresToTxtFile and ReadScoresFromTxtFile
 15. Added  two Global constants: FreePositionInScoreBoars and NoPlayer
+
+
+!!!!!!! Преди да пушвате бъдете сигурни, че сте сто процента синкнали най - новото защото, някой ми бе затрил препавените методи и трябваше на ново да ги пушвам.
