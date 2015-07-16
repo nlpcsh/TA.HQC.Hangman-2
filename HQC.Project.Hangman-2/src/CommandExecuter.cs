@@ -59,7 +59,7 @@
             Console.WriteLine("Good bye!");
             WordGuesser.IsExited = true;
 
-            return;
+            Environment.Exit(0);
         }
     }
 }
