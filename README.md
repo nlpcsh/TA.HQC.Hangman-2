@@ -51,11 +51,6 @@ Refactoring Documentation for Project “Hangman 2”
 13. Changed class ScoreBoard non-static
 14. Added methods SaveScoresToTxtFile and ReadScoresFromTxtFile
 15. Added  two Global constants: FreePositionInScoreBoars and NoPlayer
-
-
-!!!!!!! Преди да пушвате бъдете сигурни, че сте сто процента синкнали най - новото защото, някой ми бе затрил препавените методи и трябваше на ново да ги пушвам.
-
----> Женя: аз съм ти го затрила, но незнам как защото обединих 2та варианта. Явно нещо съм прещакала накрая. Моля те пускай си skype и изрий това като го прочетеш(доста тъпо пишем тук, но няма как да стане без комуникация)  
 16.  Update methods RevealGuessedLetters and InitializationAfterTheGuess
 
 17.  Introduced class Printer
