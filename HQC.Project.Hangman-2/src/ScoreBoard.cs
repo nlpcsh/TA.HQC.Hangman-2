@@ -15,29 +15,22 @@ namespace HQC.Project.Hangman2
 
         public void PlacePlayerInScoreBoard(Player player)
         {
-            int emptyPosition = this.GetFirstFreePosition();
+            int emptyPosition = GetFirstFreePosition();
 
-            if (emptyPosition > -1 || player.Mistakes <= this.scoreBoardTable[Globals.ScoreBoardSize - 1].Mistakes)
+            if (scoreBoardTable[emptyPosition] == null || player.Mistakes <= scoreBoardTable[emptyPosition].Mistakes)
             {
-                if (emptyPosition > -1)
-                {
-                    this.scoreBoardTable[emptyPosition] = player;
-                }
-                else
-                {
-                    this.scoreBoardTable[Globals.ScoreBoardSize - 1] = player;
-                }
+                scoreBoardTable[emptyPosition] = player;
 
                 for (int i = emptyPosition; i > 0; i--)
                 {
-                    Player firstPlayer = this.scoreBoardTable[i];
-                    Player secondPlayer = this.scoreBoardTable[i - 1];
+                    Player firstPlayer = scoreBoardTable[i];
+                    Player secondPlayer = scoreBoardTable[i - 1];
 
                     if (firstPlayer.Compare(secondPlayer) < 0)
                     {
                         //// swap
-                        this.scoreBoardTable[i] = secondPlayer;
-                        this.scoreBoardTable[i - 1] = firstPlayer;
+                        scoreBoardTable[i] = secondPlayer;
+                        scoreBoardTable[i - 1] = firstPlayer;
                     }
                 }
             }
