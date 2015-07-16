@@ -22,7 +22,7 @@
         public void GuessLetter()
         {
             Console.WriteLine("Enter your guess: ");
-            string supposedCharOrCommand = Console.ReadLine();
+            string supposedCharOrCommand = Console.ReadLine().ToLower();
 
             //// the input is a character
             if (supposedCharOrCommand.Length == 1)

@@ -16,17 +16,10 @@
 
         public static void BegginingOfTheGameInitialization(string word)
         {
-            Console.WriteLine("Welcome to “Hangman” game. Please try to guess my secret word.");
-            Console.WriteLine("Use 'top' to view the top scoreboard, 'restart' to start a new game,'help' to cheat and 'exit' to quit the game.");
             allGuessedLetters = new List<char>();
-
             hiddenWord = new StringBuilder(new string('_', word.Length));
             hiddenWord = hiddenWord.Replace("_", "_ ");
-
-            Console.WriteLine();
-            Console.WriteLine("The secret word is: ");
-            Console.WriteLine(hiddenWord);
-            Console.WriteLine();
+            Printer.PrintStartHangmanGameMessage(hiddenWord.ToString());
         }
 
         //// helper of the next function
@@ -38,9 +31,8 @@
             while (index != -1)
             {
                 hiddenWord[index * 2] = charSupposed;
-                startIndex = index+1;
+                startIndex = index + 1;
                 index = word.IndexOf(charSupposed, startIndex);
-               
             }
 
             Console.WriteLine(hiddenWord);
@@ -88,8 +80,7 @@
         {
             Console.WriteLine("You won with {0} mistakes.", mistakes);
             //RevealGuessedLetters(word);
-            Console.WriteLine(hiddenWord);
-            Console.WriteLine();
+            Printer.PrintSecretWord(hiddenWord.ToString());
             Console.WriteLine("Please enter your name for the top scoreboard:");
             string playerName = Console.ReadLine();
             Player currentPlayer = new Player(playerName, mistakes);

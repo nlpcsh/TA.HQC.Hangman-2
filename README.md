@@ -57,3 +57,4 @@ Refactoring Documentation for Project “Hangman 2”
 
 ---> Женя: аз съм ти го затрила, но незнам как защото обединих 2та варианта. Явно нещо съм прещакала накрая. Моля те пускай си skype и изрий това като го прочетеш(доста тъпо пишем тук, но няма как да стане без комуникация)  
 16.  Update methods RevealGuessedLetters and InitializationAfterTheGuess
+17.  Introduced class Printer
