@@ -1,4 +1,4 @@
-﻿namespace HQC.Project.Hangman_2
+namespace HQC.Project.Hangman_2
 {
     using System;
     using HQC.Project.Hangman2;
@@ -11,16 +11,9 @@
         {
             int emptyPosition = GetFirstFreePosition();
 
-            if (emptyPosition > -1 || player.Mistakes <= scoreBoardTable[Globals.ScoreBoardSize - 1].Mistakes)
+            if (scoreBoardTable[emptyPosition] == null || player.Mistakes <= scoreBoardTable[emptyPosition].Mistakes)
             {
-                if (emptyPosition > - 1)
-                {
-                    scoreBoardTable[emptyPosition] = player; 
-                }
-                else
-                {
-                    scoreBoardTable[Globals.ScoreBoardSize - 1] = player;
-                }
+                scoreBoardTable[emptyPosition] = player;
 
                 for (int i = emptyPosition; i > 0; i--)
                 {
@@ -53,7 +46,7 @@
 
         private static int GetFirstFreePosition()
         {
-            int freePosition = Globals.IndicationThatScoreBoardIsFull;
+            int freePosition = Globals.LastPositionInScoreBoard;
 
             for (int i = 0; i < Globals.ScoreBoardSize; i++)
             {
