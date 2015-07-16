@@ -28,7 +28,6 @@ namespace HQC.Project.Hangman2
 
                     if (firstPlayer.Compare(secondPlayer) < 0)
                     {
-                        //// swap
                         scoreBoardTable[i] = secondPlayer;
                         scoreBoardTable[i - 1] = firstPlayer;
                     }

@@ -6,7 +6,7 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAIAAAAAAABBAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAABAIAAAAAAAAAA=</HashCode>
       <FileName>CommandExecuter.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -20,14 +20,14 @@
   <Class Name="HQC.Project.Hangman2.WordGuesser">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAQAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAAAQgAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WordGuesser.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HQC.Project.Hangman2.WordInitializator">
-    <Position X="5.25" Y="2.75" Width="2.5" />
+    <Position X="7" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAIgIAAgAAAAAAAAAAAAAAAAAEABAQ=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAIgIAAgAAAAAAAAAAAAEAAAAEABAQ=</HashCode>
       <FileName>WordInitializator.cs</FileName>
     </TypeIdentifier>
   </Class>
