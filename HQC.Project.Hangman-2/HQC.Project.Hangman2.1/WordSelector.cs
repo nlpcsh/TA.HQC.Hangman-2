@@ -3,7 +3,7 @@
     using System;
     using System.Linq;
 
-    internal class WordSelector
+    public class WordSelector
     {
         private string[] words =
                                         { 

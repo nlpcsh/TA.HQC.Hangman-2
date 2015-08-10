@@ -7,10 +7,6 @@
         private string name;
         private int mistakes;
 
-        public Player()
-        {
-        }
-
         public Player(string playerName, int mistakes)
         {
             this.Name = playerName;

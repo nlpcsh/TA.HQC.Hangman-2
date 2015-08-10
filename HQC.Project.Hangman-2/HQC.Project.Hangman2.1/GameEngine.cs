@@ -8,20 +8,44 @@
 
     public class GameEngine
     {
-        private static bool gameIsOn = true;
+        public static bool gameIsOn = true;
+
+        public WordInitializator WordInit { get; set; }
+
+        public WordSelector WordSelect { get; set; }
+
+        private WordGuesser WordGuess { get; set; }
+
+        public CommandManager execute { get; set; }
+
+        public GameEngine()
+        {
+            execute = new CommandManager();
+            WordInit = new WordInitializator();
+            WordSelect = new WordSelector();
+        }
 
         internal void NewGame()
         {
-            var commantExecutor = new CommandExecuter();
-            var scoreBoard = new ScoreBoard();
-            var wordSelector = new WordSelector();
+            string word = WordSelect.SelectRandomWord();
+            //// Console.WriteLine(word);
+            WordInit.BegginingOfTheGameInitialization(word);
 
-            while (gameIsOn)
+            WordGuess = new WordGuesser() { Word = word };
+            string commandToExecute = string.Empty;
+
+            while (WordInit.guessedLetters < word.Length && gameIsOn == true)
             {
-                var player = new Player();
+                commandToExecute = WordGuess.GuessLetter(WordInit, WordSelect);
 
-
-                gameIsOn = false;
+                if (commandToExecute.Equals("restart"))
+                {
+                    execute.Restart();
+                }
+                else if (commandToExecute.Equals("exit"))
+                {
+                    execute.Exit();
+                }
             }
         }
     }
