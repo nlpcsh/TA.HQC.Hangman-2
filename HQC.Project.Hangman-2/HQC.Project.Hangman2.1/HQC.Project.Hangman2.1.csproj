@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CommandExecuter.cs" />
     <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="GameEngine.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Hangman.cs" />
     <Compile Include="interfaces\ILogger.cs" />

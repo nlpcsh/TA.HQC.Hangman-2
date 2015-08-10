@@ -8,21 +8,10 @@
 
     public class Hangman
     {
-        private static bool gameIsOn = true;
-
         static void Main(string[] args)
         {
-            var commantExecutor = new CommandExecuter();
-            var scoreBoard = new ScoreBoard();
-            var wordSelector = new WordSelector();
-
-            while (gameIsOn)
-            {
-                var player = new Player();
-
-
-                gameIsOn = false;
-            }
+            var newGame = new GameEngine();
+            newGame.NewGame();
         }
     }
 }
