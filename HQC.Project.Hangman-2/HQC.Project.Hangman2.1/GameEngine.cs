@@ -38,11 +38,11 @@
             {
                 commandToExecute = WordGuess.GuessLetter(WordInit, WordSelect);
 
-                if (commandToExecute.Equals("restart"))
+                if (commandToExecute.Equals(Command.restart.ToString()))
                 {
                     execute.Restart();
                 }
-                else if (commandToExecute.Equals("exit"))
+                else if (commandToExecute.Equals(Command.exit.ToString()))
                 {
                     execute.Exit();
                 }

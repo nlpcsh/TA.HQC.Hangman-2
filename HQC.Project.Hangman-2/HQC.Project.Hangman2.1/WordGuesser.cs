@@ -30,7 +30,7 @@
                 char supposedChar = supposedCharOrCommand[0];
                 wordInit.InitializationAfterTheGuess(this.Word, supposedChar);
             }
-            else if (supposedCharOrCommand.Equals("help"))
+            else if (supposedCharOrCommand.Equals(Command.help.ToString()))
             {
                 wordInit.RevealTheNextLetter(this.Word);
             }
@@ -43,7 +43,7 @@
             //    execute.Exit();
             //    return;
             //}
-            else if (supposedCharOrCommand.Equals("top"))
+            else if (supposedCharOrCommand.Equals(Command.top.ToString()))
             {
                 this.Scores.PrintTopResults();
             }
