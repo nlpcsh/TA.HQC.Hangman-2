@@ -12,7 +12,7 @@
 
         public static void PrintOptionsMessage()
         {
-            Console.WriteLine("Use \n 'top' to view the top scoreboard, \n'restart' to start a new game,\n'help' to cheat,\n'options' to see again the options and \n'exit' to quit the game.");
+            Console.WriteLine("Use \n 'top' to view the top scoreboard,\n 'restart' to start a new game,\n 'help' to cheat,\n 'options' to see again the options and \n 'exit' to quit the game.");
             Console.WriteLine();
         }
 
@@ -25,6 +25,7 @@
 
         public static void PrintGoodBuyMessage()
         {
+            Console.WriteLine();
             Console.WriteLine("Good bye!");
         }
     }

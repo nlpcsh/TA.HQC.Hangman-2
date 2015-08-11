@@ -46,6 +46,10 @@
                 {
                     execute.Exit();
                 }
+                else if (commandToExecute.Equals(Command.options.ToString()))
+                {
+                    Printer.PrintOptionsMessage();
+                }
             }
         }
     }
