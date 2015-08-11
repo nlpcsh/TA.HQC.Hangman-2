@@ -33,7 +33,7 @@
             string word = WordSelect.SelectRandomWord();
             //// Console.WriteLine(word);
             WordGuess = new WordGuesser() { Word = word };
-            WordGuess.InitializationOfGame(word);
+            WordGuess.InitializationOfGame();
 
             string commandToExecute = string.Empty;
 

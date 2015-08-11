@@ -25,9 +25,9 @@
 
         public ScoreBoard Scores { get; set; }
 
-        public void InitializationOfGame(string word)
+        public void InitializationOfGame()
         {
-            hiddenWord = new StringBuilder(new string('_', word.Length));
+            hiddenWord = new StringBuilder(new string('_', this.Word.Length));
             hiddenWord = hiddenWord.Replace("_", "_ ");
 
             Printer.PrintSecretWord(hiddenWord.ToString());
@@ -66,38 +66,38 @@
             return supposedCharOrCommand;
         }
 
-        public void RevealGuessedLetters(char charSupposed)
+        public void RevealGuessedLetters(char supposedChar)
         {
             var startIndex = 0;
-            var index = this.Word.IndexOf(charSupposed, startIndex);
+            var index = this.Word.IndexOf(supposedChar, startIndex);
 
             while (index != -1)
             {
-                hiddenWord[index * 2] = charSupposed;
+                hiddenWord[index * 2] = supposedChar;
                 startIndex = index + 1;
-                index = this.Word.IndexOf(charSupposed, startIndex);
+                index = this.Word.IndexOf(supposedChar, startIndex);
             }
 
             Console.WriteLine(hiddenWord);
         }
 
-        public void InitializationAfterTheGuess(char charSupposed)
+        public void InitializationAfterTheGuess(char supposedChar)
         {
             StringBuilder wordInitailized = new StringBuilder();
 
-            if (this.allGuessedLetters.Contains<char>(charSupposed))
+            if (this.allGuessedLetters.Contains<char>(supposedChar))
             {
-                Console.WriteLine("You have already revealed the letter {0}", charSupposed);
+                Console.WriteLine("You have already revealed the letter {0}", supposedChar);
                 return;
             }
 
-            this.allGuessedLetters.Add(charSupposed);
-            int numberOfTheAppearancesOfTheSupposedChar = this.Word.Count(x => x.Equals(charSupposed));
-            this.RevealGuessedLetters(charSupposed);
+            this.allGuessedLetters.Add(supposedChar);
+            int numberOfTheAppearancesOfTheSupposedChar = this.Word.Count(x => x.Equals(supposedChar));
+            this.RevealGuessedLetters(supposedChar);
 
             if (numberOfTheAppearancesOfTheSupposedChar == 0)
             {
-                Console.WriteLine("Sorry! There are no unrevealed letters {0}", charSupposed);
+                Console.WriteLine("Sorry! There are no unrevealed letters {0}", supposedChar);
                 this.mistakes++;
             }
             else
