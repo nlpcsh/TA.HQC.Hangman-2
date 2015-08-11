@@ -5,6 +5,7 @@
         help,
         top,
         exit,
+        options,
         restart
     }
 }

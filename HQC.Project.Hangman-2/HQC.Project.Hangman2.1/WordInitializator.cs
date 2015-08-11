@@ -19,7 +19,9 @@
             allGuessedLetters = new List<char>();
             hiddenWord = new StringBuilder(new string('_', word.Length));
             hiddenWord = hiddenWord.Replace("_", "_ ");
-            Printer.PrintStartHangmanGameMessage(hiddenWord.ToString());
+            Printer.PrintWellcomeMessage();
+            Printer.PrintOptionsMessage();
+            Printer.PrintSecretWord(hiddenWord.ToString());
         }
 
         //// helper of the next function
