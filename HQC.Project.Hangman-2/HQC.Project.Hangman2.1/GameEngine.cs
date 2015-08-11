@@ -10,7 +10,7 @@
     {
         public static bool gameIsOn = true;
 
-        public WordInitializator WordInit { get; set; }
+        //public WordInitializator WordInit { get; set; }
 
         public WordSelector WordSelect { get; set; }
 
@@ -21,22 +21,25 @@
         public GameEngine()
         {
             execute = new CommandManager();
-            WordInit = new WordInitializator();
+            //WordInit = new WordInitializator();
             WordSelect = new WordSelector();
         }
 
         internal void NewGame()
         {
+            Printer.PrintWellcomeMessage();
+            Printer.PrintOptionsMessage();
+
             string word = WordSelect.SelectRandomWord();
             //// Console.WriteLine(word);
-            WordInit.BegginingOfTheGameInitialization(word);
-
             WordGuess = new WordGuesser() { Word = word };
+            WordGuess.InitializationOfGame(word);
+
             string commandToExecute = string.Empty;
 
-            while (WordInit.guessedLetters < word.Length && gameIsOn == true)
+            while (WordGuess.guessedLetters < word.Length && gameIsOn == true)
             {
-                commandToExecute = WordGuess.GuessLetter(WordInit, WordSelect);
+                commandToExecute = WordGuess.GuessLetter();
 
                 if (commandToExecute.Equals(Command.restart.ToString()))
                 {
@@ -50,6 +53,24 @@
                 {
                     Printer.PrintOptionsMessage();
                 }
+            }
+
+            PlayAgain();
+        }
+
+        private void PlayAgain()
+        {
+            System.Console.WriteLine("Want to play again? y/n");
+            char playAgainYesNo = System.Console.ReadKey().KeyChar;
+
+            if (playAgainYesNo == 'y')
+            {
+                GameEngine.gameIsOn = true;
+                execute.Restart();
+            }
+            else
+            {
+                execute.Exit();
             }
         }
     }

@@ -7,10 +7,17 @@
 
     public class WordGuesser
     {
+        public List<char> allGuessedLetters;
+        private StringBuilder hiddenWord;
+        public bool flag = false;
+        public int guessedLetters = 0;
+        private int mistakes = 0;
+
         //public static bool IsExited;
 
         public WordGuesser()
         {
+            this.allGuessedLetters = new List<char>();
             this.Scores = new ScoreBoard();
         }
 
@@ -18,8 +25,16 @@
 
         public ScoreBoard Scores { get; set; }
 
+        public void InitializationOfGame(string word)
+        {
+            hiddenWord = new StringBuilder(new string('_', word.Length));
+            hiddenWord = hiddenWord.Replace("_", "_ ");
+
+            Printer.PrintSecretWord(hiddenWord.ToString());
+        }
+
         //// 2 methods from WordInitializator must be moved here!
-        public string GuessLetter(WordInitializator wordInit, WordSelector wordSelect)
+        public string GuessLetter()
         {
             Console.WriteLine("Enter your guess: ");
             string supposedCharOrCommand = Console.ReadLine().ToLower();
@@ -28,11 +43,11 @@
             if (supposedCharOrCommand.Length == 1)
             {
                 char supposedChar = supposedCharOrCommand[0];
-                wordInit.InitializationAfterTheGuess(this.Word, supposedChar);
+                InitializationAfterTheGuess(supposedChar);
             }
             else if (supposedCharOrCommand.Equals(Command.help.ToString()))
             {
-                wordInit.RevealTheNextLetter(this.Word);
+                this.RevealTheNextLetter();
             }
             //else if (supposedCharOrCommand.Equals("restart"))
             //{
@@ -49,6 +64,100 @@
             }
 
             return supposedCharOrCommand;
+        }
+
+        public void RevealGuessedLetters(char charSupposed)
+        {
+            var startIndex = 0;
+            var index = this.Word.IndexOf(charSupposed, startIndex);
+
+            while (index != -1)
+            {
+                hiddenWord[index * 2] = charSupposed;
+                startIndex = index + 1;
+                index = this.Word.IndexOf(charSupposed, startIndex);
+            }
+
+            Console.WriteLine(hiddenWord);
+        }
+
+        public void InitializationAfterTheGuess(char charSupposed)
+        {
+            StringBuilder wordInitailized = new StringBuilder();
+
+            if (this.allGuessedLetters.Contains<char>(charSupposed))
+            {
+                Console.WriteLine("You have already revealed the letter {0}", charSupposed);
+                return;
+            }
+
+            this.allGuessedLetters.Add(charSupposed);
+            int numberOfTheAppearancesOfTheSupposedChar = this.Word.Count(x => x.Equals(charSupposed));
+            this.RevealGuessedLetters(charSupposed);
+
+            if (numberOfTheAppearancesOfTheSupposedChar == 0)
+            {
+                Console.WriteLine("Sorry! There are no unrevealed letters {0}", charSupposed);
+                this.mistakes++;
+            }
+            else
+            {
+                Console.WriteLine("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar);
+                guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
+            }
+
+            Console.WriteLine();
+
+            //// check if the word is guessed
+            if (guessedLetters == this.Word.Length)
+            {
+                //EndOfTheGameInitialization(word);
+                this.EndOfTheGame();
+                //CommandManager.Start();
+                // Go to GameEngine logic
+                GameEngine.gameIsOn = false;
+
+                return;
+            }
+
+            Console.WriteLine("The secret word is:");
+            Console.WriteLine(hiddenWord);
+        }
+
+        public void RevealTheNextLetter()
+        {
+            char firstUnrevealedLetter = '$';
+
+            for (int i = 0; i < this.Word.Length; i++)
+            {
+                if (this.allGuessedLetters[i].Equals('$'))
+                {
+                    firstUnrevealedLetter = this.Word[i];
+                    break;
+                }
+            }
+
+            Console.WriteLine("OK, I reveal for you the next letter {0}.", firstUnrevealedLetter);
+            this.InitializationAfterTheGuess(firstUnrevealedLetter);
+
+            //// flag - not in the chart
+            this.flag = true;
+        }
+
+        public void EndOfTheGame()
+        {
+            Console.WriteLine("You won with {0} mistakes.", mistakes);
+            //RevealGuessedLetters(word);
+            Printer.PrintSecretWord(hiddenWord.ToString());
+            Console.WriteLine("Please enter your name for the top scoreboard:");
+            string playerName = Console.ReadLine();
+            Player currentPlayer = new Player(playerName, mistakes);
+
+            //wordGuesser.Scores.PlacePlayerInScoreBoard(currentPlayer);
+            this.Scores.PlacePlayerInScoreBoard(currentPlayer);
+            this.guessedLetters = 0;
+            this.mistakes = 0;
+            this.flag = false;
         }
     }
 }
