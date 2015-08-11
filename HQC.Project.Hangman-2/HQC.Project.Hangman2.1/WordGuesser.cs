@@ -9,7 +9,7 @@
     {
         public List<char> allGuessedLetters;
         private StringBuilder hiddenWord;
-        public bool flag = false;
+        public bool isNextLetterToReveal = false;
         public int guessedLetters = 0;
         private int mistakes = 0;
 
@@ -140,8 +140,8 @@
             Console.WriteLine("OK, I reveal for you the next letter {0}.", firstUnrevealedLetter);
             this.InitializationAfterTheGuess(firstUnrevealedLetter);
 
-            //// flag - not in the chart
-            this.flag = true;
+            //// isNextLetterToReveal - not in the chart
+            this.isNextLetterToReveal = true;
         }
 
         public void EndOfTheGame()
@@ -157,7 +157,7 @@
             this.Scores.PlacePlayerInScoreBoard(currentPlayer);
             this.guessedLetters = 0;
             this.mistakes = 0;
-            this.flag = false;
+            this.isNextLetterToReveal = false;
         }
     }
 }
