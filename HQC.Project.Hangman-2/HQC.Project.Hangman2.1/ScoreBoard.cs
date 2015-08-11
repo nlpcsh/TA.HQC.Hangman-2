@@ -1,16 +1,23 @@
 namespace HQC.Project.Hangman2._1
 {
+    using HQC.Project.Hangman2._1.Interfaces;
     using System;
     using System.IO;
     using System.Linq;
 
-    public class ScoreBoard
+    public class ScoreBoard : ILogger
     {
+        private ILogger logger;
         private Player[] scoreBoardTable;
 
-        public ScoreBoard()
+        public ScoreBoard(ILogger logger)
         {
             this.scoreBoardTable = this.ReadScoresFromTxtFile();
+            this.logger = logger;
+        }
+
+        public ScoreBoard() : this(new ConsoleLogger())
+        {
         }
 
         public void PlacePlayerInScoreBoard(Player player)
@@ -39,25 +46,30 @@ namespace HQC.Project.Hangman2._1
 
         public void PrintTopResults()
         {
-            Console.WriteLine();
+            //Console.WriteLine();
+            this.LogLine(string.Empty);
+
             for (int i = 0; i < Globals.ScoreBoardSize; i++)
             {
                 if (this.scoreBoardTable[i] != null && this.scoreBoardTable[i].Name != Globals.NoPlayer)
                 {
-                    Console.WriteLine("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes);
+                    //Console.WriteLine("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes);
+                    this.LogLine(string.Format("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes));
                 }
                 else
                 {
                     if (i == 0)
                     {
-                        Console.WriteLine("No Scores");
+                        //Console.WriteLine("No Scores");
+                        this.LogLine("No Scores");
                     }
 
                     break;
                 }
             }
 
-            Console.WriteLine();
+            //Console.WriteLine();
+            this.LogLine(string.Empty);
         }
 
         private int GetFirstFreePosition()
@@ -136,6 +148,11 @@ namespace HQC.Project.Hangman2._1
             }
 
             return scoreBoardTable;
+        }
+
+        public void LogLine(string printMessage)
+        {
+            this.logger.LogLine(printMessage);
         }
     }
 }
