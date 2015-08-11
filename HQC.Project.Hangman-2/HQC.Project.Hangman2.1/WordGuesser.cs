@@ -27,10 +27,10 @@
 
         public void InitializationOfGame()
         {
-            hiddenWord = new StringBuilder(new string('_', this.Word.Length));
-            hiddenWord = hiddenWord.Replace("_", "_ ");
+            this.hiddenWord = new StringBuilder(new string('_', this.Word.Length));
+            this.hiddenWord = this.hiddenWord.Replace("_", "_ ");
 
-            Printer.PrintSecretWord(hiddenWord.ToString());
+            Printer.PrintSecretWord(this.hiddenWord.ToString());
         }
 
         //// 2 methods from WordInitializator must be moved here!
@@ -73,12 +73,12 @@
 
             while (index != -1)
             {
-                hiddenWord[index * 2] = supposedChar;
+                this.hiddenWord[index * 2] = supposedChar;
                 startIndex = index + 1;
                 index = this.Word.IndexOf(supposedChar, startIndex);
             }
 
-            Console.WriteLine(hiddenWord);
+            Console.WriteLine(this.hiddenWord);
         }
 
         public void InitializationAfterTheGuess(char supposedChar)
@@ -103,13 +103,13 @@
             else
             {
                 Console.WriteLine("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar);
-                guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
+                this.guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
             }
 
             Console.WriteLine();
 
             //// check if the word is guessed
-            if (guessedLetters == this.Word.Length)
+            if (this.guessedLetters == this.Word.Length)
             {
                 //EndOfTheGameInitialization(word);
                 this.EndOfTheGame();
@@ -121,7 +121,7 @@
             }
 
             Console.WriteLine("The secret word is:");
-            Console.WriteLine(hiddenWord);
+            Console.WriteLine(this.hiddenWord);
         }
 
         public void RevealTheNextLetter()
@@ -148,7 +148,7 @@
         {
             Console.WriteLine("You won with {0} mistakes.", mistakes);
             //RevealGuessedLetters(word);
-            Printer.PrintSecretWord(hiddenWord.ToString());
+            Printer.PrintSecretWord(this.hiddenWord.ToString());
             Console.WriteLine("Please enter your name for the top scoreboard:");
             string playerName = Console.ReadLine();
             Player currentPlayer = new Player(playerName, mistakes);
