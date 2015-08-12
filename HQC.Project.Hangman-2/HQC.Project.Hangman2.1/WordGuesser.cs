@@ -81,8 +81,20 @@
                 return isRevelingMoreLetters;
             }
 
-            this.allGuessedLetters.Add(supposedChar);
             int numberOfTheAppearancesOfTheSupposedChar = this.Word.Count(x => x.Equals(supposedChar));
+
+            for (int i = 0; i < this.Word.Length; i++)
+            {
+                if (this.Word[i].Equals(supposedChar))
+                {
+                    this.allGuessedLetters[i] = Word[i];
+                    //numberOfTheAppearancesOfTheSupposedChar++;
+                }
+            }
+
+            //this.allGuessedLetters.Add(supposedChar);
+
+            
             this.RevealGuessedLetters(supposedChar);
 
             if (numberOfTheAppearancesOfTheSupposedChar == 0)
@@ -99,7 +111,7 @@
             Console.WriteLine();
 
             //// check if the word is guessed
-            if (this.guessedLetters == this.Word.Length)
+            if (this.guessedLetters >= this.Word.Length)
             {
                 isRevelingMoreLetters = false;
                 return isRevelingMoreLetters;
