@@ -8,21 +8,24 @@
 
     public class GameEngine
     {
-        public static bool gameIsOn = true;
+        private bool gameIsOn = true;
 
         //public WordInitializator WordInit { get; set; }
 
-        public WordSelector WordSelect { get; set; }
+        private WordSelector WordSelect { get; set; }
 
         private WordGuesser WordGuess { get; set; }
 
-        public CommandManager execute { get; set; }
+        private CommandManager Execute { get; set; }
+
+        private ScoreBoard Scores { get; set; }
 
         public GameEngine()
         {
-            execute = new CommandManager();
+            this.Execute = new CommandManager();
             //WordInit = new WordInitializator();
-            WordSelect = new WordSelector();
+            this.WordSelect = new WordSelector();
+            this.Scores = new ScoreBoard();
         }
 
         internal void NewGame()
@@ -37,17 +40,31 @@
 
             string commandToExecute = string.Empty;
 
-            while (WordGuess.guessedLetters < word.Length && gameIsOn == true)
+            while (gameIsOn == true)
             {
-                commandToExecute = WordGuess.GuessLetter();
+                commandToExecute = Execute.ReadInput();
+                //GuessLetter();
 
-                if (commandToExecute.Equals(Command.restart.ToString()))
+                if (commandToExecute.Length == 1)
                 {
-                    execute.Restart();
+                    char supposedChar = commandToExecute[0];
+                    gameIsOn = WordGuess.InitializationAfterTheGuess(supposedChar);
+                }
+                else if (commandToExecute.Equals(Command.help.ToString()))
+                {
+                    WordGuess.RevealTheNextLetter();
+                }
+                else if (commandToExecute.Equals(Command.top.ToString()))
+                {
+                    this.Scores.PrintTopResults();
+                }
+                else if (commandToExecute.Equals(Command.restart.ToString()))
+                {
+                    Execute.Restart();
                 }
                 else if (commandToExecute.Equals(Command.exit.ToString()))
                 {
-                    execute.Exit();
+                    Execute.Exit();
                 }
                 else if (commandToExecute.Equals(Command.options.ToString()))
                 {
@@ -55,6 +72,7 @@
                 }
             }
 
+            EndOfTheGame(WordGuess);
             PlayAgain();
         }
 
@@ -65,13 +83,30 @@
 
             if (playAgainYesNo == 'y')
             {
-                GameEngine.gameIsOn = true;
-                execute.Restart();
+                this.gameIsOn = true;
+                Execute.Restart();
             }
             else
             {
-                execute.Exit();
+                Execute.Exit();
             }
+        }
+
+        public void EndOfTheGame(WordGuesser WordGuess)
+        {
+            System.Console.WriteLine("You won with {0} mistakes.", WordGuess.Mistakes);
+            //RevealGuessedLetters(word);
+            Printer.PrintSecretWord(WordGuess.HiddenWord);
+            System.Console.WriteLine("Please enter your name for the top scoreboard:");
+
+            string playerName = System.Console.ReadLine();
+
+            Player currentPlayer = new Player(playerName, WordGuess.Mistakes);
+
+            this.Scores.PlacePlayerInScoreBoard(currentPlayer);
+            //WordGuess.guessedLetters = 0;
+            WordGuess.Mistakes = 0;
+            //this.isNextLetterToReveal = false;
         }
     }
 }
