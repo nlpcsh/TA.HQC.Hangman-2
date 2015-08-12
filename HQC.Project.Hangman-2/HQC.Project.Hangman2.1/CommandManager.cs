@@ -30,16 +30,16 @@
             return this.Input;
         }
 
-        public void Restart()
-        {
-            var newGame = new GameEngine();
-            newGame.NewGame();
-        }
+        //public void Restart()
+        //{
+        //    var newGame = new GameEngine();
+        //    newGame.NewGame();
+        //}
 
-        public void Exit()
-        {
-            Printer.PrintGoodBuyMessage();
-            Environment.Exit(0);
-        }
+        //public void Exit()
+        //{
+        //    Printer.PrintGoodBuyMessage();
+        //    Environment.Exit(0);
+        //}
     }
 }

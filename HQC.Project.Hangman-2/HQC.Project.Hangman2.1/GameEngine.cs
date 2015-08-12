@@ -52,11 +52,15 @@
                 }
                 else if (commandToExecute.Equals(Command.restart.ToString()))
                 {
-                    this.Execute.Restart();
+                    //this.Execute.Restart();
+                    this.NewGame();
                 }
                 else if (commandToExecute.Equals(Command.exit.ToString()))
                 {
-                    this.Execute.Exit();
+                    //this.Execute.Exit();
+                    Printer.PrintGoodBuyMessage();
+                    Environment.Exit(0);
+
                 }
                 else if (commandToExecute.Equals(Command.options.ToString()))
                 {
@@ -78,11 +82,14 @@
             if (playAgainYesNo == 'y')
             {
                 this.gameIsOn = true;
-                Execute.Restart();
+                //Execute.Restart();
+                this.NewGame();
             }
             else
             {
-                Execute.Exit();
+                //Execute.Exit();
+                Printer.PrintGoodBuyMessage();
+                Environment.Exit(0);
             }
         }
 

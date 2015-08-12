@@ -3,8 +3,12 @@ Refactoring Documentation for Project “Hangman 2”
 
 1.  Redesigned the project structure: Team “Hangman-2”
 	-   Added class `Hangman` and moved `Main()` inside
-	-   Added class `ScoreBoard` and moved all related functionality in it
-	-   In class `ScoreBoard` - Added methods `SaveScoresToTxtFile()` and `ReadScoresFromTxtFile()`
+	-   Added class `ScoreBoard` and moved all related functionality in it. It contains methods:
+		- `SaveScoresToTxtFile()`
+		- `ReadScoresFromTxtFile()`
+		- `PrintTopResults()`
+		- `GetFirstFreePosition()`
+		- `PlacePlayerInScoreBoard()`
 	-   Added class `Player`(replaced class `PlayerMistakes`)
 	-   Added class `Printer` (static) - contaning all general messages in the game
 	-   Added class `Globals` (static) - holder of all constants in the game
@@ -13,6 +17,17 @@ Refactoring Documentation for Project “Hangman 2”
 		- `NewGame()`
 		- `PlayAgain()`
 		- `EndOfTheGame()`
+	-   Added class `Validator` (static) containing major validation methods (v2.1):
+	-   Added interface `ILogger` containing method `LogLine()` - to implement Dependency Inversion for the output printing
+	-   Added enumeration `Command` containing all valid for the game commands
+	-   Changed class `CommandExecuter` to `CommandManager` containing methods (v2.1):
+		- `ReadInput()`
+	-   Added class `ConsoleLogger` - implemets interface `ILogger` (v2.1)
+	-   Implemented in the class `WordGuesser` new methods (v2.1):
+		- `InitializationOfGame()`
+		- `RevealGuessedLetters()`
+		- `InitializationAfterTheGuess()`
+		- `RevealTheNextLetter()`
 
 2.  Reformatted the source code:
 	-   General refractoring of class `WorldInitializator`
