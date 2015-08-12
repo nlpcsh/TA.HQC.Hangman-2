@@ -26,9 +26,6 @@
 
         internal void NewGame()
         {
-            Printer.PrintWellcomeMessage();
-            Printer.PrintOptionsMessage();
-
             string word = WordSelect.SelectRandomWord();
 
             this.WordGuess = new WordGuesser() { Word = word };
