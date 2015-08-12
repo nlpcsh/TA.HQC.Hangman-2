@@ -1,9 +1,6 @@
 ﻿namespace HQC.Project.Hangman2._1
 {
     using System;
-    //using System.Collections.Generic;
-    //using System.Linq;
-    //using System.Text;
 
     public class CommandManager
     {
@@ -22,7 +19,6 @@
             }
         }
         
-
         public CommandManager()
         {
             this.input = string.Empty;
@@ -42,10 +38,7 @@
 
         public void Exit()
         {
-            //Console.WriteLine("Good bye!");
             Printer.PrintGoodBuyMessage();
-            //GameEngine.gameIsOn = false;
-
             Environment.Exit(0);
         }
     }

@@ -1,16 +1,10 @@
 ﻿namespace HQC.Project.Hangman2._1
 {
-    //using System;
-    //using System.Collections.Generic;
-    //using System.Linq;
-    //using System.Text;
-    //using System.Threading.Tasks;
+    using System;
 
     public class GameEngine
     {
         private bool gameIsOn = true;
-
-        //public WordInitializator WordInit { get; set; }
 
         private WordSelector WordSelect { get; set; }
 
@@ -23,7 +17,6 @@
         public GameEngine()
         {
             this.Execute = new CommandManager();
-            //WordInit = new WordInitializator();
             this.WordSelect = new WordSelector();
             this.Scores = new ScoreBoard();
         }
@@ -34,7 +27,7 @@
             Printer.PrintOptionsMessage();
 
             string word = WordSelect.SelectRandomWord();
-            //// Console.WriteLine(word);
+
             WordGuess = new WordGuesser() { Word = word };
             WordGuess.InitializationOfGame();
 
@@ -43,7 +36,6 @@
             while (gameIsOn == true)
             {
                 commandToExecute = Execute.ReadInput();
-                //GuessLetter();
 
                 if (commandToExecute.Length == 1)
                 {
@@ -78,8 +70,10 @@
 
         private void PlayAgain()
         {
-            System.Console.WriteLine("Want to play again? y/n");
-            char playAgainYesNo = System.Console.ReadKey().KeyChar;
+            Console.Write("Want to play again? y/n ");
+            char playAgainYesNo = Console.ReadKey().KeyChar;
+
+            Console.WriteLine();
 
             if (playAgainYesNo == 'y')
             {
@@ -94,19 +88,18 @@
 
         public void EndOfTheGame(WordGuesser WordGuess)
         {
-            System.Console.WriteLine("You won with {0} mistakes.", WordGuess.Mistakes);
-            //RevealGuessedLetters(word);
-            Printer.PrintSecretWord(WordGuess.HiddenWord);
-            System.Console.WriteLine("Please enter your name for the top scoreboard:");
+            Console.WriteLine("You won with {0} mistakes.", WordGuess.Mistakes);
 
-            string playerName = System.Console.ReadLine();
+            Printer.PrintSecretWord(WordGuess.HiddenWord);
+            Console.WriteLine("Please enter your name for the top scoreboard:");
+
+            string playerName = Console.ReadLine();
 
             Player currentPlayer = new Player(playerName, WordGuess.Mistakes);
 
             this.Scores.PlacePlayerInScoreBoard(currentPlayer);
-            //WordGuess.guessedLetters = 0;
+
             WordGuess.Mistakes = 0;
-            //this.isNextLetterToReveal = false;
         }
     }
 }

@@ -8,6 +8,11 @@ Refactoring Documentation for Project “Hangman 2”
 	-   Added class `Player`(replaced class `PlayerMistakes`)
 	-   Added class `Printer` (static) - contaning all general messages in the game
 	-   Added class `Globals` (static) - holder of all constants in the game
+	-   Removed class `WorldInitializator` - all methods passed to `GameEngine` and `WordGuesser` classes (v2.1)
+	-   Added class `GameEngine` containing methods (v2.1): 
+		- `NewGame()`
+		- `PlayAgain()`
+		- `EndOfTheGame()`
 
 2.  Reformatted the source code:
 	-   General refractoring of class `WorldInitializator`
@@ -17,7 +22,7 @@ Refactoring Documentation for Project “Hangman 2”
 	-   Put **{** and **}** after all conditionals and loops (when missing).
 	-   Character casing: variables and fields made **camelCase**; types and methods made **PascalCase**.
 	-   Formatted all other elements of the source code according to the best practices introduced in the course “[High-Quality Programming Code](http://telerikacademy.com/Courses/Courses/Details/244)”.
-	-   
+	-   ...
 3.  Renamed variables:
 	-   In class `WordInitializator`: `allGuessedLettersOrderedByPositionInTheWord` to `allGuessedLetters`
 	-   In class `WordInitializator`: `num1` to `guessedLetters`
@@ -32,6 +37,6 @@ Refactoring Documentation for Project “Hangman 2”
 5.  Extracted the method `GenerateRandomGame()` from the method `Main()`.
 6.  Renamed class `Hangman` to `HangmanStartPoint`.
 7.  Update methods `RevealGuessedLetters()` and `InitializationAfterTheGuess()`
-8.   
+8.  ...
 
 

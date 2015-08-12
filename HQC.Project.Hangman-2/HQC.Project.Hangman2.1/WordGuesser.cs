@@ -9,7 +9,6 @@
     {
         private List<char> allGuessedLetters;
         private StringBuilder hiddenWord;
-        //private bool isNextLetterToReveal = false;
         private int guessedLetters = 0;
         private int mistakes = 0;
 
@@ -18,7 +17,6 @@
         public WordGuesser()
         {
             this.allGuessedLetters = new List<char>();
-            //this.Scores = new ScoreBoard();
         }
 
         internal string Word { get; set; }
@@ -44,8 +42,6 @@
             }
         }
 
-        //public ScoreBoard Scores { get; set; }
-
         public void InitializationOfGame()
         {
             this.hiddenWord = new StringBuilder(new string('_', this.Word.Length));
@@ -59,39 +55,6 @@
 
             Printer.PrintSecretWord(this.hiddenWord.ToString());
         }
-
-        //// 2 methods from WordInitializator must be moved here!
-        //public string GuessLetter()
-        //{
-        //    Console.WriteLine("Enter your guess: ");
-        //    string supposedCharOrCommand = Console.ReadLine().ToLower();
-
-        //    //// the input is a character
-        //    if (supposedCharOrCommand.Length == 1)
-        //    {
-        //        char supposedChar = supposedCharOrCommand[0];
-        //        InitializationAfterTheGuess(supposedChar);
-        //    }
-        //    else if (supposedCharOrCommand.Equals(Command.help.ToString()))
-        //    {
-        //        this.RevealTheNextLetter();
-        //    }
-        //    //else if (supposedCharOrCommand.Equals("restart"))
-        //    //{
-        //    //    execute.Start(wordSelect, wordInit);
-        //    //}
-        //    //else if (supposedCharOrCommand.Equals("exit"))
-        //    //{
-        //    //    execute.Exit();
-        //    //    return;
-        //    //}
-        //    else if (supposedCharOrCommand.Equals(Command.top.ToString()))
-        //    {
-        //        this.Scores.PrintTopResults();
-        //    }
-
-        //    return supposedCharOrCommand;
-        //}
 
         public void RevealGuessedLetters(char supposedChar)
         {
@@ -110,9 +73,6 @@
 
         public bool InitializationAfterTheGuess(char supposedChar)
         {
-            //StringBuilder wordInitailized = new StringBuilder();
-
-
             if (this.allGuessedLetters.Contains<char>(supposedChar))
             {
                 Console.WriteLine("You have already revealed the letter {0}", supposedChar);
@@ -141,18 +101,12 @@
             //// check if the word is guessed
             if (this.guessedLetters == this.Word.Length)
             {
-                //EndOfTheGameInitialization(word);
-                //this.EndOfTheGame();
-                //CommandManager.Start();
-                // Go to GameEngine logic
-                //GameEngine.gameIsOn = false;
-
                 isRevelingMoreLetters = false;
                 return isRevelingMoreLetters;
             }
 
             Console.WriteLine("The secret word is:");
-            Console.WriteLine(this.hiddenWord);
+            Console.WriteLine(this.HiddenWord);
 
             isRevelingMoreLetters = true;
             return isRevelingMoreLetters;
@@ -173,25 +127,6 @@
 
             Console.WriteLine("OK, I reveal for you the next letter {0}.", firstUnrevealedLetter);
             this.InitializationAfterTheGuess(firstUnrevealedLetter);
-
-            //// isNextLetterToReveal - not in the chart
-            //this.isNextLetterToReveal = true;
         }
-
-        //public void EndOfTheGame()
-        //{
-        //    Console.WriteLine("You won with {0} mistakes.", mistakes);
-        //    //RevealGuessedLetters(word);
-        //    Printer.PrintSecretWord(this.hiddenWord.ToString());
-        //    Console.WriteLine("Please enter your name for the top scoreboard:");
-        //    string playerName = Console.ReadLine();
-        //    Player currentPlayer = new Player(playerName, mistakes);
-
-        //    //wordGuesser.Scores.PlacePlayerInScoreBoard(currentPlayer);
-        //    this.Scores.PlacePlayerInScoreBoard(currentPlayer);
-        //    this.guessedLetters = 0;
-        //    this.mistakes = 0;
-        //    this.isNextLetterToReveal = false;
-        //}
     }
 }
