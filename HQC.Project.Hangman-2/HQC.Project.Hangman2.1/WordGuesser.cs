@@ -51,6 +51,12 @@
             this.hiddenWord = new StringBuilder(new string('_', this.Word.Length));
             this.hiddenWord = this.hiddenWord.Replace("_", "_ ");
 
+            for (int i = 0; i < this.Word.Length; i++)
+            {
+                this.allGuessedLetters.Add('$');
+                //hiddenWord.Append("_ ");
+            }
+
             Printer.PrintSecretWord(this.hiddenWord.ToString());
         }
 
