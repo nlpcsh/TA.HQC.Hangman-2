@@ -1,9 +1,8 @@
 namespace HQC.Project.Hangman2._1
 {
-    using HQC.Project.Hangman2._1.Interfaces;
-    using System;
     using System.IO;
     using System.Linq;
+    using HQC.Project.Hangman2._1.Interfaces;
 
     public class ScoreBoard : ILogger
     {
@@ -22,21 +21,21 @@ namespace HQC.Project.Hangman2._1
 
         public void PlacePlayerInScoreBoard(Player player)
         {
-            int emptyPosition = GetFirstFreePosition();
+            int emptyPosition = this.GetFirstFreePosition();
 
-            if (scoreBoardTable[emptyPosition] == null || player.Mistakes <= scoreBoardTable[emptyPosition].Mistakes)
+            if (this.scoreBoardTable[emptyPosition] == null || player.Mistakes <= this.scoreBoardTable[emptyPosition].Mistakes)
             {
-                scoreBoardTable[emptyPosition] = player;
+                this.scoreBoardTable[emptyPosition] = player;
 
                 for (int i = emptyPosition; i > 0; i--)
                 {
-                    Player firstPlayer = scoreBoardTable[i];
-                    Player secondPlayer = scoreBoardTable[i - 1];
+                    Player firstPlayer = this.scoreBoardTable[i];
+                    Player secondPlayer = this.scoreBoardTable[i - 1];
 
                     if (firstPlayer.Compare(secondPlayer) < 0)
                     {
-                        scoreBoardTable[i] = secondPlayer;
-                        scoreBoardTable[i - 1] = firstPlayer;
+                        this.scoreBoardTable[i] = secondPlayer;
+                        this.scoreBoardTable[i - 1] = firstPlayer;
                     }
                 }
             }
@@ -46,21 +45,21 @@ namespace HQC.Project.Hangman2._1
 
         public void PrintTopResults()
         {
-            //Console.WriteLine();
+            // Console.WriteLine();
             this.LogLine(string.Empty);
 
             for (int i = 0; i < Globals.ScoreBoardSize; i++)
             {
                 if (this.scoreBoardTable[i] != null && this.scoreBoardTable[i].Name != Globals.NoPlayer)
                 {
-                    //Console.WriteLine("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes);
+                    // Console.WriteLine("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes);
                     this.LogLine(string.Format("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes));
                 }
                 else
                 {
                     if (i == 0)
                     {
-                        //Console.WriteLine("No Scores");
+                        // Console.WriteLine("No Scores");
                         this.LogLine("No Scores");
                     }
 
@@ -68,8 +67,13 @@ namespace HQC.Project.Hangman2._1
                 }
             }
 
-            //Console.WriteLine();
+            // Console.WriteLine();
             this.LogLine(string.Empty);
+        }
+
+        public void LogLine(string printMessage)
+        {
+            this.logger.LogLine(printMessage);
         }
 
         private int GetFirstFreePosition()
@@ -148,11 +152,6 @@ namespace HQC.Project.Hangman2._1
             }
 
             return scoreBoardTable;
-        }
-
-        public void LogLine(string printMessage)
-        {
-            this.logger.LogLine(printMessage);
         }
     }
 }

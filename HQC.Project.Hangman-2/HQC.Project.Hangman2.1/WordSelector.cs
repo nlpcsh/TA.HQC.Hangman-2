@@ -6,15 +6,15 @@
     public class WordSelector
     {
         private string[] words =
-                                        { 
-                                            "computer", "programmer", "software", "debugger", "compiler", 
+                                        {
+                                            "computer", "programmer", "software", "debugger", "compiler",
                                             "developer", "algorithm", "array", "method", "variable"
                                         };
 
         public string SelectRandomWord()
         {
-            int randomWordPosition = GetRandomNumber(0, words.Length);
-            string randomlySelectedWord = words.ElementAt(randomWordPosition);
+            int randomWordPosition = this.GetRandomNumber(0, this.words.Length);
+            string randomlySelectedWord = this.words.ElementAt(randomWordPosition);
 
             return randomlySelectedWord;
         }

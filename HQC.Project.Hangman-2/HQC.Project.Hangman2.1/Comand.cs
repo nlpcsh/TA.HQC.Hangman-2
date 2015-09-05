@@ -2,10 +2,10 @@
 {
     public enum Command
     {
-        help,
-        top,
-        exit,
-        options,
-        restart
+        Help,
+        Top,
+        Exit,
+        Options,
+        Restart
     }
 }

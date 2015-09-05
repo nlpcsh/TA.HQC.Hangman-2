@@ -13,7 +13,7 @@
             this.Scores = new ScoreBoard();
             this.CurrentPlayer = new Player();
         }
-        
+
         private WordSelector WordSelect { get; set; }
 
         private WordGuesser WordGuess { get; set; }
@@ -26,43 +26,42 @@
 
         internal void NewGame()
         {
-            string word = WordSelect.SelectRandomWord();
+            string word = this.WordSelect.SelectRandomWord();
 
             this.WordGuess = new WordGuesser() { Word = word };
             this.WordGuess.InitializationOfGame();
 
             string commandToExecute = string.Empty;
 
-            while (gameIsOn == true)
+            while (this.gameIsOn == true)
             {
-                commandToExecute = Execute.ReadInput();
+                commandToExecute = this.Execute.ReadInput();
 
                 if (commandToExecute.Length == 1)
                 {
                     char supposedChar = commandToExecute[0];
-                    gameIsOn = this.WordGuess.InitializationAfterTheGuess(supposedChar);
+                    this.gameIsOn = this.WordGuess.InitializationAfterTheGuess(supposedChar);
                 }
-                else if (commandToExecute.Equals(Command.help.ToString()))
+                else if (commandToExecute.Equals(Command.Help.ToString()))
                 {
                     this.WordGuess.RevealTheNextLetter();
                 }
-                else if (commandToExecute.Equals(Command.top.ToString()))
+                else if (commandToExecute.Equals(Command.Top.ToString()))
                 {
                     this.Scores.PrintTopResults();
                 }
-                else if (commandToExecute.Equals(Command.restart.ToString()))
+                else if (commandToExecute.Equals(Command.Restart.ToString()))
                 {
-                    //this.Execute.Restart();
+                    // this.Execute.Restart();
                     this.NewGame();
                 }
-                else if (commandToExecute.Equals(Command.exit.ToString()))
+                else if (commandToExecute.Equals(Command.Exit.ToString()))
                 {
-                    //this.Execute.Exit();
+                    // this.Execute.Exit();
                     Printer.PrintGoodBuyMessage();
                     Environment.Exit(0);
-
                 }
-                else if (commandToExecute.Equals(Command.options.ToString()))
+                else if (commandToExecute.Equals(Command.Options.ToString()))
                 {
                     Printer.PrintOptionsMessage();
                 }
@@ -82,12 +81,13 @@
             if (playAgainYesNo == 'y')
             {
                 this.gameIsOn = true;
-                //Execute.Restart();
+
+                // Execute.Restart();
                 this.NewGame();
             }
             else
             {
-                //Execute.Exit();
+                // Execute.Exit();
                 Printer.PrintGoodBuyMessage();
                 Environment.Exit(0);
             }

@@ -6,22 +6,22 @@
     {
         private string input;
 
-        public string Input
-        {
-            get 
-            { 
-                return this.input; 
-            }
-
-            set 
-            { 
-                this.input = value; 
-            }
-        }
-        
         public CommandManager()
         {
             this.input = string.Empty;
+        }
+
+        public string Input
+        {
+            get
+            {
+                return this.input;
+            }
+
+            set
+            {
+                this.input = value;
+            }
         }
 
         public string ReadInput()
@@ -30,16 +30,16 @@
             return this.Input;
         }
 
-        //public void Restart()
-        //{
+        // public void Restart()
+        // {
         //    var newGame = new GameEngine();
         //    newGame.NewGame();
-        //}
+        // }
 
-        //public void Exit()
-        //{
+        // public void Exit()
+        // {
         //    Printer.PrintGoodBuyMessage();
         //    Environment.Exit(0);
-        //}
+        // }
     }
 }
