@@ -52,6 +52,5 @@ Refactoring Documentation for Project “Hangman 2”
 5.  Extracted the method `GenerateRandomGame()` from the method `Main()`.
 6.  Renamed class `Hangman` to `HangmanStartPoint`.
 7.  Update methods `RevealGuessedLetters()` and `InitializationAfterTheGuess()`
-8.  ...
-
-
+8.  Make commands insensitive
+9.  Add wrong command in commands
