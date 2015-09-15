@@ -6,10 +6,10 @@
     public class WordSelector
     {
         private string[] words =
-                                        {
-                                            "computer", "programmer", "software", "debugger", "compiler",
-                                            "developer", "algorithm", "array", "method", "variable"
-                                        };
+                                {
+                                    "computer", "programmer", "software", "debugger", "compiler",
+                                    "developer", "algorithm", "array", "method", "variable"
+                                };
 
         public string SelectRandomWord()
         {

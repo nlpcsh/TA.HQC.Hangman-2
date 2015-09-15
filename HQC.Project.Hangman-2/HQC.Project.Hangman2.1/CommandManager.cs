@@ -27,7 +27,7 @@
         public string ReadInput()
         {
             this.Input = Console.ReadLine();
-            return this.Input;
+            return this.Input.ToLower();
         }
 
         // public void Restart()

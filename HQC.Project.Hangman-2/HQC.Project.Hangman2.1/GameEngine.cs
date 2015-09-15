@@ -42,26 +42,26 @@
                     char supposedChar = commandToExecute[0];
                     this.gameIsOn = this.WordGuess.InitializationAfterTheGuess(supposedChar);
                 }
-                else if (commandToExecute.Equals(Command.Help.ToString()))
+                else if (commandToExecute.Equals(Command.Help.ToString().ToLower()))
                 {
                     this.WordGuess.RevealTheNextLetter();
                 }
-                else if (commandToExecute.Equals(Command.Top.ToString()))
+                else if (commandToExecute.Equals(Command.Top.ToString().ToLower()))
                 {
                     this.Scores.PrintTopResults();
                 }
-                else if (commandToExecute.Equals(Command.Restart.ToString()))
+                else if (commandToExecute.Equals(Command.Restart.ToString().ToLower()))
                 {
                     // this.Execute.Restart();
                     this.NewGame();
                 }
-                else if (commandToExecute.Equals(Command.Exit.ToString()))
+                else if (commandToExecute.Equals(Command.Exit.ToString().ToLower()))
                 {
                     // this.Execute.Exit();
                     Printer.PrintGoodBuyMessage();
                     Environment.Exit(0);
                 }
-                else if (commandToExecute.Equals(Command.Options.ToString()))
+                else if (commandToExecute.Equals(Command.Options.ToString().ToLower()))
                 {
                     Printer.PrintOptionsMessage();
                 }
