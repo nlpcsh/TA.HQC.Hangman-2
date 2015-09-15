@@ -65,6 +65,10 @@
                 {
                     Printer.PrintOptionsMessage();
                 }
+                else
+                {
+                    Printer.PrintWrongMessage();
+                }
             }
 
             this.EndOfTheGame();

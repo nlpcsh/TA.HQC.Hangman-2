@@ -28,5 +28,11 @@
             Console.WriteLine();
             Console.WriteLine("Good bye!");
         }
+
+        public static void PrintWrongMessage()
+        {
+            Console.WriteLine("Wrong command, please try again!");
+            Console.WriteLine();
+        }
     }
 }
