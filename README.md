@@ -53,4 +53,5 @@ Refactoring Documentation for Project “Hangman 2”
 6.  Renamed class `Hangman` to `HangmanStartPoint`.
 7.  Update methods `RevealGuessedLetters()` and `InitializationAfterTheGuess()`
 8.  Make commands insensitive
-9.  Add wrong command in commands
+9.  Add command "wrong" in commands
+10. Add reading from file for random word, not from array.
