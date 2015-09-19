@@ -26,7 +26,7 @@
 
         internal void NewGame()
         {
-            string word = this.WordSelect.SelectRandomWord();
+            string word = this.WordSelect.SelectRandomWord("../../Words/words.txt");
 
             this.WordGuess = new WordGuesser() { Word = word };
             this.WordGuess.InitializationOfGame();

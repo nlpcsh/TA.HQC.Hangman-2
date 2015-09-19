@@ -1,0 +1,10 @@
+computer
+programmer
+software
+debugger
+compile
+developer
+algorithm
+array
+method
+variable
