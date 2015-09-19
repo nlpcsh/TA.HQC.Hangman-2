@@ -1,6 +1,6 @@
-﻿namespace HQC.Project.Hangman2._1
+﻿namespace HQC.Project.Hangman
 {
-    using HQC.Project.Hangman2._1.Interfaces;
+    using HQC.Project.Hangman.Interfaces;
 
     // using System;
     public class ConsoleLogger : ILogger

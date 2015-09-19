@@ -1,9 +1,9 @@
-﻿namespace HQC.Project.Hangman2._1
+﻿namespace HQC.Project.Hangman
 {
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using HQC.Project.Hangman2._1.Interfaces;
+    using HQC.Project.Hangman.Interfaces;
 
     public class WordGuesser
     {

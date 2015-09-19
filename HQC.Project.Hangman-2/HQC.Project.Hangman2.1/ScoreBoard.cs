@@ -1,8 +1,8 @@
-namespace HQC.Project.Hangman2._1
+namespace HQC.Project.Hangman
 {
     using System.IO;
     using System.Linq;
-    using HQC.Project.Hangman2._1.Interfaces;
+    using HQC.Project.Hangman.Interfaces;
 
     public class ScoreBoard : ILogger
     {

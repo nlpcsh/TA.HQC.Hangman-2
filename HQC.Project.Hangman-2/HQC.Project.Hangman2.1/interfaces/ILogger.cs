@@ -1,4 +1,4 @@
-﻿namespace HQC.Project.Hangman2._1.Interfaces
+﻿namespace HQC.Project.Hangman.Interfaces
 {
     public interface ILogger
     {

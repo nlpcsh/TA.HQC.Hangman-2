@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HQC.Project.Hangman2", "src\HQC.Project.Hangman2.csproj", "{1DAFE987-45A7-4DFF-B573-5538715DA755}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "before", "before\before.csproj", "{EA943C2B-2C9E-4E67-B3D7-B61C5A2620DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HQC.Project.Hangman2.1", "HQC.Project.Hangman2.1\HQC.Project.Hangman2.1.csproj", "{D0D5B78E-B338-4FFF-85DF-7799E37DE4B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HQC.Project.Hangman", "HQC.Project.Hangman2.1\HQC.Project.Hangman.csproj", "{D0D5B78E-B338-4FFF-85DF-7799E37DE4B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1DAFE987-45A7-4DFF-B573-5538715DA755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1DAFE987-45A7-4DFF-B573-5538715DA755}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1DAFE987-45A7-4DFF-B573-5538715DA755}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1DAFE987-45A7-4DFF-B573-5538715DA755}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EA943C2B-2C9E-4E67-B3D7-B61C5A2620DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EA943C2B-2C9E-4E67-B3D7-B61C5A2620DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA943C2B-2C9E-4E67-B3D7-B61C5A2620DC}.Release|Any CPU.ActiveCfg = Release|Any CPU

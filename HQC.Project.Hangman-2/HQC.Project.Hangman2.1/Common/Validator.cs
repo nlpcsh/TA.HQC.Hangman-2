@@ -1,4 +1,4 @@
-﻿namespace HQC.Project.Hangman2._1.Common
+﻿namespace HQC.Project.Hangman.Common
 {
     using System;
 
