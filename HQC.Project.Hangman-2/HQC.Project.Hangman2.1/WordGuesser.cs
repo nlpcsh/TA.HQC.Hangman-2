@@ -21,7 +21,8 @@
             this.logger = logger;
         }
 
-        public WordGuesser() : this(new ConsoleLogger())
+        public WordGuesser()
+            : this(new ConsoleLogger())
         {
         }
 

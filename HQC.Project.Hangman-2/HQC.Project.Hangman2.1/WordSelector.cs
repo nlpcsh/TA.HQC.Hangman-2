@@ -7,18 +7,18 @@
     {
         private FileStream inputFileStream;
         private StreamReader streamReader;
-        
+
         public string SelectRandomWord(string path)
         {
-            inputFileStream = new FileStream(path, FileMode.Open);
-            streamReader = new StreamReader(inputFileStream);
-            string randomWord = "";
+            this.inputFileStream = new FileStream(path, FileMode.Open);
+            this.streamReader = new StreamReader(this.inputFileStream);
+            string randomWord = string.Empty;
 
             // determine extent of source file
-            long lastPos = streamReader.BaseStream.Seek(0, SeekOrigin.End);
+            long lastPos = this.streamReader.BaseStream.Seek(0, SeekOrigin.End);
 
             // generate a random position
-            double randomNumber = GetRandomNumber();
+            double randomNumber = this.GetRandomNumber();
             long randomPositionFromFile = (long)(randomNumber * lastPos);
 
             if (randomNumber >= 0.99)
@@ -26,14 +26,14 @@
                 randomPositionFromFile -= 1024; // if near the end, back up a bit
             }
 
-            streamReader.BaseStream.Seek(randomPositionFromFile, SeekOrigin.Begin);
+            this.streamReader.BaseStream.Seek(randomPositionFromFile, SeekOrigin.Begin);
 
-            randomWord = streamReader.ReadLine(); // consume curr partial line
-            randomWord = streamReader.ReadLine(); // this will be a full line
-            streamReader.DiscardBufferedData(); // magic
+            randomWord = this.streamReader.ReadLine(); // consume curr partial line
+            randomWord = this.streamReader.ReadLine(); // this will be a full line
+            this.streamReader.DiscardBufferedData(); // magic
 
-            streamReader.Close();
-            inputFileStream.Close();
+            this.streamReader.Close();
+            this.inputFileStream.Close();
 
             return randomWord;
         }

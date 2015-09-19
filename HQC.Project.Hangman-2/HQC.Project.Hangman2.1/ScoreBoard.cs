@@ -15,7 +15,8 @@ namespace HQC.Project.Hangman
             this.logger = logger;
         }
 
-        public ScoreBoard() : this(new ConsoleLogger())
+        public ScoreBoard()
+            : this(new ConsoleLogger())
         {
         }
 
