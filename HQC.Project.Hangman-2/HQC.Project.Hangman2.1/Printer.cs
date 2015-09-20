@@ -56,10 +56,23 @@
         public static void PrintHangman(int playerLives)
         {
             var playerPattern = ConsoleHelper.Patterns[playerLives];
+            var heigth = Console.WindowHeight / 2 - playerPattern.Length / 9;
 
+            Console.SetCursorPosition(1, heigth);
             for (int i = 0; i < playerPattern.Length; i++)
             {
                 Console.WriteLine(playerPattern[i]);
+            }
+        }
+
+        public static void PrintVerticalMiddleBorder()
+        {
+            var width = Console.WindowWidth / 2;
+
+            for (int i = 8; i < Console.WindowHeight - 1; i++)
+            {
+                Console.SetCursorPosition(width, i);
+                Console.WriteLine("|");
             }
         }
     }
