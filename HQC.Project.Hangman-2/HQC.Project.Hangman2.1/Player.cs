@@ -4,14 +4,20 @@
 
     public class Player
     {
+        private const int InitialLives = 7;
+        private const int InitialMistakes = 0;
+
         private string name;
         private int mistakes;
 
         public Player()
         {
+            this.Lives = Player.InitialLives;
+            this.Mistakes = Player.InitialMistakes;
         }
 
         public Player(string playerName, int mistakes)
+            : this()
         {
             this.Name = playerName;
             this.Mistakes = mistakes;
@@ -52,6 +58,8 @@
                 this.mistakes = value;
             }
         }
+
+        public int Lives { get; private set; }
 
         public int Compare(Player otherPlayer)
         {
