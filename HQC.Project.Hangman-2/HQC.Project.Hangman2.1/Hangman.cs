@@ -4,8 +4,9 @@
     {
         private static void Main(string[] args)
         {
-            var newGame = new GameEngine();
-            newGame.NewGame();
+            Printer.PrintGameTitle();
+            //var newGame = new GameEngine();
+            //newGame.NewGame();
         }
     }
 }

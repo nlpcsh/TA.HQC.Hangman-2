@@ -1,9 +1,25 @@
 ﻿namespace HQC.Project.Hangman
 {
     using System;
+    using System.Text;
 
     public static class Printer
     {
+        public static void PrintGameTitle()
+        {
+           var title = new StringBuilder();
+        
+          title.AppendLine("00  00     000     00    00  0000   00     00     000     00    00");
+          title.AppendLine("00  00    00 00    0000  00 00      0000 0000    00 00    0000  00");
+          title.AppendLine("000000   0000000   00 00 00 00 0000 00 000 00   0000000   00 00 00");
+          title.AppendLine("00  00  00     00  00   000 00   00 00  0  00  00     00  00   000");
+          title.AppendLine("00  00 00       00 00    00  00000  00     00 00       00 00    00");
+
+          Console.WriteLine(title.ToString().Trim());
+          Console.WriteLine(new string('_',Console.BufferWidth));
+          Console.WriteLine(new string('-', Console.BufferWidth));
+        }
+
         public static void PrintWellcomeMessage()
         {
             Console.WriteLine("Welcome to \"Hangman\" game. Please try to guess my secret word.");
