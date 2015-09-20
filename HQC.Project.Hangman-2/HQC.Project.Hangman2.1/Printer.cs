@@ -3,21 +3,23 @@
     using System;
     using System.Text;
 
+    using HQC.Project.Hangman2._1.Common;
+
     public static class Printer
     {
         public static void PrintGameTitle()
         {
-           var title = new StringBuilder();
-        
-          title.AppendLine("00  00     000     00    00  0000   00     00     000     00    00");
-          title.AppendLine("00  00    00 00    0000  00 00      0000 0000    00 00    0000  00");
-          title.AppendLine("000000   0000000   00 00 00 00 0000 00 000 00   0000000   00 00 00");
-          title.AppendLine("00  00  00     00  00   000 00   00 00  0  00  00     00  00   000");
-          title.AppendLine("00  00 00       00 00    00  00000  00     00 00       00 00    00");
+            var title = new StringBuilder();
 
-          Console.WriteLine(title.ToString().Trim());
-          Console.WriteLine(new string('_',Console.BufferWidth));
-          Console.WriteLine(new string('-', Console.BufferWidth));
+            title.AppendLine("00  00     000     00    00  0000   00     00     000     00    00");
+            title.AppendLine("00  00    00 00    0000  00 00      0000 0000    00 00    0000  00");
+            title.AppendLine("000000   0000000   00 00 00 00 0000 00 000 00   0000000   00 00 00");
+            title.AppendLine("00  00  00     00  00   000 00   00 00  0  00  00     00  00   000");
+            title.AppendLine("00  00 00       00 00    00  00000  00     00 00       00 00    00");
+
+            Console.WriteLine(title.ToString().Trim());
+            Console.WriteLine(new string('_', Console.BufferWidth));
+            Console.WriteLine(new string('-', Console.BufferWidth));
         }
 
         public static void PrintWellcomeMessage()
@@ -49,6 +51,16 @@
         {
             Console.WriteLine("Wrong command, please try again!");
             Console.WriteLine();
+        }
+
+        public static void PrintHangman(int playerLives)
+        {
+            var playerPattern = ConsoleHelper.Patterns[playerLives];
+
+            for (int i = 0; i < playerPattern.Length; i++)
+            {
+                Console.WriteLine(playerPattern[i]);
+            }
         }
     }
 }

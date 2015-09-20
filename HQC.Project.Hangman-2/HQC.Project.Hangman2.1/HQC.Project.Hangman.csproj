@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Comand.cs" />
     <Compile Include="CommandManager.cs" />
+    <Compile Include="Common\ConsoleHelper.cs" />
     <Compile Include="Common\Validator.cs" />
     <Compile Include="ConsoleLogger.cs" />
     <Compile Include="GameEngine.cs" />
