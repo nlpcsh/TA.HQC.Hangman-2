@@ -1,10 +1,20 @@
 ﻿namespace HQC.Project.Hangman
 {
+    /// <summary>
+    /// Keeps all constants used in the game
+    /// </summary>
     public static class Globals
     {
         public const int ScoreBoardSize = 5;
         public const int LastPositionInScoreBoard = 4;
         public const string FreePositionInScoreBoars = "unknown-0";
         public const string NoPlayer = "No Player";
+
+        // Game messages
+        public const string Wellcome = "Welcome to \"Hangman\" game. Please try to guess my secret word.";
+        public const string Options = "Use \n 'top' to view the top scoreboard,\n 'restart' to start a new game,\n 'help' to cheat,\n 'options' to see again the options and \n 'exit' to quit the game.";
+        public const string SecretWord = "The secret word is: ";
+        public const string GoodBuy = "Good bye!";
+        public const string WrongCommand = "Wrong command, please try again!";
     }
 }
