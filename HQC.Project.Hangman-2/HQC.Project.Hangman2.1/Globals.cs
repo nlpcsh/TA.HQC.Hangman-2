@@ -16,5 +16,8 @@
         public const string SecretWord = "The secret word is: ";
         public const string GoodBuy = "Good bye!";
         public const string WrongCommand = "Wrong command, please try again!";
+        public const string EnterSecretMessage = "The secret word is:";
+        public const string EnterLetterMessage = "Please enter a letter:";
+        public const string UsedLettersMessage = "Used letter:";
     }
 }

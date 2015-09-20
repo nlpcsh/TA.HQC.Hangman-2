@@ -1,6 +1,7 @@
 ﻿namespace HQC.Project.Hangman
 {
     using System;
+    using System.Collections.Generic;
     using System.Text;
 
     using HQC.Project.Hangman2._1.Common;
@@ -36,7 +37,14 @@
 
         public static void PrintSecretWord(string hiddenWord)
         {
-            Console.WriteLine("The secret word is: ");
+            var leftPositionMessage = Console.WindowWidth - (Console.WindowWidth / 4) - Globals.EnterSecretMessage.Length / 2;
+            var top = Console.WindowHeight / 2;
+
+            Console.SetCursorPosition(leftPositionMessage, top);
+            Console.WriteLine(Globals.EnterSecretMessage);
+
+            var leftPositionWord = Console.WindowWidth - (Console.WindowWidth / 4) - hiddenWord.Length / 2;
+            Console.SetCursorPosition(leftPositionWord, top + 2);
             Console.WriteLine(hiddenWord);
             Console.WriteLine();
         }
@@ -74,6 +82,31 @@
                 Console.SetCursorPosition(width, i);
                 Console.WriteLine("|");
             }
+        }
+
+        public static void PrintEnterCommandMessage()
+        {
+            var left = Console.WindowWidth - (Console.WindowWidth / 4) - Globals.EnterLetterMessage.Length / 2; ;
+            var top = Console.WindowHeight / 2 - (Console.WindowHeight / 4);
+
+            Console.SetCursorPosition(left, top);
+            Console.WriteLine(Globals.EnterLetterMessage);
+        }
+
+        public static void PrintUsedLetters(IList<char> letters)
+        {
+            var leftMessage = Console.WindowWidth - (Console.WindowWidth / 4) - Globals.UsedLettersMessage.Length / 2; ;
+            var topMessage = Console.WindowHeight / 2 + (Console.WindowHeight / 4);
+
+            Console.SetCursorPosition(leftMessage, topMessage);
+            Console.WriteLine(Globals.UsedLettersMessage);
+
+            var lettersAsString = string.Join(", ", letters);
+            var leftLetters = Console.WindowWidth - (Console.WindowWidth / 4) - lettersAsString.Length / 2; ;
+            var topLetters = topMessage + 2;
+
+            Console.SetCursorPosition(leftLetters, topLetters);
+            Console.WriteLine(lettersAsString);
         }
     }
 }
