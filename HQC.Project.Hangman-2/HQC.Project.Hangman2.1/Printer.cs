@@ -67,7 +67,7 @@
 
         public static void PrintHangman(int playerLives)
         {
-            var playerPattern = ConsoleHelper.Patterns[playerLives];
+            var playerPattern = HangmanPattern.Patterns[playerLives];
             var heigth = Console.WindowHeight / 2 - playerPattern.Length / 9;
 
             Console.SetCursorPosition(1, heigth);
