@@ -12,18 +12,18 @@
             Printer.PrintGameInitialization();
             string name = Console.ReadLine();
             var playerName = string.IsNullOrWhiteSpace(name) ? "unknown" : name;
-            game.Player = new Player(playerName, 0);
+            game.WordGuess = new WordGuesser(playerName, 0);
 
             Console.Clear();
             Printer.PrintGameTitle();
             Printer.PrintVerticalMiddleBorder();
-            Printer.PrintHangman(game.Player.Lives);
+            Printer.PrintHangman(game.WordGuess.Lives);
             
             string word = game.WordSelect.SelectRandomWord("../../Words/words.txt");
             game.WordGuess = new WordGuesser() { Word = word };
             game.WordGuess.InitializationOfGame();
 
-            Printer.PrintUsedLetters(game.Player.WrongLetters);
+            Printer.PrintUsedLetters(game.WordGuess.WrongLetters);
             Printer.PrintEnterCommandMessage();
 
             game.State = new PlayGameState();

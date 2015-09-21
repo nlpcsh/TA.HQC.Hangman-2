@@ -5,13 +5,13 @@
     using System.Text;
     using HQC.Project.Hangman.Interfaces;
 
-    public class WordGuesser
+    public class WordGuesser : Player
     {
         private ILogger logger;
         private List<char> allGuessedLetters;
         private StringBuilder hiddenWord;
         private int guessedLetters = 0;
-        private int mistakes = 0;
+        //private int mistakes = 0;
 
         private bool isRevelingMoreLetters = true;
 
@@ -22,6 +22,12 @@
             //this.PrintInitialMessages();
         }
 
+        public WordGuesser(string name, int mistakes)
+            : base(name, mistakes)
+        {
+            this.logger = new ConsoleLogger();
+        }
+
         public WordGuesser()
             : this(new ConsoleLogger())
         {
@@ -29,18 +35,18 @@
 
         internal string Word { get; set; }
 
-        internal int Mistakes
-        {
-            get
-            {
-                return this.mistakes;
-            }
-
-            set
-            {
-                this.mistakes = value;
-            }
-        }
+        //internal int Mistakes
+        //{
+        //    get
+        //    {
+        //        return this.mistakes;
+        //    }
+        //
+        //    set
+        //    {
+        //        this.mistakes = value;
+        //    }
+        //}
 
         internal string HiddenWord
         {
@@ -115,10 +121,12 @@
                 //this.LogLine(string.Format("Sorry! There are no unrevealed letters {0}", supposedChar));
                 Printer.PrintWrongMessage(string.Format("There are no unrevealed letters {0}", supposedChar));
                 this.Mistakes++;
+                this.Lives--;
+                Printer.PrintHangman(this.Lives);
             }
             else
             {
-               // this.LogLine(string.Format("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar));
+                // this.LogLine(string.Format("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar));
                 Printer.PrintWrongMessage(string.Format("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar));
                 this.guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
             }
@@ -158,7 +166,7 @@
 
         public void LogLine(string printMessage)
         {
-           // this.logger.LogLine(printMessage);
+            // this.logger.LogLine(printMessage);
         }
     }
 }

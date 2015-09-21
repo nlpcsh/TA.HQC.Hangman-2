@@ -49,6 +49,11 @@ namespace HQC.Project.Hangman2._1.GameStates
                     Globals.TopPositionCommandInput);
                 ConsoleHelper.ClearConsoleInRange(Console.WindowWidth / 2 + 1, Console.WindowWidth - 1, Globals.TopPositionCommandInput + 2);
 
+                if (game.WordGuess.Lives == 0)
+                {
+                    break;
+                }
+
             }
 
             game.State = new EndGameState();

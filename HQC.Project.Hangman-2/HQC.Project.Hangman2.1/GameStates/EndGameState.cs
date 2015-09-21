@@ -13,8 +13,8 @@ namespace HQC.Project.Hangman2._1.GameStates
             //string playerName = Console.ReadLine();
             //game.Player.Name = playerName;
 
-            game.Player.Mistakes = game.WordGuess.Mistakes;
-            game.Scores.PlacePlayerInScoreBoard(game.Player);
+            game.WordGuess.Mistakes = game.WordGuess.Mistakes;
+            game.Scores.PlacePlayerInScoreBoard(game.WordGuess);
             game.WordGuess.Mistakes = 0;
             game.State = new RestartGameState();
             game.State.Play(game);

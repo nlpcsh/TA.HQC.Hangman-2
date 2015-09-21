@@ -9,8 +9,6 @@
 
     public class GameEngine
     {
-        private bool gameIsOn = true;
-
         public GameEngine()
         {
             this.Execute = new CommandManager();
@@ -30,7 +28,7 @@
 
         public ScoreBoard Scores { get; set; }
 
-        public Player Player { get; set; }
+       // public Player Player { get; set; }
 
         internal void NewGame()
         {

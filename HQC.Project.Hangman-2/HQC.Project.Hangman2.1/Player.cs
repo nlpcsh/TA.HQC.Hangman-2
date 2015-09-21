@@ -61,7 +61,7 @@
             }
         }
 
-        public int Lives { get; private set; }
+        public int Lives { get; set; }
 
         public ISet<char> WrongLetters { get; set; }
 
