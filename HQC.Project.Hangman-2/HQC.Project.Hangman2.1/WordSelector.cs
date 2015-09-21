@@ -5,6 +5,7 @@
 
     public class WordSelector
     {
+        private static Random random = new Random();
         private FileStream inputFileStream;
         private StreamReader streamReader;
 
@@ -40,7 +41,6 @@
 
         private double GetRandomNumber()
         {
-            Random random = new Random();
             return random.NextDouble();
         }
     }
