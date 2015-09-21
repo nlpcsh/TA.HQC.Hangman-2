@@ -1,6 +1,7 @@
 ﻿namespace HQC.Project.Hangman
 {
     using System;
+    using System.Collections.Generic;
 
     public class Player
     {
@@ -14,6 +15,7 @@
         {
             this.Lives = Player.InitialLives;
             this.Mistakes = Player.InitialMistakes;
+            this.WrongLetters = new HashSet<char>();
         }
 
         public Player(string playerName, int mistakes)
@@ -60,6 +62,8 @@
         }
 
         public int Lives { get; private set; }
+
+        public ISet<char> WrongLetters { get; set; }
 
         public int Compare(Player otherPlayer)
         {

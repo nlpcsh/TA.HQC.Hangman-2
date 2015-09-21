@@ -97,7 +97,7 @@
             Console.WriteLine(Globals.EnterLetterMessage);
         }
 
-        public static void PrintUsedLetters(IList<char> letters)
+        public static void PrintUsedLetters(ISet<char> letters)
         {
             var leftMessage = Console.WindowWidth - (Console.WindowWidth / 4) - Globals.UsedLettersMessage.Length / 2; ;
             var topMessage = Console.WindowHeight / 2 + (Console.WindowHeight / 4);
@@ -111,6 +111,17 @@
 
             Console.SetCursorPosition(leftLetters, topLetters);
             Console.WriteLine(lettersAsString);
+        }
+
+        public static void PrintGameInitialization()
+        {
+            string text = "Please enter your name: ";
+            var left = Console.WindowWidth / 2 - text.Length / 2;
+            var top = Console.WindowHeight / 2;
+
+            Console.SetCursorPosition(left, top);
+            Console.Write(text);
+            
         }
     }
 }

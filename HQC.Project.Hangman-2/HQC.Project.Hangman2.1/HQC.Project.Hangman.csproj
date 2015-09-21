@@ -48,6 +48,10 @@
     <Compile Include="Common\Validator.cs" />
     <Compile Include="ConsoleLogger.cs" />
     <Compile Include="GameEngine.cs" />
+    <Compile Include="GameStates\EndGameState.cs" />
+    <Compile Include="GameStates\GameState.cs" />
+    <Compile Include="GameStates\InitializeGameState.cs" />
+    <Compile Include="GameStates\PlayGameState.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Hangman.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
