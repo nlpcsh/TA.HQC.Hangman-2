@@ -16,7 +16,7 @@ namespace HQC.Project.Hangman2._1.GameStates
             game.Player.Mistakes = game.WordGuess.Mistakes;
             game.Scores.PlacePlayerInScoreBoard(game.Player);
             game.WordGuess.Mistakes = 0;
-            game.State = new InitializeGameState();
+            game.State = new RestartGameState();
             game.State.Play(game);
         }
     }

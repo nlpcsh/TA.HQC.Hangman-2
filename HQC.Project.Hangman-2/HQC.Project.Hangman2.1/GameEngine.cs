@@ -34,10 +34,7 @@
 
         internal void NewGame()
         {
-           // while(true)
-           // {
-                this.State.Play(this);
-           // }
+            this.State.Play(this);
 
             //string word = this.WordSelect.SelectRandomWord("../../Words/words.txt");
             //Printer.PrintGameTitle();
@@ -101,44 +98,44 @@
             //this.PlayAgain();
         }
 
-        private void PlayAgain()
-        {
-            Console.Write("Want to play again? y/n ");
-            char playAgainYesNo = Console.ReadKey().KeyChar;
-
-            Console.WriteLine();
-
-            if (playAgainYesNo == 'y')
-            {
-                this.gameIsOn = true;
-
-                // Execute.Restart();
-                this.NewGame();
-            }
-            else
-            {
-                // Execute.Exit();
-                Printer.PrintGoodBuyMessage();
-                Environment.Exit(0);
-            }
-        }
-
-        private void EndOfTheGame()
-        {
-           //  //Console.WriteLine("You won with {0} mistakes.", this.WordGuess.Mistakes);
-           //  Printer.PrintWrongMessage(string.Format("You won with {0} mistakes.", this.WordGuess.Mistakes));
-           // 
-           //  Printer.PrintSecretWord(this.WordGuess.HiddenWord);
-           //  Console.WriteLine("Please enter your name for the top scoreboard:");
-           // 
-           //  string playerName = Console.ReadLine();
-           // 
-           //  this.Player.Name = playerName;
-           //  this.Player.Mistakes = this.WordGuess.Mistakes;
-           // 
-           //  this.Scores.PlacePlayerInScoreBoard(this.Player);
-           // 
-           //  this.WordGuess.Mistakes = 0;
-        }
+        // private void PlayAgain()
+        // {
+        //     Console.Write("Want to play again? y/n ");
+        //     char playAgainYesNo = Console.ReadKey().KeyChar;
+        // 
+        //     Console.WriteLine();
+        // 
+        //     if (playAgainYesNo == 'y')
+        //     {
+        //         this.gameIsOn = true;
+        // 
+        //         // Execute.Restart();
+        //         this.NewGame();
+        //     }
+        //     else
+        //     {
+        //         // Execute.Exit();
+        //         Printer.PrintGoodBuyMessage();
+        //         Environment.Exit(0);
+        //     }
+        // }
+        // 
+        // private void EndOfTheGame()
+        // {
+        //     //  //Console.WriteLine("You won with {0} mistakes.", this.WordGuess.Mistakes);
+        //     //  Printer.PrintWrongMessage(string.Format("You won with {0} mistakes.", this.WordGuess.Mistakes));
+        //     // 
+        //     //  Printer.PrintSecretWord(this.WordGuess.HiddenWord);
+        //     //  Console.WriteLine("Please enter your name for the top scoreboard:");
+        //     // 
+        //     //  string playerName = Console.ReadLine();
+        //     // 
+        //     //  this.Player.Name = playerName;
+        //     //  this.Player.Mistakes = this.WordGuess.Mistakes;
+        //     // 
+        //     //  this.Scores.PlacePlayerInScoreBoard(this.Player);
+        //     // 
+        //     //  this.WordGuess.Mistakes = 0;
+        // }
     }
 }

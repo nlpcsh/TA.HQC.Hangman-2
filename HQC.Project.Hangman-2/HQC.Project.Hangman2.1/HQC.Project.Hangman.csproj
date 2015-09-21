@@ -52,6 +52,7 @@
     <Compile Include="GameStates\GameState.cs" />
     <Compile Include="GameStates\InitializeGameState.cs" />
     <Compile Include="GameStates\PlayGameState.cs" />
+    <Compile Include="GameStates\RestartGameState.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Hangman.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
