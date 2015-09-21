@@ -1,4 +1,5 @@
-﻿namespace HQC.Project.Hangman
+﻿using System;
+namespace HQC.Project.Hangman
 {
     /// <summary>
     /// Keeps all constants used in the game
@@ -9,6 +10,9 @@
         public const int LastPositionInScoreBoard = 4;
         public const string FreePositionInScoreBoars = "unknown-0";
         public const string NoPlayer = "No Player";
+
+        public static int TopPositionCommandInput = Console.WindowHeight / 2 - (Console.WindowHeight / 4) + 2;
+        public static int LeftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
 
         // Game messages
         public const string Wellcome = "Welcome to \"Hangman\" game. Please try to guess my secret word.";

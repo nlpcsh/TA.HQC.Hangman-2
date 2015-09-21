@@ -1,6 +1,10 @@
 ﻿namespace HQC.Project.Hangman
 {
     using System;
+    using System.Collections.Generic;
+    using System.Threading;
+
+    using HQC.Project.Hangman2._1.Common;
 
     public class GameEngine
     {
@@ -27,11 +31,18 @@
         internal void NewGame()
         {
             string word = this.WordSelect.SelectRandomWord("../../Words/words.txt");
+            Printer.PrintGameTitle();
+            Printer.PrintVerticalMiddleBorder();
+            Printer.PrintEnterCommandMessage();
+            Printer.PrintUsedLetters(new List<char>());
+            Printer.PrintHangman(this.CurrentPlayer.Lives);
 
             this.WordGuess = new WordGuesser() { Word = word };
             this.WordGuess.InitializationOfGame();
 
             string commandToExecute = string.Empty;
+
+
 
             while (this.gameIsOn == true)
             {
@@ -67,9 +78,15 @@
                 }
                 else
                 {
-                    Printer.PrintWrongMessage();
+                    Printer.PrintWrongMessage("Wrong command, please try again!");
                 }
+
+                ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + commandToExecute.Length,
+                    Globals.TopPositionCommandInput);
+                ConsoleHelper.ClearConsoleInRange(Console.WindowWidth / 2 + 1, Console.WindowWidth - 1, Globals.TopPositionCommandInput + 2);
+               
             }
+
 
             this.EndOfTheGame();
             this.PlayAgain();
@@ -99,7 +116,8 @@
 
         private void EndOfTheGame()
         {
-            Console.WriteLine("You won with {0} mistakes.", this.WordGuess.Mistakes);
+            //Console.WriteLine("You won with {0} mistakes.", this.WordGuess.Mistakes);
+            Printer.PrintWrongMessage(string.Format("You won with {0} mistakes.", this.WordGuess.Mistakes));
 
             Printer.PrintSecretWord(this.WordGuess.HiddenWord);
             Console.WriteLine("Please enter your name for the top scoreboard:");

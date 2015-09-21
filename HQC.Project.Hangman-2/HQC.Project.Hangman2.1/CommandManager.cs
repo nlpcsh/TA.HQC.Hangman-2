@@ -26,6 +26,7 @@
 
         public string ReadInput()
         {
+            Console.SetCursorPosition(Globals.LeftPositionCommandInput, Globals.TopPositionCommandInput);
             this.Input = Console.ReadLine();
             return this.Input.ToLower();
         }

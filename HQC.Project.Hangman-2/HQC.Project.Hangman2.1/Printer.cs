@@ -5,6 +5,7 @@
     using System.Text;
 
     using HQC.Project.Hangman2._1.Common;
+    using System.Threading;
 
     public static class Printer
     {
@@ -55,10 +56,13 @@
             Console.WriteLine("Good bye!");
         }
 
-        public static void PrintWrongMessage()
+        public static void PrintWrongMessage(string message)
         {
-            Console.WriteLine("Wrong command, please try again!");
-            Console.WriteLine();
+            Console.SetCursorPosition(Globals.LeftPositionCommandInput - message.Length / 2, Globals.TopPositionCommandInput + 2);
+            // Console.WriteLine("Wrong command, please try again!");
+            Console.WriteLine(message);
+            Console.SetCursorPosition(Globals.LeftPositionCommandInput, Globals.TopPositionCommandInput);
+            Thread.Sleep(2000);
         }
 
         public static void PrintHangman(int playerLives)
