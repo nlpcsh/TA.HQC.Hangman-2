@@ -50,12 +50,6 @@
             }
         }
 
-        //private void PrintInitialMessages()
-        //{
-        //    this.LogLine(Globals.Wellcome);
-        //    this.LogLine(Globals.Options);
-        //}
-
         public void InitializationOfGame()
         {
             this.hiddenWord = new StringBuilder(new string('_', this.Word.Length));
@@ -116,6 +110,8 @@
                 this.Mistakes++;
                 this.Lives--;
                 Printer.PrintHangman(this.Lives);
+                this.WrongLetters.Add(supposedChar);
+                Printer.PrintUsedLetters(this.WrongLetters);
             }
             else
             {
@@ -138,23 +134,6 @@
 
             this.isRevelingMoreLetters = true;
             return this.isRevelingMoreLetters;
-        }
-
-        public void RevealTheNextLetter()
-        {
-           // char firstUnrevealedLetter = '$';
-           //
-           // for (int i = 0; i < this.Word.Length; i++)
-           // {
-           //     if (this.allGuessedLetters[i].Equals('$'))
-           //     {
-           //         firstUnrevealedLetter = this.Word[i];
-           //         break;
-           //     }
-           // }
-           //
-            //this.LogLine(string.Format("OK, I reveal for you the next letter {0}.", firstUnrevealedLetter));
-            //this.InitializationAfterTheGuess(firstUnrevealedLetter);
         }
 
         public void LogLine(string printMessage)

@@ -62,7 +62,7 @@
             // Console.WriteLine("Wrong command, please try again!");
             Console.WriteLine(message);
             Console.SetCursorPosition(Globals.LeftPositionCommandInput, Globals.TopPositionCommandInput);
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
         }
 
         public static void PrintHangman(int playerLives)

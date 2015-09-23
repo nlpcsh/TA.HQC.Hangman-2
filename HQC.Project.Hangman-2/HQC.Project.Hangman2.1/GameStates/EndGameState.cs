@@ -1,7 +1,9 @@
-﻿using HQC.Project.Hangman;
-using System;
-namespace HQC.Project.Hangman2._1.GameStates
+﻿namespace HQC.Project.Hangman2._1.GameStates
 {
+    using System;
+
+    using HQC.Project.Hangman;
+
     public class EndGameState : GameState
     {
         public override void Play(GameEngine game)
