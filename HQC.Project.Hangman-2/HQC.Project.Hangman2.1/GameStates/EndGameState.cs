@@ -6,7 +6,7 @@ namespace HQC.Project.Hangman2._1.GameStates
     {
         public override void Play(GameEngine game)
         {
-            Printer.PrintWrongMessage(string.Format("You won with {0} mistakes.", game.WordGuess.Mistakes));
+            Printer.PrintMessage(string.Format("You won with {0} mistakes.", game.WordGuess.Mistakes));
             Printer.PrintSecretWord(game.WordGuess.HiddenWord);
 
             game.WordGuess.Mistakes = game.WordGuess.Mistakes;

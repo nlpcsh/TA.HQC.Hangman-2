@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HQC.Project.Hangman2._1.Commands;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 namespace HQC.Project.Hangman
 {
     /// <summary>
@@ -23,5 +26,14 @@ namespace HQC.Project.Hangman
         public const string EnterSecretMessage = "The secret word is:";
         public const string EnterLetterMessage = "Please enter a letter:";
         public const string UsedLettersMessage = "Used letter:";
+
+        public static readonly IDictionary<string, Type> commandTypes = new Dictionary<string, Type>()
+        {
+             {"help",typeof(HelpCommand)},
+             {"exit", typeof(ExitCommand)},
+             {"top",typeof(TopCommand)},
+             {"restart",typeof(RestartCommand)},
+             {"option",typeof(OptionCommand)}
+        };
     }
 }

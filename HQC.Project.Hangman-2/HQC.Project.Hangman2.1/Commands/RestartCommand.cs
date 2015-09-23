@@ -6,17 +6,15 @@
 
     public class RestartCommand : Command
     {
-        private GameEngine game;
-
         public RestartCommand(GameEngine currentGame)
+            : base(currentGame)
         {
-            this.game = currentGame;
         }
 
         public override void Execute()
         {
-            this.game.State = new RestartGameState();
-            this.game.State.Play(game);
+            this.Game.State = new RestartGameState();
+            this.Game.State.Play(this.Game);
         }
     }
 }

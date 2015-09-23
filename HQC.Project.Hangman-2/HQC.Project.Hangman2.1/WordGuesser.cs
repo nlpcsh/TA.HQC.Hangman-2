@@ -92,7 +92,7 @@
             if (this.allGuessedLetters.Contains<char>(supposedChar))
             {
                 //this.LogLine(string.Format("You have already revealed the letter {0}", supposedChar));
-                Printer.PrintWrongMessage(string.Format("You have already revealed the letter {0}", supposedChar));
+                Printer.PrintMessage(string.Format("You have already revealed the letter {0}", supposedChar));
                 this.isRevelingMoreLetters = true;
                 return this.isRevelingMoreLetters;
             }
@@ -112,7 +112,7 @@
             if (numberOfTheAppearancesOfTheSupposedChar == 0)
             {
                 //this.LogLine(string.Format("Sorry! There are no unrevealed letters {0}", supposedChar));
-                Printer.PrintWrongMessage(string.Format("There are no unrevealed letters {0}", supposedChar));
+                Printer.PrintMessage(string.Format("There are no unrevealed letters {0}", supposedChar));
                 this.Mistakes++;
                 this.Lives--;
                 Printer.PrintHangman(this.Lives);
@@ -120,7 +120,7 @@
             else
             {
                 // this.LogLine(string.Format("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar));
-                Printer.PrintWrongMessage(string.Format("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar));
+                Printer.PrintMessage(string.Format("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar));
                 this.guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
             }
 

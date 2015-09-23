@@ -6,17 +6,15 @@
 
     public class PlayCommand : Command
     {
-        private GameEngine game;
-
         public PlayCommand(GameEngine currentGame)
+            : base(currentGame)
         {
-            this.game = currentGame;
         }
 
         public override void Execute()
         {
-            game.State = new InitializeGameState();
-            game.State.Play(game);
+            this.Game.State = new InitializeGameState();
+            this.Game.State.Play(this.Game);
         }
     }
 }

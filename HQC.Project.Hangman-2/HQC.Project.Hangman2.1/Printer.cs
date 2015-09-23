@@ -56,7 +56,7 @@
             Console.WriteLine("Good bye!");
         }
 
-        public static void PrintWrongMessage(string message)
+        public static void PrintMessage(string message)
         {
             Console.SetCursorPosition(Globals.LeftPositionCommandInput - message.Length / 2, Globals.TopPositionCommandInput + 2);
             // Console.WriteLine("Wrong command, please try again!");
@@ -121,7 +121,36 @@
 
             Console.SetCursorPosition(left, top);
             Console.Write(text);
-            
+        }
+
+        public static void PrintMenu()
+        {
+            Console.Clear();
+            Printer.PrintGameTitle();
+            var top = Console.WindowHeight / 2 - 6;
+            var left = (Console.WindowWidth / 2) - "MENU".Length / 2;
+            Console.SetCursorPosition(left, top);
+            Console.WriteLine("MENU:");
+
+            left = (Console.WindowWidth / 2) - ("MENU".Length + 2) / 2; 
+            Console.SetCursorPosition(left, top + 1);
+            Console.WriteLine("------");
+
+            left = (Console.WindowWidth / 2) - ("PLAY".Length) / 2;
+            Console.SetCursorPosition(left, top + 3);
+            Console.WriteLine("PLAY");
+
+            left = (Console.WindowWidth / 2) - ("HELP".Length) / 2;
+            Console.SetCursorPosition(left, top + 5);
+            Console.WriteLine("HELP");
+
+            left = (Console.WindowWidth / 2) - ("SCORES".Length) / 2;
+            Console.SetCursorPosition(left, top + 7);
+            Console.WriteLine("SCORES");
+
+            left = (Console.WindowWidth / 2) - ("EXIT".Length) / 2;
+            Console.SetCursorPosition(left, top + 9);
+            Console.WriteLine("EXIT");
         }
     }
 }

@@ -5,6 +5,8 @@
     using HQC.Project.Hangman;
     using HQC.Project.Hangman2._1.Common;
     using HQC.Project.Hangman2._1.Commands;
+    using System.Collections.Generic;
+    using HQC.Project.Hangman2._1.Commands.Common;
 
     public class PlayGameState : GameState
     {
@@ -20,34 +22,15 @@
                     game.WordGuess.InitializationAfterTheGuess(supposedChar);
 
                 }
-                 else if (commandToExecute.Equals("help"))
-                 {
-                     var command = new HelpCommand(game);
-                     command.Execute();
-                 }
-                 else if (commandToExecute.Equals("top"))
-                 {
-                     var command = new TopCommand(game);
-                     command.Execute();
-                 }
-                 else if (commandToExecute.Equals("restart"))
-                 {
-                     var command = new RestartCommand(game);
-                     command.Execute();
-                 }
-                 else if (commandToExecute.Equals("exit"))
-                 {
-                     var command = new ExitCommand(game);
-                     command.Execute();
-                 }
-                 else if (commandToExecute.Equals("option"))
-                 {
-                     var command = new OptionCommand(game);
-                     command.Execute();
-                 }
+                else if (Globals.commandTypes.ContainsKey(commandToExecute.ToLower()))
+                {
+                    var typeCommand = Globals.commandTypes[commandToExecute.ToLower()];
+                    var command = (ICommand)Activator.CreateInstance(typeCommand, game);
+                    command.Execute();
+                }
                 else
                 {
-                    Printer.PrintWrongMessage("Wrong input, please try again!");
+                    Printer.PrintMessage("Wrong input, please try again!");
                 }
 
                 ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + commandToExecute.Length,

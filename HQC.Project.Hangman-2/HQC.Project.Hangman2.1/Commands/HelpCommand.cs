@@ -5,31 +5,29 @@
 
     public class HelpCommand : Command
     {
-        GameEngine game;
-
         public HelpCommand(GameEngine currentGame)
+            : base(currentGame)
         {
-            this.game = currentGame;
         }
 
         public override void Execute()
         {
             char firstUnrevealedLetter = '$';
 
-            for (int i = 0; i < game.WordGuess.Word.Length; i++)
+            for (int i = 0; i < this.Game.WordGuess.Word.Length; i++)
             {
-                if (game.WordGuess.AllGuessedLetters[i].Equals('$'))
+                if (this.Game.WordGuess.AllGuessedLetters[i].Equals('$'))
                 {
-                    firstUnrevealedLetter = game.WordGuess.Word[i];
+                    firstUnrevealedLetter = this.Game.WordGuess.Word[i];
                     break;
                 }
             }
 
 
-            game.WordGuess.InitializationAfterTheGuess(firstUnrevealedLetter);
-            Printer.PrintWrongMessage(string.Format("OK, I reveal for you the next letter {0}.", firstUnrevealedLetter));
-            Printer.PrintSecretWord(game.WordGuess.HiddenWord);
-           
+            this.Game.WordGuess.InitializationAfterTheGuess(firstUnrevealedLetter);
+            Printer.PrintMessage(string.Format("OK, I reveal for you the next letter {0}.", firstUnrevealedLetter));
+            Printer.PrintSecretWord(this.Game.WordGuess.HiddenWord);
+
         }
     }
 }

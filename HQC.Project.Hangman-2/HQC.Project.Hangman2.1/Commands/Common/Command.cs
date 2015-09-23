@@ -4,6 +4,13 @@
 
     public abstract class Command : ICommand
     {
+        public  Command(GameEngine currentGame)
+        {
+            this.Game = currentGame;
+        }
+
+        protected GameEngine Game { get;  set; }
+
         public abstract void Execute();
     }
 }
