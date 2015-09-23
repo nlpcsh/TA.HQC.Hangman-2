@@ -1,6 +1,6 @@
 ﻿namespace HQC.Project.Hangman
 {
-    public enum Command
+    public enum CommandEnum
     {
         Help,
         Top,

@@ -11,7 +11,6 @@
         private List<char> allGuessedLetters;
         private StringBuilder hiddenWord;
         private int guessedLetters = 0;
-        //private int mistakes = 0;
 
         private bool isRevelingMoreLetters = true;
 
@@ -35,18 +34,13 @@
 
         internal string Word { get; set; }
 
-        //internal int Mistakes
-        //{
-        //    get
-        //    {
-        //        return this.mistakes;
-        //    }
-        //
-        //    set
-        //    {
-        //        this.mistakes = value;
-        //    }
-        //}
+        public IList<char> AllGuessedLetters
+        {
+            get
+            {
+                return new List<char>(this.allGuessedLetters);
+            }
+        }
 
         internal string HiddenWord
         {
@@ -56,11 +50,11 @@
             }
         }
 
-        private void PrintInitialMessages()
-        {
-            this.LogLine(Globals.Wellcome);
-            this.LogLine(Globals.Options);
-        }
+        //private void PrintInitialMessages()
+        //{
+        //    this.LogLine(Globals.Wellcome);
+        //    this.LogLine(Globals.Options);
+        //}
 
         public void InitializationOfGame()
         {
@@ -99,7 +93,6 @@
             {
                 //this.LogLine(string.Format("You have already revealed the letter {0}", supposedChar));
                 Printer.PrintWrongMessage(string.Format("You have already revealed the letter {0}", supposedChar));
-
                 this.isRevelingMoreLetters = true;
                 return this.isRevelingMoreLetters;
             }
@@ -149,17 +142,17 @@
 
         public void RevealTheNextLetter()
         {
-            char firstUnrevealedLetter = '$';
-
-            for (int i = 0; i < this.Word.Length; i++)
-            {
-                if (this.allGuessedLetters[i].Equals('$'))
-                {
-                    firstUnrevealedLetter = this.Word[i];
-                    break;
-                }
-            }
-
+           // char firstUnrevealedLetter = '$';
+           //
+           // for (int i = 0; i < this.Word.Length; i++)
+           // {
+           //     if (this.allGuessedLetters[i].Equals('$'))
+           //     {
+           //         firstUnrevealedLetter = this.Word[i];
+           //         break;
+           //     }
+           // }
+           //
             //this.LogLine(string.Format("OK, I reveal for you the next letter {0}.", firstUnrevealedLetter));
             //this.InitializationAfterTheGuess(firstUnrevealedLetter);
         }

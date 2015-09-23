@@ -30,17 +30,5 @@
             this.Input = Console.ReadLine();
             return this.Input.ToLower();
         }
-
-        // public void Restart()
-        // {
-        //    var newGame = new GameEngine();
-        //    newGame.NewGame();
-        // }
-
-        // public void Exit()
-        // {
-        //    Printer.PrintGoodBuyMessage();
-        //    Environment.Exit(0);
-        // }
     }
 }

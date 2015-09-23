@@ -44,29 +44,37 @@ namespace HQC.Project.Hangman
             this.SaveScoresToTxtFile();
         }
 
+        public Player[] ScoreBoardTable 
+        {
+            get
+            {
+                return this.scoreBoardTable;
+            }
+        }
+
         public void PrintTopResults()
         {
             // Console.WriteLine();
-            this.LogLine(string.Empty);
-
-            for (int i = 0; i < Globals.ScoreBoardSize; i++)
-            {
-                if (this.scoreBoardTable[i] != null && this.scoreBoardTable[i].Name != Globals.NoPlayer)
-                {
-                    // Console.WriteLine("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes);
-                    this.LogLine(string.Format("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes));
-                }
-                else
-                {
-                    if (i == 0)
-                    {
-                        // Console.WriteLine("No Scores");
-                        this.LogLine("No Scores");
-                    }
-
-                    break;
-                }
-            }
+           //this.LogLine(string.Empty);
+           //
+           //for (int i = 0; i < Globals.ScoreBoardSize; i++)
+           //{
+           //    if (this.scoreBoardTable[i] != null && this.scoreBoardTable[i].Name != Globals.NoPlayer)
+           //    {
+           //        // Console.WriteLine("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes);
+           //        this.LogLine(string.Format("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes));
+           //    }
+           //    else
+           //    {
+           //        if (i == 0)
+           //        {
+           //            // Console.WriteLine("No Scores");
+           //            this.LogLine("No Scores");
+           //        }
+           //
+           //        break;
+           //    }
+           //}
 
             // Console.WriteLine();
             this.LogLine(string.Empty);

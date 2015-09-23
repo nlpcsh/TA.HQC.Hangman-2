@@ -1,13 +1,15 @@
-﻿using HQC.Project.Hangman;
-using HQC.Project.Hangman2._1.Common;
-using System;
-namespace HQC.Project.Hangman2._1.GameStates
+﻿namespace HQC.Project.Hangman2._1.GameStates
 {
+    using System;
+
+    using HQC.Project.Hangman;
+    using HQC.Project.Hangman2._1.Common;
+    using HQC.Project.Hangman2._1.Commands;
+
     public class PlayGameState : GameState
     {
         public override void Play(GameEngine game)
         {
-            //string commandToExecute = string.Empty;
             while (game.WordGuess.HiddenWord.Contains("_"))
             {
                 string commandToExecute = game.Execute.ReadInput();
@@ -16,33 +18,36 @@ namespace HQC.Project.Hangman2._1.GameStates
                 {
                     char supposedChar = commandToExecute[0];
                     game.WordGuess.InitializationAfterTheGuess(supposedChar);
+
                 }
-                else if (commandToExecute.Equals(Command.Help.ToString().ToLower()))
-                {
-                    game.WordGuess.RevealTheNextLetter();
-                }
-                else if (commandToExecute.Equals(Command.Top.ToString().ToLower()))
-                {
-                    game.Scores.PrintTopResults();
-                }
-                else if (commandToExecute.Equals(Command.Restart.ToString().ToLower()))
-                {
-                    // this.Execute.Restart();
-                    game.NewGame();
-                }
-                else if (commandToExecute.Equals(Command.Exit.ToString().ToLower()))
-                {
-                    // this.Execute.Exit();
-                    Printer.PrintGoodBuyMessage();
-                    Environment.Exit(0);
-                }
-                else if (commandToExecute.Equals(Command.Options.ToString().ToLower()))
-                {
-                    Printer.PrintOptionsMessage();
-                }
+                 else if (commandToExecute.Equals("help"))
+                 {
+                     var command = new HelpCommand(game);
+                     command.Execute();
+                 }
+                 else if (commandToExecute.Equals("top"))
+                 {
+                     var command = new TopCommand(game);
+                     command.Execute();
+                 }
+                 else if (commandToExecute.Equals("restart"))
+                 {
+                     var command = new RestartCommand(game);
+                     command.Execute();
+                 }
+                 else if (commandToExecute.Equals("exit"))
+                 {
+                     var command = new ExitCommand(game);
+                     command.Execute();
+                 }
+                 else if (commandToExecute.Equals("option"))
+                 {
+                     var command = new OptionCommand(game);
+                     command.Execute();
+                 }
                 else
                 {
-                    Printer.PrintWrongMessage("Wrong command, please try again!");
+                    Printer.PrintWrongMessage("Wrong input, please try again!");
                 }
 
                 ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + commandToExecute.Length,
@@ -53,7 +58,6 @@ namespace HQC.Project.Hangman2._1.GameStates
                 {
                     break;
                 }
-
             }
 
             game.State = new EndGameState();

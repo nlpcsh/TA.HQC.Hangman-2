@@ -41,8 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comand.cs" />
+    <Compile Include="ComandEnum.cs" />
     <Compile Include="CommandManager.cs" />
+    <Compile Include="Commands\Common\Command.cs" />
+    <Compile Include="Commands\Common\ICommand.cs" />
+    <Compile Include="Commands\ExitCommand.cs" />
+    <Compile Include="Commands\GuessLetterCommand.cs" />
+    <Compile Include="Commands\HelpCommand.cs" />
+    <Compile Include="Commands\OptionCommand.cs" />
+    <Compile Include="Commands\RestartCommand.cs" />
+    <Compile Include="Commands\TopCommand.cs" />
     <Compile Include="Common\ConsoleHelper.cs" />
     <Compile Include="Common\HangmanPattern.cs" />
     <Compile Include="Common\Validator.cs" />
