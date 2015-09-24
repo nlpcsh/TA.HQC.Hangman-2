@@ -14,7 +14,7 @@
         public WordSelectorFromFile(string fileName) 
         {
             this.FileName = fileName;
-            this.randomWord = SelectRandomWord();
+            this.RandomWord = SelectRandomWord();
         }
 
         public string FileName

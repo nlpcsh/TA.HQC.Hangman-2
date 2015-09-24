@@ -20,6 +20,7 @@
             Printer.PrintHangman(game.WordGuess.Lives);
 
             string word = game.WordSelect.RandomWord;
+            Console.WriteLine(word);
             game.WordGuess = new WordGuesser() { Word = word };
             game.WordGuess.InitializationOfGame();
 
