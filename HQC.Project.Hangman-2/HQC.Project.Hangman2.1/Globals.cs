@@ -1,21 +1,21 @@
-﻿using HQC.Project.Hangman2._1.Commands;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-namespace HQC.Project.Hangman
+﻿namespace HQC.Project.Hangman
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+
+    using HQC.Project.Hangman2._1.Commands;
+
     /// <summary>
     /// Keeps all constants used in the game
-    /// </summary>
+    /// </summary> 
+ 
     public static class Globals
     {
         public const int ScoreBoardSize = 5;
         public const int LastPositionInScoreBoard = 4;
         public const string FreePositionInScoreBoars = "unknown-0";
         public const string NoPlayer = "No Player";
-
-        public static int TopPositionCommandInput = Console.WindowHeight / 2 - (Console.WindowHeight / 4) + 2;
-        public static int LeftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
 
         // Game messages
         public const string Wellcome = "Welcome to \"Hangman\" game. Please try to guess my secret word.";
@@ -29,11 +29,14 @@ namespace HQC.Project.Hangman
 
         public static readonly IDictionary<string, Type> commandTypes = new Dictionary<string, Type>()
         {
-             {"help",typeof(HelpCommand)},
-             {"exit", typeof(ExitCommand)},
-             {"top",typeof(TopCommand)},
-             {"restart",typeof(RestartCommand)},
-             {"option",typeof(OptionCommand)}
+             { "help", typeof(HelpCommand) },
+             { "exit", typeof(ExitCommand) },
+             { "top", typeof(TopCommand) },
+             { "restart", typeof(RestartCommand) },
+             { "option", typeof(OptionCommand) }
         };
+
+        public static int TopPositionCommandInput = Console.WindowHeight / 2 - (Console.WindowHeight / 4) + 2;
+        public static int LeftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
     }
 }

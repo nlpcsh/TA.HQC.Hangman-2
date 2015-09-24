@@ -1,11 +1,11 @@
 ﻿namespace HQC.Project.Hangman2._1.GameStates
 {
     using System;
+    using System.Collections.Generic;
 
     using HQC.Project.Hangman;
-    using HQC.Project.Hangman2._1.Common;
     using HQC.Project.Hangman2._1.Commands;
-    using System.Collections.Generic;
+    using HQC.Project.Hangman2._1.Common;
     using HQC.Project.Hangman2._1.Commands.Common;
 
     public class PlayGameState : GameState
@@ -20,7 +20,6 @@
                 {
                     char supposedChar = commandToExecute[0];
                     game.WordGuess.InitializationAfterTheGuess(supposedChar);
-
                 }
                 else if (Globals.commandTypes.ContainsKey(commandToExecute.ToLower()))
                 {
@@ -33,8 +32,7 @@
                     Printer.PrintMessage("Wrong input, please try again!");
                 }
                 
-                ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + commandToExecute.Length,
-                    Globals.TopPositionCommandInput);
+                ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + commandToExecute.Length, Globals.TopPositionCommandInput);
                 ConsoleHelper.ClearConsoleInRange(Console.WindowWidth / 2 + 1, Console.WindowWidth - 1, Globals.TopPositionCommandInput + 2);
 
                 if (game.WordGuess.Lives == 0)

@@ -4,7 +4,7 @@
 
     public abstract class Command : ICommand
     {
-        public  Command(GameEngine currentGame)
+        public Command(GameEngine currentGame)
         {
             this.Game = currentGame;
         }

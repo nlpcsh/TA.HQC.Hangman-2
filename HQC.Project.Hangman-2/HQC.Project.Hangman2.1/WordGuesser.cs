@@ -32,8 +32,6 @@
         {
         }
 
-        internal string Word { get; set; }
-
         public IList<char> AllGuessedLetters
         {
             get
@@ -49,6 +47,8 @@
                 return this.hiddenWord.ToString();
             }
         }
+
+        internal string Word { get; set; }
 
         public void InitializationOfGame()
         {

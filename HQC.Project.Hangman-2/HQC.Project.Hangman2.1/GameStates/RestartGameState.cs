@@ -1,7 +1,8 @@
 ﻿namespace HQC.Project.Hangman2._1.GameStates
 {
-    using HQC.Project.Hangman;
     using System;
+
+    using HQC.Project.Hangman;
 
     public class RestartGameState : GameState
     {

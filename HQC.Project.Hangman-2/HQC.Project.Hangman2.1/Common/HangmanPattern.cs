@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+
     public class HangmanPattern
     {
         public static readonly IDictionary<int, string[]> Patterns = new Dictionary<int, string[]>
@@ -239,6 +240,5 @@
                 } 
             }
         };
-
     }
 }

@@ -42,6 +42,7 @@
       <HashCode>AAAAAAQAAAIAgAAAAIAAAAQAAAAEBAACAABAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="HQC.Project.Hangman.Printer">
     <Position X="20" Y="0.5" Width="1.5" />

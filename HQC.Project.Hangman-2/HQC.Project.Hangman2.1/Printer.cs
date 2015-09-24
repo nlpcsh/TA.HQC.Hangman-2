@@ -3,9 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Threading;
 
     using HQC.Project.Hangman2._1.Common;
-    using System.Threading;
 
     public static class Printer
     {
@@ -58,7 +58,7 @@
 
         public static void PrintMessage(string message)
         {
-            Console.SetCursorPosition(Globals.LeftPositionCommandInput - message.Length / 2, Globals.TopPositionCommandInput + 2);
+            Console.SetCursorPosition(Globals.LeftPositionCommandInput - (message.Length / 2), Globals.TopPositionCommandInput + 2);
             // Console.WriteLine("Wrong command, please try again!");
             Console.WriteLine(message);
             Console.SetCursorPosition(Globals.LeftPositionCommandInput, Globals.TopPositionCommandInput);
@@ -90,7 +90,7 @@
 
         public static void PrintEnterCommandMessage()
         {
-            var left = Console.WindowWidth - (Console.WindowWidth / 4) - Globals.EnterLetterMessage.Length / 2; ;
+            var left = Console.WindowWidth - Console.WindowWidth / 4 - Globals.EnterLetterMessage.Length / 2;
             var top = Console.WindowHeight / 2 - (Console.WindowHeight / 4);
 
             Console.SetCursorPosition(left, top);
@@ -99,14 +99,14 @@
 
         public static void PrintUsedLetters(ISet<char> letters)
         {
-            var leftMessage = Console.WindowWidth - (Console.WindowWidth / 4) - Globals.UsedLettersMessage.Length / 2; ;
+            var leftMessage = Console.WindowWidth - (Console.WindowWidth / 4) - Globals.UsedLettersMessage.Length / 2;
             var topMessage = Console.WindowHeight / 2 + (Console.WindowHeight / 4);
 
             Console.SetCursorPosition(leftMessage, topMessage);
             Console.WriteLine(Globals.UsedLettersMessage);
 
             var lettersAsString = string.Join(", ", letters);
-            var leftLetters = Console.WindowWidth - (Console.WindowWidth / 4) - lettersAsString.Length / 2; ;
+            var leftLetters = Console.WindowWidth - (Console.WindowWidth / 4) - lettersAsString.Length / 2;
             var topLetters = topMessage + 2;
 
             Console.SetCursorPosition(leftLetters, topLetters);

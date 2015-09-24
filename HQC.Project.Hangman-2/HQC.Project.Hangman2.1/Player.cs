@@ -3,7 +3,9 @@
     using System;
     using System.Collections.Generic;
 
-    public class Player
+    using HQC.Project.Hangman2._1.Interfaces;
+
+    public class Player : IPlayer
     {
         private const int InitialLives = 7;
         private const int InitialMistakes = 0;
@@ -65,7 +67,7 @@
 
         public ISet<char> WrongLetters { get; set; }
 
-        public int Compare(Player otherPlayer)
+        public int Compare(IPlayer otherPlayer)
         {
             if (this.Mistakes <= otherPlayer.Mistakes)
             {

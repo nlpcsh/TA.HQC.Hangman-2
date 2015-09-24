@@ -20,6 +20,14 @@ namespace HQC.Project.Hangman
         {
         }
 
+        public Player[] ScoreBoardTable
+        {
+            get
+            {
+                return this.scoreBoardTable;
+            }
+        }
+
         public void PlacePlayerInScoreBoard(Player player)
         {
             int emptyPosition = this.GetFirstFreePosition();
@@ -42,14 +50,6 @@ namespace HQC.Project.Hangman
             }
 
             this.SaveScoresToTxtFile();
-        }
-
-        public Player[] ScoreBoardTable 
-        {
-            get
-            {
-                return this.scoreBoardTable;
-            }
         }
 
         public void PrintTopResults()
