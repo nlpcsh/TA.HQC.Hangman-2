@@ -66,11 +66,11 @@
       <FileName>WordGuesser.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HQC.Project.Hangman.WordSelector">
+  <Class Name="HQC.Project.Hangman.WordSelectorFromFile">
     <Position X="6.5" Y="7.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAAABQAAAAAAAAAAAAAAAAAAAEAQAAAAAAAA=</HashCode>
-      <FileName>WordSelector.cs</FileName>
+      <HashCode>AAgAAAAAAAABQAAAAAAQAAAAAAAAAAAAEEQAAABAAAA=</HashCode>
+      <FileName>WordSelectorFromFile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HQC.Project.Hangman2._1.Commands.Common.Command">

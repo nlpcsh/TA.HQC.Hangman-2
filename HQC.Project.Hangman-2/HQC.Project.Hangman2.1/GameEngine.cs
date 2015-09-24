@@ -12,7 +12,7 @@
         public GameEngine()
         {
             this.Execute = new CommandManager();
-            this.WordSelect = new WordSelector();
+            this.WordSelect = new WordSelectorFromFile("../../Words/words.txt");
             this.Scores = new ScoreBoard();
             this.State = new InitializeGameState();
             this.WordGuess = new WordGuesser();
@@ -20,7 +20,7 @@
 
         public GameState State { get; set; }
 
-        public WordSelector WordSelect { get; set; }
+        public WordSelectorFromFile WordSelect { get; set; }
 
         public WordGuesser WordGuess { get; set; }
 

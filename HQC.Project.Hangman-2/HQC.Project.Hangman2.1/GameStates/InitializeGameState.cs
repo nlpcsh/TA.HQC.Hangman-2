@@ -18,8 +18,8 @@
             Printer.PrintGameTitle();
             Printer.PrintVerticalMiddleBorder();
             Printer.PrintHangman(game.WordGuess.Lives);
-            
-            string word = game.WordSelect.SelectRandomWord("../../Words/words.txt");
+
+            string word = game.WordSelect.RandomWord;
             game.WordGuess = new WordGuesser() { Word = word };
             game.WordGuess.InitializationOfGame();
 

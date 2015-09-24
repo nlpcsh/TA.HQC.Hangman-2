@@ -2,11 +2,14 @@ namespace HQC.Project.Hangman
 {
     using System.IO;
     using System.Linq;
-    using HQC.Project.Hangman.Interfaces;
 
-    public class ScoreBoard : ILogger
+    using HQC.Project.Hangman.Interfaces;
+    using HQC.Project.Hangman2._1.Interfaces;
+
+    public class ScoreBoard : ILogger //, IImporter
     {
         private ILogger logger;
+        //private IImporter import;
         private Player[] scoreBoardTable;
 
         public ScoreBoard(ILogger logger)

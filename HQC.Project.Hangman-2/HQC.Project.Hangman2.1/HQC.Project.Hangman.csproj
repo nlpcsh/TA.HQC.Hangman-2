@@ -55,6 +55,7 @@
     <Compile Include="Common\HangmanPattern.cs" />
     <Compile Include="Common\Validator.cs" />
     <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="FileImporter.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameStates\EndGameState.cs" />
     <Compile Include="GameStates\GameState.cs" />
@@ -71,7 +72,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScoreBoard.cs" />
     <Compile Include="WordGuesser.cs" />
-    <Compile Include="WordSelector.cs" />
+    <Compile Include="WordSelectorFromFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

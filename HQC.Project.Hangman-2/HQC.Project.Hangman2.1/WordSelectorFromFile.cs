@@ -3,15 +3,37 @@
     using System;
     using System.IO;
 
-    public class WordSelector
+    public class WordSelectorFromFile
     {
         private static Random random = new Random();
         private FileStream inputFileStream;
         private StreamReader streamReader;
+        private string fileName;
+        private string randomWord;
 
-        public string SelectRandomWord(string path)
+        public WordSelectorFromFile(string fileName) 
         {
-            this.inputFileStream = new FileStream(path, FileMode.Open);
+            this.FileName = fileName;
+            this.randomWord = SelectRandomWord();
+        }
+
+        public string FileName
+        {
+            get
+            {
+                return this.fileName;
+            }
+            set 
+            {
+                // add validation on file name
+                this.fileName = value;
+            }
+        }
+
+        public string RandomWord { get; set; }
+        private string SelectRandomWord()
+        {
+            this.inputFileStream = new FileStream(this.FileName, FileMode.Open);
             this.streamReader = new StreamReader(this.inputFileStream);
             string randomWord = string.Empty;
 
