@@ -12,7 +12,10 @@
             Printer.PrintGameInitialization();
             string name = Console.ReadLine();
             var playerName = string.IsNullOrWhiteSpace(name) ? "unknown" : name;
-            game.WordGuess = new WordGuesser(playerName, 0);
+            //game.WordGuess.Name = playerName;
+            //game.WordGuess = new WordGuesser(playerName, 0);
+            game.WordGuess.Name = playerName;
+            game.WordGuess.Mistakes = 0;
 
             Console.Clear();
             Printer.PrintGameTitle();
@@ -21,7 +24,8 @@
 
             string word = game.WordSelect.RandomWord;
             Console.WriteLine(word);
-            game.WordGuess = new WordGuesser() { Word = word };
+            game.WordGuess.Word = word;
+            //game.WordGuess = new WordGuesser() { Word = word };
             game.WordGuess.InitializationOfGame();
 
             Printer.PrintUsedLetters(game.WordGuess.WrongLetters);
