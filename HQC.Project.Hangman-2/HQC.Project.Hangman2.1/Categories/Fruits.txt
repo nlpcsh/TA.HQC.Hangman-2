@@ -1,0 +1,10 @@
+pear
+grapes
+blackberry
+watermelon
+peach
+apricot
+quince
+grapefruit
+raspberry
+strawberry
