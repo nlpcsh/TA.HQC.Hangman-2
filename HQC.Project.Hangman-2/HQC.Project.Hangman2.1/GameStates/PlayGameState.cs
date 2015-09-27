@@ -24,8 +24,8 @@
                 }
                 else if (Globals.commandTypes.ContainsKey(commandToExecute.ToLower()))
                 {
-                    var typeCommand = Globals.commandTypes[commandToExecute.ToLower()];
-                    var command = (ICommand)Activator.CreateInstance(typeCommand, game);
+                    //var typeCommand = Globals.commandTypes[commandToExecute.ToLower()];
+                    var command = game.CommandFactory.GetCommand(commandToExecute.ToLower(), game);  //(ICommand)Activator.CreateInstance(typeCommand, game);
                     command.Execute();
                 }
                 else

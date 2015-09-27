@@ -18,7 +18,6 @@
             game.Logger.PrintVerticalMiddleBorder();
             game.Logger.PrintHangman(game.WordGuess.Lives);
 
-            //Console.WriteLine(word);
             game.WordGuess.InitializationOfGame();
 
             game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
