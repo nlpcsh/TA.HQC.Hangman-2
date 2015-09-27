@@ -4,26 +4,48 @@
     using System.Linq;
     using System.Text;
     using HQC.Project.Hangman.Interfaces;
+    using HQC.Project.Hangman2._1.Interfaces;
+    using System;
 
-    public class WordGuesser : Player
+    public class WordGuesser : IPlayer
     {
         private List<char> allGuessedLetters;
         private StringBuilder hiddenWord;
         private int guessedLetters = 0;
 
+        private const int InitialLives = 7;
+        private const int InitialMistakes = 0;
+
+        private string name;
+        private int mistakes;
+
         private bool isRevelingMoreLetters = true;
 
-        public WordGuesser()
+       // public WordGuesser()
+       // {
+       //     this.allGuessedLetters = new List<char>();
+       // }
+
+       // public WordGuesser(string name, int mistakes)
+       //     : this(name, mistakes)
+       // {
+       // }
+
+
+         public WordGuesser()
         {
+            this.Lives = WordGuesser.InitialLives;
+            this.Mistakes = WordGuesser.InitialMistakes;
+            this.WrongLetters = new HashSet<char>();
             this.allGuessedLetters = new List<char>();
-            //this.PrintInitialMessages();
         }
 
-        public WordGuesser(string name, int mistakes)
-            : base(name, mistakes)
+         public WordGuesser(string playerName, int mistakes)
+            : this()
         {
+            this.Name = playerName;
+            this.Mistakes = mistakes;
         }
-
 
         public IList<char> AllGuessedLetters
         {
@@ -42,6 +64,59 @@
         }
 
         internal string Word { get; set; }
+
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+
+            set
+            {
+                if (value.Length == 0)
+                {
+                    throw new ArgumentException("Player must have at least one symbol!");
+                }
+
+                this.name = value;
+            }
+        }
+
+        public int Mistakes
+        {
+            get
+            {
+                return this.mistakes;
+            }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Player mistakes cannot be less than 0!");
+                }
+
+                this.mistakes = value;
+            }
+        }
+
+        public int Lives { get; set; }
+
+        public ISet<char> WrongLetters { get; set; }
+
+        public int Compare(IPlayer otherPlayer)
+        {
+            if (this.Mistakes <= otherPlayer.Mistakes)
+            {
+                return -1;
+            }
+            else
+            {
+                //// the newer one replaces the older
+                return 1;
+            }
+        }
 
 
         public void InitializationOfGame()
@@ -111,10 +186,5 @@
             this.isRevelingMoreLetters = true;
             return this.isRevelingMoreLetters;
         }
-
-        //public void LogLine(string printMessage)
-        //{
-        //    // this.logger.LogLine(printMessage);
-        //}
     }
 }

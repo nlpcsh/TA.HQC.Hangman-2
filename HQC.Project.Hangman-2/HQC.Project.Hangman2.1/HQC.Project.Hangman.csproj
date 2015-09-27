@@ -67,8 +67,6 @@
     <Compile Include="Interfaces\IImporter.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Printer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScoreBoard.cs" />
     <Compile Include="WordGuesser.cs" />

@@ -10,7 +10,7 @@ namespace HQC.Project.Hangman
     {
         private ILogger logger;
         //private IImporter import;
-        private Player[] scoreBoardTable;
+        private IPlayer[] scoreBoardTable;
 
         public ScoreBoard(ILogger logger)
         {
@@ -23,7 +23,7 @@ namespace HQC.Project.Hangman
         {
         }
 
-        public Player[] ScoreBoardTable
+        public IPlayer[] ScoreBoardTable
         {
             get
             {
@@ -31,7 +31,7 @@ namespace HQC.Project.Hangman
             }
         }
 
-        public void PlacePlayerInScoreBoard(Player player)
+        public void PlacePlayerInScoreBoard(IPlayer player)
         {
             int emptyPosition = this.GetFirstFreePosition();
 
@@ -41,8 +41,8 @@ namespace HQC.Project.Hangman
 
                 for (int i = emptyPosition; i > 0; i--)
                 {
-                    Player firstPlayer = this.scoreBoardTable[i];
-                    Player secondPlayer = this.scoreBoardTable[i - 1];
+                    var firstPlayer = this.scoreBoardTable[i];
+                    var secondPlayer = this.scoreBoardTable[i - 1];
 
                     if (firstPlayer.Compare(secondPlayer) < 0)
                     {
@@ -58,26 +58,26 @@ namespace HQC.Project.Hangman
         public void PrintTopResults()
         {
             // Console.WriteLine();
-           //this.LogLine(string.Empty);
-           //
-           //for (int i = 0; i < Globals.ScoreBoardSize; i++)
-           //{
-           //    if (this.scoreBoardTable[i] != null && this.scoreBoardTable[i].Name != Globals.NoPlayer)
-           //    {
-           //        // Console.WriteLine("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes);
-           //        this.LogLine(string.Format("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes));
-           //    }
-           //    else
-           //    {
-           //        if (i == 0)
-           //        {
-           //            // Console.WriteLine("No Scores");
-           //            this.LogLine("No Scores");
-           //        }
-           //
-           //        break;
-           //    }
-           //}
+            //this.LogLine(string.Empty);
+            //
+            //for (int i = 0; i < Globals.ScoreBoardSize; i++)
+            //{
+            //    if (this.scoreBoardTable[i] != null && this.scoreBoardTable[i].Name != Globals.NoPlayer)
+            //    {
+            //        // Console.WriteLine("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes);
+            //        this.LogLine(string.Format("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes));
+            //    }
+            //    else
+            //    {
+            //        if (i == 0)
+            //        {
+            //            // Console.WriteLine("No Scores");
+            //            this.LogLine("No Scores");
+            //        }
+            //
+            //        break;
+            //    }
+            //}
 
             // Console.WriteLine();
             this.LogLine(string.Empty);
@@ -124,9 +124,9 @@ namespace HQC.Project.Hangman
             }
         }
 
-        private Player[] ReadScoresFromTxtFile()
+        private IPlayer[] ReadScoresFromTxtFile()
         {
-            var scoreBoardTable = new Player[Globals.ScoreBoardSize];
+            var scoreBoardTable = new WordGuesser[Globals.ScoreBoardSize];
             using (var reader = new StreamReader(@"..\..\bestScores.txt"))
             {
                 var score = reader.ReadLine();
@@ -149,7 +149,7 @@ namespace HQC.Project.Hangman
                         playerScore = int.Parse(separateScore[1]);
                     }
 
-                    scoreBoardTable[index] = new Player(playerName, playerScore);
+                    scoreBoardTable[index] = new WordGuesser(playerName, playerScore);
                     score = reader.ReadLine();
                     index++;
                 }
@@ -159,7 +159,7 @@ namespace HQC.Project.Hangman
             {
                 if (scoreBoardTable[i] == null)
                 {
-                    scoreBoardTable[i] = new Player(Globals.NoPlayer, int.MaxValue);
+                    scoreBoardTable[i] = new WordGuesser(Globals.NoPlayer, int.MaxValue);
                 }
             }
 
