@@ -1,5 +1,6 @@
 ﻿namespace HQC.Project.Hangman
 {
+    using HQC.Project.Hangman.Common;
     using System;
 
     public class CommandManager

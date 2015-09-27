@@ -6,7 +6,10 @@
 
     using HQC.Project.Hangman2._1.Common;
     using HQC.Project.Hangman2._1.GameStates;
-    using HQC.Project.Hangman.Interfaces;
+    using HQC.Project.Hangman.UI;
+    using HQC.Project.Hangman.Players;
+    using HQC.Project.Hangman2._1.Players.Common;
+    using HQC.Project.Hangman.GameScoreBoard;
 
     public class GameEngine
     {
@@ -16,7 +19,7 @@
             this.WordSelect = new WordSelectorFromFile("../../Words/words.txt");
             this.Scores = new ScoreBoard();
             this.State = new PlayerInitialization();
-            this.WordGuess = new WordGuesser();
+            this.WordGuess = new Player();
             this.Logger = logger;
         }
 
@@ -24,7 +27,7 @@
 
         public WordSelectorFromFile WordSelect { get; set; }
 
-        public WordGuesser WordGuess { get; set; }
+        public IPlayer WordGuess { get; set; }
 
         public CommandManager Execute { get; set; }
 

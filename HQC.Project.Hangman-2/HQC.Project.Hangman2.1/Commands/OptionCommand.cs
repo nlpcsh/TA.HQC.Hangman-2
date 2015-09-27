@@ -12,7 +12,7 @@
 
         public override void Execute()
         {
-            this.Game.Logger.PrintOptionsMessage();
+            this.Game.Logger.PrintOptionsControls();
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿namespace HQC.Project.Hangman
 {
+    using HQC.Project.Hangman.UI;
+
     public class Hangman
     {
         private static void Main(string[] args)

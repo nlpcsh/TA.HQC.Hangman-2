@@ -7,6 +7,7 @@
     using HQC.Project.Hangman2._1.Commands;
     using HQC.Project.Hangman2._1.Common;
     using HQC.Project.Hangman2._1.Commands.Common;
+    using HQC.Project.Hangman.Common;
 
     public class PlayGameState : GameState
     {

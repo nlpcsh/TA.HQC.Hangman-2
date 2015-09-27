@@ -9,7 +9,6 @@
         private FileStream inputFileStream;
         private StreamReader streamReader;
         private string fileName;
-        private string randomWord;
 
         public WordSelectorFromFile(string fileName) 
         {

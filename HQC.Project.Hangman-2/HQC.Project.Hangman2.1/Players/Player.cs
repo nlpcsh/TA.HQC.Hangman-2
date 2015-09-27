@@ -1,13 +1,14 @@
-﻿namespace HQC.Project.Hangman
+﻿namespace HQC.Project.Hangman.Players
 {
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using HQC.Project.Hangman.Interfaces;
-    using HQC.Project.Hangman2._1.Interfaces;
+    using HQC.Project.Hangman.UI;
+    using HQC.Project.Hangman2._1.Importers.Common;
     using System;
+    using HQC.Project.Hangman2._1.Players.Common;
 
-    public class WordGuesser : IPlayer
+    public class Player : IPlayer
     {
         private List<char> allGuessedLetters;
         private StringBuilder hiddenWord;
@@ -32,15 +33,15 @@
         // }
 
 
-        public WordGuesser()
+        public Player()
         {
-            this.Lives = WordGuesser.InitialLives;
-            this.Mistakes = WordGuesser.InitialMistakes;
+            this.Lives = Player.InitialLives;
+            this.Mistakes = Player.InitialMistakes;
             this.WrongLetters = new HashSet<char>();
             this.allGuessedLetters = new List<char>();
         }
 
-        public WordGuesser(string playerName, int mistakes)
+        public Player(string playerName, int mistakes)
             : this()
         {
             this.Name = playerName;
@@ -60,7 +61,7 @@
             }
         }
 
-        internal string HiddenWord
+        public string HiddenWord
         {
             get
             {
@@ -68,7 +69,7 @@
             }
         }
 
-        internal string Word { get; set; }
+        public string Word { get; set; }
 
         public string Name
         {
@@ -122,8 +123,7 @@
                 return 1;
             }
         }
-
-
+        
         public void InitializationOfGame()
         {
             this.hiddenWord = new StringBuilder(new string('_', this.Word.Length));

@@ -1,6 +1,7 @@
 ﻿namespace HQC.Project.Hangman2._1.Commands
 {
     using HQC.Project.Hangman;
+    using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman2._1.Commands.Common;
 
     public class TopCommand : Command

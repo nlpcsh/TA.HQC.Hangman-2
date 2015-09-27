@@ -1,14 +1,18 @@
-﻿namespace HQC.Project.Hangman
+﻿namespace HQC.Project.Hangman.UI
 {
-    using HQC.Project.Hangman.Interfaces;
-    using HQC.Project.Hangman2._1.Common;
     using System;
     using System.Collections.Generic;
     using System.Text;
     using System.Threading;
 
+    using HQC.Project.Hangman.UI;
+    using HQC.Project.Hangman2._1.Common;
+    using HQC.Project.Hangman.Common;
+   
     public class ConsoleLogger : ILogger
     {
+        private int commandMessageTopPosition = Globals.TopPositionCommandInput + 2;
+
         public void LogLine(string line)
         {
             Console.WriteLine(line);
@@ -29,10 +33,24 @@
             Console.WriteLine(new string('-', Console.BufferWidth));
         }
               
-        public void PrintOptionsMessage()
+        public void PrintOptionsControls()
         {
             Console.WriteLine("Use \n 'top' to view the top scoreboard,\n 'restart' to start a new game,\n 'help' to cheat,\n 'options' to see again the options and \n 'exit' to quit the game.");
             Console.WriteLine();
+        }
+
+        public void PrintGoodBuyMessage()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Good bye!");
+        }
+
+        public void PrintMessage(string message)
+        {
+            Console.SetCursorPosition(Globals.LeftPositionCommandInput - (message.Length / 2),commandMessageTopPosition);
+            Console.WriteLine(message);
+            Console.SetCursorPosition(Globals.LeftPositionCommandInput, Globals.TopPositionCommandInput);
+            Thread.Sleep(1000);
         }
 
         public void PrintSecretWord(string hiddenWord)
@@ -48,21 +66,7 @@
             Console.WriteLine(hiddenWord);
             Console.WriteLine();
         }
-
-        public void PrintGoodBuyMessage()
-        {
-            Console.WriteLine();
-            Console.WriteLine("Good bye!");
-        }
-
-        public void PrintMessage(string message)
-        {
-            Console.SetCursorPosition(Globals.LeftPositionCommandInput - (message.Length / 2), Globals.TopPositionCommandInput + 2);
-            Console.WriteLine(message);
-            Console.SetCursorPosition(Globals.LeftPositionCommandInput, Globals.TopPositionCommandInput);
-            Thread.Sleep(1000);
-        }
-
+               
         public void PrintHangman(int playerLives)
         {
             var playerPattern = HangmanPattern.Patterns[playerLives];

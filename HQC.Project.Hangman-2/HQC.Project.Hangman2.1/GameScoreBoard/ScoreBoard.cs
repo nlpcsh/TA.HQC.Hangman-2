@@ -1,10 +1,14 @@
-namespace HQC.Project.Hangman
+namespace HQC.Project.Hangman.GameScoreBoard
 {
     using System.IO;
     using System.Linq;
 
-    using HQC.Project.Hangman.Interfaces;
-    using HQC.Project.Hangman2._1.Interfaces;
+    using HQC.Project.Hangman.UI;
+    using HQC.Project.Hangman2._1.Importers.Common;
+    using HQC.Project.Hangman.Players;
+    using HQC.Project.Hangman2._1.Players.Common;
+    using HQC.Project.Hangman.Common;
+
 
     public class ScoreBoard  //, IImporter
     {
@@ -126,7 +130,7 @@ namespace HQC.Project.Hangman
 
         private IPlayer[] ReadScoresFromTxtFile()
         {
-            var scoreBoardTable = new WordGuesser[Globals.ScoreBoardSize];
+            var scoreBoardTable = new Player[Globals.ScoreBoardSize];
             using (var reader = new StreamReader(@"..\..\bestScores.txt"))
             {
                 var score = reader.ReadLine();
@@ -149,7 +153,7 @@ namespace HQC.Project.Hangman
                         playerScore = int.Parse(separateScore[1]);
                     }
 
-                    scoreBoardTable[index] = new WordGuesser(playerName, playerScore);
+                    scoreBoardTable[index] = new Player(playerName, playerScore);
                     score = reader.ReadLine();
                     index++;
                 }
@@ -159,7 +163,7 @@ namespace HQC.Project.Hangman
             {
                 if (scoreBoardTable[i] == null)
                 {
-                    scoreBoardTable[i] = new WordGuesser(Globals.NoPlayer, int.MaxValue);
+                    scoreBoardTable[i] = new Player(Globals.NoPlayer, int.MaxValue);
                 }
             }
 
