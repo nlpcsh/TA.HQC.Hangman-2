@@ -1,9 +1,9 @@
-﻿namespace HQC.Project.Hangman2._1.Commands
+﻿namespace HQC.Project.Hangman2.Commands
 {
     using System;
 
     using HQC.Project.Hangman;
-    using HQC.Project.Hangman2._1.Commands.Common;
+    using HQC.Project.Hangman2.Commands.Common;
 
     public class ExitCommand : Command
     {

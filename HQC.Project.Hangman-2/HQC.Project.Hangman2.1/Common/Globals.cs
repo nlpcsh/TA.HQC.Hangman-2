@@ -4,7 +4,7 @@
     using System.Collections;
     using System.Collections.Generic;
 
-    using HQC.Project.Hangman2._1.Commands;
+    using HQC.Project.Hangman2.Commands;
 
     /// <summary>
     /// Keeps all constants used in the game

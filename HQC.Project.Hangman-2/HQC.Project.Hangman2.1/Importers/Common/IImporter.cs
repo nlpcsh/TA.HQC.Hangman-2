@@ -1,6 +1,6 @@
-﻿namespace HQC.Project.Hangman2._1.Importers.Common
+﻿namespace HQC.Project.Hangman2.Importers.Common
 {
-    using HQC.Project.Hangman2._1.Players.Common;
+    using HQC.Project.Hangman2.Players.Common;
     using System.Collections.Generic;
 
     public interface IImporter

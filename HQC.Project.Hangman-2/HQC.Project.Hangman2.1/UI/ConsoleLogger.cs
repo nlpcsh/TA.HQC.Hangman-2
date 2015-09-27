@@ -6,7 +6,7 @@
     using System.Threading;
 
     using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2._1.Common;
+    using HQC.Project.Hangman2.Common;
     using HQC.Project.Hangman.Common;
    
     public class ConsoleLogger : ILogger

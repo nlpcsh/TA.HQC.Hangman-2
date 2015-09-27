@@ -1,4 +1,4 @@
-﻿namespace HQC.Project.Hangman2._1.GameStates
+﻿namespace HQC.Project.Hangman2.GameStates
 {
     using System;
     using HQC.Project.Hangman;

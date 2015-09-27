@@ -1,4 +1,4 @@
-﻿namespace HQC.Project.Hangman2._1.Importers
+﻿namespace HQC.Project.Hangman2.Importers
 {
     using System;
     using System.Collections.Generic;
@@ -6,8 +6,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    using HQC.Project.Hangman2._1.Importers.Common;
-    using HQC.Project.Hangman2._1.Players.Common;
+    using HQC.Project.Hangman2.Importers.Common;
+    using HQC.Project.Hangman2.Players.Common;
   
     public class FileImporter : IImporter
     {

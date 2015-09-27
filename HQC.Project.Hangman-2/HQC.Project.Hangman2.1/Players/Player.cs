@@ -4,9 +4,9 @@
     using System.Linq;
     using System.Text;
     using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2._1.Importers.Common;
+    using HQC.Project.Hangman2.Importers.Common;
     using System;
-    using HQC.Project.Hangman2._1.Players.Common;
+    using HQC.Project.Hangman2.Players.Common;
 
     public class Player : IPlayer
     {

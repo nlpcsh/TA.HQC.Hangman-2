@@ -1,12 +1,12 @@
-﻿namespace HQC.Project.Hangman2._1.GameStates
+﻿namespace HQC.Project.Hangman2.GameStates
 {
     using System;
     using System.Collections.Generic;
 
     using HQC.Project.Hangman;
-    using HQC.Project.Hangman2._1.Commands;
-    using HQC.Project.Hangman2._1.Common;
-    using HQC.Project.Hangman2._1.Commands.Common;
+    using HQC.Project.Hangman2.Commands;
+    using HQC.Project.Hangman2.Common;
+    using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman.Common;
 
     public class PlayGameState : GameState

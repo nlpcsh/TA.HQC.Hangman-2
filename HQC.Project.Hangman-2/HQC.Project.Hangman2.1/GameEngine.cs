@@ -7,10 +7,10 @@
     using HQC.Project.Hangman.GameScoreBoard;
     using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2._1.Commands.Common;
-    using HQC.Project.Hangman2._1.Common;
-    using HQC.Project.Hangman2._1.GameStates;
-    using HQC.Project.Hangman2._1.Players.Common;
+    using HQC.Project.Hangman2.Commands.Common;
+    using HQC.Project.Hangman2.Common;
+    using HQC.Project.Hangman2.GameStates;
+    using HQC.Project.Hangman2.Players.Common;
 
     public class GameEngine
     {
@@ -19,7 +19,7 @@
             this.Execute = new CommandManager();
             this.WordSelect = new WordSelectorFromFile("../../Words/words.txt");
             this.Scores = new ScoreBoard();
-            this.State = new PlayerInitialization();
+            this.State = new PlayerInitializationState();
             this.WordGuess = new Player();
             this.Logger = logger;
             this.CommandFactory = new CommandFactory();

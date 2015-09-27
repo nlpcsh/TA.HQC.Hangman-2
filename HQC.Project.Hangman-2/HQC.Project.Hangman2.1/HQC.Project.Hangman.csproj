@@ -60,7 +60,7 @@
     <Compile Include="GameStates\EndGameState.cs" />
     <Compile Include="GameStates\GameState.cs" />
     <Compile Include="GameStates\InitializeGameState.cs" />
-    <Compile Include="GameStates\PlayerInitialization.cs" />
+    <Compile Include="GameStates\PlayerInitializationState.cs" />
     <Compile Include="GameStates\PlayGameState.cs" />
     <Compile Include="GameStates\RestartGameState.cs" />
     <Compile Include="Common\Globals.cs" />

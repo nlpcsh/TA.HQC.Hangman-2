@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-namespace HQC.Project.Hangman2._1.Players.Common
+﻿namespace HQC.Project.Hangman2.Players.Common
 {
+    using System.Collections.Generic;
+
     public interface IPlayer
     {
         string Name { get; set; }

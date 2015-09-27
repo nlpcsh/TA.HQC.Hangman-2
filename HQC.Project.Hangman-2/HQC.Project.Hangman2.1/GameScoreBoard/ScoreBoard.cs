@@ -4,9 +4,9 @@ namespace HQC.Project.Hangman.GameScoreBoard
     using System.Linq;
 
     using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2._1.Importers.Common;
+    using HQC.Project.Hangman2.Importers.Common;
     using HQC.Project.Hangman.Players;
-    using HQC.Project.Hangman2._1.Players.Common;
+    using HQC.Project.Hangman2.Players.Common;
     using HQC.Project.Hangman.Common;
 
 
