@@ -6,7 +6,7 @@ namespace HQC.Project.Hangman
     using HQC.Project.Hangman.Interfaces;
     using HQC.Project.Hangman2._1.Interfaces;
 
-    public class ScoreBoard : ILogger //, IImporter
+    public class ScoreBoard  //, IImporter
     {
         private ILogger logger;
         //private IImporter import;

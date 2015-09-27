@@ -24,8 +24,8 @@
             }
 
             this.Game.WordGuess.InitializationAfterTheGuess(firstUnrevealedLetter);
-            Printer.PrintMessage(string.Format("OK, I reveal for you the next letter {0}.", firstUnrevealedLetter));
-            Printer.PrintSecretWord(this.Game.WordGuess.HiddenWord);
+            this.Game.Logger.PrintMessage(string.Format("OK, I reveal for you the next letter {0}.", firstUnrevealedLetter));
+            this.Game.Logger.PrintSecretWord(this.Game.WordGuess.HiddenWord);
         }
     }
 }

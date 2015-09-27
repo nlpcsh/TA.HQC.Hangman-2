@@ -29,9 +29,13 @@
                 }
                 else
                 {
-                    Printer.PrintMessage("Wrong input, please try again!");
+                    game.Logger.PrintMessage("Wrong input, please try again!");
                 }
-                
+
+                game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
+                game.Logger.PrintUsedLetters(game.WordGuess.WrongLetters);
+                game.Logger.PrintHangman(game.WordGuess.Lives);
+
                 ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + commandToExecute.Length, Globals.TopPositionCommandInput);
                 ConsoleHelper.ClearConsoleInRange(Console.WindowWidth / 2 + 1, Console.WindowWidth - 1, Globals.TopPositionCommandInput + 2);
 

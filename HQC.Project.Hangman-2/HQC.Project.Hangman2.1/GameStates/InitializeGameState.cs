@@ -8,28 +8,28 @@
         public override void Play(GameEngine game)
         {
             Console.Clear();
-            Printer.PrintGameTitle();
-            Printer.PrintGameInitialization();
+
+            game.Logger.PrintGameTitle();
+            game.Logger.PrintGameInitialization();
+
             string name = Console.ReadLine();
             var playerName = string.IsNullOrWhiteSpace(name) ? "unknown" : name;
-            //game.WordGuess.Name = playerName;
-            //game.WordGuess = new WordGuesser(playerName, 0);
             game.WordGuess.Name = playerName;
             game.WordGuess.Mistakes = 0;
 
             Console.Clear();
-            Printer.PrintGameTitle();
-            Printer.PrintVerticalMiddleBorder();
-            Printer.PrintHangman(game.WordGuess.Lives);
+            game.Logger.PrintGameTitle();
+            game.Logger.PrintVerticalMiddleBorder();
+            game.Logger.PrintHangman(game.WordGuess.Lives);
 
             string word = game.WordSelect.RandomWord;
-            Console.WriteLine(word);
+            //Console.WriteLine(word);
             game.WordGuess.Word = word;
-            //game.WordGuess = new WordGuesser() { Word = word };
             game.WordGuess.InitializationOfGame();
 
-            Printer.PrintUsedLetters(game.WordGuess.WrongLetters);
-            Printer.PrintEnterCommandMessage();
+            game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
+            game.Logger.PrintUsedLetters(game.WordGuess.WrongLetters);
+            game.Logger.PrintEnterCommandMessage();
 
             game.State = new PlayGameState();
             game.State.Play(game);

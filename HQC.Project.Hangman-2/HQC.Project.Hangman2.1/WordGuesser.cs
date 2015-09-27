@@ -7,30 +7,23 @@
 
     public class WordGuesser : Player
     {
-        private ILogger logger;
         private List<char> allGuessedLetters;
         private StringBuilder hiddenWord;
         private int guessedLetters = 0;
 
         private bool isRevelingMoreLetters = true;
 
-        public WordGuesser(ILogger logger)
+        public WordGuesser()
         {
             this.allGuessedLetters = new List<char>();
-            this.logger = logger;
             //this.PrintInitialMessages();
         }
 
         public WordGuesser(string name, int mistakes)
             : base(name, mistakes)
         {
-            this.logger = new ConsoleLogger();
         }
 
-        public WordGuesser()
-            : this(new ConsoleLogger())
-        {
-        }
 
         public IList<char> AllGuessedLetters
         {
@@ -50,6 +43,7 @@
 
         internal string Word { get; set; }
 
+
         public void InitializationOfGame()
         {
             this.hiddenWord = new StringBuilder(new string('_', this.Word.Length));
@@ -58,11 +52,7 @@
             for (int i = 0; i < this.Word.Length; i++)
             {
                 this.allGuessedLetters.Add('$');
-                // hiddenWord.Append("_ ");
             }
-
-            Printer.PrintSecretWord(this.hiddenWord.ToString());
-            //this.LogLine(this.hiddenWord.ToString());
         }
 
         public void RevealGuessedLetters(char supposedChar)
@@ -76,17 +66,12 @@
                 startIndex = index + 1;
                 index = this.Word.IndexOf(supposedChar, startIndex);
             }
-
-            Printer.PrintSecretWord(this.hiddenWord.ToString());
-            //this.LogLine(this.hiddenWord.ToString());
         }
 
         public bool InitializationAfterTheGuess(char supposedChar)
         {
             if (this.allGuessedLetters.Contains<char>(supposedChar))
             {
-                //this.LogLine(string.Format("You have already revealed the letter {0}", supposedChar));
-                Printer.PrintMessage(string.Format("You have already revealed the letter {0}", supposedChar));
                 this.isRevelingMoreLetters = true;
                 return this.isRevelingMoreLetters;
             }
@@ -105,22 +90,16 @@
 
             if (numberOfTheAppearancesOfTheSupposedChar == 0)
             {
-                //this.LogLine(string.Format("Sorry! There are no unrevealed letters {0}", supposedChar));
-                Printer.PrintMessage(string.Format("There are no unrevealed letters {0}", supposedChar));
                 this.Mistakes++;
                 this.Lives--;
-                Printer.PrintHangman(this.Lives);
                 this.WrongLetters.Add(supposedChar);
-                Printer.PrintUsedLetters(this.WrongLetters);
             }
             else
             {
-                // this.LogLine(string.Format("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar));
-                Printer.PrintMessage(string.Format("Good job! You revealed {0} letters.", numberOfTheAppearancesOfTheSupposedChar));
                 this.guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
             }
 
-            this.LogLine(string.Empty);
+            //this.LogLine(string.Empty);
 
             // check if the word is guessed
             if (this.guessedLetters >= this.Word.Length)
@@ -129,16 +108,13 @@
                 return this.isRevelingMoreLetters;
             }
 
-            //this.LogLine("The secret word is:");
-            //this.LogLine(this.HiddenWord);
-
             this.isRevelingMoreLetters = true;
             return this.isRevelingMoreLetters;
         }
 
-        public void LogLine(string printMessage)
-        {
-            // this.logger.LogLine(printMessage);
-        }
+        //public void LogLine(string printMessage)
+        //{
+        //    // this.logger.LogLine(printMessage);
+        //}
     }
 }

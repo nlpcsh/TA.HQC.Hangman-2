@@ -9,7 +9,7 @@
         public override void Play(GameEngine game)
         {
             Console.Clear();
-            Printer.PrintGameTitle();
+            game.Logger.PrintGameTitle();
 
             Console.Write("Want to play again? y/n ");
             char playAgainYesNo = Console.ReadKey().KeyChar;
@@ -24,7 +24,7 @@
             else
             {
                 // Execute.Exit();
-                Printer.PrintGoodBuyMessage();
+                game.Logger.PrintGoodBuyMessage();
                 Environment.Exit(0);
             }
         }
