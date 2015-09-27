@@ -7,8 +7,6 @@ namespace HQC.Project.Hangman.Interfaces
 
         void PrintGameTitle();
 
-        void PrintWellcomeMessage();
-
         void PrintOptionsMessage();
 
         void PrintSecretWord(string hiddenWord);

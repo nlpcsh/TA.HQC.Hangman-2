@@ -28,13 +28,7 @@
             Console.WriteLine(new string('_', Console.BufferWidth));
             Console.WriteLine(new string('-', Console.BufferWidth));
         }
-
-        public void PrintWellcomeMessage()
-        {
-            Console.WriteLine("Welcome to \"Hangman\" game. Please try to guess my secret word.");
-            Console.WriteLine();
-        }
-
+              
         public void PrintOptionsMessage()
         {
             Console.WriteLine("Use \n 'top' to view the top scoreboard,\n 'restart' to start a new game,\n 'help' to cheat,\n 'options' to see again the options and \n 'exit' to quit the game.");
