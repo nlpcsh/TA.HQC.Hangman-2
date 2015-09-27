@@ -11,14 +11,12 @@
         int Lives { get; set; }
 
         string Word { get; set; }
-
-        List<char> AllGuessedLetters { get; set; }
-
+        
         ISet<char> WrongLetters { get; set; }
 
         string HiddenWord { get; }
 
-        void InitializationOfGame();
+        void HideWord();
 
         bool InitializationAfterTheGuess(char supposedChar);
 

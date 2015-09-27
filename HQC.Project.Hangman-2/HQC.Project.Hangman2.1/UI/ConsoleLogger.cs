@@ -63,7 +63,7 @@
 
             var leftPositionWord = Console.WindowWidth - (Console.WindowWidth / 4) - hiddenWord.Length / 2;
             Console.SetCursorPosition(leftPositionWord, top + 2);
-            Console.WriteLine(hiddenWord);
+            Console.WriteLine(string.Join(" ", hiddenWord.ToCharArray()));
             Console.WriteLine();
         }
                

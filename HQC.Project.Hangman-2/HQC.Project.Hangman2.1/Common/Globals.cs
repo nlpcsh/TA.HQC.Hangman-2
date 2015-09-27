@@ -27,7 +27,7 @@
         public const string EnterLetterMessage = "Please enter a letter:";
         public const string UsedLettersMessage = "Used letter:";
 
-        public static readonly IDictionary<string, Type> commandTypes = new Dictionary<string, Type>()
+        public static readonly IDictionary<string, Type> CommandTypes = new Dictionary<string, Type>()
         {
              { "help", typeof(HelpCommand) },
              { "exit", typeof(ExitCommand) },

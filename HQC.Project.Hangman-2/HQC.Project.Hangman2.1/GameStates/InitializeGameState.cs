@@ -10,7 +10,6 @@
         {
             Console.Clear();
             game.WordGuess.Lives = 7;
-            game.WordGuess.AllGuessedLetters = new List<char>();
             game.WordGuess.WrongLetters = new HashSet<char>();
             game.WordGuess.Word = game.WordSelect.SelectRandomWord();
 
@@ -18,7 +17,7 @@
             game.Logger.PrintVerticalMiddleBorder();
             game.Logger.PrintHangman(game.WordGuess.Lives);
 
-            game.WordGuess.InitializationOfGame();
+            game.WordGuess.HideWord();
 
             game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
             game.Logger.PrintUsedLetters(game.WordGuess.WrongLetters);

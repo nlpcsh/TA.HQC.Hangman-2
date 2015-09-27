@@ -10,7 +10,7 @@
     {
         public ICommand GetCommand(string commandAsString, GameEngine game)
         {
-            var typeCommand = Globals.commandTypes[commandAsString];
+            var typeCommand = Globals.CommandTypes[commandAsString];
             var command = (ICommand)Activator.CreateInstance(typeCommand, game);
             return command;
         }

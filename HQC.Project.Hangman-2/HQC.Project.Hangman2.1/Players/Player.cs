@@ -10,7 +10,6 @@
 
     public class Player : IPlayer
     {
-        private List<char> allGuessedLetters;
         private StringBuilder hiddenWord;
         private int guessedLetters = 0;
 
@@ -22,23 +21,11 @@
 
         private bool isRevelingMoreLetters = true;
 
-        // public WordGuesser()
-        // {
-        //     this.allGuessedLetters = new List<char>();
-        // }
-
-        // public WordGuesser(string name, int mistakes)
-        //     : this(name, mistakes)
-        // {
-        // }
-
-
         public Player()
         {
             this.Lives = Player.InitialLives;
             this.Mistakes = Player.InitialMistakes;
             this.WrongLetters = new HashSet<char>();
-            this.allGuessedLetters = new List<char>();
         }
 
         public Player(string playerName, int mistakes)
@@ -47,20 +34,7 @@
             this.Name = playerName;
             this.Mistakes = mistakes;
         }
-
-        public List<char> AllGuessedLetters
-        {
-            get
-            {
-                return new List<char>(this.allGuessedLetters);
-            }
-
-            set
-            {
-                this.allGuessedLetters = value;
-            }
-        }
-
+              
         public string HiddenWord
         {
             get
@@ -123,16 +97,10 @@
                 return 1;
             }
         }
-        
-        public void InitializationOfGame()
+
+        public void HideWord()
         {
             this.hiddenWord = new StringBuilder(new string('_', this.Word.Length));
-            this.hiddenWord = this.hiddenWord.Replace("_", "_ ");
-
-            for (int i = 0; i < this.Word.Length; i++)
-            {
-                this.allGuessedLetters.Add('$');
-            }
         }
 
         public void RevealGuessedLetters(char supposedChar)
@@ -142,7 +110,7 @@
 
             while (index != -1)
             {
-                this.hiddenWord[index * 2] = supposedChar;
+                this.hiddenWord[index] = supposedChar;
                 startIndex = index + 1;
                 index = this.Word.IndexOf(supposedChar, startIndex);
             }
@@ -150,21 +118,13 @@
 
         public bool InitializationAfterTheGuess(char supposedChar)
         {
-            if (this.allGuessedLetters.Contains<char>(supposedChar))
+            if (this.HiddenWord.Contains<char>(supposedChar))
             {
                 this.isRevelingMoreLetters = true;
                 return this.isRevelingMoreLetters;
             }
 
             int numberOfTheAppearancesOfTheSupposedChar = this.Word.Count(x => x.Equals(supposedChar));
-
-            for (int i = 0; i < this.Word.Length; i++)
-            {
-                if (this.Word[i].Equals(supposedChar))
-                {
-                    this.allGuessedLetters[i] = this.Word[i];
-                }
-            }
 
             this.RevealGuessedLetters(supposedChar);
 
@@ -178,9 +138,7 @@
             {
                 this.guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
             }
-
-            //this.LogLine(string.Empty);
-
+            
             // check if the word is guessed
             if (this.guessedLetters >= this.Word.Length)
             {

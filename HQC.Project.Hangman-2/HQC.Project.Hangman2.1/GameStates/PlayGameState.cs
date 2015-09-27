@@ -15,17 +15,16 @@
         {
             while (game.WordGuess.HiddenWord.Contains("_"))
             {
-                string commandToExecute = game.Execute.ReadInput();
+                string commandToExecute = game.Execute.ReadInput().ToLower();
 
                 if (commandToExecute.Length == 1)
                 {
                     char supposedChar = commandToExecute[0];
                     game.WordGuess.InitializationAfterTheGuess(supposedChar);
                 }
-                else if (Globals.commandTypes.ContainsKey(commandToExecute.ToLower()))
+                else if (Globals.CommandTypes.ContainsKey(commandToExecute))
                 {
-                    //var typeCommand = Globals.commandTypes[commandToExecute.ToLower()];
-                    var command = game.CommandFactory.GetCommand(commandToExecute.ToLower(), game);  //(ICommand)Activator.CreateInstance(typeCommand, game);
+                    var command = game.CommandFactory.GetCommand(commandToExecute, game);
                     command.Execute();
                 }
                 else
