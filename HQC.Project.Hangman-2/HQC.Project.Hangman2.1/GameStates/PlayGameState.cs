@@ -22,6 +22,11 @@
                     char supposedChar = commandToExecute[0];
                     game.WordGuess.InitializationAfterTheGuess(supposedChar);
                 }
+                else if (commandToExecute == game.WordGuess.Word)
+                {
+                    game.State = new EndGameState();
+                    game.State.Play(game);
+                }
                 else if (Globals.CommandTypes.ContainsKey(commandToExecute))
                 {
                     var command = game.CommandFactory.GetCommand(commandToExecute, game);
@@ -30,6 +35,8 @@
                 else
                 {
                     game.Logger.PrintMessage("Wrong input, please try again!");
+                    game.WordGuess.Mistakes++;
+                    game.WordGuess.Lives--;
                 }
 
                 game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
