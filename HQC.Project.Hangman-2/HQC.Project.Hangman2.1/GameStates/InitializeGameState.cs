@@ -2,29 +2,23 @@
 {
     using System;
     using HQC.Project.Hangman;
+    using System.Collections.Generic;
 
     public class InitializeGameState : GameState
     {
         public override void Play(GameEngine game)
         {
             Console.Clear();
+            game.WordGuess.Lives = 7;
+            game.WordGuess.AllGuessedLetters = new List<char>();
+            game.WordGuess.WrongLetters = new HashSet<char>();
+            game.WordGuess.Word = game.WordSelect.SelectRandomWord();
 
-            game.Logger.PrintGameTitle();
-            game.Logger.PrintGameInitialization();
-
-            string name = Console.ReadLine();
-            var playerName = string.IsNullOrWhiteSpace(name) ? "unknown" : name;
-            game.WordGuess.Name = playerName;
-            game.WordGuess.Mistakes = 0;
-
-            Console.Clear();
             game.Logger.PrintGameTitle();
             game.Logger.PrintVerticalMiddleBorder();
             game.Logger.PrintHangman(game.WordGuess.Lives);
 
-            string word = game.WordSelect.RandomWord;
             //Console.WriteLine(word);
-            game.WordGuess.Word = word;
             game.WordGuess.InitializationOfGame();
 
             game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);

@@ -31,7 +31,8 @@
         }
 
         public string RandomWord { get; set; }
-        private string SelectRandomWord()
+
+        public string SelectRandomWord()
         {
             this.inputFileStream = new FileStream(this.FileName, FileMode.Open);
             this.streamReader = new StreamReader(this.inputFileStream);

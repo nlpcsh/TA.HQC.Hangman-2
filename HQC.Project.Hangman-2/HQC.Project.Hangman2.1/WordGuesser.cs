@@ -21,18 +21,18 @@
 
         private bool isRevelingMoreLetters = true;
 
-       // public WordGuesser()
-       // {
-       //     this.allGuessedLetters = new List<char>();
-       // }
+        // public WordGuesser()
+        // {
+        //     this.allGuessedLetters = new List<char>();
+        // }
 
-       // public WordGuesser(string name, int mistakes)
-       //     : this(name, mistakes)
-       // {
-       // }
+        // public WordGuesser(string name, int mistakes)
+        //     : this(name, mistakes)
+        // {
+        // }
 
 
-         public WordGuesser()
+        public WordGuesser()
         {
             this.Lives = WordGuesser.InitialLives;
             this.Mistakes = WordGuesser.InitialMistakes;
@@ -40,18 +40,23 @@
             this.allGuessedLetters = new List<char>();
         }
 
-         public WordGuesser(string playerName, int mistakes)
+        public WordGuesser(string playerName, int mistakes)
             : this()
         {
             this.Name = playerName;
             this.Mistakes = mistakes;
         }
 
-        public IList<char> AllGuessedLetters
+        public List<char> AllGuessedLetters
         {
             get
             {
                 return new List<char>(this.allGuessedLetters);
+            }
+
+            set
+            {
+                this.allGuessedLetters = value;
             }
         }
 

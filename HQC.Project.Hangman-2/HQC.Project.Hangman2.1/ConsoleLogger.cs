@@ -64,7 +64,6 @@
         public void PrintMessage(string message)
         {
             Console.SetCursorPosition(Globals.LeftPositionCommandInput - (message.Length / 2), Globals.TopPositionCommandInput + 2);
-            // Console.WriteLine("Wrong command, please try again!");
             Console.WriteLine(message);
             Console.SetCursorPosition(Globals.LeftPositionCommandInput, Globals.TopPositionCommandInput);
             Thread.Sleep(1000);
