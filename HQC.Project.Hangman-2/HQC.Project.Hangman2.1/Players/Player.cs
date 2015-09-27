@@ -12,6 +12,7 @@
     {
         private StringBuilder hiddenWord;
         private int guessedLetters = 0;
+        private string word;
 
         private const int InitialLives = 7;
         private const int InitialMistakes = 0;
@@ -43,7 +44,19 @@
             }
         }
 
-        public string Word { get; set; }
+        public string Word 
+        {
+            get
+            {
+                return this.word;
+            }
+
+            set
+            {
+                this.word = value;
+                this.hiddenWord = new StringBuilder(new string('_', this.word.Length));
+            }
+        }
 
         public string Name
         {
@@ -96,11 +109,6 @@
                 //// the newer one replaces the older
                 return 1;
             }
-        }
-
-        public void HideWord()
-        {
-            this.hiddenWord = new StringBuilder(new string('_', this.Word.Length));
         }
 
         public void RevealGuessedLetters(char supposedChar)

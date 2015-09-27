@@ -16,8 +16,6 @@
 
         string HiddenWord { get; }
 
-        void HideWord();
-
         bool InitializationAfterTheGuess(char supposedChar);
 
         int Compare(IPlayer otherPlayer);

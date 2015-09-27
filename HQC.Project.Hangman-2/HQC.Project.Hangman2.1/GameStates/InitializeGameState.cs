@@ -15,10 +15,7 @@
 
             game.Logger.PrintGameTitle();
             game.Logger.PrintVerticalMiddleBorder();
-            game.Logger.PrintHangman(game.WordGuess.Lives);
-
-            game.WordGuess.HideWord();
-
+            game.Logger.PrintHangman(game.WordGuess.Lives);            
             game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
             game.Logger.PrintUsedLetters(game.WordGuess.WrongLetters);
             game.Logger.PrintEnterCommandMessage();
