@@ -19,7 +19,7 @@
             this.Execute = new CommandManager();
             this.WordSelect = new WordSelectorFromFile("../../Words/words.txt");
             this.Scores = new ScoreBoard();
-            this.State = new PlayerInitializationState();
+            this.State = new MenuGameState();
             this.WordGuess = new Player();
             this.Logger = logger;
             this.CommandFactory = new CommandFactory();
