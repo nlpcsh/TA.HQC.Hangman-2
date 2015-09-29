@@ -146,9 +146,9 @@
             Console.SetCursorPosition(left, top + 5);
             Console.WriteLine("OPTION");
 
-            left = (Console.WindowWidth / 2) - ("TOP".Length) / 2;
+            left = (Console.WindowWidth / 2) - ("SCORES".Length) / 2;
             Console.SetCursorPosition(left, top + 7);
-            Console.WriteLine("TOP");
+            Console.WriteLine("SCORES");
 
             left = (Console.WindowWidth / 2) - ("EXIT".Length) / 2;
             Console.SetCursorPosition(left, top + 9);
@@ -156,7 +156,7 @@
 
             left = (Console.WindowWidth / 2) - ("Enter your choice:".Length) / 2;
             Console.SetCursorPosition(left, top + 11);
-            Console.WriteLine("Enter your choice:");
+            Console.Write("Enter your choice:");
         }
     }
 }

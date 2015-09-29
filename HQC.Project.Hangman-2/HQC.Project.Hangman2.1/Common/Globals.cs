@@ -31,7 +31,7 @@
         {
              { "help", typeof(HelpCommand) },
              { "exit", typeof(ExitCommand) },
-             { "top", typeof(TopCommand) },
+             { "scores", typeof(TopCommand) },
              { "restart", typeof(RestartCommand) },
              { "option", typeof(OptionCommand) }
         };
