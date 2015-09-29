@@ -13,7 +13,7 @@
 
         public override void Execute()
         {
-            this.Game.State = new InitializeGameState();
+            this.Game.State = new PlayerInitializationState();
             this.Game.State.Play(this.Game);
         }
     }

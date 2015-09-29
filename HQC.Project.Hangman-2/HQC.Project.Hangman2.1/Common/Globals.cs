@@ -33,7 +33,8 @@
              { "exit", typeof(ExitCommand) },
              { "scores", typeof(TopCommand) },
              { "restart", typeof(RestartCommand) },
-             { "option", typeof(OptionCommand) }
+             { "option", typeof(OptionCommand) },
+             { "play", typeof(PlayCommand)}
         };
 
         public static int TopPositionCommandInput = Console.WindowHeight / 2 - (Console.WindowHeight / 4) + 2;
