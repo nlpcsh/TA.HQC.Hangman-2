@@ -158,5 +158,14 @@
             Console.SetCursorPosition(left, top + 11);
             Console.Write("Enter your choice:");
         }
+
+        public void PrintCategories(string[] categories)
+        {
+            // Will look better
+            foreach(var category in categories)
+            {
+                Console.WriteLine(category);
+            }
+        }
     }
 }

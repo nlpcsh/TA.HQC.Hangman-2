@@ -13,6 +13,14 @@
         {
         }
 
+        public string[] Categories
+        {
+            public get
+            {
+                return this.getCategories();
+            }
+        }
+
         public string[] getCategories()
         {
             return Directory.GetFiles(Globals.CategoriesPath, fileExtension)
