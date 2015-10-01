@@ -15,7 +15,7 @@
 
         public string[] Categories
         {
-            public get
+            get
             {
                 return this.getCategories();
             }
