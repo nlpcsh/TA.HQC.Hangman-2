@@ -6,9 +6,7 @@
     using HQC.Project.Hangman.Common;
 
     public class FolderContentReader
-    {
-        private readonly string fileExtension = "*.TXT";
-        
+    {     
         public FolderContentReader()
         {
         }
@@ -21,9 +19,9 @@
             }
         }
 
-        public string[] getCategories()
+        private string[] getCategories()
         {
-            return Directory.GetFiles(Globals.CategoriesPath, fileExtension)
+            return Directory.GetFiles(Globals.CategoriesPath, Globals.fileExtension)
                 .Select(path => Path.GetFileNameWithoutExtension(path))
                 .ToArray();
         }

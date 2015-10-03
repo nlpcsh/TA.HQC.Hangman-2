@@ -161,7 +161,7 @@
 
         public void PrintCategories(string[] categories)
         {
-            // Will look better
+            // Will look better one day...
             foreach(var category in categories)
             {
                 Console.WriteLine(category);
