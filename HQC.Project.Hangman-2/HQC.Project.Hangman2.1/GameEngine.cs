@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Threading;
 
-    using HQC.Project.Hangman.GameScoreBoard;
+    //using HQC.Project.Hangman.GameScoreBoard;
     using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman2.Commands.Common;
@@ -18,7 +18,7 @@
         {
             this.Execute = new CommandManager();
             this.WordSelect = new WordSelectorFromFile("../../Words/words.txt");
-            this.Scores = new ScoreBoard();
+            this.Scores = ScoreBoard.Instance;
             this.State = new MenuGameState();
             this.WordGuess = new Player();
             this.Logger = logger;

@@ -1,33 +1,38 @@
-namespace HQC.Project.Hangman.GameScoreBoard
+namespace HQC.Project.Hangman
 {
     using System.IO;
     using System.Linq;
 
+    using System.Collections.Generic;
     using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2.Importers.Common;
     using HQC.Project.Hangman.Players;
-    using HQC.Project.Hangman2.Players.Common;
     using HQC.Project.Hangman.Common;
 
-
-    public class ScoreBoard  //, IImporter
+    public sealed class ScoreBoard : ILogger
     {
+        private static ScoreBoard scoreBoardInstance;
+        private readonly IList<Player> scoreBoardTable = new List<Player>();
         private ILogger logger;
-        //private IImporter import;
-        private IPlayer[] scoreBoardTable;
 
-        public ScoreBoard(ILogger logger)
+        private ScoreBoard()
         {
-            this.scoreBoardTable = this.ReadScoresFromTxtFile();
-            this.logger = logger;
+
         }
 
-        public ScoreBoard()
-            : this(new ConsoleLogger())
+        public static ScoreBoard Instance
         {
+            get
+            {
+                if (scoreBoardInstance == null)
+                {
+                    scoreBoardInstance = new ScoreBoard();
+                }
+                return scoreBoardInstance;
+            }
         }
 
-        public IPlayer[] ScoreBoardTable
+
+        public IList<Player> ScoreBoardTable
         {
             get
             {
@@ -35,7 +40,7 @@ namespace HQC.Project.Hangman.GameScoreBoard
             }
         }
 
-        public void PlacePlayerInScoreBoard(IPlayer player)
+        public void PlacePlayerInScoreBoard(Player player)
         {
             int emptyPosition = this.GetFirstFreePosition();
 
@@ -45,8 +50,8 @@ namespace HQC.Project.Hangman.GameScoreBoard
 
                 for (int i = emptyPosition; i > 0; i--)
                 {
-                    var firstPlayer = this.scoreBoardTable[i];
-                    var secondPlayer = this.scoreBoardTable[i - 1];
+                    Player firstPlayer = this.scoreBoardTable[i];
+                    Player secondPlayer = this.scoreBoardTable[i - 1];
 
                     if (firstPlayer.Compare(secondPlayer) < 0)
                     {
@@ -57,6 +62,7 @@ namespace HQC.Project.Hangman.GameScoreBoard
             }
 
             this.SaveScoresToTxtFile();
+
         }
 
         public void PrintTopResults()
@@ -128,7 +134,7 @@ namespace HQC.Project.Hangman.GameScoreBoard
             }
         }
 
-        private IPlayer[] ReadScoresFromTxtFile()
+        private IList<Player> ReadScoresFromTxtFile()
         {
             var scoreBoardTable = new Player[Globals.ScoreBoardSize];
             using (var reader = new StreamReader(@"..\..\bestScores.txt"))
