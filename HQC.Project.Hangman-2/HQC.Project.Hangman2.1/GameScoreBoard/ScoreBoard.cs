@@ -12,7 +12,7 @@ namespace HQC.Project.Hangman
     public sealed class ScoreBoard : ILogger
     {
         private static ScoreBoard scoreBoardInstance;
-        private readonly IList<IPlayer> scoreBoardTable = new List<IPlayer>();
+        private IList<IPlayer> scoreBoardTable = new List<IPlayer>();
         private ILogger logger;
 
         private ScoreBoard()
@@ -43,6 +43,7 @@ namespace HQC.Project.Hangman
 
         public void PlacePlayerInScoreBoard(IPlayer player)
         {
+            scoreBoardTable = ReadScoresFromTxtFile();
             int emptyPosition = this.GetFirstFreePosition();
 
             if (this.scoreBoardTable[emptyPosition] == null || player.Mistakes <= this.scoreBoardTable[emptyPosition].Mistakes)
@@ -135,7 +136,7 @@ namespace HQC.Project.Hangman
             }
         }
 
-        private IList<Player> ReadScoresFromTxtFile()
+        private IList<IPlayer> ReadScoresFromTxtFile()
         {
             var scoreBoardTable = new Player[Globals.ScoreBoardSize];
             using (var reader = new StreamReader(@"..\..\bestScores.txt"))
