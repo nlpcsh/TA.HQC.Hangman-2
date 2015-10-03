@@ -7,11 +7,12 @@ namespace HQC.Project.Hangman
     using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.Common;
+    using HQC.Project.Hangman2.Players.Common;
 
     public sealed class ScoreBoard : ILogger
     {
         private static ScoreBoard scoreBoardInstance;
-        private readonly IList<Player> scoreBoardTable = new List<Player>();
+        private readonly IList<IPlayer> scoreBoardTable = new List<IPlayer>();
         private ILogger logger;
 
         private ScoreBoard()
@@ -32,7 +33,7 @@ namespace HQC.Project.Hangman
         }
 
 
-        public IList<Player> ScoreBoardTable
+        public IList<IPlayer> ScoreBoardTable
         {
             get
             {
@@ -40,7 +41,7 @@ namespace HQC.Project.Hangman
             }
         }
 
-        public void PlacePlayerInScoreBoard(Player player)
+        public void PlacePlayerInScoreBoard(IPlayer player)
         {
             int emptyPosition = this.GetFirstFreePosition();
 
@@ -50,8 +51,8 @@ namespace HQC.Project.Hangman
 
                 for (int i = emptyPosition; i > 0; i--)
                 {
-                    Player firstPlayer = this.scoreBoardTable[i];
-                    Player secondPlayer = this.scoreBoardTable[i - 1];
+                    IPlayer firstPlayer = this.scoreBoardTable[i];
+                    IPlayer secondPlayer = this.scoreBoardTable[i - 1];
 
                     if (firstPlayer.Compare(secondPlayer) < 0)
                     {
@@ -175,5 +176,68 @@ namespace HQC.Project.Hangman
 
             return scoreBoardTable;
         }
+
+
+        public void PrintGameTitle()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintOptionsControls()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintGoodBuyMessage()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintMessage(string message)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintSecretWord(string hiddenWord)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintHangman(int playerLives)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintVerticalMiddleBorder()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintEnterCommandMessage()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintUsedLetters(ISet<char> letters)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintGameInitialization()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintMenu()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PrintCategories(string[] categories)
+        {
+            throw new System.NotImplementedException();
+        }
+
+       
     }
 }
