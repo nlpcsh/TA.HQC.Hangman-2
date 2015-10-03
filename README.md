@@ -55,3 +55,4 @@ Refactoring Documentation for Project “Hangman 2”
 8.  Make commands insensitive
 9.  Add command "wrong" in commands
 10. Add reading from file for random word, not from array.
+11. Implement Singleton Pattern for ScoreBoard
