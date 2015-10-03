@@ -27,6 +27,8 @@
         void PrintGameInitialization();
 
         void PrintMenu();
+
+        void PrintCategories(string[] categories);
     }
 
 }

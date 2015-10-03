@@ -55,7 +55,9 @@
     <Compile Include="Common\ConsoleHelper.cs" />
     <Compile Include="Common\HangmanPattern.cs" />
     <Compile Include="Common\Validator.cs" />
+    <Compile Include="GameStates\ChooseCategoryState.cs" />
     <Compile Include="GameStates\MenuGameState.cs" />
+    <Compile Include="Importers\FolderContentReader.cs" />
     <Compile Include="UI\ConsoleLogger.cs" />
     <Compile Include="Importers\FileImporter.cs" />
     <Compile Include="GameEngine.cs" />
