@@ -17,7 +17,7 @@
         public GameEngine(ILogger logger)
         {
             this.Execute = new CommandManager();
-            this.WordSelect = new WordSelectorFromFile("../../Words/words.txt");
+            this.WordSelect = new WordSelectorFromFile("../../Words/Random.txt");
             //this.WordSelect = new WordSelectorFromFile();
             this.Scores = ScoreBoard.Instance;
             this.State = new MenuState();

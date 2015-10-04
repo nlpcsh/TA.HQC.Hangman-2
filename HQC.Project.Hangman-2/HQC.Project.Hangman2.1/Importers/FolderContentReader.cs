@@ -21,7 +21,7 @@
 
         private string[] getCategories()
         {
-            return Directory.GetFiles(Globals.CategoriesPath, Globals.fileExtension)
+            return Directory.GetFiles(Globals.CategoriesPath, Globals.FileExtension)
                 .Select(path => Path.GetFileNameWithoutExtension(path))
                 .ToArray();
         }

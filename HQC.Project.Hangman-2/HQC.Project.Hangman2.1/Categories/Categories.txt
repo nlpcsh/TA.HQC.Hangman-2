@@ -1,9 +1,0 @@
-Animals
-CarManufacturers
-Countries
-EgyptianGods
-Fruits
-GreekMythology
-IT
-Philosophers
-Vegetables
