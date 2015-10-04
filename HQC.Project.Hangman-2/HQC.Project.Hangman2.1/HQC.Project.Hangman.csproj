@@ -62,7 +62,7 @@
     <Compile Include="States\MenuState.cs" />
     <Compile Include="Importers\FolderContentReader.cs" />
     <Compile Include="UI\ConsoleLogger.cs" />
-    <Compile Include="Importers\FileImporter.cs" />
+    <Compile Include="Importers\ImportTopPlayers.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="States\EndGameState.cs" />
     <Compile Include="States\Common\State.cs" />
@@ -72,7 +72,7 @@
     <Compile Include="States\RestartGameState.cs" />
     <Compile Include="Common\Globals.cs" />
     <Compile Include="Hangman.cs" />
-    <Compile Include="Importers\Common\IImporter.cs" />
+    <Compile Include="Importers\Common\IPlayesImporter.cs" />
     <Compile Include="UI\Common\ILogger.cs" />
     <Compile Include="Players\Common\IPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

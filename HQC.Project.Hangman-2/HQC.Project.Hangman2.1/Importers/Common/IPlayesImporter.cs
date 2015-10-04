@@ -3,8 +3,8 @@
     using HQC.Project.Hangman2.Players.Common;
     using System.Collections.Generic;
 
-    public interface IImporter
+    public interface IPlayesImporter
     {
-        IList<IPlayer> Import();
+        IList<IPlayer> ImportPlayers(string name);
     }
 }

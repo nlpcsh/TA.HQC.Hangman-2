@@ -14,12 +14,12 @@
         public override void Execute()
         {
             this.Game.Scores.LogLine(string.Empty);
-
+            ScoreBoard.Instance.LoadTopPlayers(@"..\..\bestScores.txt");
             for (int i = 0; i < Globals.ScoreBoardSize; i++)
-            {
-                if (this.Game.Scores.ScoreBoardTable[i] != null && this.Game.Scores.ScoreBoardTable[i].Name != Globals.NoPlayer)
+            {             
+                if (ScoreBoard.Instance.ScoreBoardTable.TopPlayers[i] != null && ScoreBoard.Instance.ScoreBoardTable.TopPlayers[i].Name != Globals.NoPlayer)
                 {
-                    this.Game.Scores.LogLine(string.Format("{0}. {1} ---> {2}", i + 1, this.Game.Scores.ScoreBoardTable[i].Name, this.Game.Scores.ScoreBoardTable[i].Mistakes));
+                    this.Game.Scores.LogLine(string.Format("{0}. {1} ---> {2}", i + 1, ScoreBoard.Instance.ScoreBoardTable.TopPlayers[i].Name, ScoreBoard.Instance.ScoreBoardTable.TopPlayers[i].Mistakes));
                 }
                 else
                 {
