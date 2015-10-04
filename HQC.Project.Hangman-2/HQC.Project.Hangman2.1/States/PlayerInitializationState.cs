@@ -17,7 +17,7 @@
             game.WordGuess.Name = playerName;
             game.WordGuess.Mistakes = 0;
 
-            game.State = new InitializeGameState();
+            game.State = new ChooseCategoryState();
             game.State.Play(game);
         }
     }

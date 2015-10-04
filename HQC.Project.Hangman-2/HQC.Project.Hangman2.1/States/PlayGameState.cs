@@ -35,8 +35,6 @@
                 else
                 {
                     game.Logger.PrintMessage("Wrong input, please try again!");
-                    game.WordGuess.Mistakes++;
-                    game.WordGuess.Lives--;
                 }
 
                 game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
