@@ -14,7 +14,6 @@ namespace HQC.Project.Hangman
     {
         private static ScoreBoard scoreBoardInstance;
         private ImportTopPlayers scoreBoardTable;
-        //private ILogger message;
 
         private ScoreBoard()
         {
@@ -43,13 +42,10 @@ namespace HQC.Project.Hangman
         }
         public void LoadTopPlayers(string filename)     
         {
-            //this.scoreBoard = new TopPlayers(@"..\..\bestScores.txt");
             this.scoreBoardTable = new ImportTopPlayers(filename);
-            //return this.scoreBoardTable;
         }
         public void PlacePlayerInScoreBoard(IPlayer player)
         {
-            //this.scoreBoard = new TopPlayers(@"..\..\bestScores.txt");
             LoadTopPlayers(@"..\..\bestScores.txt");
             int emptyPosition = this.GetFirstFreePosition();
 
@@ -114,47 +110,5 @@ namespace HQC.Project.Hangman
                 }
             }
         }
-
-        //private IList<IPlayer> ReadScoresFromTxtFile()
-        //{
-        //    var scoreBoardTable = new Player[Globals.ScoreBoardSize];
-        //    using (var reader = new StreamReader(@"..\..\bestScores.txt"))
-        //    {
-        //        var score = reader.ReadLine();
-        //        var index = 0;
-
-        //        while (score != null)
-        //        {
-        //            string playerName;
-        //            int playerScore;
-
-        //            if (score == Globals.FreePositionInScoreBoars)
-        //            {
-        //                playerName = "No Player";
-        //                playerScore = int.MaxValue;
-        //            }
-        //            else
-        //            {
-        //                var separateScore = score.Split('-');
-        //                playerName = separateScore[0].Trim();
-        //                playerScore = int.Parse(separateScore[1]);
-        //            }
-
-        //            scoreBoardTable[index] = new Player(playerName, playerScore);
-        //            score = reader.ReadLine();
-        //            index++;
-        //        }
-        //    }
-
-        //    for (int i = 0; i < Globals.ScoreBoardSize; i++)
-        //    {
-        //        if (scoreBoardTable[i] == null)
-        //        {
-        //            scoreBoardTable[i] = new Player(Globals.NoPlayer, int.MaxValue);
-        //        }
-        //    }
-
-        //    return scoreBoardTable;
-        //}
     }
 }
