@@ -12,22 +12,23 @@ Refactoring Documentation for Project “Hangman 2”
 	-   Added class `Player`(replaced class `PlayerMistakes`)
 	-   Added class `Printer` (static) - contaning all general messages in the game
 	-   Added class `Globals` (static) - holder of all constants in the game
-	-   Removed class `WorldInitializator` - all methods passed to `GameEngine` and `WordGuesser` classes (v2.1)
+	-   Removed class `WorldInitializator` - all methods passed to `GameEngine` and `WordGuesser` classes
 	-   Added class `GameEngine` containing methods (v2.1): 
 		- `NewGame()`
 		- `PlayAgain()`
 		- `EndOfTheGame()`
-	-   Added class `Validator` (static) containing major validation methods (v2.1):
+	-   Added class `Validator` (static) containing major validation methods:
 	-   Added interface `ILogger` containing method `LogLine()` - to implement Dependency Inversion for the output printing
 	-   Added enumeration `Command` containing all valid for the game commands
-	-   Changed class `CommandExecuter` to `CommandManager` containing methods (v2.1):
+	-   Changed class `CommandExecuter` to `CommandManager` containing methods:
 		- `ReadInput()`
-	-   Added class `ConsoleLogger` - implemets interface `ILogger` (v2.1)
-	-   Implemented in the class `WordGuesser` new methods (v2.1):
+	-   Added class `ConsoleLogger` - implemets interface `ILogger`
+	-   Implemented in the class `WordGuesser` new methods:
 		- `InitializationOfGame()`
 		- `RevealGuessedLetters()`
 		- `InitializationAfterTheGuess()`
 		- `RevealTheNextLetter()`
+	-   Added class `WordSelectorFromFile` - to read word from file, not from array
 
 2.  Reformatted the source code:
 	-   General refractoring of class `WorldInitializator`
@@ -54,5 +55,5 @@ Refactoring Documentation for Project “Hangman 2”
 7.  Update methods `RevealGuessedLetters()` and `InitializationAfterTheGuess()`
 8.  Make commands insensitive
 9.  Add command "wrong" in commands
-10. Add reading from file for random word, not from array.
+10. Add WPF app(only UI for now)
 11. Implement Singleton Pattern for ScoreBoard
