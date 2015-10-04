@@ -9,7 +9,7 @@ namespace HQC.Project.Hangman
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman2.Players.Common;
 
-    public sealed class ScoreBoard : ILogger
+    public sealed class ScoreBoard 
     {
         private static ScoreBoard scoreBoardInstance;
         private IList<IPlayer> scoreBoardTable = new List<IPlayer>();
@@ -65,34 +65,6 @@ namespace HQC.Project.Hangman
 
             this.SaveScoresToTxtFile();
 
-        }
-
-        public void PrintTopResults()
-        {
-            // Console.WriteLine();
-            //this.LogLine(string.Empty);
-            //
-            //for (int i = 0; i < Globals.ScoreBoardSize; i++)
-            //{
-            //    if (this.scoreBoardTable[i] != null && this.scoreBoardTable[i].Name != Globals.NoPlayer)
-            //    {
-            //        // Console.WriteLine("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes);
-            //        this.LogLine(string.Format("{0}. {1} ---> {2}", i + 1, this.scoreBoardTable[i].Name, this.scoreBoardTable[i].Mistakes));
-            //    }
-            //    else
-            //    {
-            //        if (i == 0)
-            //        {
-            //            // Console.WriteLine("No Scores");
-            //            this.LogLine("No Scores");
-            //        }
-            //
-            //        break;
-            //    }
-            //}
-
-            // Console.WriteLine();
-            this.LogLine(string.Empty);
         }
 
         public void LogLine(string printMessage)
@@ -176,72 +148,6 @@ namespace HQC.Project.Hangman
             }
 
             return scoreBoardTable;
-        }
-
-
-        public void PrintGameTitle()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintOptionsControls()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintGoodBuyMessage()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintMessage(string message)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintSecretWord(string hiddenWord)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintHangman(int playerLives)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintVerticalMiddleBorder()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintEnterCommandMessage()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintUsedLetters(ISet<char> letters)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintGameInitialization()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintMenu()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintCategories(string[] categories)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintMenuHelpOption()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
