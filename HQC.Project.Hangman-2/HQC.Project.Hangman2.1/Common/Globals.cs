@@ -17,7 +17,7 @@
         public const string FreePositionInScoreBoars = "unknown-0";
         public const string NoPlayer = "No Player";
         public const string CategoriesPath = @"../../Words";
-        public const string FileExtension = "*.TXT";
+        public const string FileExtension = ".txt";
 
         // Game messages
         public const string Wellcome = "Welcome to \"Hangman\" game. Please try to guess my secret word.";

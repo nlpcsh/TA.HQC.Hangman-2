@@ -23,11 +23,11 @@
 
             if(categoryExists)
             {
-                game.WordSelect.FileName = "../../Words/" + chosenCategory + ".txt";
+                game.WordSelect.FileName = "../../Words/" + chosenCategory + Globals.FileExtension;
             }
             else
             {
-                game.WordSelect.FileName = "../../Words/Random.txt";
+                game.WordSelect.FileName = "../../Words/Random" + Globals.FileExtension;
             }
             
             game.State = new InitializeGameState();
