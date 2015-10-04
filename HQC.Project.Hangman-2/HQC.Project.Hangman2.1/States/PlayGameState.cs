@@ -9,7 +9,7 @@
     using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman.Common;
 
-    public class PlayGameState : GameState
+    public class PlayGameState : State
     {
         public override void Play(GameEngine game)
         {

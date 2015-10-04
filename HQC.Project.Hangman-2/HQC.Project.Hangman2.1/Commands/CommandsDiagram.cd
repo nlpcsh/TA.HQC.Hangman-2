@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HQC.Project.Hangman2.Commands.HelpCommand" Collapsed="true">
+    <Position X="14.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\GameCommands\HelpCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.RestartCommand" Collapsed="true">
+    <Position X="16.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\GameCommands\RestartCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.ExitCommand" Collapsed="true">
+    <Position X="5.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MenuCommands\ExitCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.ShowGameRulesCommand" Collapsed="true">
+    <Position X="7.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MenuCommands\ShowGameRulesCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.PlayCommand" Collapsed="true">
+    <Position X="12.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MenuCommands\PlayCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.StartGameCommand" Collapsed="true">
+    <Position X="3.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MenuCommands\StartGameCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.TopCommand" Collapsed="true">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MenuCommands\TopCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.Common.Command" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Common\Command.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HQC.Project.Hangman2._1.MenuCommand">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MenuCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2._1.GameCommand">
+    <Position X="15.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

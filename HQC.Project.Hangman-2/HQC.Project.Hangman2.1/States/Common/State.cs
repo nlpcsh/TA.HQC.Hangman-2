@@ -2,7 +2,7 @@
 {
     using HQC.Project.Hangman;
 
-    public abstract class GameState
+    public abstract class State
     {
         public abstract void Play(GameEngine game);
     }

@@ -8,6 +8,7 @@
     using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman2.Common;
     using HQC.Project.Hangman.Common;
+    using HQC.Project.Hangman2._1.Common;
    
     public class ConsoleLogger : ILogger
     {
@@ -142,9 +143,9 @@
             Console.SetCursorPosition(left, top + 3);
             Console.WriteLine("PLAY");
 
-            left = (Console.WindowWidth / 2) - ("OPTION".Length) / 2;
+            left = (Console.WindowWidth / 2) - ("RULES".Length) / 2;
             Console.SetCursorPosition(left, top + 5);
-            Console.WriteLine("OPTION");
+            Console.WriteLine("RULES");
 
             left = (Console.WindowWidth / 2) - ("SCORES".Length) / 2;
             Console.SetCursorPosition(left, top + 7);
@@ -166,6 +167,39 @@
             {
                 Console.WriteLine(category);
             }
+        }
+
+        public void PrintMenuHelpOption()
+        {
+            var startCol = Console.WindowWidth / 2 - Messages.EnterChoiceMessage.Length / 2;
+            var endCol = Console.WindowWidth / 2 + Messages.EnterChoiceMessage.Length;
+            var top = Console.WindowHeight / 2 - 6;
+            ConsoleHelper.ClearConsoleInRange(startCol, endCol, top, top + 12);
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.WelcomeMessage.Length / 2, top);
+            Console.WriteLine(Messages.WelcomeMessage);
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.RulesMessage.Length / 2, top + 2);
+            Console.WriteLine(Messages.RulesMessage);
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.BonusMenuMessagePart1.Length / 2, top + 4);
+            Console.WriteLine(Messages.BonusMenuMessagePart1);
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.BonusMenuMessagePart2.Length / 2, top + 5);
+            Console.WriteLine(Messages.BonusMenuMessagePart2);
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.HelpCommandMessagePart1.Length / 2, top + 7);
+            Console.WriteLine(Messages.HelpCommandMessagePart1);
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.HelpCommandMessagePart2.Length / 2, top + 8);
+            Console.WriteLine(Messages.HelpCommandMessagePart2);
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.EnjoyMessage.Length / 2, top + 10);
+            Console.WriteLine(Messages.EnjoyMessage);
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.PressAnyKeyMessage.Length / 2, Console.WindowHeight / 2 + 10);
+            Console.WriteLine(Messages.PressAnyKeyMessage);
+            Console.ReadLine();
         }
     }
 }

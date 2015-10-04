@@ -35,7 +35,7 @@
              { "exit", typeof(ExitCommand) },
              { "scores", typeof(TopCommand) },
              { "restart", typeof(RestartCommand) },
-             { "option", typeof(OptionCommand) },
+             { "rules", typeof(ShowGameRulesCommand) },
              { "play", typeof(PlayCommand)}
         };
 

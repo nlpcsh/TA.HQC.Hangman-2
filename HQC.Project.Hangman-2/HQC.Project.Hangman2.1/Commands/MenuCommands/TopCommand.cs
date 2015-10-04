@@ -4,7 +4,7 @@
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman2.Commands.Common;
 
-    public class TopCommand : Command
+    public class TopCommand : HQC.Project.Hangman2._1.MenuCommand
     {
         public TopCommand(GameEngine currentGame)
             : base(currentGame)

@@ -29,6 +29,8 @@
         void PrintMenu();
 
         void PrintCategories(string[] categories);
+
+        void PrintMenuHelpOption();
     }
 
 }

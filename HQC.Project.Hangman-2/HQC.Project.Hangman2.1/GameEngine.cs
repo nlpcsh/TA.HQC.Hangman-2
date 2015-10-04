@@ -19,13 +19,13 @@
             this.Execute = new CommandManager();
             this.WordSelect = new WordSelectorFromFile("../../Words/words.txt");
             this.Scores = ScoreBoard.Instance;
-            this.State = new MenuGameState();
+            this.State = new MenuState();
             this.WordGuess = new Player();
             this.Logger = logger;
             this.CommandFactory = new CommandFactory();
         }
 
-        public GameState State { get; set; }
+        public State State { get; set; }
 
         public WordSelectorFromFile WordSelect { get; set; }
 

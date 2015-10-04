@@ -4,7 +4,7 @@
 
     using HQC.Project.Hangman;
 
-    public class RestartGameState : GameState
+    public class RestartGameState : State
     {
         public override void Play(GameEngine game)
         {

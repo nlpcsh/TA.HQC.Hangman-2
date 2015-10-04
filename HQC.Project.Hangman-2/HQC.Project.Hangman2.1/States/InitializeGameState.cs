@@ -4,7 +4,7 @@
     using HQC.Project.Hangman;
     using System.Collections.Generic;
 
-    public class InitializeGameState : GameState
+    public class InitializeGameState : State
     {
         public override void Play(GameEngine game)
         {

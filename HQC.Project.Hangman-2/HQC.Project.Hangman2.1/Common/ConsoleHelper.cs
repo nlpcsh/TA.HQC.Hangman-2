@@ -6,10 +6,19 @@
     {
         public static void ClearConsoleInRange(int startCol, int endCol, int row)
         {
+            Console.SetCursorPosition(startCol, row);
+
             for (int col = startCol; col <= endCol; col++)
             {
-                Console.SetCursorPosition(col, row);
-                Console.WriteLine(" ");
+                Console.Write(" ");
+            }
+        }
+
+        public static void ClearConsoleInRange(int startCol, int endCol, int startRow, int endRow)
+        {
+            for (int i = startRow; i <= endRow; i++)
+            {
+                ClearConsoleInRange(startCol, endCol, i);
             }
         }
     }

@@ -3,7 +3,7 @@
     using HQC.Project.Hangman;
     using HQC.Project.Hangman2.Commands.Common;
 
-    public class HelpCommand : Command
+    public class HelpCommand : HQC.Project.Hangman2._1.GameCommand
     {
         public HelpCommand(GameEngine currentGame)
             : base(currentGame)

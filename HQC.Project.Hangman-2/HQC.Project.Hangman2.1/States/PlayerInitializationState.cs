@@ -4,7 +4,7 @@
 
     using HQC.Project.Hangman;
 
-    public class PlayerInitializationState : GameState
+    public class PlayerInitializationState : State
     {
         public override void Play(GameEngine game)
         {

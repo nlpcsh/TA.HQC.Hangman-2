@@ -7,7 +7,7 @@
     using HQC.Project.Hangman;
     
 
-    public class ChooseCategoryState : GameState
+    public class ChooseCategoryState : State
     {
         public override void Play(GameEngine game)
         {

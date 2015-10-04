@@ -4,16 +4,16 @@
     using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman2.GameStates;
 
-    public class StartGameCommand : Command
+    public class RestartCommand : HQC.Project.Hangman2._1.GameCommand
     {
-        public StartGameCommand(GameEngine currentGame)
+        public RestartCommand(GameEngine currentGame)
             : base(currentGame)
         {
         }
 
         public override void Execute()
         {
-            this.Game.State = new InitializeGameState();
+            this.Game.State = new RestartGameState();
             this.Game.State.Play(this.Game);
         }
     }

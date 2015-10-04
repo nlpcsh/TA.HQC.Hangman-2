@@ -239,6 +239,9 @@ namespace HQC.Project.Hangman
             throw new System.NotImplementedException();
         }
 
-       
+        public void PrintMenuHelpOption()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

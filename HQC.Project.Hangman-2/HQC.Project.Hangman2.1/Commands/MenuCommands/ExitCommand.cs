@@ -5,7 +5,7 @@
     using HQC.Project.Hangman;
     using HQC.Project.Hangman2.Commands.Common;
 
-    public class ExitCommand : Command
+    public class ExitCommand : HQC.Project.Hangman2._1.MenuCommand
     {
         public ExitCommand(GameEngine currentGame)
             : base(currentGame)

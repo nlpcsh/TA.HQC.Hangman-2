@@ -8,7 +8,7 @@
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
    
-    public class MenuGameState : GameState
+    public class MenuState : State
     {
         public override void Play(GameEngine game)
         {
@@ -22,9 +22,9 @@
                 if (Globals.CommandTypes.ContainsKey(commandToExecute))
                 {
                     var command = game.CommandFactory.GetCommand(commandToExecute, game);
-                    Console.Clear();
+                    //Console.Clear();
                     command.Execute();
-                    Thread.Sleep(1000);
+                    //Thread.Sleep(1000);
                 }
                 else
                 {
