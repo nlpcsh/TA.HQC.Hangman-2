@@ -42,8 +42,13 @@
 
         public void PrintGoodBuyMessage()
         {
-            Console.WriteLine();
-            Console.WriteLine("Good bye!");
+            Console.Clear();
+            this.PrintGameTitle();
+            var left = Console.WindowWidth / 2 - Messages.GoodBuy.Length / 2;
+            var top = Console.WindowHeight / 2;
+            Console.SetCursorPosition(left, top);
+            Console.WriteLine(Messages.GoodBuy);
+            Environment.Exit(0);
         }
 
         public void PrintMessage(string message)

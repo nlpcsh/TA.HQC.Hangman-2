@@ -2,6 +2,7 @@
 {
     public class Messages
     {
+        public const string GoodBuy = "Good bye!";
         public const string EnterChoiceMessage = "Enter your choice:";
         public const string WelcomeMessage = "Welcome to Hangman game!";
         public const string RulesMessage = "Rules are simple: guess secret word and keep your head on your shoulders :)";

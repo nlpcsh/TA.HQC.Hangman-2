@@ -14,8 +14,8 @@
 
         public override void Execute()
         {
-            Console.Clear();
-            this.Game.Logger.PrintGameTitle();
+            //Console.Clear();
+            //this.Game.Logger.PrintGameTitle();
             this.Game.Logger.PrintGoodBuyMessage();
             Environment.Exit(0);
         }
