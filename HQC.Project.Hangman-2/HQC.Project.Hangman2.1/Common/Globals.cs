@@ -32,9 +32,13 @@
         public static readonly IDictionary<string, Type> CommandTypes = new Dictionary<string, Type>()
         {
              { "help", typeof(HelpCommand) },
+             { "restart", typeof(RestartGameCommand) },
+        };
+
+        public static readonly IDictionary<string, Type> MenuCommandTypes = new Dictionary<string, Type>()
+        {
              { "exit", typeof(ExitCommand) },
              { "scores", typeof(TopCommand) },
-             { "restart", typeof(RestartGameCommand) },
              { "rules", typeof(ShowGameRulesCommand) },
              { "play", typeof(PlayCommand)}
         };

@@ -29,7 +29,7 @@
                 }
                 else if (Globals.CommandTypes.ContainsKey(commandToExecute))
                 {
-                    var command = game.CommandFactory.GetCommand(commandToExecute, game);
+                    var command = game.CommandFactory.GetCommand(commandToExecute, game, Globals.CommandTypes);
                     command.Execute();
                 }
                 else

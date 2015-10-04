@@ -7,7 +7,7 @@
     using Commands.Common;
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
-   
+
     public class MenuState : State
     {
         public override void Play(GameEngine game)
@@ -19,12 +19,10 @@
 
                 string commandToExecute = Console.ReadLine().Trim().ToLower();
 
-                if (Globals.CommandTypes.ContainsKey(commandToExecute))
+                if (Globals.MenuCommandTypes.ContainsKey(commandToExecute))
                 {
-                    var command = game.CommandFactory.GetCommand(commandToExecute, game);
-                    //Console.Clear();
+                    var command = game.CommandFactory.GetCommand(commandToExecute, game, Globals.MenuCommandTypes);
                     command.Execute();
-                    //Thread.Sleep(1000);
                 }
                 else
                 {

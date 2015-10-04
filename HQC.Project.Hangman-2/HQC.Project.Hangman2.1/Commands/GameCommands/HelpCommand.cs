@@ -14,15 +14,6 @@
         {
             char firstUnrevealedLetter = '$';
 
-            // for (int i = 0; i < this.Game.WordGuess.Word.Length; i++)
-            // {
-            //     if (this.Game.WordGuess.AllGuessedLetters[i].Equals('$'))
-            //     {
-            //         firstUnrevealedLetter = this.Game.WordGuess.Word[i];
-            //         break;
-            //     }
-            // }
-
             for (int i = 0; i < this.Game.WordGuess.Word.Length; i++)
             {
                 if (this.Game.WordGuess.HiddenWord[i] == '_')
