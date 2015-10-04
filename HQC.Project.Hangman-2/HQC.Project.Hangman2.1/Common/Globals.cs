@@ -34,7 +34,7 @@
              { "help", typeof(HelpCommand) },
              { "exit", typeof(ExitCommand) },
              { "scores", typeof(TopCommand) },
-             { "restart", typeof(RestartCommand) },
+             { "restart", typeof(RestartGameCommand) },
              { "rules", typeof(ShowGameRulesCommand) },
              { "play", typeof(PlayCommand)}
         };

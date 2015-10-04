@@ -1,12 +1,13 @@
-﻿namespace HQC.Project.Hangman2.Commands
+﻿
+namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
     using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman2.GameStates;
 
-    public class RestartCommand : HQC.Project.Hangman2._1.GameCommand
+    public class RestartGameCommand : HQC.Project.Hangman2._1.GameCommand
     {
-        public RestartCommand(GameEngine currentGame)
+        public RestartGameCommand(GameEngine currentGame)
             : base(currentGame)
         {
         }
