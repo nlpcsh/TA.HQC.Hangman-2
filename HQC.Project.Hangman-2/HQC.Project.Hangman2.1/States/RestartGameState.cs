@@ -18,7 +18,7 @@
 
             if (playAgainYesNo == 'y')
             {
-                game.State = new MenuGameState();
+                game.State = new MenuState();
                 game.State.Play(game);
             }
             else
