@@ -57,3 +57,9 @@ Refactoring Documentation for Project “Hangman 2”
 9.  Add command "wrong" in commands
 10. Add WPF app(only UI for now)
 11. Implement Singleton Pattern for ScoreBoard
+12. Rename interface IImporter to IPlayersImporter
+13. Create class ImportTopPlayers that implements IPlayersImporter interface
+14. Rename and move ReadFromTxtFile() method to ImportPlayers() method in ImportTopPlayers class
+15. In ScoreBoard class add method LoadTopPlayers() that invokes ImportTopPlayers
+16. Load top players in TopCommand class
+17. Fixed display top player's scores
