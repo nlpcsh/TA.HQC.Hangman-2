@@ -11,22 +11,15 @@
     {
         public override void Play(GameEngine game)
         {
-           // Console.Clear();
-
             var contentReader = new FolderContentReader();
             
-            //Console.WriteLine("Choose Category!");
-            
             game.Logger.PrintCategories(contentReader.Categories);
-            
-            //Console.WriteLine();
-            //Console.WriteLine("Now working yet, 3 seconds untill redirect!");
-            //Thread.Sleep(3000);
-            
+
+            string chosenCategory = Console.ReadLine().Trim().ToLower();
+            game.WordSelect.FileName = "../../Words/" + chosenCategory + ".txt";
+
             game.State = new PlayerInitializationState();
             game.State.Play(game);
-            
-
         }
     }
 }

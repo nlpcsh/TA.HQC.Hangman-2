@@ -189,7 +189,7 @@
             Console.SetCursorPosition(left - Messages.EnterChoiceMessage.Length / 2, top + 2);
             Console.Write(Messages.EnterChoiceMessage);
            
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
         public void PrintMenuHelpOption()

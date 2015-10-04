@@ -18,6 +18,7 @@
         {
             this.Execute = new CommandManager();
             this.WordSelect = new WordSelectorFromFile("../../Words/words.txt");
+            //this.WordSelect = new WordSelectorFromFile();
             this.Scores = ScoreBoard.Instance;
             this.State = new MenuState();
             this.WordGuess = new Player();
