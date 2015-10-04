@@ -9,7 +9,7 @@
     using HQC.Project.Hangman2.Common;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman2._1.Common;
-   
+
     public class ConsoleLogger : ILogger
     {
         private int commandMessageTopPosition = Globals.TopPositionCommandInput + 2;
@@ -33,7 +33,7 @@
             Console.WriteLine(new string('_', Console.BufferWidth));
             Console.WriteLine(new string('-', Console.BufferWidth));
         }
-              
+
         public void PrintOptionsControls()
         {
             Console.WriteLine("Use \n 'top' to view the top scoreboard,\n 'restart' to start a new game,\n 'help' to cheat,\n 'options' to see again the options and \n 'exit' to quit the game.");
@@ -53,7 +53,7 @@
 
         public void PrintMessage(string message)
         {
-            Console.SetCursorPosition(Globals.LeftPositionCommandInput - (message.Length / 2),commandMessageTopPosition);
+            Console.SetCursorPosition(Globals.LeftPositionCommandInput - (message.Length / 2), commandMessageTopPosition);
             Console.WriteLine(message);
             Console.SetCursorPosition(Globals.LeftPositionCommandInput, Globals.TopPositionCommandInput);
             Thread.Sleep(1000);
@@ -72,7 +72,7 @@
             Console.WriteLine(string.Join(" ", hiddenWord.ToCharArray()));
             Console.WriteLine();
         }
-               
+
         public void PrintHangman(int playerLives)
         {
             var playerPattern = HangmanPattern.Patterns[playerLives];
@@ -167,11 +167,29 @@
 
         public void PrintCategories(string[] categories)
         {
-            // Will look better one day...
-            foreach(var category in categories)
+            Console.Clear();
+            this.PrintGameTitle();
+            var top = Console.WindowHeight / 3;
+            var left = Console.WindowWidth / 2;
+            Console.SetCursorPosition(left - Messages.Categories.Length / 2, top);
+            Console.WriteLine(Messages.Categories);
+
+
+            top++;
+            foreach (var category in categories)
             {
+                top += 1;
+                Console.SetCursorPosition(left - category.Length / 2, top);
                 Console.WriteLine(category);
             }
+
+            Console.SetCursorPosition(left - Messages.PressToContinue.Length / 2, top + 3);
+            Console.Write(Messages.PressToContinue);
+
+            Console.SetCursorPosition(left - Messages.EnterChoiceMessage.Length / 2, top + 2);
+            Console.Write(Messages.EnterChoiceMessage);
+           
+            Console.ReadLine();
         }
 
         public void PrintMenuHelpOption()

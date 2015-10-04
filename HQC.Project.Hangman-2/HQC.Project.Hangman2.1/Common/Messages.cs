@@ -12,5 +12,7 @@
         public const string HelpCommandMessagePart2 = "and we will open one letter for you (of course you will lose 150 points)";
         public const string EnjoyMessage = "Enjoy!";
         public const string PressAnyKeyMessage = "Press any key to continue....";
+        public const string Categories = "CATEGORIES:";
+        public const string PressToContinue = "/or press any key for random word/"; 
     }
 }

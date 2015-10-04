@@ -11,21 +11,17 @@
     {
         public override void Play(GameEngine game)
         {
-            Console.Clear();
+           // Console.Clear();
 
             var contentReader = new FolderContentReader();
             
-            Console.WriteLine("Choose Category!");
+            //Console.WriteLine("Choose Category!");
             
             game.Logger.PrintCategories(contentReader.Categories);
             
-            //string chosenCategory = Console.ReadLine().Trim().ToLower();
-            //string categoryPath = "../../Words/" + chosenCategory + ".txt";
-            //game.WordSelect.FileName = categoryPath;
-            
-            Console.WriteLine();
-            Console.WriteLine("Now working yet, 3 seconds untill redirect!");
-            Thread.Sleep(3000);
+            //Console.WriteLine();
+            //Console.WriteLine("Now working yet, 3 seconds untill redirect!");
+            //Thread.Sleep(3000);
             
             game.State = new PlayerInitializationState();
             game.State.Play(game);
