@@ -36,7 +36,7 @@ namespace HQC.Project.Hangman2.GameStates
                 }
                 else if (Globals.CommandTypes.ContainsKey(commandToExecute))
                 {
-                    var command = game.CommandFactory.GetCommand(commandToExecute, game, Globals.CommandTypes);
+                    var command = game.CommandFactory.GetGameCommand(commandToExecute, game, Globals.CommandTypes);
                     command.Execute();
                 }
                 else

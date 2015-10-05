@@ -4,10 +4,13 @@
 
 namespace HQC.Project.Hangman
 {
+    using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman2.Commands.Common;
+    using HQC.Project.Hangman2.Commands.MenuCommands;
     using HQC.Project.Hangman2.GameStates;
+    using System;
 
     /// <summary>
     /// Start point to the game
@@ -16,15 +19,26 @@ namespace HQC.Project.Hangman
     {
         private static void Main(string[] args)
         {
-            var state = new MenuState();
             var logger = new ConsoleLogger();
-            var wordSelector = new WordSelectorFromFile("../../Words/Random.txt");
-            var scores = ScoreBoard.Instance;
-            var player = new Player();
-            var commandCreator = new CommandFactory();
+            var caommandFactory = new CommandFactory();
 
-            var newGame = new HangmanGame(logger, state, wordSelector, scores, player, commandCreator);
-            newGame.StartGame();
+            while (true)
+            {
+                Console.Clear();
+                logger.PrintMenu();
+
+                string commandToExecute = Console.ReadLine().Trim().ToLower();
+
+                if (Globals.MenuCommandTypes.ContainsKey(commandToExecute))
+                {
+                    var command = caommandFactory.GetMenuCommand(commandToExecute, logger, Globals.MenuCommandTypes);
+                    command.Execute();
+                }
+                else
+                {
+                    logger.PrintMessage("Wrong command!");
+                }
+            }
         }
     }
 }

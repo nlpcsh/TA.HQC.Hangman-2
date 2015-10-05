@@ -8,18 +8,20 @@ namespace HQC.Project.Hangman2.Commands
     using HQC.Project.Hangman;
     using HQC.Project.Hangman2;
     using HQC.Project.Hangman2.Commands.Common;
+    using HQC.Project.Hangman2.Commands.MenuCommands;
+    using HQC.Project.Hangman.UI;
 
     /// <summary>
     /// Exit the game
     /// </summary>
-    public class ExitCommand : Command
+    public class ExitCommand : MenuCommand
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExitCommand"/> class.
         /// </summary>
-        /// <param name="currentGame">???</param>
-        public ExitCommand(HangmanGame currentGame)
-            : base(currentGame)
+        /// <param name="logger">???</param>
+        public ExitCommand(ILogger logger)
+            : base(logger)
         {
         }
 
@@ -28,7 +30,7 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            this.Game.Logger.PrintGoodBuyMessage();
+            this.Logger.PrintGoodBuyMessage();
             Environment.Exit(0);
         }
     }

@@ -91,11 +91,7 @@ namespace HQC.Project.Hangman
         /// ???
         /// </summary>
         /// <param name="message">???</param>
-        public void LogLine(string message)
-        {
-            System.Console.WriteLine(message);
-        }
-
+      
         private int GetFirstFreePosition()
         {
             int freePosition = Globals.LastPositionInScoreBoard;

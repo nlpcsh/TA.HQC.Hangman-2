@@ -46,6 +46,7 @@
     <Compile Include="Commands\Common\ICommand.cs" />
     <Compile Include="Commands\GameCommands\RestartGameCommand.cs" />
     <Compile Include="Commands\MenuCommands\ExitCommand.cs" />
+    <Compile Include="Commands\MenuCommands\MenuCommand.cs" />
     <Compile Include="Commands\MenuCommands\PlayCommand.cs" />
     <Compile Include="Commands\MenuCommands\StartGameCommand.cs" />
     <Compile Include="Commands\GameCommands\HelpCommand.cs" />
@@ -57,7 +58,6 @@
     <Compile Include="Common\Validator.cs" />
     <Compile Include="Importers\Common\IWordsImporter.cs" />
     <Compile Include="States\ChooseCategoryState.cs" />
-    <Compile Include="States\MenuState.cs" />
     <Compile Include="Importers\FolderContentReader.cs" />
     <Compile Include="UI\ConsoleLogger.cs" />
     <Compile Include="Importers\ImportTopPlayersFromFile.cs" />
@@ -83,6 +83,7 @@
     <None Include="Commands\CommandsDiagram.cd" />
     <None Include="v2.1.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
