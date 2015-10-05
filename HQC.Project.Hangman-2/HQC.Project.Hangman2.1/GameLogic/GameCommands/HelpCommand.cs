@@ -13,7 +13,7 @@ namespace HQC.Project.Hangman2.Commands
     /// <summary>
     /// Help command help to user for guess a letter
     /// </summary>
-    public class HelpCommand : Command
+    public class HelpCommand : GameCommand
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="HelpCommand"/> class.

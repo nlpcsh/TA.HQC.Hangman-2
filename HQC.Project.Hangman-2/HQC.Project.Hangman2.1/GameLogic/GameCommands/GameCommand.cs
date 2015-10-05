@@ -9,13 +9,13 @@ namespace HQC.Project.Hangman2.Commands.Common
     /// <summary>
     /// This is the base abstract class for all commands.
     /// </summary>
-    public abstract class Command : ICommand
+    public abstract class GameCommand : ICommand
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Command"/> class.
+        /// Initializes a new instance of the <see cref="GameCommand"/> class.
         /// </summary>
         /// <param name="currentGame">???</param>
-        public Command(HangmanGame currentGame)
+        public GameCommand(HangmanGame currentGame)
         {
             this.Game = currentGame;
         }
