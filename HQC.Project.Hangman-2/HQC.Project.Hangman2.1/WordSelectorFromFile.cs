@@ -6,11 +6,12 @@ namespace HQC.Project.Hangman
 {
     using System;
     using System.IO;
+    using HQC.Project.Hangman2._1.Importers.Common;
 
     /// <summary>
     /// ???
     /// </summary>
-    public class WordSelectorFromFile
+    public class WordSelectorFromFile : IWordsImporter
     {
         private static Random random = new Random();
         private FileStream inputFileStream;
