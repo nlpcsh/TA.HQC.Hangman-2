@@ -1,16 +1,23 @@
-﻿namespace HQC.Project.Hangman2.GameStates
+﻿// <copyright file="PlayGameState.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman2.GameStates
 {
     using System;
-    using System.Collections.Generic;
-
     using HQC.Project.Hangman;
-    using HQC.Project.Hangman2.Commands;
-    using HQC.Project.Hangman2.Common;
-    using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman.Common;
+    using HQC.Project.Hangman2.Common;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class PlayGameState : State
     {
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="game">???</param>
         public override void Play(GameEngine game)
         {
             while (game.WordGuess.HiddenWord.Contains("_"))
@@ -42,7 +49,7 @@
                 game.Logger.PrintHangman(game.WordGuess.Lives);
 
                 ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + commandToExecute.Length, Globals.TopPositionCommandInput);
-                ConsoleHelper.ClearConsoleInRange(Console.WindowWidth / 2 + 1, Console.WindowWidth - 1, Globals.TopPositionCommandInput + 2);
+                ConsoleHelper.ClearConsoleInRange((Console.WindowWidth / 2) + 1, Console.WindowWidth - 1, Globals.TopPositionCommandInput + 2);
 
                 if (game.WordGuess.Lives == 0)
                 {

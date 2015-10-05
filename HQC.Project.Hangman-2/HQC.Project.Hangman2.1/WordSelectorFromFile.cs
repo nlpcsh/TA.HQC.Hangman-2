@@ -1,8 +1,15 @@
-﻿namespace HQC.Project.Hangman
+﻿// <copyright file="WordSelectorFromFile.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman
 {
     using System;
     using System.IO;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class WordSelectorFromFile
     {
         private static Random random = new Random();
@@ -10,27 +17,42 @@
         private StreamReader streamReader;
         private string fileName;
 
-        public WordSelectorFromFile(string fileName) 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WordSelectorFromFile"/> class.
+        /// </summary>
+        /// <param name="fileName">???</param>
+        public WordSelectorFromFile(string fileName)
         {
             this.FileName = fileName;
-            this.RandomWord = SelectRandomWord();
+            this.RandomWord = this.SelectRandomWord();
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public string FileName
         {
             get
             {
                 return this.fileName;
             }
-            set 
+
+            set
             {
                 // add validation on file name
                 this.fileName = value;
             }
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public string RandomWord { get; set; }
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <returns>???</returns>
         public string SelectRandomWord()
         {
             this.inputFileStream = new FileStream(this.FileName, FileMode.Open);

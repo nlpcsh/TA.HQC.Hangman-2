@@ -1,11 +1,20 @@
-﻿namespace HQC.Project.Hangman2.GameStates
-{
-    using System;
+﻿// <copyright file="EndGameState.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
+namespace HQC.Project.Hangman2.GameStates
+{
     using HQC.Project.Hangman;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class EndGameState : State
     {
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="game">???</param>
         public override void Play(GameEngine game)
         {
             game.Logger.PrintMessage(string.Format("You won with {0} mistakes.", game.WordGuess.Mistakes));

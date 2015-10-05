@@ -1,28 +1,42 @@
-﻿namespace HQC.Project.Hangman2.Importers
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+﻿// <copyright file="ImportTopPlayers.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
-    using HQC.Project.Hangman2.Importers.Common;
-    using HQC.Project.Hangman2.Players.Common;
-    using HQC.Project.Hangman.Players;
+namespace HQC.Project.Hangman2.Importers
+{
+    using System.Collections.Generic;
     using System.IO;
     using HQC.Project.Hangman.Common;
+    using HQC.Project.Hangman.Players;
+    using HQC.Project.Hangman2.Importers.Common;
+    using HQC.Project.Hangman2.Players.Common;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class ImportTopPlayers : IPlayesImporter
     {
         private IList<IPlayer> topPlayers = new List<IPlayer>();
 
-        public IList<IPlayer> TopPlayers { get; set; }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImportTopPlayers"/> class.
+        /// </summary>
+        /// <param name="fileName">???</param>
         public ImportTopPlayers(string fileName)
         {
-            this.TopPlayers = ImportPlayers(fileName);
+            this.TopPlayers = this.ImportPlayers(fileName);
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        public IList<IPlayer> TopPlayers { get; set; }
+
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="fileName">???</param>
+        /// <returns>???</returns>
         public IList<IPlayer> ImportPlayers(string fileName)
         {
             var scoreBoardTable = new Player[Globals.ScoreBoardSize];

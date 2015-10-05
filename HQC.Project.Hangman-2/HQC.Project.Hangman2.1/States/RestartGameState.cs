@@ -1,11 +1,21 @@
-﻿namespace HQC.Project.Hangman2.GameStates
+﻿// <copyright file="RestartGameState.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman2.GameStates
 {
     using System;
-
     using HQC.Project.Hangman;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class RestartGameState : State
     {
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="game">???</param>
         public override void Play(GameEngine game)
         {
             Console.Clear();

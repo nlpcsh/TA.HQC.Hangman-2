@@ -1,11 +1,22 @@
-﻿namespace HQC.Project.Hangman2.GameStates
+﻿// <copyright file="InitializeGameState.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman2.GameStates
 {
     using System;
-    using HQC.Project.Hangman;
     using System.Collections.Generic;
+    using HQC.Project.Hangman;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class InitializeGameState : State
     {
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="game">???</param>
         public override void Play(GameEngine game)
         {
             Console.Clear();
@@ -15,7 +26,7 @@
 
             game.Logger.PrintGameTitle();
             game.Logger.PrintVerticalMiddleBorder();
-            game.Logger.PrintHangman(game.WordGuess.Lives);            
+            game.Logger.PrintHangman(game.WordGuess.Lives);
             game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
             game.Logger.PrintUsedLetters(game.WordGuess.WrongLetters);
             game.Logger.PrintEnterCommandMessage();

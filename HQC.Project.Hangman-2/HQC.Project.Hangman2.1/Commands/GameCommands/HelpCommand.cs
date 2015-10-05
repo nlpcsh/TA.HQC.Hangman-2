@@ -1,15 +1,29 @@
-﻿namespace HQC.Project.Hangman2.Commands
+﻿// <copyright file="HelpCommand.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
     using HQC.Project.Hangman2;
 
+    /// <summary>
+    /// Help command help to user for guess a letter
+    /// </summary>
     public class HelpCommand : GameCommand
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HelpCommand"/> class.
+        /// </summary>
+        /// <param name="currentGame">???</param>
         public HelpCommand(GameEngine currentGame)
             : base(currentGame)
         {
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public override void Execute()
         {
             char firstUnrevealedLetter = '$';

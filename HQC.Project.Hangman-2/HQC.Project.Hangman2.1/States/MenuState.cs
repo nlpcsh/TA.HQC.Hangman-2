@@ -1,15 +1,22 @@
-﻿namespace HQC.Project.Hangman2.GameStates
+﻿// <copyright file="MenuState.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman2.GameStates
 {
     using System;
-    using System.Collections.Generic;
-    using System.Threading;
-
-    using Commands.Common;
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class MenuState : State
     {
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="game">???</param>
         public override void Play(GameEngine game)
         {
             while (true)
@@ -28,7 +35,6 @@
                 {
                     game.Logger.PrintMessage("Wrong command!");
                 }
-
             }
         }
     }

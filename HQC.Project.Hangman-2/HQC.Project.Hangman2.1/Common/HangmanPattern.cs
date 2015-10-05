@@ -1,8 +1,15 @@
-﻿namespace HQC.Project.Hangman2.Common
+﻿// <copyright file="HangmanPattern.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman2.Common
 {
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class HangmanPattern
     {
         private static readonly IDictionary<int, string[]> PatternsValue = new Dictionary<int, string[]>
@@ -241,6 +248,9 @@
             }
         };
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public static IDictionary<int, string[]> Patterns
         {
             get

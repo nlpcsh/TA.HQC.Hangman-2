@@ -1,3 +1,7 @@
+// <copyright file="ScoreBoard.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 namespace HQC.Project.Hangman
 {
     using System.IO;
@@ -6,6 +10,9 @@ namespace HQC.Project.Hangman
     using HQC.Project.Hangman2.Importers;
     using HQC.Project.Hangman2.Players.Common;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public sealed class ScoreBoard
     {
         private static ScoreBoard scoreBoardInstance;
@@ -13,9 +20,11 @@ namespace HQC.Project.Hangman
 
         private ScoreBoard()
         {
-
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public static ScoreBoard Instance
         {
             get
@@ -24,11 +33,14 @@ namespace HQC.Project.Hangman
                 {
                     scoreBoardInstance = new ScoreBoard();
                 }
+
                 return scoreBoardInstance;
             }
         }
 
-
+        /// <summary>
+        /// ???
+        /// </summary>
         public ImportTopPlayers ScoreBoardTable
         {
             get
@@ -37,14 +49,22 @@ namespace HQC.Project.Hangman
             }
         }
 
-        public void LoadTopPlayers(string filename)     
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="filename">???</param>
+        public void LoadTopPlayers(string filename)
         {
             this.scoreBoardTable = new ImportTopPlayers(filename);
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="player">???</param>
         public void PlacePlayerInScoreBoard(IPlayer player)
         {
-            LoadTopPlayers(Globals.BestScoresPath);
+            this.LoadTopPlayers(Globals.BestScoresPath);
             int emptyPosition = this.GetFirstFreePosition();
 
             if (this.scoreBoardTable.TopPlayers[emptyPosition] == null || player.Mistakes <= this.scoreBoardTable.TopPlayers[emptyPosition].Mistakes)
@@ -65,9 +85,12 @@ namespace HQC.Project.Hangman
             }
 
             this.SaveScoresToTxtFile();
-
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="message">???</param>
         public void LogLine(string message)
         {
             System.Console.WriteLine(message);

@@ -1,15 +1,29 @@
-﻿namespace HQC.Project.Hangman2.Commands
+﻿// <copyright file="StartGameCommand.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
     using HQC.Project.Hangman2.GameStates;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class StartGameCommand : MenuCommand
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StartGameCommand"/> class.
+        /// </summary>
+        /// <param name="currentGame">???</param>
         public StartGameCommand(GameEngine currentGame)
             : base(currentGame)
         {
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public override void Execute()
         {
             this.Game.State = new InitializeGameState();

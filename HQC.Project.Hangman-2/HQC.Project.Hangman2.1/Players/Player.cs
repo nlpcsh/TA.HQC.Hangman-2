@@ -1,27 +1,35 @@
-﻿namespace HQC.Project.Hangman.Players
+﻿// <copyright file="Player.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman.Players
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2.Importers.Common;
-    using System;
     using HQC.Project.Hangman2.Players.Common;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class Player : IPlayer
     {
+        private const int InitialLives = 7;
+        private const int InitialMistakes = 0;
+
         private StringBuilder hiddenWord;
         private int guessedLetters = 0;
         private string word;
-
-        private const int InitialLives = 7;
-        private const int InitialMistakes = 0;
 
         private string name;
         private int mistakes;
 
         private bool isRevelingMoreLetters = true;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Player"/> class.
+        /// </summary>
         public Player()
         {
             this.Lives = Player.InitialLives;
@@ -29,13 +37,21 @@
             this.WrongLetters = new HashSet<char>();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Player"/> class.
+        /// </summary>
+        /// <param name="playerName">???</param>
+        /// <param name="mistakes">???</param>
         public Player(string playerName, int mistakes)
             : this()
         {
             this.Name = playerName;
             this.Mistakes = mistakes;
         }
-              
+
+        /// <summary>
+        /// ???
+        /// </summary>
         public string HiddenWord
         {
             get
@@ -44,7 +60,10 @@
             }
         }
 
-        public string Word 
+        /// <summary>
+        /// ???
+        /// </summary>
+        public string Word
         {
             get
             {
@@ -58,6 +77,9 @@
             }
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public string Name
         {
             get
@@ -76,6 +98,9 @@
             }
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public int Mistakes
         {
             get
@@ -94,10 +119,21 @@
             }
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public int Lives { get; set; }
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public ISet<char> WrongLetters { get; set; }
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="otherPlayer">???</param>
+        /// <returns>???</returns>
         public int Compare(IPlayer otherPlayer)
         {
             if (this.Mistakes <= otherPlayer.Mistakes)
@@ -111,6 +147,10 @@
             }
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="supposedChar">???</param>
         public void RevealGuessedLetters(char supposedChar)
         {
             var startIndex = 0;
@@ -124,6 +164,11 @@
             }
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="supposedChar">???</param>
+        /// <returns>???</returns>
         public bool InitializationAfterTheGuess(char supposedChar)
         {
             if (this.HiddenWord.Contains<char>(supposedChar))
@@ -146,7 +191,7 @@
             {
                 this.guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
             }
-            
+
             // check if the word is guessed
             if (this.guessedLetters >= this.Word.Length)
             {
