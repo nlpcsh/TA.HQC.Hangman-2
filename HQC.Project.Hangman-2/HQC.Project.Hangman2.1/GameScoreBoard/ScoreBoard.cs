@@ -16,7 +16,7 @@ namespace HQC.Project.Hangman
     public sealed class ScoreBoard
     {
         private static ScoreBoard scoreBoardInstance;
-        private ImportTopPlayers scoreBoardTable;
+        private ImportTopPlayersFromFile scoreBoardTable;
 
         private ScoreBoard()
         {
@@ -41,7 +41,7 @@ namespace HQC.Project.Hangman
         /// <summary>
         /// ???
         /// </summary>
-        public ImportTopPlayers ScoreBoardTable
+        public ImportTopPlayersFromFile ScoreBoardTable
         {
             get
             {
@@ -55,7 +55,7 @@ namespace HQC.Project.Hangman
         /// <param name="filename">???</param>
         public void LoadTopPlayers(string filename)
         {
-            this.scoreBoardTable = new ImportTopPlayers(filename);
+            this.scoreBoardTable = new ImportTopPlayersFromFile(filename);
         }
 
         /// <summary>

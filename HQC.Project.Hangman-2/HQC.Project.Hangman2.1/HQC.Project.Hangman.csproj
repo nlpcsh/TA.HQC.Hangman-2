@@ -63,7 +63,7 @@
     <Compile Include="States\MenuState.cs" />
     <Compile Include="Importers\FolderContentReader.cs" />
     <Compile Include="UI\ConsoleLogger.cs" />
-    <Compile Include="Importers\ImportTopPlayers.cs" />
+    <Compile Include="Importers\ImportTopPlayersFromFile.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="States\EndGameState.cs" />
     <Compile Include="States\Common\State.cs" />

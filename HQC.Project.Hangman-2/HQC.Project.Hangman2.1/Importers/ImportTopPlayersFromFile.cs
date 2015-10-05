@@ -14,15 +14,15 @@ namespace HQC.Project.Hangman2.Importers
     /// <summary>
     /// ???
     /// </summary>
-    public class ImportTopPlayers : IPlayesImporter
+    public class ImportTopPlayersFromFile : IPlayesImporter
     {
         private IList<IPlayer> topPlayers = new List<IPlayer>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImportTopPlayers"/> class.
+        /// Initializes a new instance of the <see cref="ImportTopPlayersFromFile"/> class.
         /// </summary>
         /// <param name="fileName">???</param>
-        public ImportTopPlayers(string fileName)
+        public ImportTopPlayersFromFile(string fileName)
         {
             this.TopPlayers = this.ImportPlayers(fileName);
         }
