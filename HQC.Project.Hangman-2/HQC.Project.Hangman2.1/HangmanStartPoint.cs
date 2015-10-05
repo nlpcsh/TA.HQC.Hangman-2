@@ -15,10 +15,8 @@ namespace HQC.Project.Hangman
     /// </summary>
     public class HangmanStartPoint
     {
-        private static void Main(string[] args)
+        public static void Start(ILogger logger, CommandFactory commandFactory)
         {
-            var logger = new ConsoleLogger();
-            var caommandFactory = new CommandFactory();
             Console.WindowHeight = Messages.gameTitle.Count + HangmanPattern.Patterns[0].Length + 2;
 
             while (true)
@@ -30,7 +28,7 @@ namespace HQC.Project.Hangman
 
                 if (Globals.MenuCommandTypesValue.ContainsKey(commandToExecute))
                 {
-                    var command = caommandFactory.GetMenuCommand(commandToExecute, logger, Globals.MenuCommandTypesValue);
+                    var command = commandFactory.GetMenuCommand(commandToExecute, logger, Globals.MenuCommandTypesValue);
                     command.Execute();
                 }
                 else
@@ -38,6 +36,10 @@ namespace HQC.Project.Hangman
                     logger.PrintMessage("Wrong command!");
                 }
             }
+        }
+
+        private static void Main(string[] args)
+        {
         }
     }
 }
