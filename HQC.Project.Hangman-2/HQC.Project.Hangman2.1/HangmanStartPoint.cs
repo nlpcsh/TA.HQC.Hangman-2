@@ -21,7 +21,6 @@ namespace HQC.Project.Hangman
             var caommandFactory = new CommandFactory();
             Console.WindowHeight = Globals.gameTitle.Count + HangmanPattern.Patterns[0].Length + 2;
 
-
             while (true)
             {
                 Console.Clear();
