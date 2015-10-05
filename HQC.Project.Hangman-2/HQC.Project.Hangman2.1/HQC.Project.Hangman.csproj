@@ -76,7 +76,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GameScoreBoard\ScoreBoard.cs" />
     <Compile Include="Players\Player.cs" />
-    <Compile Include="WordSelectorFromFile.cs" />
+    <Compile Include="Importers\WordSelectorFromFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

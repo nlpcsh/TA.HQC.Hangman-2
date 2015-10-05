@@ -67,7 +67,7 @@ namespace HQC.Project.Hangman
             this.LoadTopPlayers(Globals.BestScoresPath);
             int emptyPosition = this.GetFirstFreePosition();
 
-            if (this.scoreBoardTable.TopPlayers[emptyPosition] == null || player.Mistakes <= this.scoreBoardTable.TopPlayers[emptyPosition].Mistakes)
+            if (this.scoreBoardTable.TopPlayers[emptyPosition] == null || player.Score <= this.scoreBoardTable.TopPlayers[emptyPosition].Score)
             {
                 this.scoreBoardTable.TopPlayers[emptyPosition] = player;
 
@@ -112,7 +112,7 @@ namespace HQC.Project.Hangman
         {
             using (var writer = new StreamWriter(Globals.BestScoresPath))
             {
-                var sortedScores = this.scoreBoardTable.TopPlayers.OrderBy(x => x.Mistakes);
+                var sortedScores = this.scoreBoardTable.TopPlayers.OrderBy(x => x.Score);
 
                 foreach (var score in sortedScores)
                 {
@@ -122,7 +122,7 @@ namespace HQC.Project.Hangman
                     }
                     else
                     {
-                        writer.WriteLine(score.Name + "-" + score.Mistakes);
+                        writer.WriteLine(score.Name + "-" + score.Score);
                     }
                 }
             }

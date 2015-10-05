@@ -10,20 +10,22 @@ namespace HQC.Project.Hangman.Players
     using System.Text;
     using HQC.Project.Hangman2.Players.Common;
 
+
     /// <summary>
     /// ???
     /// </summary>
     public class Player : IPlayer
     {
         private const int InitialLives = 7;
-        private const int InitialMistakes = 0;
+        private const int InitialScore = 0;
+        private const int ScoreToAdd = 10;
 
         private StringBuilder hiddenWord;
         private int guessedLetters = 0;
         private string word;
 
         private string name;
-        private int mistakes;
+        private int score;
 
         private bool isRevelingMoreLetters = true;
 
@@ -33,7 +35,7 @@ namespace HQC.Project.Hangman.Players
         public Player()
         {
             this.Lives = Player.InitialLives;
-            this.Mistakes = Player.InitialMistakes;
+            this.Score = Player.InitialScore;
             this.WrongLetters = new HashSet<char>();
         }
 
@@ -41,12 +43,12 @@ namespace HQC.Project.Hangman.Players
         /// Initializes a new instance of the <see cref="Player"/> class.
         /// </summary>
         /// <param name="playerName">???</param>
-        /// <param name="mistakes">???</param>
-        public Player(string playerName, int mistakes)
+        /// <param name="score">???</param>
+        public Player(string playerName, int score)
             : this()
         {
             this.Name = playerName;
-            this.Mistakes = mistakes;
+            this.Score = score;
         }
 
         /// <summary>
@@ -101,11 +103,11 @@ namespace HQC.Project.Hangman.Players
         /// <summary>
         /// ???
         /// </summary>
-        public int Mistakes
+        public int Score
         {
             get
             {
-                return this.mistakes;
+                return this.score;
             }
 
             set
@@ -115,7 +117,7 @@ namespace HQC.Project.Hangman.Players
                     throw new ArgumentException("Player mistakes cannot be less than 0!");
                 }
 
-                this.mistakes = value;
+                this.score = value;
             }
         }
 
@@ -136,7 +138,7 @@ namespace HQC.Project.Hangman.Players
         /// <returns>???</returns>
         public int Compare(IPlayer otherPlayer)
         {
-            if (this.Mistakes <= otherPlayer.Mistakes)
+            if (this.Score <= otherPlayer.Score)
             {
                 return -1;
             }
@@ -183,13 +185,14 @@ namespace HQC.Project.Hangman.Players
 
             if (numberOfTheAppearancesOfTheSupposedChar == 0)
             {
-                this.Mistakes++;
+               // this.Score++;
                 this.Lives--;
                 this.WrongLetters.Add(supposedChar);
             }
             else
             {
                 this.guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
+                this.Score += Player.ScoreToAdd;
             }
 
             // check if the word is guessed
