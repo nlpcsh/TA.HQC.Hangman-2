@@ -49,12 +49,9 @@ namespace HQC.Project.Hangman.Common
         /// </summary>
         public const string BestScoresPath = @"..\..\bestScores.txt";
 
-        // Game messages
+        public const int HelpNeededPoints = 50;
 
-        /// <summary>
-        /// ???
-        /// </summary>
-        
+        // Game messages
 
         /// <summary>
         /// ???
@@ -84,8 +81,6 @@ namespace HQC.Project.Hangman.Common
         /// <summary>
         /// ???
         /// </summary>
-        public static int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;
-
-       
+        public static int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;       
     }
 }

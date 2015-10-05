@@ -5,6 +5,7 @@
 namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
+    using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman2;
     using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman2.Common;
@@ -28,7 +29,7 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            if (Game.WordGuess.Score >= 50)
+            if (Game.WordGuess.Score >= Globals.HelpNeededPoints)
             {
                 char firstUnrevealedLetter = '$';
 
@@ -42,13 +43,13 @@ namespace HQC.Project.Hangman2.Commands
                 }
 
                 this.Game.WordGuess.InitializationAfterTheGuess(firstUnrevealedLetter);
-                this.Game.WordGuess.Score -= 50;
+                this.Game.WordGuess.Score -= Globals.HelpNeededPoints;
                 this.Game.Logger.PrintMessage(string.Format(Messages.RevealLetterMessage, firstUnrevealedLetter));
                 this.Game.Logger.PrintSecretWord(this.Game.WordGuess.HiddenWord);
             }
             else
             {
-                this.Game.Logger.PrintMessage(string.Format(Messages.CantUseHelp, 50));
+                this.Game.Logger.PrintMessage(string.Format(Messages.CantUseHelp, Globals.HelpNeededPoints));
             }
         }
     }
