@@ -22,7 +22,7 @@ namespace HQC.Project.Hangman2.GameStates
         {
             while (game.WordGuess.HiddenWord.Contains("_"))
             {
-                string commandToExecute = game.Execute.ReadInput().ToLower();
+                string commandToExecute = game.Logger.ReadInput();
 
                 if (commandToExecute.Length == 1)
                 {

@@ -21,7 +21,7 @@ namespace HQC.Project.Hangman
         /// <param name="logger">???</param>
         public GameEngine(ILogger logger)
         {
-            this.Execute = new CommandManager();
+            //this.Execute = new CommandManager();
             this.WordSelect = new WordSelectorFromFile("../../Words/Random.txt");
 
             // this.WordSelect = new WordSelectorFromFile();
@@ -50,7 +50,7 @@ namespace HQC.Project.Hangman
         /// <summary>
         /// ???
         /// </summary>
-        public CommandManager Execute { get; set; }
+        //public CommandManager Execute { get; set; }
 
         /// <summary>
         /// ???

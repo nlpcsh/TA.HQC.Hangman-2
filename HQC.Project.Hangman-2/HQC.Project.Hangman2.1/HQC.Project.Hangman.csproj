@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandManager.cs" />
     <Compile Include="Commands\Common\CommandFactory.cs" />
     <Compile Include="Commands\Common\Command.cs" />
     <Compile Include="Commands\Common\ICommand.cs" />

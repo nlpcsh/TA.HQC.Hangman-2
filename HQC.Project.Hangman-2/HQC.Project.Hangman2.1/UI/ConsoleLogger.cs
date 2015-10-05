@@ -302,5 +302,16 @@ namespace HQC.Project.Hangman.UI
             Console.WriteLine(Messages.PressAnyKeyMessage);
             Console.ReadLine();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public string ReadInput()
+        {
+            Console.SetCursorPosition(Globals.LeftPositionCommandInput, Globals.TopPositionCommandInput);
+            var input = Console.ReadLine();
+            return input.ToLower();
+        }
     }
 }

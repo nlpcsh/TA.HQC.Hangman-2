@@ -88,5 +88,11 @@ namespace HQC.Project.Hangman.UI
         /// ???
         /// </summary>
         void PrintMenuHelpOption();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        string ReadInput();
     }
 }
