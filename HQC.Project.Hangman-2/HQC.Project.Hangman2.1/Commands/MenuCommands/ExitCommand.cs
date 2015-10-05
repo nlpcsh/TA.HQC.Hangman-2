@@ -3,8 +3,7 @@
     using System;
 
     using HQC.Project.Hangman;
-    using HQC.Project.Hangman2.Commands.Common;
-    using HQC.Project.Hangman2._1;
+    using HQC.Project.Hangman2;
 
     public class ExitCommand : MenuCommand
     {

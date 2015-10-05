@@ -80,9 +80,9 @@
       <FileName>Commands\ExitCommand.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HQC.Project.Hangman2._1.Commands.PlayCommand">
+  <Class Name="HQC.Project.Hangman2.Commands.PlayCommand">
     <Position X="4.5" Y="2.75" Width="1.5" />
-    <InheritanceLine Type="HQC.Project.Hangman2._1.Commands.Common.Command" FixedToPoint="true">
+    <InheritanceLine Type="HQC.Project.Hangman2.Commands.Common.Command" FixedToPoint="true">
       <Path>
         <Point X="7.25" Y="2.247" />
         <Point X="7.25" Y="2.375" />

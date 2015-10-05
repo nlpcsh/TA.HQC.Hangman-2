@@ -1,9 +1,9 @@
 ﻿namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
-    using HQC.Project.Hangman2.Commands.Common;
+    using HQC.Project.Hangman2;
 
-    public class HelpCommand : HQC.Project.Hangman2._1.GameCommand
+    public class HelpCommand : GameCommand
     {
         public HelpCommand(GameEngine currentGame)
             : base(currentGame)

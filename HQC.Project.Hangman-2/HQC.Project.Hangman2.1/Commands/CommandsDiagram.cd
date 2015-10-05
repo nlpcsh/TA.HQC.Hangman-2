@@ -57,14 +57,14 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HQC.Project.Hangman2._1.MenuCommand">
+  <Class Name="HQC.Project.Hangman2.MenuCommand">
     <Position X="7.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MenuCommand.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HQC.Project.Hangman2._1.GameCommand">
+  <Class Name="HQC.Project.Hangman2.GameCommand">
     <Position X="15.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>

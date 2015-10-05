@@ -6,7 +6,7 @@
     using HQC.Project.Hangman.Common;
 
     public class FolderContentReader
-    {     
+    {
         public FolderContentReader()
         {
         }

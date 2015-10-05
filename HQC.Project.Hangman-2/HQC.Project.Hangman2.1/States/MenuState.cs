@@ -23,7 +23,6 @@
                 {
                     var command = game.CommandFactory.GetCommand(commandToExecute, game, Globals.MenuCommandTypes);
                     command.Execute();
-                    System.Threading.Thread.Sleep(3000);
                 }
                 else
                 {

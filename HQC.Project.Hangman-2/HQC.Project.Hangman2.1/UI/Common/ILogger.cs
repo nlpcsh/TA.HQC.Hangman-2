@@ -1,6 +1,7 @@
 ﻿namespace HQC.Project.Hangman.UI
 {
     using System.Collections.Generic;
+    using Hangman2.Players.Common;
 
     public interface ILogger
     {
@@ -23,6 +24,8 @@
         void PrintEnterCommandMessage();
 
         void PrintUsedLetters(ISet<char> letters);
+
+        void PrintBestScores(IList<IPlayer> topPlayers);
 
         void PrintGameInitialization();
 

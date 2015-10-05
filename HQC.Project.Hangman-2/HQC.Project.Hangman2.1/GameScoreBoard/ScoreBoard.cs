@@ -2,15 +2,11 @@ namespace HQC.Project.Hangman
 {
     using System.IO;
     using System.Linq;
-
-    using System.Collections.Generic;
-    using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman2.Players.Common;
     using HQC.Project.Hangman2.Importers;
+    using HQC.Project.Hangman2.Players.Common;
 
-    public sealed class ScoreBoard 
+    public sealed class ScoreBoard
     {
         private static ScoreBoard scoreBoardInstance;
         private ImportTopPlayers scoreBoardTable;
@@ -40,13 +36,15 @@ namespace HQC.Project.Hangman
                 return this.scoreBoardTable;
             }
         }
+
         public void LoadTopPlayers(string filename)     
         {
             this.scoreBoardTable = new ImportTopPlayers(filename);
         }
+
         public void PlacePlayerInScoreBoard(IPlayer player)
         {
-            LoadTopPlayers(@"..\..\bestScores.txt");
+            LoadTopPlayers(Globals.BestScoresPath);
             int emptyPosition = this.GetFirstFreePosition();
 
             if (this.scoreBoardTable.TopPlayers[emptyPosition] == null || player.Mistakes <= this.scoreBoardTable.TopPlayers[emptyPosition].Mistakes)
@@ -93,7 +91,7 @@ namespace HQC.Project.Hangman
 
         private void SaveScoresToTxtFile()
         {
-            using (var writer = new StreamWriter(@"..\..\bestScores.txt"))
+            using (var writer = new StreamWriter(Globals.BestScoresPath))
             {
                 var sortedScores = this.scoreBoardTable.TopPlayers.OrderBy(x => x.Mistakes);
 

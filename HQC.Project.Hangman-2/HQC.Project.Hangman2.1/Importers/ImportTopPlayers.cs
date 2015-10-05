@@ -17,10 +17,12 @@
         private IList<IPlayer> topPlayers = new List<IPlayer>();
 
         public IList<IPlayer> TopPlayers { get; set; }
+
         public ImportTopPlayers(string fileName)
         {
             this.TopPlayers = ImportPlayers(fileName);
         }
+
         public IList<IPlayer> ImportPlayers(string fileName)
         {
             var scoreBoardTable = new Player[Globals.ScoreBoardSize];

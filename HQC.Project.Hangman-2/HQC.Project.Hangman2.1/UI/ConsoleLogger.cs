@@ -4,11 +4,9 @@
     using System.Collections.Generic;
     using System.Text;
     using System.Threading;
-
-    using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2.Common;
+    using Hangman2.Players.Common;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman2._1.Common;
+    using HQC.Project.Hangman2.Common;
 
     public class ConsoleLogger : ILogger
     {
@@ -188,7 +186,7 @@
 
             Console.SetCursorPosition(left - Messages.EnterChoiceMessage.Length / 2, top + 2);
             Console.Write(Messages.EnterChoiceMessage);
-           
+
             //Console.ReadLine();
         }
 
@@ -221,6 +219,39 @@
             Console.WriteLine(Messages.EnjoyMessage);
 
             Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.PressAnyKeyMessage.Length / 2, Console.WindowHeight / 2 + 10);
+            Console.WriteLine(Messages.PressAnyKeyMessage);
+            Console.ReadLine();
+        }
+
+        public void PrintBestScores(IList<IPlayer> topPlayers)
+        {
+            Console.Clear();
+            this.PrintGameTitle();
+            var top = Console.WindowHeight / 2 - 6;
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.BestScores.Length / 2, top);
+            Console.WriteLine(Messages.BestScores);
+
+            for (int i = 0; i < Globals.ScoreBoardSize; i++)
+            {
+                if (topPlayers[i] != null && topPlayers[i].Name != Globals.NoPlayer)
+                {
+                    string places = string.Format("{0}. {1} ---> {2}", i + 1, topPlayers[i].Name, topPlayers[i].Mistakes);
+                    Console.SetCursorPosition(Console.WindowWidth / 2 - places.Length / 2, top + 2*i + 2);
+                    Console.WriteLine(places);
+                }
+                else
+                {
+                    if (i == 0)
+                    {
+                        Console.WriteLine("No Scores");
+                    }
+
+                    break;
+                }
+            }
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.PressAnyKeyMessage.Length / 2, Console.WindowHeight / 2 + 7);
             Console.WriteLine(Messages.PressAnyKeyMessage);
             Console.ReadLine();
         }

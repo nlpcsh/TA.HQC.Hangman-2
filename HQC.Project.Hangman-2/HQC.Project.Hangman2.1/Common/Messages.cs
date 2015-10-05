@@ -1,4 +1,4 @@
-﻿namespace HQC.Project.Hangman2._1.Common
+﻿namespace HQC.Project.Hangman2.Common
 {
     public class Messages
     {
@@ -13,6 +13,7 @@
         public const string EnjoyMessage = "Enjoy!";
         public const string PressAnyKeyMessage = "Press any key to continue....";
         public const string Categories = "CATEGORIES:";
-        public const string PressToContinue = "/or press any key for random word/"; 
+        public const string PressToContinue = "/or press any key for random word/";
+        public const string BestScores = "Top 5 players";
     }
 }

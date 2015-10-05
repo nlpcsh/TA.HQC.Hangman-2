@@ -11,7 +11,7 @@
             game.Logger.PrintMessage(string.Format("You won with {0} mistakes.", game.WordGuess.Mistakes));
             game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
 
-            //game.Scores.PlacePlayerInScoreBoard(game.WordGuess);
+            // game.Scores.PlacePlayerInScoreBoard(game.WordGuess);
             ScoreBoard.Instance.PlacePlayerInScoreBoard(game.WordGuess);
             game.WordGuess.Mistakes = 0;
 

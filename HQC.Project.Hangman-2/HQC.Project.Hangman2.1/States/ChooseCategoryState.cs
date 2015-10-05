@@ -1,21 +1,19 @@
 ﻿namespace HQC.Project.Hangman2.GameStates
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading;
-    using System.Collections.Generic;
-
-    using HQC.Project.Hangman2.Importers;
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
-
+    using HQC.Project.Hangman2.Importers;
 
     public class ChooseCategoryState : State
     {
         public override void Play(GameEngine game)
         {
             var contentReader = new FolderContentReader();
-            
+
             game.Logger.PrintCategories(contentReader.Categories);
             string chosenCategory = Console.ReadLine().Trim().ToLower();
 
@@ -29,7 +27,7 @@
             {
                 game.WordSelect.FileName = "../../Words/Random" + Globals.FileExtension;
             }
-            
+
             game.State = new InitializeGameState();
             game.State.Play(game);
         }

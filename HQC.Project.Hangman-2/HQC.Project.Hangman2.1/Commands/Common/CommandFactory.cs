@@ -1,11 +1,8 @@
 ﻿namespace HQC.Project.Hangman2.Commands.Common
 {
     using System;
-
-    using HQC.Project.Hangman;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman2.Commands.Common;
     using System.Collections.Generic;
+    using HQC.Project.Hangman;
 
     public class CommandFactory
     {

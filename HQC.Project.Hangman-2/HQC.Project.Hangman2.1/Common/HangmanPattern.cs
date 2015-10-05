@@ -5,7 +5,7 @@
 
     public class HangmanPattern
     {
-        public static readonly IDictionary<int, string[]> Patterns = new Dictionary<int, string[]>
+        private static readonly IDictionary<int, string[]> PatternsValue = new Dictionary<int, string[]>
         {
              { 0, new[]
                  {
@@ -33,8 +33,8 @@
                     "   |                       |",
                     "   |                       |__________",
                     "   |                                 |",
-                    "   |                                 |"                
-                } 
+                    "   |                                 |"
+                }
             },
             { 1, new[]
                  {
@@ -62,8 +62,8 @@
                     "   |                       |",
                     "   |                       |__________",
                     "   |                                 |",
-                    "   |                                 |"                
-                } 
+                    "   |                                 |"
+                }
             },
             { 2,   new[]
                 {
@@ -91,8 +91,8 @@
                     "   |                       |",
                     "   |                       |__________",
                     "   |                                 |",
-                    "   |                                 |"                
-                } 
+                    "   |                                 |"
+                }
             },
             { 3,  new[]
                {
@@ -120,8 +120,8 @@
                     "   |                       |",
                     "   |                       |__________",
                     "   |                                 |",
-                    "   |                                 |"                
-                } 
+                    "   |                                 |"
+                }
             },
             { 4, new[]
                  {
@@ -149,8 +149,8 @@
                     "   |                       |",
                     "   |                       |__________",
                     "   |                                 |",
-                    "   |                                 |"                
-                } 
+                    "   |                                 |"
+                }
             },
             { 5, new[]
                  {
@@ -178,8 +178,8 @@
                     "   |                       |",
                     "   |                       |__________",
                     "   |                                 |",
-                    "   |                                 |"                
-                } 
+                    "   |                                 |"
+                }
             },
             { 6, new[]
                 {
@@ -207,8 +207,8 @@
                     "   |                       |",
                     "   |                       |__________",
                     "   |                                 |",
-                    "   |                                 |"                
-                } 
+                    "   |                                 |"
+                }
             },
              { 7, new[]
                 {
@@ -237,8 +237,16 @@
                     "   |                       |__________",
                     "   |                                 |",
                     "   |                                 |"
-                } 
+                }
             }
         };
+
+        public static IDictionary<int, string[]> Patterns
+        {
+            get
+            {
+                return PatternsValue;
+            }
+        }
     }
 }
