@@ -56,9 +56,7 @@
     <Compile Include="Common\HangmanPattern.cs" />
     <Compile Include="Common\Messages.cs" />
     <Compile Include="Common\Validator.cs" />
-    <Compile Include="GameCommand.cs" />
     <Compile Include="Importers\Common\IWordsImporter.cs" />
-    <Compile Include="MenuCommand.cs" />
     <Compile Include="States\ChooseCategoryState.cs" />
     <Compile Include="States\MenuState.cs" />
     <Compile Include="Importers\FolderContentReader.cs" />

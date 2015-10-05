@@ -7,11 +7,12 @@ namespace HQC.Project.Hangman2.Commands
     using System;
     using HQC.Project.Hangman;
     using HQC.Project.Hangman2;
+    using HQC.Project.Hangman2.Commands.Common;
 
     /// <summary>
     /// Exit the game
     /// </summary>
-    public class ExitCommand : MenuCommand
+    public class ExitCommand : Command
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExitCommand"/> class.

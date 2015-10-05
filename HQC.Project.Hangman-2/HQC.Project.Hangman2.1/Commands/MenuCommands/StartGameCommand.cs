@@ -5,12 +5,13 @@
 namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
+    using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman2.GameStates;
 
     /// <summary>
     /// ???
     /// </summary>
-    public class StartGameCommand : MenuCommand
+    public class StartGameCommand : Command
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StartGameCommand"/> class.

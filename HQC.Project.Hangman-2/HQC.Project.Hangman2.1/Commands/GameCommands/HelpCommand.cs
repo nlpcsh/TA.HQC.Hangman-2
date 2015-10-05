@@ -6,11 +6,12 @@ namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
     using HQC.Project.Hangman2;
+    using HQC.Project.Hangman2.Commands.Common;
 
     /// <summary>
     /// Help command help to user for guess a letter
     /// </summary>
-    public class HelpCommand : GameCommand
+    public class HelpCommand : Command
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="HelpCommand"/> class.
@@ -22,7 +23,7 @@ namespace HQC.Project.Hangman2.Commands
         }
 
         /// <summary>
-        /// ???
+        /// Open letter to user 
         /// </summary>
         public override void Execute()
         {

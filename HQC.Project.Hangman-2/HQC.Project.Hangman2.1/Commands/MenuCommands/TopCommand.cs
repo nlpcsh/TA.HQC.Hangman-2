@@ -6,11 +6,12 @@ namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
+    using HQC.Project.Hangman2.Commands.Common;
 
     /// <summary>
     /// Show top 5 players
     /// </summary>
-    public class TopCommand : MenuCommand
+    public class TopCommand : Command
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TopCommand"/> class.
