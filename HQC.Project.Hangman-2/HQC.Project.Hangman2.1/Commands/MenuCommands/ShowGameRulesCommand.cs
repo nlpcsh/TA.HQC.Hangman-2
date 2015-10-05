@@ -11,6 +11,7 @@ namespace HQC.Project.Hangman2.Commands
     using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman2.Commands.MenuCommands;
     using System;
+    using HQC.Project.Hangman2.Common;
 
     /// <summary>
     /// Show on user game rules
@@ -31,7 +32,7 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            this.Logger.Print(Globals.rulesInfo);
+            this.Logger.Print(Messages.rulesInfo);
             Console.ReadKey();
 
         }

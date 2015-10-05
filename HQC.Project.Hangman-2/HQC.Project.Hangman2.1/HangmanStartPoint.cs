@@ -19,12 +19,12 @@ namespace HQC.Project.Hangman
         {
             var logger = new ConsoleLogger();
             var caommandFactory = new CommandFactory();
-            Console.WindowHeight = Globals.gameTitle.Count + HangmanPattern.Patterns[0].Length + 2;
+            Console.WindowHeight = Messages.gameTitle.Count + HangmanPattern.Patterns[0].Length + 2;
 
             while (true)
             {
                 Console.Clear();
-                logger.Print(Globals.menuOptions);
+                logger.Print(Messages.menuOptions);
 
                 string commandToExecute = Console.ReadLine().Trim().ToLower();
 

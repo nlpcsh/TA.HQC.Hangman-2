@@ -25,9 +25,9 @@ namespace HQC.Project.Hangman.UI
         public void PrintGameTitle()
         {
             Console.Clear();
-            for (int i = 0; i < Globals.gameTitle.Count; i++)
+            for (int i = 0; i < Messages.gameTitle.Count; i++)
             {
-                Console.WriteLine(Globals.gameTitle[i]);
+                Console.WriteLine(Messages.gameTitle[i]);
             }
         }
 
@@ -63,11 +63,11 @@ namespace HQC.Project.Hangman.UI
         /// <param name="hiddenWord">???</param>
         public void PrintSecretWord(string hiddenWord)
         {
-            var leftPositionMessage = Console.WindowWidth - (Console.WindowWidth / 4) - (Globals.EnterSecretMessage.Length / 2);
+            var leftPositionMessage = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.EnterSecretMessage.Length / 2);
             var top = Console.WindowHeight / 2;
 
             Console.SetCursorPosition(leftPositionMessage, top);
-            Console.WriteLine(Globals.EnterSecretMessage);
+            Console.WriteLine(Messages.EnterSecretMessage);
 
             var leftPositionWord = Console.WindowWidth - (Console.WindowWidth / 4) - (hiddenWord.Length / 2);
             Console.SetCursorPosition(leftPositionWord, top + 2);
@@ -82,7 +82,7 @@ namespace HQC.Project.Hangman.UI
         public void PrintHangman(int playerLives)
         {
             var playerPattern = HangmanPattern.Patterns[playerLives];
-            var heigth = Globals.gameTitle.Count + 1;
+            var heigth = Messages.gameTitle.Count + 1;
 
             Console.SetCursorPosition(1, heigth);
             for (int i = 0; i < playerPattern.Length; i++)
@@ -110,11 +110,11 @@ namespace HQC.Project.Hangman.UI
         /// </summary>
         public void PrintEnterCommandMessage()
         {
-            var left = Console.WindowWidth - (Console.WindowWidth / 4) - (Globals.EnterLetterMessage.Length / 2);
-            var top = Globals.gameTitle.Count;
+            var left = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.EnterLetterMessage.Length / 2);
+            var top = Messages.gameTitle.Count;
 
             Console.SetCursorPosition(left, top);
-            Console.WriteLine(Globals.EnterLetterMessage);
+            Console.WriteLine(Messages.EnterLetterMessage);
         }
 
         /// <summary>
@@ -123,11 +123,11 @@ namespace HQC.Project.Hangman.UI
         /// <param name="letters">???</param>
         public void PrintUsedLetters(ISet<char> letters)
         {
-            var leftMessage = Console.WindowWidth - (Console.WindowWidth / 4) - (Globals.UsedLettersMessage.Length / 2);
+            var leftMessage = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.UsedLettersMessage.Length / 2);
             var topMessage = (Console.WindowHeight / 2) + (Console.WindowHeight / 4);
 
             Console.SetCursorPosition(leftMessage, topMessage);
-            Console.WriteLine(Globals.UsedLettersMessage);
+            Console.WriteLine(Messages.UsedLettersMessage);
 
             var lettersAsString = string.Join(", ", letters);
             var leftLetters = Console.WindowWidth - (Console.WindowWidth / 4) - (lettersAsString.Length / 2);
@@ -142,7 +142,7 @@ namespace HQC.Project.Hangman.UI
         /// </summary>
         public void PrintGameInitialization()
         {
-            string text = "Please enter your name: ";
+            string text = Messages.EnterNameMessage;
             var left = (Console.WindowWidth / 2) - (text.Length / 2);
             var top = Console.WindowHeight / 2;
 
@@ -156,7 +156,7 @@ namespace HQC.Project.Hangman.UI
         public void Print(List<string> options)
         {
             this.PrintGameTitle();
-            var top = Globals.gameTitle.Count;
+            var top = Messages.gameTitle.Count;
 
             for (int i = 0; i < options.Count; i++)
             {

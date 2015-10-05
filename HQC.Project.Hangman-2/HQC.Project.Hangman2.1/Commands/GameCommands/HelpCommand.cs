@@ -7,6 +7,7 @@ namespace HQC.Project.Hangman2.Commands
     using HQC.Project.Hangman;
     using HQC.Project.Hangman2;
     using HQC.Project.Hangman2.Commands.Common;
+    using HQC.Project.Hangman2.Common;
 
     /// <summary>
     /// Help command help to user for guess a letter
@@ -27,20 +28,28 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            char firstUnrevealedLetter = '$';
-
-            for (int i = 0; i < this.Game.WordGuess.Word.Length; i++)
+            if (Game.WordGuess.Score >= 50)
             {
-                if (this.Game.WordGuess.HiddenWord[i] == '_')
-                {
-                    firstUnrevealedLetter = this.Game.WordGuess.Word[i];
-                    break;
-                }
-            }
+                char firstUnrevealedLetter = '$';
 
-            this.Game.WordGuess.InitializationAfterTheGuess(firstUnrevealedLetter);
-            this.Game.Logger.PrintMessage(string.Format("OK, I reveal for you the next letter {0}.", firstUnrevealedLetter));
-            this.Game.Logger.PrintSecretWord(this.Game.WordGuess.HiddenWord);
+                for (int i = 0; i < this.Game.WordGuess.Word.Length; i++)
+                {
+                    if (this.Game.WordGuess.HiddenWord[i] == '_')
+                    {
+                        firstUnrevealedLetter = this.Game.WordGuess.Word[i];
+                        break;
+                    }
+                }
+
+                this.Game.WordGuess.InitializationAfterTheGuess(firstUnrevealedLetter);
+                this.Game.WordGuess.Score -= 50;
+                this.Game.Logger.PrintMessage(string.Format(Messages.RevealLetterMessage, firstUnrevealedLetter));
+                this.Game.Logger.PrintSecretWord(this.Game.WordGuess.HiddenWord);
+            }
+            else
+            {
+                this.Game.Logger.PrintMessage(string.Format(Messages.CantUseHelp, 50));
+            }
         }
     }
 }
