@@ -18,7 +18,7 @@ namespace HQC.Project.Hangman2.Commands
         /// Initializes a new instance of the <see cref="ExitCommand"/> class.
         /// </summary>
         /// <param name="currentGame">???</param>
-        public ExitCommand(GameEngine currentGame)
+        public ExitCommand(HangmanGame currentGame)
             : base(currentGame)
         {
         }

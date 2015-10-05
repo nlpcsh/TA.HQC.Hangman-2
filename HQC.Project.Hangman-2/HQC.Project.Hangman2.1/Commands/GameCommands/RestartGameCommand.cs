@@ -17,7 +17,7 @@ namespace HQC.Project.Hangman2.Commands
         /// Initializes a new instance of the <see cref="RestartGameCommand"/> class.
         /// </summary>
         /// <param name="currentGame">???</param>
-        public RestartGameCommand(GameEngine currentGame)
+        public RestartGameCommand(HangmanGame currentGame)
             : base(currentGame)
         {
         }

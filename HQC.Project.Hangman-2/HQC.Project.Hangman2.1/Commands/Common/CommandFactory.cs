@@ -20,7 +20,7 @@ namespace HQC.Project.Hangman2.Commands.Common
         /// <param name="game">???</param>
         /// <param name="commandTypes">All commands that exist</param>
         /// <returns>command</returns>
-        public ICommand GetCommand(string commandAsString, GameEngine game, IDictionary<string, Type> commandTypes)
+        public ICommand GetCommand(string commandAsString, HangmanGame game, IDictionary<string, Type> commandTypes)
         {
             var typeCommand = commandTypes[commandAsString];
             var command = (ICommand)Activator.CreateInstance(typeCommand, game);

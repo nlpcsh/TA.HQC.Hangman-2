@@ -15,6 +15,6 @@ namespace HQC.Project.Hangman2.GameStates
         /// ???
         /// </summary>
         /// <param name="game">???</param>
-        public abstract void Play(GameEngine game);
+        public abstract void Play(HangmanGame game);
     }
 }

@@ -13,18 +13,15 @@ namespace HQC.Project.Hangman
     /// <summary>
     /// ???
     /// </summary>
-    public class GameEngine
+    public class HangmanGame
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GameEngine"/> class.
+        /// Initializes a new instance of the <see cref="HangmanGame"/> class.
         /// </summary>
         /// <param name="logger">???</param>
-        public GameEngine(ILogger logger)
+        public HangmanGame(ILogger logger)
         {
-            //this.Execute = new CommandManager();
             this.WordSelect = new WordSelectorFromFile("../../Words/Random.txt");
-
-            // this.WordSelect = new WordSelectorFromFile();
             this.Scores = ScoreBoard.Instance;
             this.State = new MenuState();
             this.WordGuess = new Player();
@@ -50,11 +47,6 @@ namespace HQC.Project.Hangman
         /// <summary>
         /// ???
         /// </summary>
-        //public CommandManager Execute { get; set; }
-
-        /// <summary>
-        /// ???
-        /// </summary>
         public ScoreBoard Scores { get; set; }
 
         /// <summary>
@@ -70,7 +62,7 @@ namespace HQC.Project.Hangman
         /// <summary>
         /// ???
         /// </summary>
-        internal void NewGame()
+        internal void StartGame()
         {
             this.State.Play(this);
         }

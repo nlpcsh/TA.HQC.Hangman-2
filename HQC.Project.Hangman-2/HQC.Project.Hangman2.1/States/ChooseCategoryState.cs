@@ -19,7 +19,7 @@ namespace HQC.Project.Hangman2.GameStates
         /// ???
         /// </summary>
         /// <param name="game">???</param>
-        public override void Play(GameEngine game)
+        public override void Play(HangmanGame game)
         {
             var contentReader = new FolderContentReader();
 

@@ -17,7 +17,7 @@ namespace HQC.Project.Hangman2.Commands
         /// Initializes a new instance of the <see cref="HelpCommand"/> class.
         /// </summary>
         /// <param name="currentGame">???</param>
-        public HelpCommand(GameEngine currentGame)
+        public HelpCommand(HangmanGame currentGame)
             : base(currentGame)
         {
         }

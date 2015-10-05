@@ -17,7 +17,7 @@ namespace HQC.Project.Hangman2.Commands
         /// Initializes a new instance of the <see cref="TopCommand"/> class.
         /// </summary>
         /// <param name="currentGame">???</param>
-        public TopCommand(GameEngine currentGame)
+        public TopCommand(HangmanGame currentGame)
             : base(currentGame)
         {
         }

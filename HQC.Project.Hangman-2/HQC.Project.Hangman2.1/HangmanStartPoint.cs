@@ -7,14 +7,14 @@ namespace HQC.Project.Hangman
     using HQC.Project.Hangman.UI;
 
     /// <summary>
-    /// ???
+    /// Start point to the game
     /// </summary>
-    public class Hangman
+    public class HangmanStartPoint
     {
         private static void Main(string[] args)
         {
-            var newGame = new GameEngine(new ConsoleLogger());
-            newGame.NewGame();
+            var newGame = new HangmanGame(new ConsoleLogger());
+            newGame.StartGame();
         }
     }
 }

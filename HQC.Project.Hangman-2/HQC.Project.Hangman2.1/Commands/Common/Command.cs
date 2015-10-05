@@ -15,7 +15,7 @@ namespace HQC.Project.Hangman2.Commands.Common
         /// Initializes a new instance of the <see cref="Command"/> class.
         /// </summary>
         /// <param name="currentGame">???</param>
-        public Command(GameEngine currentGame)
+        public Command(HangmanGame currentGame)
         {
             this.Game = currentGame;
         }
@@ -23,7 +23,7 @@ namespace HQC.Project.Hangman2.Commands.Common
         /// <summary>
         /// ???
         /// </summary>
-        protected GameEngine Game { get;  set; }
+        protected HangmanGame Game { get;  set; }
 
         /// <summary>
         /// ???

@@ -15,7 +15,7 @@ namespace HQC.Project.Hangman2.GameStates
         /// ???
         /// </summary>
         /// <param name="game">???</param>
-        public override void Play(GameEngine game)
+        public override void Play(HangmanGame game)
         {
             game.Logger.PrintMessage(string.Format("You won with {0} mistakes.", game.WordGuess.Mistakes));
             game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);

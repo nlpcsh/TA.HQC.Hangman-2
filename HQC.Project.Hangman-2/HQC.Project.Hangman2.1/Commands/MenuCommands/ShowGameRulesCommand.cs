@@ -17,7 +17,7 @@ namespace HQC.Project.Hangman2.Commands
         /// Initializes a new instance of the <see cref="ShowGameRulesCommand"/> class.
         /// </summary>
         /// <param name="currentGame">???</param>
-        public ShowGameRulesCommand(GameEngine currentGame)
+        public ShowGameRulesCommand(HangmanGame currentGame)
             : base(currentGame)
         {
         }
