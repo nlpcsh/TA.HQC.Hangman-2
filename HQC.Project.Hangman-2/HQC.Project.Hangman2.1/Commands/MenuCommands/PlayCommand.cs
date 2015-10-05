@@ -28,10 +28,10 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            var game = new HangmanGame(new ConsoleLogger(), new PlayerInitializationState());
-            game.StartGame();
+            // var game = new HangmanGame(new ConsoleLogger(), new PlayerInitializationState());
+            //game.StartGame();
 
-           // this.Game.State = new PlayerInitializationState();
+            this.Game.State = new PlayerInitializationState();
             this.Game.State.Play(this.Game);
         }
     }
