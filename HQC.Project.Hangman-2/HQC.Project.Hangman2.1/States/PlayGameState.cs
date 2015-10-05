@@ -5,9 +5,12 @@
 namespace HQC.Project.Hangman2.GameStates
 {
     using System;
+    using System.Linq;
+
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman2.Common;
+    using HQC.Project.Hangman2.Players.Common;
 
     /// <summary>
     /// ???
@@ -31,6 +34,10 @@ namespace HQC.Project.Hangman2.GameStates
                 }
                 else if (commandToExecute == game.WordGuess.Word)
                 {
+                    var bonus = GetBonus(game.WordGuess);
+
+                    game.WordGuess.Score += bonus;
+
                     game.State = new EndGameState();
                     game.State.Play(game);
                 }
@@ -59,6 +66,19 @@ namespace HQC.Project.Hangman2.GameStates
 
             game.State = new EndGameState();
             game.State.Play(game);
+        }
+
+        private int GetBonus(IPlayer player)
+        {
+            var hiddenWords = player.HiddenWord.Count(x => x == '_');
+            var bonus = hiddenWords * 10;
+
+            if (hiddenWords >= player.Word.Length / 2)
+            {
+                return bonus * 2;
+            }
+
+            return bonus;
         }
     }
 }

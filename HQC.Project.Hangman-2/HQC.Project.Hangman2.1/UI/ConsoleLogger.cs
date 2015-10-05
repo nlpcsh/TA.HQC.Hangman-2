@@ -82,7 +82,7 @@ namespace HQC.Project.Hangman.UI
         public void PrintHangman(int playerLives)
         {
             var playerPattern = HangmanPattern.Patterns[playerLives];
-            var heigth = Globals.gameTitle.Count;
+            var heigth = Globals.gameTitle.Count + 1;
 
             Console.SetCursorPosition(1, heigth);
             for (int i = 0; i < playerPattern.Length; i++)

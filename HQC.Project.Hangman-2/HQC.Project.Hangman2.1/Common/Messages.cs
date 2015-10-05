@@ -21,5 +21,7 @@ namespace HQC.Project.Hangman2.Common
 
         public const string BestScores = "Top 5 players";
 
+        public const string WinGameMessage = "You won! Your score is {0}";
+
     }
 }

@@ -41,7 +41,7 @@ namespace HQC.Project.Hangman2.Commands
             {
                 if (topPlayers[i] != null && topPlayers[i].Name != Globals.NoPlayer)
                 {
-                    topPlayersToList.Add(string.Format("{0}. {1} ---> {2}", i + 1, topPlayers[i].Name, topPlayers[i].Mistakes));
+                    topPlayersToList.Add(string.Format("{0}. {1} ---> {2}", i + 1, topPlayers[i].Name, topPlayers[i].Score));
                 }
                 else
                 {

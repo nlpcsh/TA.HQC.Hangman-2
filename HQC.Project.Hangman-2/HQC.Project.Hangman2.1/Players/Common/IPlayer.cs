@@ -19,7 +19,7 @@ namespace HQC.Project.Hangman2.Players.Common
         /// <summary>
         /// ???
         /// </summary>
-        int Mistakes { get; set; }
+        int Score { get; set; }
 
         /// <summary>
         /// ???

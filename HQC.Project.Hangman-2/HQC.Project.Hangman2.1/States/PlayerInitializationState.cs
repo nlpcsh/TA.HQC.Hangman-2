@@ -25,7 +25,7 @@ namespace HQC.Project.Hangman2.GameStates
             string name = Console.ReadLine();
             var playerName = string.IsNullOrWhiteSpace(name) ? "unknown" : name;
             game.WordGuess.Name = playerName;
-            game.WordGuess.Mistakes = 0;
+            game.WordGuess.Score = 0;
 
             game.State = new ChooseCategoryState();
             game.State.Play(game);
