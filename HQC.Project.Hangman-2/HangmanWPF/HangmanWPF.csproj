@@ -105,6 +105,12 @@
     <Resource Include="Images\6.png" />
     <Resource Include="Images\7.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HQC.Project.Hangman2.1\HQC.Project.Hangman.csproj">
+      <Project>{d0d5b78e-b338-4fff-85df-7799e37de4b0}</Project>
+      <Name>HQC.Project.Hangman</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
