@@ -26,11 +26,6 @@ namespace HQC.Project.Hangman.UI
         /// <summary>
         /// ???
         /// </summary>
-        void PrintOptionsControls();
-
-        /// <summary>
-        /// ???
-        /// </summary>
         void PrintGoodBuyMessage();
 
         /// <summary>

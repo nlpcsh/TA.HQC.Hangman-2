@@ -49,15 +49,6 @@ namespace HQC.Project.Hangman.UI
         /// <summary>
         /// ???
         /// </summary>
-        public void PrintOptionsControls()
-        {
-            Console.WriteLine("Use \n 'top' to view the top scoreboard,\n 'restart' to start a new game,\n 'help' to cheat,\n 'options' to see again the options and \n 'exit' to quit the game.");
-            Console.WriteLine();
-        }
-
-        /// <summary>
-        /// ???
-        /// </summary>
         public void PrintGoodBuyMessage()
         {
             Console.Clear();
