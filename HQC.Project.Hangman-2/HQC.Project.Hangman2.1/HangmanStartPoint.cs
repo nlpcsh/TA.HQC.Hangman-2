@@ -4,7 +4,10 @@
 
 namespace HQC.Project.Hangman
 {
+    using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.UI;
+    using HQC.Project.Hangman2.Commands.Common;
+    using HQC.Project.Hangman2.GameStates;
 
     /// <summary>
     /// Start point to the game
@@ -13,7 +16,14 @@ namespace HQC.Project.Hangman
     {
         private static void Main(string[] args)
         {
-            var newGame = new HangmanGame(new ConsoleLogger());
+            var state = new MenuState();
+            var logger = new ConsoleLogger();
+            var wordSelector = new WordSelectorFromFile("../../Words/Random.txt");
+            var scores = ScoreBoard.Instance;
+            var player = new Player();
+            var commandCreator = new CommandFactory();
+
+            var newGame = new HangmanGame(logger, state, wordSelector, scores, player, commandCreator);
             newGame.StartGame();
         }
     }

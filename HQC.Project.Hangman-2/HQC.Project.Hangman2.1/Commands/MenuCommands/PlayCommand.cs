@@ -5,6 +5,7 @@
 namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
+    using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman2.GameStates;
 
@@ -27,7 +28,10 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            this.Game.State = new PlayerInitializationState();
+            var game = new HangmanGame(new ConsoleLogger(), new PlayerInitializationState());
+            game.StartGame();
+
+           // this.Game.State = new PlayerInitializationState();
             this.Game.State.Play(this.Game);
         }
     }

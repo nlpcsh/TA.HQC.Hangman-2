@@ -18,15 +18,20 @@ namespace HQC.Project.Hangman
         /// <summary>
         /// Initializes a new instance of the <see cref="HangmanGame"/> class.
         /// </summary>
-        /// <param name="logger">???</param>
-        public HangmanGame(ILogger logger)
+        /// <param name="logger">Used to draw on console</param>
+        /// <param name="state">Holds different states while game is running</param>
+        /// <param name="wordselector">Select words from .txt file</param>
+        /// <param name="scoreboard">Holds best scores from games</param>
+        /// <param name="player">Holds information for user</param>
+        /// <param name="commandCreator">Returns command from user</param>
+        public HangmanGame(ILogger logger, State state, WordSelectorFromFile wordselector, ScoreBoard scoreboard, IPlayer player, CommandFactory commandCreator)
         {
-            this.WordSelect = new WordSelectorFromFile("../../Words/Random.txt");
-            this.Scores = ScoreBoard.Instance;
-            this.State = new MenuState();
-            this.WordGuess = new Player();
+            this.WordSelect = wordselector;
+            this.Scores = scoreboard;
+            this.State = state;
+            this.WordGuess = player;
             this.Logger = logger;
-            this.CommandFactory = new CommandFactory();
+            this.CommandFactory = commandCreator;
         }
 
         /// <summary>
