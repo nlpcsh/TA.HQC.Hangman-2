@@ -5,12 +5,9 @@
 namespace HQC.Project.Hangman
 {
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman2.Commands.Common;
-    using HQC.Project.Hangman2.Commands.MenuCommands;
     using Hangman2.Common;
-    using HQC.Project.Hangman2.GameStates;
     using System;
 
     /// <summary>

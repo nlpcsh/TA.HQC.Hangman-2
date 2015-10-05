@@ -111,7 +111,7 @@ namespace HQC.Project.Hangman.UI
         public void PrintEnterCommandMessage()
         {
             var left = Console.WindowWidth - (Console.WindowWidth / 4) - (Globals.EnterLetterMessage.Length / 2);
-            var top = (Console.WindowHeight / 2) - (Console.WindowHeight / 4);
+            var top = Globals.gameTitle.Count;
 
             Console.SetCursorPosition(left, top);
             Console.WriteLine(Globals.EnterLetterMessage);
