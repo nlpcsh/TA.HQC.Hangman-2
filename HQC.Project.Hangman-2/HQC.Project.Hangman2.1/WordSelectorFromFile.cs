@@ -6,6 +6,7 @@ namespace HQC.Project.Hangman
 {
     using System;
     using System.IO;
+    using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman2._1.Importers.Common;
 
     /// <summary>
@@ -40,7 +41,10 @@ namespace HQC.Project.Hangman
 
             set
             {
-                // add validation on file name
+                if (Validator.IsValidFilename(value))
+                {
+                    throw new ArgumentException("Invalid file name!");
+                }
                 this.fileName = value;
             }
         }
