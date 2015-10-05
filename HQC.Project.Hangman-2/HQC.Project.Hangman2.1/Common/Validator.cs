@@ -5,6 +5,8 @@
 namespace HQC.Project.Hangman.Common
 {
     using System;
+    using System.IO;
+    using System.Text.RegularExpressions;
 
     /// <summary>
     /// ???
@@ -62,6 +64,17 @@ namespace HQC.Project.Hangman.Common
             {
                 throw new ArgumentOutOfRangeException(message);
             }
+        }
+
+        public static bool IsValidFilename(string fileName)
+        {
+            bool isContainsABadCharacter = fileName.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0;
+            if (isContainsABadCharacter) 
+            { 
+                return false; 
+            };
+
+            return true;
         }
     }
 }
