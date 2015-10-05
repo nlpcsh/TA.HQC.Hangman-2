@@ -15,12 +15,6 @@ namespace HQC.Project.Hangman.UI
         /// <summary>
         /// ???
         /// </summary>
-        /// <param name="logger">???</param>
-        void LogLine(string logger);
-
-        /// <summary>
-        /// ???
-        /// </summary>
         void PrintGameTitle();
 
         /// <summary>
@@ -65,29 +59,12 @@ namespace HQC.Project.Hangman.UI
         /// <summary>
         /// ???
         /// </summary>
-        /// <param name="topPlayers">???</param>
-        void PrintBestScores(IList<IPlayer> topPlayers);
-
-        /// <summary>
-        /// ???
-        /// </summary>
         void PrintGameInitialization();
 
         /// <summary>
         /// ???
         /// </summary>
-        void PrintMenu();
-
-        /// <summary>
-        /// ???
-        /// </summary>
-        /// <param name="categories">???</param>
-        void PrintCategories(string[] categories);
-
-        /// <summary>
-        /// ???
-        /// </summary>
-        void PrintMenuHelpOption();
+        void Print(List<string> options);
 
         /// <summary>
         /// 

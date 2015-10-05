@@ -34,9 +34,9 @@ namespace HQC.Project.Hangman2.GameStates
                     game.State = new EndGameState();
                     game.State.Play(game);
                 }
-                else if (Globals.CommandTypes.ContainsKey(commandToExecute))
+                else if (Globals.CommandTypesValue.ContainsKey(commandToExecute))
                 {
-                    var command = game.CommandFactory.GetGameCommand(commandToExecute, game, Globals.CommandTypes);
+                    var command = game.CommandFactory.GetGameCommand(commandToExecute, game, Globals.CommandTypesValue);
                     command.Execute();
                 }
                 else
@@ -48,8 +48,8 @@ namespace HQC.Project.Hangman2.GameStates
                 game.Logger.PrintUsedLetters(game.WordGuess.WrongLetters);
                 game.Logger.PrintHangman(game.WordGuess.Lives);
 
-                ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + commandToExecute.Length, Globals.TopPositionCommandInput);
-                ConsoleHelper.ClearConsoleInRange((Console.WindowWidth / 2) + 1, Console.WindowWidth - 1, Globals.TopPositionCommandInput + 2);
+                ConsoleHelper.ClearConsoleInRange(Globals.leftPositionCommandInput, Globals.leftPositionCommandInput + commandToExecute.Length, Globals.topPositionCommandInput);
+                ConsoleHelper.ClearConsoleInRange((Console.WindowWidth / 2) + 1, Console.WindowWidth - 1, Globals.topPositionCommandInput + 2);
 
                 if (game.WordGuess.Lives == 0)
                 {

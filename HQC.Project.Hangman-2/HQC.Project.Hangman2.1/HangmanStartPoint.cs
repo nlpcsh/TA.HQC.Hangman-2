@@ -9,6 +9,7 @@ namespace HQC.Project.Hangman
     using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman2.Commands.MenuCommands;
+    using Hangman2.Common;
     using HQC.Project.Hangman2.GameStates;
     using System;
 
@@ -21,17 +22,19 @@ namespace HQC.Project.Hangman
         {
             var logger = new ConsoleLogger();
             var caommandFactory = new CommandFactory();
+            Console.WindowHeight = Globals.gameTitle.Count + HangmanPattern.Patterns[0].Length + 2;
+
 
             while (true)
             {
                 Console.Clear();
-                logger.PrintMenu();
+                logger.Print(Globals.menuOptions);
 
                 string commandToExecute = Console.ReadLine().Trim().ToLower();
 
-                if (Globals.MenuCommandTypes.ContainsKey(commandToExecute))
+                if (Globals.MenuCommandTypesValue.ContainsKey(commandToExecute))
                 {
-                    var command = caommandFactory.GetMenuCommand(commandToExecute, logger, Globals.MenuCommandTypes);
+                    var command = caommandFactory.GetMenuCommand(commandToExecute, logger, Globals.MenuCommandTypesValue);
                     command.Execute();
                 }
                 else

@@ -9,6 +9,7 @@ namespace HQC.Project.Hangman2.GameStates
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman2.Importers;
+    using Common;
 
     /// <summary>
     /// ???
@@ -22,8 +23,18 @@ namespace HQC.Project.Hangman2.GameStates
         public override void Play(HangmanGame game)
         {
             var contentReader = new FolderContentReader();
+            var categories = contentReader.Categories;
+            var categoriesToList = new List<string>();
 
-            game.Logger.PrintCategories(contentReader.Categories);
+            categoriesToList.Add(Messages.Categories);
+            for (int i = 0; i < categories.Length; i++)
+            {
+                categoriesToList.Add(categories[i]);
+            }
+            categoriesToList.Add(Messages.PressToContinue);
+            categoriesToList.Add(Messages.EnterChoiceMessage);
+
+            game.Logger.Print(categoriesToList);
             string chosenCategory = Console.ReadLine().Trim().ToLower();
 
             bool categoryExists = this.CategoriesToLower(contentReader.Categories).Contains(chosenCategory.ToLower());

@@ -5,10 +5,12 @@
 namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
+    using Hangman.Common;
     using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman2;
     using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman2.Commands.MenuCommands;
+    using System;
 
     /// <summary>
     /// Show on user game rules
@@ -29,7 +31,9 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            this.Logger.PrintMenuHelpOption();
+            this.Logger.Print(Globals.rulesInfo);
+            Console.ReadKey();
+
         }
     }
 }

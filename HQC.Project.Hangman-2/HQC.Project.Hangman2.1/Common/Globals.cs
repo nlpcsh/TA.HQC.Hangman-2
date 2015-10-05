@@ -7,6 +7,7 @@ namespace HQC.Project.Hangman.Common
     using System;
     using System.Collections.Generic;
     using HQC.Project.Hangman2.Commands;
+    using Hangman2.Common;
 
     /// <summary>
     /// Keeps all constants used in the game
@@ -90,7 +91,10 @@ namespace HQC.Project.Hangman.Common
         /// </summary>
         public const string UsedLettersMessage = "Used letter:";
 
-        private static readonly IDictionary<string, Type> MenuCommandTypesValue = new Dictionary<string, Type>()
+        /// <summary>
+        /// ???
+        /// </summary>
+        public static readonly IDictionary<string, Type> MenuCommandTypesValue = new Dictionary<string, Type>()
         {
              { "exit", typeof(ExitCommand) },
              { "scores", typeof(TopCommand) },
@@ -98,68 +102,57 @@ namespace HQC.Project.Hangman.Common
              { "play", typeof(PlayCommand) }
         };
 
-        private static readonly IDictionary<string, Type> CommandTypesValue = new Dictionary<string, Type>()
+        /// <summary>
+        /// ???
+        /// </summary>
+        public static readonly IDictionary<string, Type> CommandTypesValue = new Dictionary<string, Type>()
         {
              { "help", typeof(HelpCommand) },
              { "restart", typeof(RestartGameCommand) },
         };
 
-        private static int leftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
-
-        private static int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;
+        /// <summary>
+        /// ???
+        /// </summary>
+        public static int leftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
 
         /// <summary>
         /// ???
         /// </summary>
-        public static IDictionary<string, Type> CommandTypes
+        public static int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;
+
+        public static List<string> rulesInfo = new List<string>()
         {
-            get
-            {
-                return CommandTypesValue;
-            }
-        }
+            "Welcome to Hangman game!",
+            "Rules are simple: guess secret word and keep your head on your shoulders :)",
+            "You can open secret word letter by letter or ",
+            "guess whole word with one shot and add 100 points bonus to your score.",
+            "If you are in trouble you can ask for help ",
+            "and we will open one letter for you (of course you will lose 150 points)",
+            "Enjoy!",
+            Messages.PressAnyKeyMessage
+        };
 
-        /// <summary>
-        /// ???
-        /// </summary>
-        public static IDictionary<string, Type> MenuCommandTypes
+        public static List<string> menuOptions = new List<string>()
         {
-            get
-            {
-                return MenuCommandTypesValue;
-            }
-        }
+            "MENU:",
+            "------",
+            "PLAY",
+            "RULES",
+            "SCORES",
+            "EXIT",
+            Messages.EnterChoiceMessage
+        };
 
-        /// <summary>
-        /// ???
-        /// </summary>
-        public static int TopPositionCommandInput
+        public static List<string> gameTitle = new List<string>()
         {
-            get
-            {
-                return topPositionCommandInput;
-            }
-
-            set
-            {
-                topPositionCommandInput = value;
-            }
-        }
-
-        /// <summary>
-        /// ???
-        /// </summary>
-        public static int LeftPositionCommandInput
-        {
-            get
-            {
-                return leftPositionCommandInput;
-            }
-
-            set
-            {
-                leftPositionCommandInput = value;
-            }
-        }
+            "00  00     000     00    00  0000   00     00     000     00    00",
+            "00  00    00 00    0000  00 00      0000 0000    00 00    0000  00",
+            "000000   0000000   00 00 00 00 0000 00 000 00   0000000   00 00 00",
+            "00  00  00     00  00   000 00   00 00  0  00  00     00  00   000",
+            "00  00 00       00 00    00  00000  00     00 00       00 00    00",
+            new string('_', Console.BufferWidth),
+            new string('-', Console.BufferWidth)
+        };
     }
 }

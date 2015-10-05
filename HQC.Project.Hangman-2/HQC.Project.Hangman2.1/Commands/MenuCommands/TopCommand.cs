@@ -9,6 +9,9 @@ namespace HQC.Project.Hangman2.Commands
     using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman2.Commands.MenuCommands;
+    using Hangman2.Common;
+    using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Show top 5 players
@@ -30,7 +33,31 @@ namespace HQC.Project.Hangman2.Commands
         public override void Execute()
         {
             ScoreBoard.Instance.LoadTopPlayers(Globals.BestScoresPath);
-            this.Logger.PrintBestScores(ScoreBoard.Instance.ScoreBoardTable.TopPlayers);
+            var topPlayers = ScoreBoard.Instance.ScoreBoardTable.TopPlayers;
+            var topPlayersToList = new List<string>();
+
+            topPlayersToList.Add(Messages.BestScores);
+            for (int i = 0; i < topPlayers.Count; i++)
+            {
+                if (topPlayers[i] != null && topPlayers[i].Name != Globals.NoPlayer)
+                {
+                    topPlayersToList.Add(string.Format("{0}. {1} ---> {2}", i + 1, topPlayers[i].Name, topPlayers[i].Mistakes));
+                }
+                else
+                {
+                    if (i == 0)
+                    {
+                        topPlayersToList.Add("No Scores");
+                    }
+
+                    break;
+                }
+
+            }
+            topPlayersToList.Add(Messages.PressAnyKeyMessage);
+
+            this.Logger.Print(topPlayersToList);
+            Console.ReadKey();
         }
     }
 }
