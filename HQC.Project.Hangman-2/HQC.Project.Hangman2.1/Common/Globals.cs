@@ -40,17 +40,17 @@ namespace HQC.Project.Hangman.Common
         public const string NoPlayer = "No Player";
 
         /// <summary>
-        /// ???
+        /// Path to directory with all categories with words
         /// </summary>
         public const string CategoriesPath = @"../../Words";
 
         /// <summary>
-        /// ???
+        /// All categories file extension
         /// </summary>
         public const string FileExtension = ".txt";
 
         /// <summary>
-        /// ???
+        /// Where save or load Top players
         /// </summary>
         public const string BestScoresPath = @"..\..\bestScores.txt";
 
@@ -62,7 +62,7 @@ namespace HQC.Project.Hangman.Common
         // Game messages
 
         /// <summary>
-        /// ???
+        /// Contains all in menu commands
         /// </summary>
         public static readonly IDictionary<string, Type> MenuCommandTypesValue = new Dictionary<string, Type>()
         {
@@ -73,7 +73,7 @@ namespace HQC.Project.Hangman.Common
         };
 
         /// <summary>
-        /// ???
+        /// Contains all in game commands
         /// </summary>
         public static readonly IDictionary<string, Type> CommandTypesValue = new Dictionary<string, Type>()
         {

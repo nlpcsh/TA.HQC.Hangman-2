@@ -12,14 +12,14 @@ namespace HQC.Project.Hangman.UI
     using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
-    /// ???
+    /// Print messages on console
     /// </summary>
     public class ConsoleLogger : ILogger
     {
         private int commandMessageTopPosition = Globals.topPositionCommandInput + 2;
 
         /// <summary>
-        /// ???
+        /// Print game title on console
         /// </summary>
         public void PrintGameTitle()
         {
@@ -31,7 +31,7 @@ namespace HQC.Project.Hangman.UI
         }
 
         /// <summary>
-        /// ???
+        /// Print good bye message on console
         /// </summary>
         public void PrintGoodBuyMessage()
         {
@@ -45,9 +45,9 @@ namespace HQC.Project.Hangman.UI
         }
 
         /// <summary>
-        /// ???
+        /// Print message on console
         /// </summary>
-        /// <param name="message">???</param>
+        /// <param name="message">Message to print</param>
         public void PrintMessage(string message)
         {
             Console.SetCursorPosition(Globals.leftPositionCommandInput - (message.Length / 2), this.commandMessageTopPosition);
@@ -57,9 +57,9 @@ namespace HQC.Project.Hangman.UI
         }
 
         /// <summary>
-        /// ???
+        /// Print hidden word
         /// </summary>
-        /// <param name="hiddenWord">???</param>
+        /// <param name="hiddenWord">Word to print hidden</param>
         public void PrintSecretWord(string hiddenWord)
         {
             var leftPositionMessage = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.EnterSecretMessage.Length / 2);
@@ -75,9 +75,9 @@ namespace HQC.Project.Hangman.UI
         }
 
         /// <summary>
-        /// ???
+        /// Print hangman. Different hangman depends on playerLives
         /// </summary>
-        /// <param name="playerLives">???</param>
+        /// <param name="playerLives">How many lives player have</param>
         public void PrintHangman(int playerLives)
         {
             var playerPattern = HangmanPattern.Patterns[playerLives];
@@ -91,7 +91,7 @@ namespace HQC.Project.Hangman.UI
         }
 
         /// <summary>
-        /// ???
+        /// Split console on two parts
         /// </summary>
         public void PrintVerticalMiddleBorder()
         {
@@ -105,7 +105,7 @@ namespace HQC.Project.Hangman.UI
         }
 
         /// <summary>
-        /// ???
+        /// Show on user where can write on console
         /// </summary>
         public void PrintEnterCommandMessage()
         {
@@ -117,9 +117,9 @@ namespace HQC.Project.Hangman.UI
         }
 
         /// <summary>
-        /// ???
+        /// Print which letters user is used
         /// </summary>
-        /// <param name="letters">???</param>
+        /// <param name="letters">All used letters by user</param>
         public void PrintUsedLetters(ISet<char> letters)
         {
             var leftMessage = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.UsedLettersMessage.Length / 2);
@@ -137,7 +137,7 @@ namespace HQC.Project.Hangman.UI
         }
 
         /// <summary>
-        /// ???
+        /// Print message for player name initialization
         /// </summary>
         public void PrintGameInitialization()
         {
@@ -150,7 +150,7 @@ namespace HQC.Project.Hangman.UI
         }
 
         /// <summary>
-        /// ???
+        /// Print on console menu, rules, categories and scores
         /// </summary>
         public void Print(List<string> options)
         {
@@ -173,9 +173,9 @@ namespace HQC.Project.Hangman.UI
         }
 
         /// <summary>
-        /// ???
+        /// Read user input
         /// </summary>
-        /// <returns>???</returns>
+        /// <returns>What user is write to lower case</returns>
         public string ReadInput()
         {
             Console.SetCursorPosition(Globals.leftPositionCommandInput, Globals.topPositionCommandInput);

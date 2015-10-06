@@ -22,12 +22,12 @@ namespace HQC.Project.Hangman.GameLogic.GameCommands
         }
 
         /// <summary>
-        /// ???
+        /// Property keep instance of HangmanGame
         /// </summary>
         protected HangmanGame Game { get;  set; }
 
         /// <summary>
-        /// ???
+        /// Abstract method should implement every inheritance class
         /// </summary>
         public abstract void Execute();
     }

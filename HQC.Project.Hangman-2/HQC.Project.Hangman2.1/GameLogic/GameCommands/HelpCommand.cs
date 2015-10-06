@@ -24,7 +24,7 @@ namespace HQC.Project.Hangman.GameLogic.GameCommands
         }
 
         /// <summary>
-        /// Open letter to user 
+        /// Open guess letter to user 
         /// </summary>
         public override void Execute()
         {

@@ -12,17 +12,17 @@ namespace HQC.Project.Hangman.Common
     using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
-    /// ???
+    /// Make easy create command by factory patern
     /// </summary>
     public class CommandFactory
     {
         /// <summary>
-        /// ???
+        /// All possible in game command
         /// </summary>
         /// <param name="commandAsString">Command from user</param>
-        /// <param name="game">???</param>
-        /// <param name="commandTypes">All commands that exist</param>
-        /// <returns>command</returns>
+        /// <param name="game">An instance of HangmanGame</param>
+        /// <param name="commandTypes">All in game commands</param>
+        /// <returns>all possible in game commands</returns>
         public ICommand GetGameCommand(string commandAsString, HangmanGame game, IDictionary<string, Type> commandTypes)
         {
             var typeCommand = commandTypes[commandAsString];
@@ -31,11 +31,11 @@ namespace HQC.Project.Hangman.Common
         }
 
         /// <summary>
-        /// ???
+        /// All possible menu game command
         /// </summary>
-        /// <param name="commandAsString">???</param>
-        /// <param name="logger">???</param>
-        /// <param name="commandTypes">???</param>
+        /// <param name="commandAsString">Command from user</param>
+        /// <param name="logger">Takes logger(where will print data)</param>
+        /// <param name="commandTypes">All in menu game commands</param>
         /// <returns></returns>
         public ICommand GetMenuCommand(string commandAsString, ILogger logger, IDictionary<string, Type> commandTypes)
         {

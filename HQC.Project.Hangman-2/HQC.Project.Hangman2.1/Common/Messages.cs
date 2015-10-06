@@ -8,7 +8,7 @@ namespace HQC.Project.Hangman.Common
     using System.Collections.Generic;
 
     /// <summary>
-    /// ???
+    /// Contains all game messages
     /// </summary>
     public class Messages
     {
@@ -88,7 +88,7 @@ namespace HQC.Project.Hangman.Common
         public const string CantUseHelp = "You don't have {0} points!";
 
         /// <summary>
-        /// ???
+        /// Contains rules on the game
         /// </summary>
         public static readonly List<string> rulesInfo = new List<string>()
         {
@@ -103,7 +103,7 @@ namespace HQC.Project.Hangman.Common
         };
 
         /// <summary>
-        /// ???
+        /// Contains all menu options
         /// </summary>
         public static readonly List<string> menuOptions = new List<string>()
         {
@@ -117,7 +117,7 @@ namespace HQC.Project.Hangman.Common
         };
 
         /// <summary>
-        /// ???
+        /// Contains game title array
         /// </summary>
         public static readonly List<string> gameTitle = new List<string>()
         {

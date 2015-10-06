@@ -12,11 +12,11 @@ namespace HQC.Project.Hangman.Common
     public static class ConsoleHelper
     {
         /// <summary>
-        /// ???
+        /// Clean console set limits
         /// </summary>
-        /// <param name="startCol">???</param>
-        /// <param name="endCol">???</param>
-        /// <param name="row">???</param>
+        /// <param name="startCol">From where</param>
+        /// <param name="endCol">to where</param>
+        /// <param name="row">How many rows</param>
         public static void ClearConsoleInRange(int startCol, int endCol, int row)
         {
             Console.SetCursorPosition(startCol, row);
@@ -30,10 +30,10 @@ namespace HQC.Project.Hangman.Common
         /// <summary>
         /// ???
         /// </summary>
-        /// <param name="startCol">???</param>
-        /// <param name="endCol">???</param>
-        /// <param name="startRow">???</param>
-        /// <param name="endRow">???</param>
+        /// <param name="startCol">From which collumn</param>
+        /// <param name="endCol">To which collumn</param>
+        /// <param name="startRow">From which row</param>
+        /// <param name="endRow">To which row</param>
         public static void ClearConsoleInRange(int startCol, int endCol, int startRow, int endRow)
         {
             for (int i = startRow; i <= endRow; i++)

@@ -8,7 +8,7 @@ namespace HQC.Project.Hangman.Common
     using System.Collections.Generic;
 
     /// <summary>
-    /// ???
+    /// Contains ascii hangman picture
     /// </summary>
     public class HangmanPattern
     {
@@ -249,7 +249,7 @@ namespace HQC.Project.Hangman.Common
         };
 
         /// <summary>
-        /// ???
+        /// Property to get needed ascii picture on hangman
         /// </summary>
         public static IDictionary<int, string[]> Patterns
         {

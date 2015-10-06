@@ -24,7 +24,7 @@ namespace HQC.Project.Hangman.GameLogic.GameCommands
         }
 
         /// <summary>
-        /// ???
+        /// Restart game for user
         /// </summary>
         public override void Execute()
         {

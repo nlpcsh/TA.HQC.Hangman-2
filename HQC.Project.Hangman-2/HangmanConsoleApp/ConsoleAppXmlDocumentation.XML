@@ -6,7 +6,7 @@
     <members>
         <member name="T:HangmanConsoleApp.ConsoleApp">
             <summary>
-            ???
+            Entry point for Console application
             </summary>
         </member>
     </members>
