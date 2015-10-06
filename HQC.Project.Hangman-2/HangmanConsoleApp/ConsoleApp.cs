@@ -4,9 +4,12 @@
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.UI;
 
+    /// <summary>
+    /// Entry point for Console application
+    /// </summary>
     public class ConsoleApp
     {
-        public static void Main(string[] args)
+        private static void Main(string[] args)
         {
             HangmanStartPoint.Start(new ConsoleLogger(), new CommandFactory());
         }

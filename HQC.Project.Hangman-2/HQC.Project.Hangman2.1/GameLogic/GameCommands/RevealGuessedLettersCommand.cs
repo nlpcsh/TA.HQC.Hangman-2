@@ -5,13 +5,23 @@
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class RevealGuessedLettersCommand : GameCommand
     {
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="game">???</param>
         public RevealGuessedLettersCommand(HangmanGame game)
             : base(game)
         {
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public override void Execute()
         {
             var supposedChar = this.Game.CurrentCommand[0];

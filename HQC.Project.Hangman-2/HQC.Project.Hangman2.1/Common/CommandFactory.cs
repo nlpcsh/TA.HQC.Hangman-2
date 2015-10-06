@@ -30,6 +30,13 @@ namespace HQC.Project.Hangman.Common
             return command;
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="commandAsString">???</param>
+        /// <param name="logger">???</param>
+        /// <param name="commandTypes">???</param>
+        /// <returns></returns>
         public ICommand GetMenuCommand(string commandAsString, ILogger logger, IDictionary<string, Type> commandTypes)
         {
             var typeCommand = commandTypes[commandAsString];

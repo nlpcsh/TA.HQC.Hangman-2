@@ -17,7 +17,7 @@ namespace HQC.Project.Hangman2.Commands
         /// <summary>
         /// Initializes a new instance of the <see cref="ShowGameRulesCommand"/> class.
         /// </summary>
-        /// <param name="currentGame">???</param>
+        /// <param name="logger">???</param>
         public ShowGameRulesCommand(ILogger logger)
             : base(logger)
         {

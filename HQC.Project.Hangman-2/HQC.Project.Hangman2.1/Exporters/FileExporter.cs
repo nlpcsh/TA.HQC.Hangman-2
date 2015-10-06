@@ -5,15 +5,26 @@
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.Importers;
 
+    /// <summary>
+    /// ???
+    /// </summary>
     public class FileExporter : IExporter
     {
         private ImportTopPlayersFromFile players;
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="players">???</param>
         public FileExporter(ImportTopPlayersFromFile players) 
         {
             this.players = players;
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="filename">???</param>
         public void Save(string filename)
         {
             using (var writer = new StreamWriter(filename))

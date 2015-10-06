@@ -19,10 +19,10 @@ namespace HQC.Project.Hangman2.Commands
     /// </summary>
     public class PlayCommand : MenuCommand
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PlayCommand"/> class.
-        /// </summary>
-        /// <param name="currentGame">???</param>
+       /// <summary>
+       /// ???
+       /// </summary>
+       /// <param name="logger">???</param>
         public PlayCommand(ILogger logger)
             : base(logger)
         {
