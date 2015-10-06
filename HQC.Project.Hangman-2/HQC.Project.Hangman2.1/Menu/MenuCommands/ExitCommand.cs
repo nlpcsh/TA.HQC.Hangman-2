@@ -17,14 +17,14 @@ namespace HQC.Project.Hangman2.Commands
         /// <summary>
         /// Initializes a new instance of the <see cref="ExitCommand"/> class.
         /// </summary>
-        /// <param name="logger">???</param>
+        /// <param name="logger">ILogger</param>
         public ExitCommand(ILogger logger)
             : base(logger)
         {
         }
 
         /// <summary>
-        /// ???
+        /// Print good buy message to user and end the game
         /// </summary>
         public override void Execute()
         {

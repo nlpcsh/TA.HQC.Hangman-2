@@ -10,14 +10,14 @@ namespace HQC.Project.Hangman.GameLogic.States
     using HQC.Project.Hangman.GameLogic.States.Common;
 
     /// <summary>
-    /// ???
+    /// Initilize player if user don't set name, player name is equal to unknown
     /// </summary>
     public class PlayerInitializationState : State
     {
         /// <summary>
-        /// ???
+        /// Initialize player
         /// </summary>
-        /// <param name="game">???</param>
+        /// <param name="game">HangmanGame</param>
         public override void Play(HangmanGame game)
         {
             Console.Clear();

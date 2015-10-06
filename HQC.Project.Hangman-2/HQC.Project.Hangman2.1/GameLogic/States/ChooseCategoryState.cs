@@ -72,7 +72,7 @@ namespace HQC.Project.Hangman.GameLogic.States
         /// Transform categories to lower case letters
         /// </summary>
         /// <param name="categories"></param>
-        /// <returns>ICollection<string>All categories to lower case letters</returns>
+        /// <returns>ICollection</returns>
         private ICollection<string> CategoriesToLower(string[] categories)
         {
             var categoriesToLower = new List<string>();

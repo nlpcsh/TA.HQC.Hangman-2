@@ -20,7 +20,7 @@ namespace HQC.Project.Hangman.Common
         public const int ScoreBoardSize = 5;
 
         /// <summary>
-        /// ???
+        /// Score that player add when guess a letter
         /// </summary>
         public const int ScoreToAdd = 10;
 
@@ -55,7 +55,7 @@ namespace HQC.Project.Hangman.Common
         public const string BestScoresPath = @"..\..\bestScores.txt";
 
         /// <summary>
-        /// ???
+        /// Points needed to player to use Help option
         /// </summary>
         public const int HelpNeededPoints = 50;
 
@@ -83,12 +83,12 @@ namespace HQC.Project.Hangman.Common
         };
 
         /// <summary>
-        /// ???
+        /// Holds column position used from ILogger to clear console when menu have to show off
         /// </summary>
         public static int leftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
 
         /// <summary>
-        /// ???
+        ///  Holds row position used from ILogger to clear console when menu have to show off
         /// </summary>
         public static int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;
     }

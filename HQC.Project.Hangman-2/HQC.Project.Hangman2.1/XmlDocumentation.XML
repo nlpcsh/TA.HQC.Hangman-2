@@ -104,18 +104,18 @@
         </member>
         <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand">
             <summary>
-            ???
+            This command reveal guessed letters 
             </summary>
         </member>
         <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
             <summary>
-            ???
+            ?Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand"/> class.
             </summary>
             <param name="game">???</param>
         </member>
         <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand.Execute">
             <summary>
-            ???
+            Open guessed letter to user
             </summary>
         </member>
         <member name="T:HQC.Project.Hangman2.Commands.ExitCommand">
@@ -397,7 +397,13 @@
             <param name="contentReader"></param>
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:HQC.Project.Hangman.GameLogic.States.ChooseCategoryState.CategoriesToLower(System.String[])" -->
+        <member name="M:HQC.Project.Hangman.GameLogic.States.ChooseCategoryState.CategoriesToLower(System.String[])">
+            <summary>
+            Transform categories to lower case letters
+            </summary>
+            <param name="categories"></param>
+            <returns>ICollection</returns>
+        </member>
         <member name="T:HQC.Project.Hangman.Importers.FolderContentReader">
             <summary>
             This class reads the files in the given directory with the given extension
@@ -641,53 +647,53 @@
         </member>
         <member name="M:HQC.Project.Hangman2.GameStates.EndGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
             <summary>
-            ???
+            Save player score and change game state to restart
             </summary>
-            <param name="game">???</param>
+            <param name="game">HangmanGame</param>
         </member>
         <member name="T:HQC.Project.Hangman.GameLogic.States.InitializeGameState">
             <summary>
-            ???
+            State of game when put initial lives to player and select new play word
             </summary>
         </member>
         <member name="M:HQC.Project.Hangman.GameLogic.States.InitializeGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
             <summary>
-            ???
+            Pu initial lives to player and select new play word
             </summary>
             <param name="game">???</param>
         </member>
         <member name="T:HQC.Project.Hangman.GameLogic.States.PlayerInitializationState">
             <summary>
-            ???
+            Initilize player if user don't set name, player name is equal to unknown
             </summary>
         </member>
         <member name="M:HQC.Project.Hangman.GameLogic.States.PlayerInitializationState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
             <summary>
-            ???
+            Initialize player
             </summary>
-            <param name="game">???</param>
+            <param name="game">HangmanGame</param>
         </member>
         <member name="T:HQC.Project.Hangman.GameLogic.States.PlayGameState">
             <summary>
-            ???
+            Read and execute player commands while player wins or lose the game 
             </summary>
         </member>
         <member name="M:HQC.Project.Hangman.GameLogic.States.PlayGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
             <summary>
-            ???
+            Read and execute player commands while player wins or lose the game 
             </summary>
-            <param name="game">???</param>
+            <param name="game">HangmanGame</param>
         </member>
         <member name="T:HQC.Project.Hangman.GameLogic.States.RestartGameState">
             <summary>
-            ???
+            Start new game if player still want to play or redirect to menu 
             </summary>
         </member>
         <member name="M:HQC.Project.Hangman.GameLogic.States.RestartGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
             <summary>
-            ???
+            Start new game if player still want to play or redirect to menu 
             </summary>
-            <param name="game">???</param>
+            <param name="game">HangmanGame</param>
         </member>
         <member name="T:HQC.Project.Hangman.Common.Globals">
             <summary>
@@ -701,7 +707,7 @@
         </member>
         <member name="F:HQC.Project.Hangman.Common.Globals.ScoreToAdd">
             <summary>
-            ???
+            Score that player add when guess a letter
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Globals.LastPositionInScoreBoard">
@@ -736,7 +742,7 @@
         </member>
         <member name="F:HQC.Project.Hangman.Common.Globals.HelpNeededPoints">
             <summary>
-            ???
+            Points needed to player to use Help option
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Globals.MenuCommandTypesValue">
@@ -751,12 +757,12 @@
         </member>
         <member name="F:HQC.Project.Hangman.Common.Globals.leftPositionCommandInput">
             <summary>
-            ???
+            Holds column position used from ILogger to clear console when menu have to show off
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Globals.topPositionCommandInput">
             <summary>
-            ???
+             Holds row position used from ILogger to clear console when menu have to show off
             </summary>
         </member>
         <member name="T:HQC.Project.Hangman.HangmanStartPoint">

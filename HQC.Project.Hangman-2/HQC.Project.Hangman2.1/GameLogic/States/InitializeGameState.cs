@@ -6,17 +6,18 @@ namespace HQC.Project.Hangman.GameLogic.States
 {
     using System;
     using System.Collections.Generic;
+
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.GameLogic.States.Common;
     using HQC.Project.Hangman2.GameStates;
 
     /// <summary>
-    /// ???
+    /// State of game when put initial lives to player and select new play word
     /// </summary>
     public class InitializeGameState : State
     {
         /// <summary>
-        /// ???
+        /// Pu initial lives to player and select new play word
         /// </summary>
         /// <param name="game">???</param>
         public override void Play(HangmanGame game)
@@ -24,7 +25,7 @@ namespace HQC.Project.Hangman.GameLogic.States
             Console.Clear();
             game.Player.Lives = 7;
             game.Player.WrongLetters = new HashSet<char>();
-            game.Player.Word = "array"; //game.WordSelect.SelectRandomWord();
+            game.Player.Word = game.WordSelect.SelectRandomWord();
             game.Player.HiddenWord = new string('_', game.Player.Word.Length);
 
             game.Logger.PrintGameTitle();

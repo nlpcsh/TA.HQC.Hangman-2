@@ -6,12 +6,12 @@
     using HQC.Project.Hangman.Common;
 
     /// <summary>
-    /// ???
+    /// This command reveal guessed letters 
     /// </summary>
     public class RevealGuessedLettersCommand : GameCommand
     {
         /// <summary>
-        /// ???
+        /// ?Initializes a new instance of the <see cref="RevealGuessedLettersCommand"/> class.
         /// </summary>
         /// <param name="game">???</param>
         public RevealGuessedLettersCommand(HangmanGame game)
@@ -20,7 +20,7 @@
         }
 
         /// <summary>
-        /// ???
+        /// Open guessed letter to user
         /// </summary>
         public override void Execute()
         {
