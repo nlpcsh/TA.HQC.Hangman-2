@@ -10,7 +10,7 @@ namespace HQC.Project.Hangman.Importers
     using HQC.Project.Hangman.Common;
 
     /// <summary>
-    /// ???
+    /// This class reads the files in the given directory with the given extension
     /// </summary>
     public class FolderContentReader
     {
@@ -22,7 +22,7 @@ namespace HQC.Project.Hangman.Importers
         }
 
         /// <summary>
-        /// ???
+        /// Return an array with string, containing only the names of the files, without their extensions
         /// </summary>
         public string[] Categories
         {
