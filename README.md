@@ -68,3 +68,4 @@ Refactoring Documentation for Project “Hangman 2”
 20. Add filename validation method in Validator class and use it in WordSelectorFromFile class
 21. Add interface IExporter and class FileExporter
 22. Move SaveToTxtFile() method in FileExporter class
+23. Changed Singleton Pattern in ScoreBoard class to be thread save

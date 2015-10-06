@@ -148,11 +148,11 @@
             <summary>
             Initializes a new instance of the <see cref="T:HQC.Project.Hangman2.Commands.ExitCommand"/> class.
             </summary>
-            <param name="logger">???</param>
+            <param name="logger">ILogger</param>
         </member>
         <member name="M:HQC.Project.Hangman2.Commands.ExitCommand.Execute">
             <summary>
-            ???
+            Print good buy message to user and end the game
             </summary>
         </member>
         <member name="T:HQC.Project.Hangman2.Commands.PlayCommand">

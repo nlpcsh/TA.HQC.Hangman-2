@@ -17,7 +17,8 @@ namespace HQC.Project.Hangman.GameScoreBoard
     /// </summary>
     public sealed class ScoreBoard
     {
-        private static ScoreBoard scoreBoardInstance;
+        private static volatile ScoreBoard scoreBoardInstance;
+        private static object syncLock = new object();
         private ImportTopPlayersFromFile scoreBoardTable;
         private IExporter export;
 
@@ -34,7 +35,13 @@ namespace HQC.Project.Hangman.GameScoreBoard
             {
                 if (scoreBoardInstance == null)
                 {
-                    scoreBoardInstance = new ScoreBoard();
+                    lock (syncLock)
+                    {
+                        if (scoreBoardInstance == null)
+                        {
+                            scoreBoardInstance = new ScoreBoard(); 
+                        }
+                    }               
                 }
 
                 return scoreBoardInstance;
