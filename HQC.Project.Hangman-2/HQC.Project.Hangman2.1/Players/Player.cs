@@ -18,11 +18,6 @@ namespace HQC.Project.Hangman.Players
     {
         private const int InitialLives = 7;
         private const int InitialScore = 0;
-        private const int ScoreToAdd = 10;
-
-        private StringBuilder hiddenWord;
-        private int guessedLetters = 0;
-        private string word;
 
         private string name;
         private int score;
@@ -54,30 +49,13 @@ namespace HQC.Project.Hangman.Players
         /// <summary>
         /// ???
         /// </summary>
-        public string HiddenWord
-        {
-            get
-            {
-                return this.hiddenWord.ToString();
-            }
-        }
+        public string HiddenWord { get; set; }
+
 
         /// <summary>
         /// ???
         /// </summary>
-        public string Word
-        {
-            get
-            {
-                return this.word;
-            }
-
-            set
-            {
-                this.word = value;
-                this.hiddenWord = new StringBuilder(new string('_', this.word.Length));
-            }
-        }
+        public string Word { get; set; }
 
         /// <summary>
         /// ???
@@ -147,62 +125,6 @@ namespace HQC.Project.Hangman.Players
                 //// the newer one replaces the older
                 return 1;
             }
-        }
-
-        /// <summary>
-        /// ???
-        /// </summary>
-        /// <param name="supposedChar">???</param>
-        public void RevealGuessedLetters(char supposedChar)
-        {
-            var startIndex = 0;
-            var index = this.Word.IndexOf(supposedChar, startIndex);
-        
-            while (index != -1)
-            {
-                this.hiddenWord[index] = supposedChar;
-                startIndex = index + 1;
-                index = this.Word.IndexOf(supposedChar, startIndex);
-            }
-        }
-
-        /// <summary>
-        /// ???
-        /// </summary>
-        /// <param name="supposedChar">???</param>
-        /// <returns>???</returns>
-        public bool InitializationAfterTheGuess(char supposedChar)
-        {
-            if (this.HiddenWord.Contains<char>(supposedChar))
-            {
-                this.isRevelingMoreLetters = true;
-                return this.isRevelingMoreLetters;
-            }
-
-            int numberOfTheAppearancesOfTheSupposedChar = this.Word.Count(x => x.Equals(supposedChar));
-
-            this.RevealGuessedLetters(supposedChar);
-
-            if (numberOfTheAppearancesOfTheSupposedChar == 0)
-            {
-                this.Lives--;
-                this.WrongLetters.Add(supposedChar);
-            }
-            else
-            {
-                this.guessedLetters += numberOfTheAppearancesOfTheSupposedChar;
-                this.Score += Player.ScoreToAdd;
-            }
-
-            // check if the word is guessed
-            if (this.guessedLetters >= this.Word.Length)
-            {
-                this.isRevelingMoreLetters = false;
-                return this.isRevelingMoreLetters;
-            }
-
-            this.isRevelingMoreLetters = true;
-            return this.isRevelingMoreLetters;
         }
     }
 }

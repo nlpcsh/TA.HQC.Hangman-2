@@ -8,6 +8,7 @@ namespace HQC.Project.Hangman.Common
     using System.Collections.Generic;
     using HQC.Project.Hangman2.Commands;
     using Hangman2.Common;
+    using HQC.Project.Hangman2._1.GameLogic.GameCommands;
 
     /// <summary>
     /// Keeps all constants used in the game
@@ -71,6 +72,7 @@ namespace HQC.Project.Hangman.Common
         {
              { "help", typeof(HelpCommand) },
              { "restart", typeof(RestartGameCommand) },
+             { "revealGuessedLetters", typeof(RevealGuessedLettersCommand)}
         };
 
         /// <summary>
@@ -81,6 +83,8 @@ namespace HQC.Project.Hangman.Common
         /// <summary>
         /// ???
         /// </summary>
-        public static int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;       
+        public static int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;
+
+        public const int ScoreToAdd = 10;
     }
 }

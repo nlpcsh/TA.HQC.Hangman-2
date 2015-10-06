@@ -42,7 +42,8 @@ namespace HQC.Project.Hangman2.Commands
                     }
                 }
 
-                this.Game.WordGuess.InitializationAfterTheGuess(firstUnrevealedLetter);
+                var command = this.Game.CommandFactory.GetGameCommand("revealGuessedLetters", this.Game, Globals.CommandTypesValue);
+                command.Execute();
                 this.Game.WordGuess.Score -= Globals.HelpNeededPoints;
                 this.Game.Logger.PrintMessage(string.Format(Messages.RevealLetterMessage, firstUnrevealedLetter));
                 this.Game.Logger.PrintSecretWord(this.Game.WordGuess.HiddenWord);

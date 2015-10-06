@@ -64,6 +64,8 @@ namespace HQC.Project.Hangman
         /// </summary>
         public CommandFactory CommandFactory { get; private set; }
 
+        public string CurrentCommand { get; set; }
+
         /// <summary>
         /// ???
         /// </summary>

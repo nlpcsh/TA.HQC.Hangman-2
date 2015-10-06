@@ -39,14 +39,7 @@ namespace HQC.Project.Hangman2.Players.Common
         /// <summary>
         /// ???
         /// </summary>
-        string HiddenWord { get; }
-
-        /// <summary>
-        /// ???
-        /// </summary>
-        /// <param name="supposedChar">???</param>
-        /// <returns>???</returns>
-        bool InitializationAfterTheGuess(char supposedChar);
+        string HiddenWord { get; set; }
 
         /// <summary>
         /// ???

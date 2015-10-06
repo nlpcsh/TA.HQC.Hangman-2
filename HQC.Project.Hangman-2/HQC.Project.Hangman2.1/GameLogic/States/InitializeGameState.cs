@@ -23,6 +23,7 @@ namespace HQC.Project.Hangman2.GameStates
             game.WordGuess.Lives = 7;
             game.WordGuess.WrongLetters = new HashSet<char>();
             game.WordGuess.Word = "array"; //game.WordSelect.SelectRandomWord();
+            game.WordGuess.HiddenWord = new string('_', game.WordGuess.Word.Length);
 
             game.Logger.PrintGameTitle();
             game.Logger.PrintVerticalMiddleBorder();

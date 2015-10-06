@@ -25,14 +25,17 @@ namespace HQC.Project.Hangman2.GameStates
         {
             while (game.WordGuess.HiddenWord.Contains("_"))
             {
-                string commandToExecute = game.Logger.ReadInput();
+                // string commandToExecute = game.Logger.ReadInput();
+                game.CurrentCommand = game.Logger.ReadInput();
 
-                if (commandToExecute.Length == 1)
+                if (game.CurrentCommand.Length == 1)
                 {
-                    char supposedChar = commandToExecute[0];
-                    game.WordGuess.InitializationAfterTheGuess(supposedChar);
+                    char supposedChar = game.CurrentCommand[0];
+                    //game.WordGuess.InitializationAfterTheGuess(supposedChar);
+                    var command = game.CommandFactory.GetGameCommand("revealGuessedLetters", game, Globals.CommandTypesValue);
+                    command.Execute();
                 }
-                else if (commandToExecute == game.WordGuess.Word)
+                else if (game.CurrentCommand == game.WordGuess.Word)
                 {
                     var bonus = GetBonus(game.WordGuess);
 
@@ -41,9 +44,9 @@ namespace HQC.Project.Hangman2.GameStates
                     game.State = new EndGameState();
                     game.State.Play(game);
                 }
-                else if (Globals.CommandTypesValue.ContainsKey(commandToExecute))
+                else if (Globals.CommandTypesValue.ContainsKey(game.CurrentCommand))
                 {
-                    var command = game.CommandFactory.GetGameCommand(commandToExecute, game, Globals.CommandTypesValue);
+                    var command = game.CommandFactory.GetGameCommand(game.CurrentCommand, game, Globals.CommandTypesValue);
                     command.Execute();
                 }
                 else
@@ -55,7 +58,7 @@ namespace HQC.Project.Hangman2.GameStates
                 game.Logger.PrintUsedLetters(game.WordGuess.WrongLetters);
                 game.Logger.PrintHangman(game.WordGuess.Lives);
 
-                ConsoleHelper.ClearConsoleInRange(Globals.leftPositionCommandInput, Globals.leftPositionCommandInput + commandToExecute.Length, Globals.topPositionCommandInput);
+                ConsoleHelper.ClearConsoleInRange(Globals.leftPositionCommandInput, Globals.leftPositionCommandInput + game.CurrentCommand.Length, Globals.topPositionCommandInput);
                 ConsoleHelper.ClearConsoleInRange((Console.WindowWidth / 2) + 1, Console.WindowWidth - 1, Globals.topPositionCommandInput + 2);
 
                 if (game.WordGuess.Lives == 0)
