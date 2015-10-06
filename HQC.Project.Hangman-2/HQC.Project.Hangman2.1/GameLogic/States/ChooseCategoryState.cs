@@ -12,14 +12,14 @@ namespace HQC.Project.Hangman.GameLogic.States
     using HQC.Project.Hangman.Importers;
 
     /// <summary>
-    /// ???
+    /// This class initializes a state in the game, where you can choose category of words. In case you choose an invalid category, the category "Random" is automatically chosen.
     /// </summary>
     public class ChooseCategoryState : State
     {
         /// <summary>
-        /// ???
+        /// initializes category choosing
         /// </summary>
-        /// <param name="game">???</param>
+        /// <param name="game">An instance of HangmanGame</param>
         public override void Play(HangmanGame game)
         {
             var contentReader = new FolderContentReader();
