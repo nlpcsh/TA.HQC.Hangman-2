@@ -4,8 +4,8 @@
 
 namespace HQC.Project.Hangman.Importers.Common
 {
-    using HQC.Project.Hangman.Players.Common;
     using System.Collections.Generic;
+    using HQC.Project.Hangman.Players.Common;
 
     /// <summary>
     /// ???

@@ -5,10 +5,9 @@
 namespace HQC.Project.Hangman.GameLogic.States
 {
     using System;
-
     using HQC.Project.Hangman;
-    using HQC.Project.Hangman.GameLogic.States.Common;
     using HQC.Project.Hangman.GameLogic.States;
+    using HQC.Project.Hangman.GameLogic.States.Common;
 
     /// <summary>
     /// ???

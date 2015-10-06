@@ -8,8 +8,8 @@ namespace HQC.Project.Hangman.GameScoreBoard
     using System.Linq;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.Importers;
-    using HQC.Project.Hangman.Players.Common;
     using HQC.Project.Hangman.Importers.Common;
+    using HQC.Project.Hangman.Players.Common;
     using HQC.Project.Hangman2._1.Exporters;
 
     /// <summary>

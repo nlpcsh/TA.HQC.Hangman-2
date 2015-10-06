@@ -4,12 +4,11 @@
 
 namespace HQC.Project.Hangman.Players
 {
-    using HQC.Project.Hangman.Players.Common;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-
+    using HQC.Project.Hangman.Players.Common;
 
     /// <summary>
     /// ???
@@ -48,7 +47,6 @@ namespace HQC.Project.Hangman.Players
         /// ???
         /// </summary>
         public string HiddenWord { get; set; }
-
 
         /// <summary>
         /// ???

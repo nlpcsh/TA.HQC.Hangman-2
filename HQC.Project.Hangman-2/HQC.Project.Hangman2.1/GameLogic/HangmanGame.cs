@@ -4,9 +4,7 @@
 
 namespace HQC.Project.Hangman.GameLogic
 {
-    using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman2.GameStates;
     using HQC.Project.Hangman.GameLogic.States.Common;
     using HQC.Project.Hangman.GameScoreBoard;
     using HQC.Project.Hangman.Importers;

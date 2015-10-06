@@ -45,6 +45,7 @@ namespace HQC.Project.Hangman.Importers
                 {
                     throw new ArgumentException("Invalid file name!");
                 }
+
                 this.fileName = value;
             }
         }

@@ -4,16 +4,14 @@
 
 namespace HQC.Project.Hangman2.Commands
 {
-    using System;
 
-    using HQC.Project.Hangman;
-    using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.GameLogic.States;
     using HQC.Project.Hangman.GameLogic;
+    using HQC.Project.Hangman.GameLogic.States;
     using HQC.Project.Hangman.GameScoreBoard;
     using HQC.Project.Hangman.Importers;
     using HQC.Project.Hangman.Menu.MenuCommands;
+    using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.UI.Common;
 
     /// <summary>

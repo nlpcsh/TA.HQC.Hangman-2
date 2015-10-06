@@ -13,6 +13,5 @@
         public ILogger Logger { get; set; }
 
         public abstract void Execute();
-
     }
 }

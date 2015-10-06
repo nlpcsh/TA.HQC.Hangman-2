@@ -31,6 +31,7 @@ namespace HQC.Project.Hangman.GameLogic.States
             {
                 categoriesToList.Add(categories[i]);
             }
+
             categoriesToList.Add(Messages.PressToContinue);
             categoriesToList.Add(Messages.EnterChoiceMessage);
 

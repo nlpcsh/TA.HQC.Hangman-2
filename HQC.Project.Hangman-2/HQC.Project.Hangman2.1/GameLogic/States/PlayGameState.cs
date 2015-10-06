@@ -6,12 +6,10 @@ namespace HQC.Project.Hangman.GameLogic.States
 {
     using System;
     using System.Linq;
-
-    using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameLogic.States.Common;
-    using HQC.Project.Hangman2.GameStates;
     using HQC.Project.Hangman.Players.Common;
+    using HQC.Project.Hangman2.GameStates;
 
     /// <summary>
     /// ???
@@ -36,7 +34,7 @@ namespace HQC.Project.Hangman.GameLogic.States
                 }
                 else if (game.CurrentCommand == game.Player.Word)
                 {
-                    var bonus = GetBonus(game.Player);
+                    var bonus = this.GetBonus(game.Player);
 
                     game.Player.Score += bonus;
 

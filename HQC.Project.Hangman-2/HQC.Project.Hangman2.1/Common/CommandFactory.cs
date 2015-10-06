@@ -36,6 +36,5 @@ namespace HQC.Project.Hangman.Common
             var command = (ICommand)Activator.CreateInstance(typeCommand, logger);
             return command;
         }
-
     }
 }

@@ -4,13 +4,12 @@
 
 namespace HQC.Project.Hangman2.Commands
 {
-    using HQC.Project.Hangman;
+    using System;
+    using System.Collections.Generic;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameScoreBoard;
     using HQC.Project.Hangman.Menu.MenuCommands;
-    using HQC.Project.Hangman.UI.Common;
-    using System;
-    using System.Collections.Generic;
+    using HQC.Project.Hangman.UI.Common;    
 
     /// <summary>
     /// Show top 5 players
@@ -51,10 +50,9 @@ namespace HQC.Project.Hangman2.Commands
 
                     break;
                 }
-
             }
-            topPlayersToList.Add(Messages.PressAnyKeyMessage);
 
+            topPlayersToList.Add(Messages.PressAnyKeyMessage);
             this.Logger.Print(topPlayersToList);
             Console.ReadKey();
         }

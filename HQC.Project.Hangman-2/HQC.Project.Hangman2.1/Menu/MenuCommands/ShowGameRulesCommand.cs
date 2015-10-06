@@ -4,8 +4,6 @@
 
 namespace HQC.Project.Hangman2.Commands
 {
-    using HQC.Project.Hangman;
-    using HQC.Project.Hangman2;
     using System;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.Menu.MenuCommands;
@@ -32,7 +30,6 @@ namespace HQC.Project.Hangman2.Commands
         {
             this.Logger.Print(Messages.rulesInfo);
             Console.ReadKey();
-
         }
     }
 }
