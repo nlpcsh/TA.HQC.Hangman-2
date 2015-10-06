@@ -66,3 +66,5 @@ Refactoring Documentation for Project “Hangman 2”
 18. Implement Strategy Pattern for selecting word via IWordsImporter interface
 19. Implement Strategy Pattern for importing player via IPlayerImporter interface
 20. Add filename validation method in Validator class and use it in WordSelectorFromFile class
+21. Add interface IExporter and class FileExporter
+22. Move SaveToTxtFile() method in FileExporter class
