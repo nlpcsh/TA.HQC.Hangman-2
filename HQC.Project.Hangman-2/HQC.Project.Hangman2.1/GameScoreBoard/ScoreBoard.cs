@@ -2,13 +2,15 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman
+namespace HQC.Project.Hangman.GameScoreBoard
 {
     using System.IO;
     using System.Linq;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman2.Importers;
-    using HQC.Project.Hangman2.Players.Common;
+    using HQC.Project.Hangman.Importers;
+    using HQC.Project.Hangman.Importers.Common;
+    using HQC.Project.Hangman.Players.Common;
+    using HQC.Project.Hangman2._1.Exporters;
 
     /// <summary>
     /// ???
@@ -17,6 +19,7 @@ namespace HQC.Project.Hangman
     {
         private static ScoreBoard scoreBoardInstance;
         private ImportTopPlayersFromFile scoreBoardTable;
+        private IExporter export;
 
         private ScoreBoard()
         {
@@ -84,14 +87,10 @@ namespace HQC.Project.Hangman
                 }
             }
 
-            this.SaveScoresToTxtFile();
+            this.export = new FileExporter(this.scoreBoardTable);
+            this.export.Save(Globals.BestScoresPath);
         }
 
-        /// <summary>
-        /// ???
-        /// </summary>
-        /// <param name="message">???</param>
-      
         private int GetFirstFreePosition()
         {
             int freePosition = Globals.LastPositionInScoreBoard;
@@ -106,26 +105,6 @@ namespace HQC.Project.Hangman
             }
 
             return freePosition;
-        }
-
-        private void SaveScoresToTxtFile()
-        {
-            using (var writer = new StreamWriter(Globals.BestScoresPath))
-            {
-                var sortedScores = this.scoreBoardTable.TopPlayers.OrderBy(x => x.Score);
-
-                foreach (var score in sortedScores)
-                {
-                    if (score == null)
-                    {
-                        writer.WriteLine(Globals.FreePositionInScoreBoars);
-                    }
-                    else
-                    {
-                        writer.WriteLine(score.Name + "-" + score.Score);
-                    }
-                }
-            }
         }
     }
 }

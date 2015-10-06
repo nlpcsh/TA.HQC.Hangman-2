@@ -2,15 +2,14 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.GameStates
+namespace HQC.Project.Hangman.GameLogic.States
 {
     using System;
     using System.Linq;
-
-    using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman2.Common;
-    using HQC.Project.Hangman2.Players.Common;
+    using HQC.Project.Hangman.GameLogic.States.Common;
+    using HQC.Project.Hangman.Players.Common;
+    using HQC.Project.Hangman2.GameStates;
 
     /// <summary>
     /// ???
@@ -23,27 +22,28 @@ namespace HQC.Project.Hangman2.GameStates
         /// <param name="game">???</param>
         public override void Play(HangmanGame game)
         {
-            while (game.WordGuess.HiddenWord.Contains("_"))
+            while (game.Player.HiddenWord.Contains("_"))
             {
-                string commandToExecute = game.Logger.ReadInput();
+                game.CurrentCommand = game.Logger.ReadInput();
 
-                if (commandToExecute.Length == 1)
+                if (game.CurrentCommand.Length == 1)
                 {
-                    char supposedChar = commandToExecute[0];
-                    game.WordGuess.InitializationAfterTheGuess(supposedChar);
+                    char supposedChar = game.CurrentCommand[0];
+                    var command = game.CommandFactory.GetGameCommand("revealGuessedLetters", game, Globals.CommandTypesValue);
+                    command.Execute();
                 }
-                else if (commandToExecute == game.WordGuess.Word)
+                else if (game.CurrentCommand == game.Player.Word)
                 {
-                    var bonus = GetBonus(game.WordGuess);
+                    var bonus = this.GetBonus(game.Player);
 
-                    game.WordGuess.Score += bonus;
+                    game.Player.Score += bonus;
 
                     game.State = new EndGameState();
                     game.State.Play(game);
                 }
-                else if (Globals.CommandTypesValue.ContainsKey(commandToExecute))
+                else if (Globals.CommandTypesValue.ContainsKey(game.CurrentCommand))
                 {
-                    var command = game.CommandFactory.GetGameCommand(commandToExecute, game, Globals.CommandTypesValue);
+                    var command = game.CommandFactory.GetGameCommand(game.CurrentCommand, game, Globals.CommandTypesValue);
                     command.Execute();
                 }
                 else
@@ -51,14 +51,14 @@ namespace HQC.Project.Hangman2.GameStates
                     game.Logger.PrintMessage("Wrong input, please try again!");
                 }
 
-                game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
-                game.Logger.PrintUsedLetters(game.WordGuess.WrongLetters);
-                game.Logger.PrintHangman(game.WordGuess.Lives);
+                game.Logger.PrintSecretWord(game.Player.HiddenWord);
+                game.Logger.PrintUsedLetters(game.Player.WrongLetters);
+                game.Logger.PrintHangman(game.Player.Lives);
 
-                ConsoleHelper.ClearConsoleInRange(Globals.leftPositionCommandInput, Globals.leftPositionCommandInput + commandToExecute.Length, Globals.topPositionCommandInput);
+                ConsoleHelper.ClearConsoleInRange(Globals.leftPositionCommandInput, Globals.leftPositionCommandInput + game.CurrentCommand.Length, Globals.topPositionCommandInput);
                 ConsoleHelper.ClearConsoleInRange((Console.WindowWidth / 2) + 1, Console.WindowWidth - 1, Globals.topPositionCommandInput + 2);
 
-                if (game.WordGuess.Lives == 0)
+                if (game.Player.Lives == 0)
                 {
                     break;
                 }

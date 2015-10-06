@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CommandFactory.cs" />
+    <Compile Include="Exporters\FileExporter.cs" />
+    <Compile Include="Exporters\IExporter.cs" />
     <Compile Include="GameLogic\GameCommands\GameCommand.cs" />
     <Compile Include="Contracts\ICommand.cs" />
     <Compile Include="GameLogic\GameCommands\RestartGameCommand.cs" />

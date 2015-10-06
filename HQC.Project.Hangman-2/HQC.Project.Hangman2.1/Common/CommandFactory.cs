@@ -2,12 +2,14 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Commands.Common
+namespace HQC.Project.Hangman.Common
 {
     using System;
     using System.Collections.Generic;
     using HQC.Project.Hangman;
-    using HQC.Project.Hangman.UI;
+    using HQC.Project.Hangman.Contracts;
+    using HQC.Project.Hangman.GameLogic;
+    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// ???
@@ -34,6 +36,5 @@ namespace HQC.Project.Hangman2.Commands.Common
             var command = (ICommand)Activator.CreateInstance(typeCommand, logger);
             return command;
         }
-
     }
 }

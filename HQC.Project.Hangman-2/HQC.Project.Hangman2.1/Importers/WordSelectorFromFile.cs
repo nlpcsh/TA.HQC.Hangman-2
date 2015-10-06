@@ -2,12 +2,12 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman
+namespace HQC.Project.Hangman.Importers
 {
     using System;
     using System.IO;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman2._1.Importers.Common;
+    using HQC.Project.Hangman.Importers.Common;
 
     /// <summary>
     /// ???
@@ -45,6 +45,7 @@ namespace HQC.Project.Hangman
                 {
                     throw new ArgumentException("Invalid file name!");
                 }
+
                 this.fileName = value;
             }
         }

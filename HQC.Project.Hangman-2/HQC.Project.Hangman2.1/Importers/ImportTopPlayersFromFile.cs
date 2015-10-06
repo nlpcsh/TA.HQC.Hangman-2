@@ -2,14 +2,14 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Importers
+namespace HQC.Project.Hangman.Importers
 {
     using System.Collections.Generic;
     using System.IO;
     using HQC.Project.Hangman.Common;
+    using HQC.Project.Hangman.Importers.Common;
     using HQC.Project.Hangman.Players;
-    using HQC.Project.Hangman2.Importers.Common;
-    using HQC.Project.Hangman2.Players.Common;
+    using HQC.Project.Hangman.Players.Common;
 
     /// <summary>
     /// ???

@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Importers
+namespace HQC.Project.Hangman.Importers
 {
     using System.IO;
     using System.Linq;

@@ -2,9 +2,10 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Commands.Common
+namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
     using HQC.Project.Hangman;
+    using HQC.Project.Hangman.Contracts;
 
     /// <summary>
     /// This is the base abstract class for all commands.

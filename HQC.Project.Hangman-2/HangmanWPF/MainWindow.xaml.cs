@@ -22,8 +22,6 @@
             categories.Add("cars");
             categories.Add("IT");
             categories.Add("dryn dryn");
-
-            
             // Set option for comboBox
             this.comboBoxCategory.ItemsSource = categories;
         }

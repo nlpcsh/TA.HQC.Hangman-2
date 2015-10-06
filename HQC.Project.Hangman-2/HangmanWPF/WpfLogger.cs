@@ -1,12 +1,9 @@
-﻿using HQC.Project.Hangman.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Hangman
+﻿namespace Hangman
 {
+    using System;
+    using System.Collections.Generic;
+    using HQC.Project.Hangman.UI.Common;
+
     public class WpfLogger : ILogger
     {
         public void PrintGameTitle()

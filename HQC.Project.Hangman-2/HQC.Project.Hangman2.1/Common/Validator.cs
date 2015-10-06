@@ -72,7 +72,7 @@ namespace HQC.Project.Hangman.Common
             if (isContainsABadCharacter) 
             { 
                 return false; 
-            };
+            }
 
             return true;
         }

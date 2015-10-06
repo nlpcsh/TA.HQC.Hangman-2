@@ -1,12 +1,12 @@
 ﻿namespace HangmanConsoleApp
 {
     using HQC.Project.Hangman;
+    using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2.Commands.Common;
 
-    class ConsoleApp
+    public class ConsoleApp
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             HangmanStartPoint.Start(new ConsoleLogger(), new CommandFactory());
         }
