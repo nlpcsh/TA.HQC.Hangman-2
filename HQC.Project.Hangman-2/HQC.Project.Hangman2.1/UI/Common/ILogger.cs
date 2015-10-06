@@ -63,7 +63,7 @@ namespace HQC.Project.Hangman.UI.Common
         /// <summary>
         /// Print all things like menu or categories or rules
         /// </summary>
-        void Print(List<string> options);
+        void Print(IList<string> options);
 
         /// <summary>
         /// Read all from user

@@ -6,6 +6,8 @@ namespace HQC.Project.Hangman.GameLogic.States
 {
     using System;
     using System.Collections.Generic;
+    using System.Threading;
+
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameLogic.States.Common;
@@ -23,6 +25,35 @@ namespace HQC.Project.Hangman.GameLogic.States
         public override void Play(HangmanGame game)
         {
             var contentReader = new FolderContentReader();
+            var categoriesToList = GetAllCategories(contentReader);
+            game.Logger.Print(categoriesToList);
+
+            string chosenCategory = Console.ReadLine().Trim().ToLower();
+            bool categoryExists = this.CategoriesToLower(contentReader.Categories).Contains(chosenCategory.ToLower());
+
+            if (categoryExists)
+            {
+                game.WordSelect.FileName = "../../Words/" + chosenCategory + Globals.FileExtension;
+            }
+            else
+            {
+                Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.WrongCommand.Length / 2, Console.WindowHeight - 2);
+                Console.WriteLine(Messages.WrongCommand);
+                Thread.Sleep(500);
+                this.Play(game);
+            }
+
+            game.State = new InitializeGameState();
+            game.State.Play(game);
+        }
+
+        /// <summary>
+        /// Get all categories from .txt file
+        /// </summary>
+        /// <param name="contentReader"></param>
+        /// <returns></returns>
+        private IList<string> GetAllCategories(FolderContentReader contentReader)
+        {
             var categories = contentReader.Categories;
             var categoriesToList = new List<string>();
 
@@ -32,27 +63,16 @@ namespace HQC.Project.Hangman.GameLogic.States
                 categoriesToList.Add(categories[i]);
             }
 
-            categoriesToList.Add(Messages.PressToContinue);
             categoriesToList.Add(Messages.EnterChoiceMessage);
 
-            game.Logger.Print(categoriesToList);
-            string chosenCategory = Console.ReadLine().Trim().ToLower();
-
-            bool categoryExists = this.CategoriesToLower(contentReader.Categories).Contains(chosenCategory.ToLower());
-
-            if (categoryExists)
-            {
-                game.WordSelect.FileName = "../../Words/" + chosenCategory + Globals.FileExtension;
-            }
-            else
-            {
-                game.WordSelect.FileName = "../../Words/Random" + Globals.FileExtension;
-            }
-
-            game.State = new InitializeGameState();
-            game.State.Play(game);
+            return categoriesToList;
         }
 
+        /// <summary>
+        /// Transform categories to lower case letters
+        /// </summary>
+        /// <param name="categories"></param>
+        /// <returns>ICollection<string>All categories to lower case letters</returns>
         private ICollection<string> CategoriesToLower(string[] categories)
         {
             var categoriesToLower = new List<string>();

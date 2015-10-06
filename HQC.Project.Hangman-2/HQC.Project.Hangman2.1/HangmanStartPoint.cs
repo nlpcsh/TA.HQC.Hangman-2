@@ -43,8 +43,9 @@ namespace HQC.Project.Hangman
             }
         }
 
-        private static void Main(string[] args)
+        internal static void Main()
         {
+            Start(new ConsoleLogger(), new CommandFactory());
         }
     }
 }

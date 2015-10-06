@@ -27,6 +27,214 @@
             <param name="commandTypes">All in menu game commands</param>
             <returns></returns>
         </member>
+        <member name="T:HQC.Project.Hangman2._1.Exporters.FileExporter">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman2._1.Exporters.IExporter">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman2._1.Exporters.IExporter.Save(System.String)">
+            <summary>
+            ???
+            </summary>
+            <param name="name">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman2._1.Exporters.FileExporter.#ctor(HQC.Project.Hangman.Importers.ImportTopPlayersFromFile)">
+            <summary>
+            ???
+            </summary>
+            <param name="players">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman2._1.Exporters.FileExporter.Save(System.String)">
+            <summary>
+            ???
+            </summary>
+            <param name="filename">???</param>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand">
+            <summary>
+            This is the base abstract class for all commands.
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.Contracts.ICommand">
+            <summary>
+            Interface ICommand
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.Contracts.ICommand.Execute">
+            <summary>
+            Method to implement by every class
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand"/> class.
+            </summary>
+            <param name="currentGame">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand.Execute">
+            <summary>
+            Abstract method should implement every inheritance class
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand.Game">
+            <summary>
+            Property keep instance of HangmanGame
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.RestartGameCommand">
+            <summary>
+            Restart the game
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.RestartGameCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.GameCommands.RestartGameCommand"/> class.
+            </summary>
+            <param name="currentGame">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.RestartGameCommand.Execute">
+            <summary>
+            Restart game for user
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            ???
+            </summary>
+            <param name="game">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand.Execute">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman2.Commands.ExitCommand">
+            <summary>
+            Exit the game
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.Menu.MenuCommands.MenuCommand">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.Menu.MenuCommands.MenuCommand.#ctor(HQC.Project.Hangman.UI.Common.ILogger)">
+            <summary>
+            ???
+            </summary>
+            <param name="logger">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.Menu.MenuCommands.MenuCommand.Execute">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.Menu.MenuCommands.MenuCommand.Logger">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman2.Commands.ExitCommand.#ctor(HQC.Project.Hangman.UI.Common.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman2.Commands.ExitCommand"/> class.
+            </summary>
+            <param name="logger">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman2.Commands.ExitCommand.Execute">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman2.Commands.PlayCommand">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman2.Commands.PlayCommand.#ctor(HQC.Project.Hangman.UI.Common.ILogger)">
+            <summary>
+            ???
+            </summary>
+            <param name="logger">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman2.Commands.PlayCommand.Execute">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.StartGameCommand">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.StartGameCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.GameCommands.StartGameCommand"/> class.
+            </summary>
+            <param name="currentGame">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.StartGameCommand.Execute">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.HelpCommand">
+            <summary>
+            Help command help to user for guess a letter
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.HelpCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.GameCommands.HelpCommand"/> class.
+            </summary>
+            <param name="currentGame">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.HelpCommand.Execute">
+            <summary>
+            Open guess letter to user 
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman2.Commands.ShowGameRulesCommand">
+            <summary>
+            Show on user game rules
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman2.Commands.ShowGameRulesCommand.#ctor(HQC.Project.Hangman.UI.Common.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman2.Commands.ShowGameRulesCommand"/> class.
+            </summary>
+            <param name="logger">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman2.Commands.ShowGameRulesCommand.Execute">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman2.Commands.TopCommand">
+            <summary>
+            Show top 5 players
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman2.Commands.TopCommand.#ctor(HQC.Project.Hangman.UI.Common.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman2.Commands.TopCommand"/> class.
+            </summary>
+            <param name="logger">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman2.Commands.TopCommand.Execute">
+            <summary>
+            Show top 5 players
+            </summary>
+        </member>
         <member name="T:HQC.Project.Hangman.Common.ConsoleHelper">
             <summary>
             Help for clear the part of console now everything
@@ -34,7 +242,7 @@
         </member>
         <member name="M:HQC.Project.Hangman.Common.ConsoleHelper.ClearConsoleInRange(System.Int32,System.Int32,System.Int32)">
             <summary>
-            Clean console set limits
+            Clear range of row on console 
             </summary>
             <param name="startCol">From where</param>
             <param name="endCol">to where</param>
@@ -42,7 +250,7 @@
         </member>
         <member name="M:HQC.Project.Hangman.Common.ConsoleHelper.ClearConsoleInRange(System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
-            ???
+            Clean console set limits
             </summary>
             <param name="startCol">From which collumn</param>
             <param name="endCol">To which collumn</param>
@@ -66,77 +274,72 @@
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.GoodBuy">
             <summary>
-            ???
+            Contains Good buy message
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.EnterChoiceMessage">
             <summary>
-            ???
+            Contains enter choice message
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.PressAnyKeyMessage">
             <summary>
-            ???
+            Contains Press any key to contionue message
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.Categories">
             <summary>
-            ???
-            </summary>
-        </member>
-        <member name="F:HQC.Project.Hangman.Common.Messages.PressToContinue">
-            <summary>
-            ???
+            Contains header of Categories 
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.BestScores">
             <summary>
-            ???
+            Contains Top 5 players message
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.WinGameMessage">
             <summary>
-            ???
+             Contains Win game message
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.SecretWord">
             <summary>
-            ???
+            Contains secret words message  
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.WrongCommand">
             <summary>
-            ???
-            </summary>
-        </member>
-        <member name="F:HQC.Project.Hangman.Common.Messages.EnterSecretMessage">
-            <summary>
-            ???
+            Contains wrong command message
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.EnterLetterMessage">
             <summary>
-            ???
+            Contains enter letters message
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.EnterNameMessage">
             <summary>
-            ???
+            Contains enter name message 
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.UsedLettersMessage">
             <summary>
-            ???
+            Contains used lettes message
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.RevealLetterMessage">
             <summary>
-            ???
+            Contains reveal letter message
+            </summary>
+        </member>
+        <member name="F:HQC.Project.Hangman.Common.Messages.PlayAgainMessage">
+            <summary>
+            Contains play again message 
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.CantUseHelp">
             <summary>
-            ???
+            Contains message for needed points to use help option 
             </summary>
         </member>
         <member name="F:HQC.Project.Hangman.Common.Messages.rulesInfo">
@@ -153,6 +356,338 @@
             <summary>
             Contains game title array
             </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.Importers.Common.IWordsImporter">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.Importers.Common.IWordsImporter.SelectRandomWord">
+            <summary>
+            ???
+            </summary>
+            <returns>???</returns>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.States.ChooseCategoryState">
+            <summary>
+            This class initializes a state in the game, where you can choose category of words. In case you choose an invalid category, the category "Random" is automatically chosen.
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.States.Common.State">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.States.Common.State.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            ???
+            </summary>
+            <param name="game">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.States.ChooseCategoryState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            initializes category choosing
+            </summary>
+            <param name="game">An instance of HangmanGame</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.States.ChooseCategoryState.GetAllCategories(HQC.Project.Hangman.Importers.FolderContentReader)">
+            <summary>
+            Get all categories from .txt file
+            </summary>
+            <param name="contentReader"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:HQC.Project.Hangman.GameLogic.States.ChooseCategoryState.CategoriesToLower(System.String[])" -->
+        <member name="T:HQC.Project.Hangman.Importers.FolderContentReader">
+            <summary>
+            This class reads the files in the given directory with the given extension
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.Importers.FolderContentReader.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.Importers.FolderContentReader"/> class.
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.Importers.FolderContentReader.Categories">
+            <summary>
+            Return an array with string, containing only the names of the files, without their extensions
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.UI.ConsoleLogger">
+            <summary>
+            Print messages on console
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.UI.Common.ILogger">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintGameTitle">
+            <summary>
+            Print game title
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintGoodBuyMessage">
+            <summary>
+            Print good bye message
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintMessage(System.String)">
+            <summary>
+            Print message
+            </summary>
+            <param name="message">Message to print</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintSecretWord(System.String)">
+            <summary>
+            Print hidden word
+            </summary>
+            <param name="hiddenWord">Word to hidden</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintHangman(System.Int32)">
+            <summary>
+            Print differnt hangman depends on player lives
+            </summary>
+            <param name="playerLives">How many lives has player</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintVerticalMiddleBorder">
+            <summary>
+            Split game field on two parts 
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintEnterCommandMessage">
+            <summary>
+            Show to user that can write command
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintUsedLetters(System.Collections.Generic.ISet{System.Char})">
+            <summary>
+            Print all used letters
+            </summary>
+            <param name="letters">Used letters</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintGameInitialization">
+            <summary>
+            Show to user that can enter name
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.Print(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Print all things like menu or categories or rules
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.ReadInput">
+            <summary>
+            Read all from user
+            </summary>
+            <returns>To game engine string with command</returns>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintGameTitle">
+            <summary>
+            Print game title on console
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintGoodBuyMessage">
+            <summary>
+            Print good bye message on console
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintMessage(System.String)">
+            <summary>
+            Print message on console
+            </summary>
+            <param name="message">Message to print</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintSecretWord(System.String)">
+            <summary>
+            Print hidden word
+            </summary>
+            <param name="hiddenWord">Word to print hidden</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintHangman(System.Int32)">
+            <summary>
+            Print hangman. Different hangman depends on playerLives
+            </summary>
+            <param name="playerLives">How many lives player have</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintVerticalMiddleBorder">
+            <summary>
+            Split console on two parts
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintEnterCommandMessage">
+            <summary>
+            Show on user where can write on console
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintUsedLetters(System.Collections.Generic.ISet{System.Char})">
+            <summary>
+            Print which letters user is used
+            </summary>
+            <param name="letters">All used letters by user</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintGameInitialization">
+            <summary>
+            Print message for player name initialization
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.Print(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Print on console menu, rules, categories and scores
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.ReadInput">
+            <summary>
+            Read user input
+            </summary>
+            <returns>What user is write to lower case</returns>
+        </member>
+        <member name="T:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.Importers.Common.IPlayesImporter">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.Importers.Common.IPlayesImporter.ImportPlayers(System.String)">
+            <summary>
+            ???
+            </summary>
+            <param name="name">???</param>
+            <returns>???</returns>
+        </member>
+        <member name="M:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile"/> class.
+            </summary>
+            <param name="fileName">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile.ImportPlayers(System.String)">
+            <summary>
+            ???
+            </summary>
+            <param name="fileName">???</param>
+            <returns>???</returns>
+        </member>
+        <member name="P:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile.TopPlayers">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.HangmanGame">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.HangmanGame.#ctor(HQC.Project.Hangman.UI.Common.ILogger,HQC.Project.Hangman.GameLogic.States.Common.State,HQC.Project.Hangman.Importers.WordSelectorFromFile,HQC.Project.Hangman.GameScoreBoard.ScoreBoard,HQC.Project.Hangman.Players.Common.IPlayer,HQC.Project.Hangman.Common.CommandFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.HangmanGame"/> class.
+            </summary>
+            <param name="logger">Used to draw on console</param>
+            <param name="state">Holds different states while game is running</param>
+            <param name="wordselector">Select words from .txt file</param>
+            <param name="scoreboard">Holds best scores from games</param>
+            <param name="player">Holds information for user</param>
+            <param name="commandCreator">Returns command from user</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.HangmanGame.StartGame">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.State">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.WordSelect">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.Player">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.Scores">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.Logger">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.CommandFactory">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.CurrentCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HQC.Project.Hangman2.GameStates.EndGameState">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman2.GameStates.EndGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            ???
+            </summary>
+            <param name="game">???</param>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.States.InitializeGameState">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.States.InitializeGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            ???
+            </summary>
+            <param name="game">???</param>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.States.PlayerInitializationState">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.States.PlayerInitializationState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            ???
+            </summary>
+            <param name="game">???</param>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.States.PlayGameState">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.States.PlayGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            ???
+            </summary>
+            <param name="game">???</param>
+        </member>
+        <member name="T:HQC.Project.Hangman.GameLogic.States.RestartGameState">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameLogic.States.RestartGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
+            <summary>
+            ???
+            </summary>
+            <param name="game">???</param>
         </member>
         <member name="T:HQC.Project.Hangman.Common.Globals">
             <summary>
@@ -224,462 +759,6 @@
             ???
             </summary>
         </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand">
-            <summary>
-            This is the base abstract class for all commands.
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand"/> class.
-            </summary>
-            <param name="currentGame">???</param>
-        </member>
-        <member name="P:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand.Game">
-            <summary>
-            Property keep instance of HangmanGame
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand.Execute">
-            <summary>
-            Abstract method should implement every inheritance class
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.RestartGameCommand">
-            <summary>
-            Restart the game
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.RestartGameCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.GameCommands.RestartGameCommand"/> class.
-            </summary>
-            <param name="currentGame">???</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.RestartGameCommand.Execute">
-            <summary>
-            Restart game for user
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            ???
-            </summary>
-            <param name="game">???</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand.Execute">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.StartGameCommand">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.StartGameCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.GameCommands.StartGameCommand"/> class.
-            </summary>
-            <param name="currentGame">???</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.StartGameCommand.Execute">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.HelpCommand">
-            <summary>
-            Help command help to user for guess a letter
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.HelpCommand.#ctor(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.GameCommands.HelpCommand"/> class.
-            </summary>
-            <param name="currentGame">???</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.GameCommands.HelpCommand.Execute">
-            <summary>
-            Open guess letter to user 
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.States.ChooseCategoryState">
-            <summary>
-            This class initializes a state in the game, where you can choose category of words. In case you choose an invalid category, the category "Random" is automatically chosen.
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.States.ChooseCategoryState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            initializes category choosing
-            </summary>
-            <param name="game">An instance of HangmanGame</param>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.States.Common.State">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.States.Common.State.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            ???
-            </summary>
-            <param name="game">???</param>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.States.InitializeGameState">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.States.InitializeGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            ???
-            </summary>
-            <param name="game">???</param>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.States.PlayerInitializationState">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.States.PlayerInitializationState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            ???
-            </summary>
-            <param name="game">???</param>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.States.PlayGameState">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.States.PlayGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            ???
-            </summary>
-            <param name="game">???</param>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.States.RestartGameState">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.States.RestartGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            ???
-            </summary>
-            <param name="game">???</param>
-        </member>
-        <member name="T:HQC.Project.Hangman.GameLogic.HangmanGame">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.HangmanGame.#ctor(HQC.Project.Hangman.UI.Common.ILogger,HQC.Project.Hangman.GameLogic.States.Common.State,HQC.Project.Hangman.Importers.WordSelectorFromFile,HQC.Project.Hangman.GameScoreBoard.ScoreBoard,HQC.Project.Hangman.Players.Common.IPlayer,HQC.Project.Hangman.Common.CommandFactory)">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.GameLogic.HangmanGame"/> class.
-            </summary>
-            <param name="logger">Used to draw on console</param>
-            <param name="state">Holds different states while game is running</param>
-            <param name="wordselector">Select words from .txt file</param>
-            <param name="scoreboard">Holds best scores from games</param>
-            <param name="player">Holds information for user</param>
-            <param name="commandCreator">Returns command from user</param>
-        </member>
-        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.State">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.WordSelect">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.Player">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.Scores">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.Logger">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.CommandFactory">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="P:HQC.Project.Hangman.GameLogic.HangmanGame.CurrentCommand">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameLogic.HangmanGame.StartGame">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman.Contracts.ICommand">
-            <summary>
-            Interface ICommand
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.Contracts.ICommand.Execute">
-            <summary>
-            Method to implement by every class
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman.Menu.MenuCommands.MenuCommand">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.Menu.MenuCommands.MenuCommand.#ctor(HQC.Project.Hangman.UI.Common.ILogger)">
-            <summary>
-            ???
-            </summary>
-            <param name="logger">???</param>
-        </member>
-        <member name="P:HQC.Project.Hangman.Menu.MenuCommands.MenuCommand.Logger">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.Menu.MenuCommands.MenuCommand.Execute">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman.Importers.Common.IWordsImporter">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.Importers.Common.IWordsImporter.SelectRandomWord">
-            <summary>
-            ???
-            </summary>
-            <returns>???</returns>
-        </member>
-        <member name="T:HQC.Project.Hangman.Importers.Common.IPlayesImporter">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.Importers.Common.IPlayesImporter.ImportPlayers(System.String)">
-            <summary>
-            ???
-            </summary>
-            <param name="name">???</param>
-            <returns>???</returns>
-        </member>
-        <member name="T:HQC.Project.Hangman.Importers.FolderContentReader">
-            <summary>
-            This class reads the files in the given directory with the given extension
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.Importers.FolderContentReader.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.Importers.FolderContentReader"/> class.
-            </summary>
-        </member>
-        <member name="P:HQC.Project.Hangman.Importers.FolderContentReader.Categories">
-            <summary>
-            Return an array with string, containing only the names of the files, without their extensions
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile"/> class.
-            </summary>
-            <param name="fileName">???</param>
-        </member>
-        <member name="P:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile.TopPlayers">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile.ImportPlayers(System.String)">
-            <summary>
-            ???
-            </summary>
-            <param name="fileName">???</param>
-            <returns>???</returns>
-        </member>
-        <member name="T:HQC.Project.Hangman.Importers.WordSelectorFromFile">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.Importers.WordSelectorFromFile.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.Importers.WordSelectorFromFile"/> class.
-            </summary>
-            <param name="fileName">???</param>
-        </member>
-        <member name="P:HQC.Project.Hangman.Importers.WordSelectorFromFile.FileName">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="P:HQC.Project.Hangman.Importers.WordSelectorFromFile.RandomWord">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.Importers.WordSelectorFromFile.SelectRandomWord">
-            <summary>
-            ???
-            </summary>
-            <returns>???</returns>
-        </member>
-        <member name="T:HQC.Project.Hangman.UI.ConsoleLogger">
-            <summary>
-            Print messages on console
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintGameTitle">
-            <summary>
-            Print game title on console
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintGoodBuyMessage">
-            <summary>
-            Print good bye message on console
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintMessage(System.String)">
-            <summary>
-            Print message on console
-            </summary>
-            <param name="message">Message to print</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintSecretWord(System.String)">
-            <summary>
-            Print hidden word
-            </summary>
-            <param name="hiddenWord">Word to print hidden</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintHangman(System.Int32)">
-            <summary>
-            Print hangman. Different hangman depends on playerLives
-            </summary>
-            <param name="playerLives">How many lives player have</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintVerticalMiddleBorder">
-            <summary>
-            Split console on two parts
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintEnterCommandMessage">
-            <summary>
-            Show on user where can write on console
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintUsedLetters(System.Collections.Generic.ISet{System.Char})">
-            <summary>
-            Print which letters user is used
-            </summary>
-            <param name="letters">All used letters by user</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.PrintGameInitialization">
-            <summary>
-            Print message for player name initialization
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.Print(System.Collections.Generic.List{System.String})">
-            <summary>
-            Print on console menu, rules, categories and scores
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.ConsoleLogger.ReadInput">
-            <summary>
-            Read user input
-            </summary>
-            <returns>What user is write to lower case</returns>
-        </member>
-        <member name="T:HQC.Project.Hangman.UI.Common.ILogger">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintGameTitle">
-            <summary>
-            Print game title
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintGoodBuyMessage">
-            <summary>
-            Print good bye message
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintMessage(System.String)">
-            <summary>
-            Print message
-            </summary>
-            <param name="message">Message to print</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintSecretWord(System.String)">
-            <summary>
-            Print hidden word
-            </summary>
-            <param name="hiddenWord">Word to hidden</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintHangman(System.Int32)">
-            <summary>
-            Print differnt hangman depends on player lives
-            </summary>
-            <param name="playerLives">How many lives has player</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintVerticalMiddleBorder">
-            <summary>
-            Split game field on two parts 
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintEnterCommandMessage">
-            <summary>
-            Show to user that can write command
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintUsedLetters(System.Collections.Generic.ISet{System.Char})">
-            <summary>
-            Print all used letters
-            </summary>
-            <param name="letters">Used letters</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.PrintGameInitialization">
-            <summary>
-            Show to user that can enter name
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.Print(System.Collections.Generic.List{System.String})">
-            <summary>
-            Print all things like menu or categories or rules
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.UI.Common.ILogger.ReadInput">
-            <summary>
-            Read all from user
-            </summary>
-            <returns>To game engine string with command</returns>
-        </member>
         <member name="T:HQC.Project.Hangman.HangmanStartPoint">
             <summary>
             Start point to the game
@@ -696,6 +775,13 @@
             <summary>
             ???
             </summary>
+        </member>
+        <member name="M:HQC.Project.Hangman.Players.Common.IPlayer.Compare(HQC.Project.Hangman.Players.Common.IPlayer)">
+            <summary>
+            ???
+            </summary>
+            <param name="otherPlayer">???</param>
+            <returns>???</returns>
         </member>
         <member name="P:HQC.Project.Hangman.Players.Common.IPlayer.Name">
             <summary>
@@ -727,12 +813,32 @@
             ???
             </summary>
         </member>
-        <member name="M:HQC.Project.Hangman.Players.Common.IPlayer.Compare(HQC.Project.Hangman.Players.Common.IPlayer)">
+        <member name="T:HQC.Project.Hangman.GameScoreBoard.ScoreBoard">
             <summary>
             ???
             </summary>
-            <param name="otherPlayer">???</param>
-            <returns>???</returns>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.LoadTopPlayers(System.String)">
+            <summary>
+            ???
+            </summary>
+            <param name="filename">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.PlacePlayerInScoreBoard(HQC.Project.Hangman.Players.Common.IPlayer)">
+            <summary>
+            ???
+            </summary>
+            <param name="player">???</param>
+        </member>
+        <member name="P:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.Instance">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="P:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.ScoreBoardTable">
+            <summary>
+            ???
+            </summary>
         </member>
         <member name="T:HQC.Project.Hangman.Players.Player">
             <summary>
@@ -750,6 +856,13 @@
             </summary>
             <param name="playerName">???</param>
             <param name="score">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.Players.Player.Compare(HQC.Project.Hangman.Players.Common.IPlayer)">
+            <summary>
+            ???
+            </summary>
+            <param name="otherPlayer">???</param>
+            <returns>???</returns>
         </member>
         <member name="P:HQC.Project.Hangman.Players.Player.HiddenWord">
             <summary>
@@ -781,142 +894,32 @@
             ???
             </summary>
         </member>
-        <member name="M:HQC.Project.Hangman.Players.Player.Compare(HQC.Project.Hangman.Players.Common.IPlayer)">
+        <member name="T:HQC.Project.Hangman.Importers.WordSelectorFromFile">
             <summary>
             ???
             </summary>
-            <param name="otherPlayer">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.Importers.WordSelectorFromFile.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.Importers.WordSelectorFromFile"/> class.
+            </summary>
+            <param name="fileName">???</param>
+        </member>
+        <member name="M:HQC.Project.Hangman.Importers.WordSelectorFromFile.SelectRandomWord">
+            <summary>
+            ???
+            </summary>
             <returns>???</returns>
         </member>
-        <member name="T:HQC.Project.Hangman.GameScoreBoard.ScoreBoard">
+        <member name="P:HQC.Project.Hangman.Importers.WordSelectorFromFile.FileName">
             <summary>
             ???
             </summary>
         </member>
-        <member name="P:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.Instance">
+        <member name="P:HQC.Project.Hangman.Importers.WordSelectorFromFile.RandomWord">
             <summary>
             ???
             </summary>
-        </member>
-        <member name="P:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.ScoreBoardTable">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.LoadTopPlayers(System.String)">
-            <summary>
-            ???
-            </summary>
-            <param name="filename">???</param>
-        </member>
-        <member name="M:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.PlacePlayerInScoreBoard(HQC.Project.Hangman.Players.Common.IPlayer)">
-            <summary>
-            ???
-            </summary>
-            <param name="player">???</param>
-        </member>
-        <member name="T:HQC.Project.Hangman2._1.Exporters.FileExporter">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman2._1.Exporters.FileExporter.#ctor(HQC.Project.Hangman.Importers.ImportTopPlayersFromFile)">
-            <summary>
-            ???
-            </summary>
-            <param name="players">???</param>
-        </member>
-        <member name="M:HQC.Project.Hangman2._1.Exporters.FileExporter.Save(System.String)">
-            <summary>
-            ???
-            </summary>
-            <param name="filename">???</param>
-        </member>
-        <member name="T:HQC.Project.Hangman2._1.Exporters.IExporter">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman2._1.Exporters.IExporter.Save(System.String)">
-            <summary>
-            ???
-            </summary>
-            <param name="name">???</param>
-        </member>
-        <member name="T:HQC.Project.Hangman2.Commands.ExitCommand">
-            <summary>
-            Exit the game
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman2.Commands.ExitCommand.#ctor(HQC.Project.Hangman.UI.Common.ILogger)">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman2.Commands.ExitCommand"/> class.
-            </summary>
-            <param name="logger">???</param>
-        </member>
-        <member name="M:HQC.Project.Hangman2.Commands.ExitCommand.Execute">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman2.Commands.PlayCommand">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman2.Commands.PlayCommand.#ctor(HQC.Project.Hangman.UI.Common.ILogger)">
-            <summary>
-            ???
-            </summary>
-            <param name="logger">???</param>
-        </member>
-        <member name="M:HQC.Project.Hangman2.Commands.PlayCommand.Execute">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman2.Commands.ShowGameRulesCommand">
-            <summary>
-            Show on user game rules
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman2.Commands.ShowGameRulesCommand.#ctor(HQC.Project.Hangman.UI.Common.ILogger)">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman2.Commands.ShowGameRulesCommand"/> class.
-            </summary>
-            <param name="logger">???</param>
-        </member>
-        <member name="M:HQC.Project.Hangman2.Commands.ShowGameRulesCommand.Execute">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman2.Commands.TopCommand">
-            <summary>
-            Show top 5 players
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman2.Commands.TopCommand.#ctor(HQC.Project.Hangman.UI.Common.ILogger)">
-            <summary>
-            Initializes a new instance of the <see cref="T:HQC.Project.Hangman2.Commands.TopCommand"/> class.
-            </summary>
-            <param name="logger">???</param>
-        </member>
-        <member name="M:HQC.Project.Hangman2.Commands.TopCommand.Execute">
-            <summary>
-            Show top 5 players
-            </summary>
-        </member>
-        <member name="T:HQC.Project.Hangman2.GameStates.EndGameState">
-            <summary>
-            ???
-            </summary>
-        </member>
-        <member name="M:HQC.Project.Hangman2.GameStates.EndGameState.Play(HQC.Project.Hangman.GameLogic.HangmanGame)">
-            <summary>
-            ???
-            </summary>
-            <param name="game">???</param>
         </member>
     </members>
 </doc>

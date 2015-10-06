@@ -62,11 +62,11 @@ namespace HQC.Project.Hangman.UI
         /// <param name="hiddenWord">Word to print hidden</param>
         public void PrintSecretWord(string hiddenWord)
         {
-            var leftPositionMessage = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.EnterSecretMessage.Length / 2);
+            var leftPositionMessage = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.SecretWord.Length / 2);
             var top = Console.WindowHeight / 2;
 
             Console.SetCursorPosition(leftPositionMessage, top);
-            Console.WriteLine(Messages.EnterSecretMessage);
+            Console.WriteLine(Messages.SecretWord);
 
             var leftPositionWord = Console.WindowWidth - (Console.WindowWidth / 4) - (hiddenWord.Length / 2);
             Console.SetCursorPosition(leftPositionWord, top + 2);
@@ -152,7 +152,7 @@ namespace HQC.Project.Hangman.UI
         /// <summary>
         /// Print on console menu, rules, categories and scores
         /// </summary>
-        public void Print(List<string> options)
+        public void Print(IList<string> options)
         {
             this.PrintGameTitle();
             var top = Messages.gameTitle.Count;

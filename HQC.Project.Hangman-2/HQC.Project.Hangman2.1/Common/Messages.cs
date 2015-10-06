@@ -13,77 +13,72 @@ namespace HQC.Project.Hangman.Common
     public class Messages
     {
         /// <summary>
-        /// ???
+        /// Contains Good buy message
         /// </summary>
         public const string GoodBuy = "Good bye!";
 
         /// <summary>
-        /// ???
+        /// Contains enter choice message
         /// </summary>
         public const string EnterChoiceMessage = "Enter your choice:";
 
         /// <summary>
-        /// ???
+        /// Contains Press any key to contionue message
         /// </summary>
         public const string PressAnyKeyMessage = "Press any key to continue....";
 
         /// <summary>
-        /// ???
+        /// Contains header of Categories 
         /// </summary>
         public const string Categories = "CATEGORIES";
-
+        
         /// <summary>
-        /// ???
-        /// </summary>
-        public const string PressToContinue = "/or press any key for random word/";
-
-        /// <summary>
-        /// ???
+        /// Contains Top 5 players message
         /// </summary>
         public const string BestScores = "Top 5 players";
 
         /// <summary>
-        /// ???
+        ///  Contains Win game message
         /// </summary>
         public const string WinGameMessage = "You won! Your score is {0}";
 
         /// <summary>
-        /// ???
+        /// Contains secret words message  
         /// </summary>
         public const string SecretWord = "The secret word is: ";
 
         /// <summary>
-        /// ???
+        /// Contains wrong command message
         /// </summary>
         public const string WrongCommand = "Wrong command, please try again!";
-
+        
         /// <summary>
-        /// ???
-        /// </summary>
-        public const string EnterSecretMessage = "The secret word is:";
-
-        /// <summary>
-        /// ???
+        /// Contains enter letters message
         /// </summary>
         public const string EnterLetterMessage = "Please enter a letter:";
 
         /// <summary>
-        /// ???
+        /// Contains enter name message 
         /// </summary>
         public const string EnterNameMessage = "Please enter your name: ";
 
         /// <summary>
-        /// ???
+        /// Contains used lettes message
         /// </summary>
         public const string UsedLettersMessage = "Used letter:";
 
         /// <summary>
-        /// ???
+        /// Contains reveal letter message
         /// </summary>
         public const string RevealLetterMessage = "OK, I reveal for you the next letter {0}.";
 
         /// <summary>
-        /// ???
+        /// Contains play again message 
+        /// </summary>
+        public const string PlayAgainMessage = "Want to play again? y/n: ";
+
+        /// <summary>
+        /// Contains message for needed points to use help option 
         /// </summary>
         public const string CantUseHelp = "You don't have {0} points!";
 

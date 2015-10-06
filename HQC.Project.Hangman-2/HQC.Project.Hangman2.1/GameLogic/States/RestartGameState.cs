@@ -8,6 +8,8 @@ namespace HQC.Project.Hangman.GameLogic.States
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.GameLogic.States;
     using HQC.Project.Hangman.GameLogic.States.Common;
+    using HQC.Project.Hangman.Common;
+    using System.Threading;
 
     /// <summary>
     /// ???
@@ -23,7 +25,7 @@ namespace HQC.Project.Hangman.GameLogic.States
             Console.Clear();
             game.Logger.PrintGameTitle();
 
-            Console.Write("Want to play again? y/n ");
+            Console.Write(Messages.PlayAgainMessage);
             char playAgainYesNo = Console.ReadKey().KeyChar;
 
             Console.WriteLine();
@@ -33,11 +35,15 @@ namespace HQC.Project.Hangman.GameLogic.States
                 game.State = new ChooseCategoryState();
                 game.State.Play(game);
             }
+            else if(playAgainYesNo=='n')
+            {
+                HangmanStartPoint.Main();
+            }
             else
             {
-                // Execute.Exit();
-                game.Logger.PrintGoodBuyMessage();
-                Environment.Exit(0);
+                Console.WriteLine(Messages.WrongCommand);
+                Thread.Sleep(500);
+                this.Play(game);
             }
         }
     }
