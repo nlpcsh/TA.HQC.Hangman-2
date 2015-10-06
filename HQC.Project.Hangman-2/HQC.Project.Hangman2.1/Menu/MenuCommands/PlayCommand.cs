@@ -12,6 +12,7 @@ namespace HQC.Project.Hangman2.Commands
     using HQC.Project.Hangman2.Commands.Common;
     using HQC.Project.Hangman2.Commands.MenuCommands;
     using HQC.Project.Hangman2.GameStates;
+    using HQC.Project.Hangman2.Common;
 
     /// <summary>
     /// ???
@@ -36,6 +37,7 @@ namespace HQC.Project.Hangman2.Commands
             var scores = ScoreBoard.Instance;
             var player = new Player();
             var caommandFactory = new CommandFactory();
+
             var game = new HangmanGame(this.Logger, new PlayerInitializationState(), wordSelector, scores, player, caommandFactory);
             game.StartGame();
         }

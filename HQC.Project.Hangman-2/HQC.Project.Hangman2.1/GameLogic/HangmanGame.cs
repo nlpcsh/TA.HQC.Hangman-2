@@ -7,6 +7,7 @@ namespace HQC.Project.Hangman
     using HQC.Project.Hangman.Players;
     using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman2.Commands.Common;
+    using HQC.Project.Hangman2.Common;
     using HQC.Project.Hangman2.GameStates;
     using HQC.Project.Hangman2.Players.Common;
 
@@ -29,7 +30,7 @@ namespace HQC.Project.Hangman
             this.WordSelect = wordselector;
             this.Scores = scoreboard;
             this.State = state;
-            this.WordGuess = player;
+            this.Player = player;
             this.Logger = logger;
             this.CommandFactory = commandCreator;
         }
@@ -47,7 +48,7 @@ namespace HQC.Project.Hangman
         /// <summary>
         /// ???
         /// </summary>
-        public IPlayer WordGuess { get; set; }
+        public IPlayer Player { get; set; }
 
         /// <summary>
         /// ???
@@ -63,7 +64,10 @@ namespace HQC.Project.Hangman
         /// ???
         /// </summary>
         public CommandFactory CommandFactory { get; private set; }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public string CurrentCommand { get; set; }
 
         /// <summary>

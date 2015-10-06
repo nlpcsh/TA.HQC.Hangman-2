@@ -22,8 +22,6 @@ namespace HQC.Project.Hangman.Players
         private string name;
         private int score;
 
-        private bool isRevelingMoreLetters = true;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Player"/> class.
         /// </summary>

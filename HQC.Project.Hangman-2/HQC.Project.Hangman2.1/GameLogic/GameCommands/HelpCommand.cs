@@ -29,24 +29,24 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            if (Game.WordGuess.Score >= Globals.HelpNeededPoints)
+            if (Game.Player.Score >= Globals.HelpNeededPoints)
             {
                 char firstUnrevealedLetter = '$';
 
-                for (int i = 0; i < this.Game.WordGuess.Word.Length; i++)
+                for (int i = 0; i < this.Game.Player.Word.Length; i++)
                 {
-                    if (this.Game.WordGuess.HiddenWord[i] == '_')
+                    if (this.Game.Player.HiddenWord[i] == '_')
                     {
-                        firstUnrevealedLetter = this.Game.WordGuess.Word[i];
+                        firstUnrevealedLetter = this.Game.Player.Word[i];
                         break;
                     }
                 }
 
                 var command = this.Game.CommandFactory.GetGameCommand("revealGuessedLetters", this.Game, Globals.CommandTypesValue);
                 command.Execute();
-                this.Game.WordGuess.Score -= Globals.HelpNeededPoints;
+                this.Game.Player.Score -= Globals.HelpNeededPoints;
                 this.Game.Logger.PrintMessage(string.Format(Messages.RevealLetterMessage, firstUnrevealedLetter));
-                this.Game.Logger.PrintSecretWord(this.Game.WordGuess.HiddenWord);
+                this.Game.Logger.PrintSecretWord(this.Game.Player.HiddenWord);
             }
             else
             {

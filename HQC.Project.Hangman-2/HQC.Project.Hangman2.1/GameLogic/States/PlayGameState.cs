@@ -23,7 +23,7 @@ namespace HQC.Project.Hangman2.GameStates
         /// <param name="game">???</param>
         public override void Play(HangmanGame game)
         {
-            while (game.WordGuess.HiddenWord.Contains("_"))
+            while (game.Player.HiddenWord.Contains("_"))
             {
                 // string commandToExecute = game.Logger.ReadInput();
                 game.CurrentCommand = game.Logger.ReadInput();
@@ -35,11 +35,11 @@ namespace HQC.Project.Hangman2.GameStates
                     var command = game.CommandFactory.GetGameCommand("revealGuessedLetters", game, Globals.CommandTypesValue);
                     command.Execute();
                 }
-                else if (game.CurrentCommand == game.WordGuess.Word)
+                else if (game.CurrentCommand == game.Player.Word)
                 {
-                    var bonus = GetBonus(game.WordGuess);
+                    var bonus = GetBonus(game.Player);
 
-                    game.WordGuess.Score += bonus;
+                    game.Player.Score += bonus;
 
                     game.State = new EndGameState();
                     game.State.Play(game);
@@ -54,14 +54,14 @@ namespace HQC.Project.Hangman2.GameStates
                     game.Logger.PrintMessage("Wrong input, please try again!");
                 }
 
-                game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
-                game.Logger.PrintUsedLetters(game.WordGuess.WrongLetters);
-                game.Logger.PrintHangman(game.WordGuess.Lives);
+                game.Logger.PrintSecretWord(game.Player.HiddenWord);
+                game.Logger.PrintUsedLetters(game.Player.WrongLetters);
+                game.Logger.PrintHangman(game.Player.Lives);
 
                 ConsoleHelper.ClearConsoleInRange(Globals.leftPositionCommandInput, Globals.leftPositionCommandInput + game.CurrentCommand.Length, Globals.topPositionCommandInput);
                 ConsoleHelper.ClearConsoleInRange((Console.WindowWidth / 2) + 1, Console.WindowWidth - 1, Globals.topPositionCommandInput + 2);
 
-                if (game.WordGuess.Lives == 0)
+                if (game.Player.Lives == 0)
                 {
                     break;
                 }

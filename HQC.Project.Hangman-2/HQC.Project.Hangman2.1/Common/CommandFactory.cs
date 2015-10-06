@@ -2,12 +2,13 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Commands.Common
+namespace HQC.Project.Hangman2.Common
 {
     using System;
     using System.Collections.Generic;
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.UI;
+    using HQC.Project.Hangman2.Commands.Common;
 
     /// <summary>
     /// ???

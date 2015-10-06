@@ -20,16 +20,16 @@ namespace HQC.Project.Hangman2.GameStates
         public override void Play(HangmanGame game)
         {
             Console.Clear();
-            game.WordGuess.Lives = 7;
-            game.WordGuess.WrongLetters = new HashSet<char>();
-            game.WordGuess.Word = "array"; //game.WordSelect.SelectRandomWord();
-            game.WordGuess.HiddenWord = new string('_', game.WordGuess.Word.Length);
+            game.Player.Lives = 7;
+            game.Player.WrongLetters = new HashSet<char>();
+            game.Player.Word = "array"; //game.WordSelect.SelectRandomWord();
+            game.Player.HiddenWord = new string('_', game.Player.Word.Length);
 
             game.Logger.PrintGameTitle();
             game.Logger.PrintVerticalMiddleBorder();
-            game.Logger.PrintHangman(game.WordGuess.Lives);
-            game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
-            game.Logger.PrintUsedLetters(game.WordGuess.WrongLetters);
+            game.Logger.PrintHangman(game.Player.Lives);
+            game.Logger.PrintSecretWord(game.Player.HiddenWord);
+            game.Logger.PrintUsedLetters(game.Player.WrongLetters);
             game.Logger.PrintEnterCommandMessage();
 
             game.State = new PlayGameState();

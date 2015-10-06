@@ -17,33 +17,36 @@
         public override void Execute()
         {
             var supposedChar = this.Game.CurrentCommand[0];
-            int numberOfTheAppearancesOfTheSupposedChar = this.Game.WordGuess.Word.Count(x => x.Equals(this.Game.CurrentCommand[0]));
-
             this.RevealGuessedLetters(supposedChar);
+            this.UpdatePlayer(this.Game, supposedChar);
+        }
 
+        private void UpdatePlayer(HangmanGame hangmanGame, char supposedChar)
+        {
+            int numberOfTheAppearancesOfTheSupposedChar = this.Game.Player.Word.Count(x => x.Equals(this.Game.CurrentCommand[0]));
             if (numberOfTheAppearancesOfTheSupposedChar == 0)
             {
-                this.Game.WordGuess.Lives--;
-                this.Game.WordGuess.WrongLetters.Add(supposedChar);
+                this.Game.Player.Lives--;
+                this.Game.Player.WrongLetters.Add(supposedChar);
             }
             else
             {
-                this.Game.WordGuess.Score += Globals.ScoreToAdd;
+                this.Game.Player.Score += Globals.ScoreToAdd;
             }
         }
 
         private void RevealGuessedLetters(char supposedChar)
         {
             var startIndex = 0;
-            var index = this.Game.WordGuess.Word.IndexOf(supposedChar, startIndex);
+            var index = this.Game.Player.Word.IndexOf(supposedChar, startIndex);
 
             while (index != -1)
             {
-                var word = new StringBuilder(this.Game.WordGuess.HiddenWord);
+                var word = new StringBuilder(this.Game.Player.HiddenWord);
                 word[index] = supposedChar;
-                this.Game.WordGuess.HiddenWord = word.ToString();
+                this.Game.Player.HiddenWord = word.ToString();
                 startIndex = index + 1;
-                index = this.Game.WordGuess.Word.IndexOf(supposedChar, startIndex);
+                index = this.Game.Player.Word.IndexOf(supposedChar, startIndex);
             }
         }
     }

@@ -18,10 +18,10 @@ namespace HQC.Project.Hangman2.GameStates
         /// <param name="game">???</param>
         public override void Play(HangmanGame game)
         {
-            game.Logger.PrintMessage(string.Format(Messages.WinGameMessage, game.WordGuess.Score));
-            game.Logger.PrintSecretWord(game.WordGuess.HiddenWord);
+            game.Logger.PrintMessage(string.Format(Messages.WinGameMessage, game.Player.Score));
+            game.Logger.PrintSecretWord(game.Player.HiddenWord);
 
-            ScoreBoard.Instance.PlacePlayerInScoreBoard(game.WordGuess);
+            ScoreBoard.Instance.PlacePlayerInScoreBoard(game.Player);
 
             game.State = new RestartGameState();
             game.State.Play(game);
