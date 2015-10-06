@@ -41,11 +41,6 @@ namespace HQC.Project.Hangman.Importers
 
             set
             {
-                if (Validator.IsValidFilename(value))
-                {
-                    throw new ArgumentException("Invalid file name!");
-                }
-
                 this.fileName = value;
             }
         }

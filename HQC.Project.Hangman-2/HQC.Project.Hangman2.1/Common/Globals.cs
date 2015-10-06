@@ -18,6 +18,10 @@ namespace HQC.Project.Hangman.Common
         /// How many user is in top scores
         /// </summary>
         public const int ScoreBoardSize = 5;
+
+        /// <summary>
+        /// ???
+        /// </summary>
         public const int ScoreToAdd = 10;
 
         /// <summary>
@@ -50,6 +54,9 @@ namespace HQC.Project.Hangman.Common
         /// </summary>
         public const string BestScoresPath = @"..\..\bestScores.txt";
 
+        /// <summary>
+        /// ???
+        /// </summary>
         public const int HelpNeededPoints = 50;
 
         // Game messages

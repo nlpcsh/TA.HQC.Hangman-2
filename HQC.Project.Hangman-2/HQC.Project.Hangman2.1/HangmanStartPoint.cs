@@ -15,6 +15,11 @@ namespace HQC.Project.Hangman
     /// </summary>
     public class HangmanStartPoint
     {
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="logger">???</param>
+        /// <param name="commandFactory">???</param>
         public static void Start(ILogger logger, CommandFactory commandFactory)
         {
             Console.WindowHeight = Messages.gameTitle.Count + HangmanPattern.Patterns[0].Length + 2;

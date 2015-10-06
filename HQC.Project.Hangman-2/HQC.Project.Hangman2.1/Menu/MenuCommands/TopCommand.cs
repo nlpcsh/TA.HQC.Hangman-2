@@ -19,7 +19,7 @@ namespace HQC.Project.Hangman2.Commands
         /// <summary>
         /// Initializes a new instance of the <see cref="TopCommand"/> class.
         /// </summary>
-        /// <param name="currentGame">???</param>
+        /// <param name="logger">???</param>
         public TopCommand(ILogger logger)
             : base(logger)
         {

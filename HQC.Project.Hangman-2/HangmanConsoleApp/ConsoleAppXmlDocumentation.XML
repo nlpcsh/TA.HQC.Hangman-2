@@ -4,5 +4,10 @@
         <name>HangmanConsoleApp</name>
     </assembly>
     <members>
+        <member name="T:HangmanConsoleApp.ConsoleApp">
+            <summary>
+            ???
+            </summary>
+        </member>
     </members>
 </doc>
