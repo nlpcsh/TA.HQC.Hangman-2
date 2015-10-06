@@ -2,13 +2,12 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Commands
+namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
+    using HQC.Project.Hangman.GameLogic.GameCommands;
     using HQC.Project.Hangman2;
-    using HQC.Project.Hangman2.Commands.Common;
-    using HQC.Project.Hangman2.Common;
 
     /// <summary>
     /// Help command help to user for guess a letter

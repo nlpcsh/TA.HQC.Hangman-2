@@ -2,10 +2,10 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Importers.Common
+namespace HQC.Project.Hangman.Importers.Common
 {
+    using HQC.Project.Hangman.Players.Common;
     using System.Collections.Generic;
-    using HQC.Project.Hangman2.Players.Common;
 
     /// <summary>
     /// ???

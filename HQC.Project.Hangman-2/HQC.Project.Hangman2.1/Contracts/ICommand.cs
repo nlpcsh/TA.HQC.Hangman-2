@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Commands.Common
+namespace HQC.Project.Hangman.Contracts
 {
     /// <summary>
     /// Interface ICommand

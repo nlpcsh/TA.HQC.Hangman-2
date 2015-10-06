@@ -1,7 +1,7 @@
-﻿namespace HQC.Project.Hangman2.Commands.MenuCommands
+﻿namespace HQC.Project.Hangman.Menu.MenuCommands
 {
-    using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2.Commands.Common;
+    using HQC.Project.Hangman.Contracts;
+    using HQC.Project.Hangman.UI.Common;
 
     public abstract class MenuCommand : ICommand
     {

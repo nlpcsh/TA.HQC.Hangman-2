@@ -2,15 +2,16 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.GameStates
+namespace HQC.Project.Hangman.GameLogic.States
 {
     using System;
     using System.Linq;
 
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman2.Common;
-    using HQC.Project.Hangman2.Players.Common;
+    using HQC.Project.Hangman.GameLogic.States.Common;
+    using HQC.Project.Hangman2.GameStates;
+    using HQC.Project.Hangman.Players.Common;
 
     /// <summary>
     /// ???
@@ -25,13 +26,11 @@ namespace HQC.Project.Hangman2.GameStates
         {
             while (game.Player.HiddenWord.Contains("_"))
             {
-                // string commandToExecute = game.Logger.ReadInput();
                 game.CurrentCommand = game.Logger.ReadInput();
 
                 if (game.CurrentCommand.Length == 1)
                 {
                     char supposedChar = game.CurrentCommand[0];
-                    //game.WordGuess.InitializationAfterTheGuess(supposedChar);
                     var command = game.CommandFactory.GetGameCommand("revealGuessedLetters", game, Globals.CommandTypesValue);
                     command.Execute();
                 }

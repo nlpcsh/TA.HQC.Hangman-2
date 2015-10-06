@@ -8,9 +8,8 @@ namespace HQC.Project.Hangman.UI
     using System.Collections.Generic;
     using System.Text;
     using System.Threading;
-    using Hangman2.Players.Common;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman2.Common;
+    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// ???

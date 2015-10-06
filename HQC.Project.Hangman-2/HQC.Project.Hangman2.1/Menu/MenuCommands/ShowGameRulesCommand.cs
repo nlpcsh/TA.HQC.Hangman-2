@@ -5,13 +5,11 @@
 namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
-    using Hangman.Common;
-    using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman2;
-    using HQC.Project.Hangman2.Commands.Common;
-    using HQC.Project.Hangman2.Commands.MenuCommands;
     using System;
-    using HQC.Project.Hangman2.Common;
+    using HQC.Project.Hangman.Common;
+    using HQC.Project.Hangman.Menu.MenuCommands;
+    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// Show on user game rules

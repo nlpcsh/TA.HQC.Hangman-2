@@ -6,10 +6,9 @@ namespace HQC.Project.Hangman2.Commands
 {
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2.Commands.Common;
-    using HQC.Project.Hangman2.Commands.MenuCommands;
-    using Hangman2.Common;
+    using HQC.Project.Hangman.GameScoreBoard;
+    using HQC.Project.Hangman.Menu.MenuCommands;
+    using HQC.Project.Hangman.UI.Common;
     using System;
     using System.Collections.Generic;
 

@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.GameStates
+namespace HQC.Project.Hangman.GameLogic.States.Common
 {
     using HQC.Project.Hangman;
 

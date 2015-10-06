@@ -2,10 +2,11 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Commands
+namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
     using HQC.Project.Hangman;
-    using HQC.Project.Hangman2.Commands.Common;
+    using HQC.Project.Hangman.GameLogic.GameCommands;
+    using HQC.Project.Hangman.GameLogic.States;
     using HQC.Project.Hangman2.GameStates;
 
     /// <summary>

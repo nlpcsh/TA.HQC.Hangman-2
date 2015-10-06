@@ -2,10 +2,11 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-namespace HQC.Project.Hangman2.Common
+namespace HQC.Project.Hangman.Common
 {
+    using System;
+    using System.Collections.Generic;
+
     /// <summary>
     /// ???
     /// </summary>

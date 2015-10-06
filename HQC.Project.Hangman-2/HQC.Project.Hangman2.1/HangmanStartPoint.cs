@@ -4,11 +4,11 @@
 
 namespace HQC.Project.Hangman
 {
+    using System;
+    
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman2.Commands.Common;
-    using Hangman2.Common;
-    using System;
+    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// Start point to the game

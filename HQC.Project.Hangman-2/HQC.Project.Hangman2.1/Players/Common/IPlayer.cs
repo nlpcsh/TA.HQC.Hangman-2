@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Players.Common
+namespace HQC.Project.Hangman.Players.Common
 {
     using System.Collections.Generic;
 

@@ -5,7 +5,11 @@
 namespace HQC.Project.Hangman2.GameStates
 {
     using HQC.Project.Hangman;
-    using HQC.Project.Hangman2.Common;
+    using HQC.Project.Hangman.Common;
+    using HQC.Project.Hangman.GameLogic;
+    using HQC.Project.Hangman.GameLogic.States;
+    using HQC.Project.Hangman.GameLogic.States.Common;
+    using HQC.Project.Hangman.GameScoreBoard;
 
     /// <summary>
     /// ???
