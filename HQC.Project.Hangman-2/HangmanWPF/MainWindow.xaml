@@ -13,7 +13,7 @@
         <Grid x:Name="gridUserName" HorizontalAlignment="Left" Height="130" Margin="10,10,0,0" VerticalAlignment="Top" Width="217">
             <Label x:Name="labelName" Content="Enter your name:" Height="40" FontFamily="Showcard Gothic" FontSize="16"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="212" TextAlignment="Center" Margin="0,45"/>
-            <Button x:Name="buttonName" Content="OK" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="74" Click="ButtonName_Click"/>
+            <Button x:Name="buttonName" Content="OK" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="74" Click="ButtonName"/>
         </Grid>
         <Grid x:Name="gridCategory" HorizontalAlignment="Left" Height="130" Margin="10,191,0,0" VerticalAlignment="Top" Width="217">
             <Label x:Name="labelCategory" Content="Select category:" Height="40" FontFamily="Showcard Gothic" FontSize="16"  HorizontalAlignment="Center" VerticalAlignment="Top"/>

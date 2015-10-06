@@ -23,6 +23,7 @@
             categories.Add("IT");
             categories.Add("dryn dryn");
 
+            
             // Set option for comboBox
             this.comboBoxCategory.ItemsSource = categories;
         }
@@ -32,7 +33,7 @@
             this.labelMessages.Content = message;
         }
 
-        private void ButtonName_Click(object sender, RoutedEventArgs e)
+        private void ButtonName(object sender, RoutedEventArgs e)
         {
             this.SetHeightAndWidth(360, 245);
 

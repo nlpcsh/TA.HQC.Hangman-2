@@ -1,0 +1,10 @@
+compiler
+computer
+developer
+hacker
+software
+debugging
+programmer
+javascript
+interface
+pattern

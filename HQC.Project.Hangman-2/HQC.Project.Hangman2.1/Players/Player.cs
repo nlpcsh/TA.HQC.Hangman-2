@@ -157,7 +157,7 @@ namespace HQC.Project.Hangman.Players
         {
             var startIndex = 0;
             var index = this.Word.IndexOf(supposedChar, startIndex);
-
+        
             while (index != -1)
             {
                 this.hiddenWord[index] = supposedChar;
@@ -185,7 +185,6 @@ namespace HQC.Project.Hangman.Players
 
             if (numberOfTheAppearancesOfTheSupposedChar == 0)
             {
-               // this.Score++;
                 this.Lives--;
                 this.WrongLetters.Add(supposedChar);
             }

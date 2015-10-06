@@ -41,33 +41,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\Common\CommandFactory.cs" />
-    <Compile Include="Commands\Common\Command.cs" />
-    <Compile Include="Commands\Common\ICommand.cs" />
-    <Compile Include="Commands\GameCommands\RestartGameCommand.cs" />
-    <Compile Include="Commands\MenuCommands\ExitCommand.cs" />
-    <Compile Include="Commands\MenuCommands\MenuCommand.cs" />
-    <Compile Include="Commands\MenuCommands\PlayCommand.cs" />
-    <Compile Include="Commands\MenuCommands\StartGameCommand.cs" />
-    <Compile Include="Commands\GameCommands\HelpCommand.cs" />
-    <Compile Include="Commands\MenuCommands\ShowGameRulesCommand.cs" />
-    <Compile Include="Commands\MenuCommands\TopCommand.cs" />
+    <Compile Include="Common\CommandFactory.cs" />
+    <Compile Include="GameLogic\GameCommands\GameCommand.cs" />
+    <Compile Include="Contracts\ICommand.cs" />
+    <Compile Include="GameLogic\GameCommands\RestartGameCommand.cs" />
+    <Compile Include="GameLogic\GameCommands\RevealGuessedLettersCommand.cs" />
+    <Compile Include="Menu\MenuCommands\ExitCommand.cs" />
+    <Compile Include="Menu\MenuCommands\MenuCommand.cs" />
+    <Compile Include="Menu\MenuCommands\PlayCommand.cs" />
+    <Compile Include="GameLogic\GameCommands\StartGameCommand.cs" />
+    <Compile Include="GameLogic\GameCommands\HelpCommand.cs" />
+    <Compile Include="Menu\MenuCommands\ShowGameRulesCommand.cs" />
+    <Compile Include="Menu\MenuCommands\TopCommand.cs" />
     <Compile Include="Common\ConsoleHelper.cs" />
     <Compile Include="Common\HangmanPattern.cs" />
     <Compile Include="Common\Messages.cs" />
     <Compile Include="Common\Validator.cs" />
     <Compile Include="Importers\Common\IWordsImporter.cs" />
-    <Compile Include="States\ChooseCategoryState.cs" />
+    <Compile Include="GameLogic\States\ChooseCategoryState.cs" />
     <Compile Include="Importers\FolderContentReader.cs" />
     <Compile Include="UI\ConsoleLogger.cs" />
     <Compile Include="Importers\ImportTopPlayersFromFile.cs" />
-    <Compile Include="HangmanGame.cs" />
-    <Compile Include="States\EndGameState.cs" />
-    <Compile Include="States\Common\State.cs" />
-    <Compile Include="States\InitializeGameState.cs" />
-    <Compile Include="States\PlayerInitializationState.cs" />
-    <Compile Include="States\PlayGameState.cs" />
-    <Compile Include="States\RestartGameState.cs" />
+    <Compile Include="GameLogic\HangmanGame.cs" />
+    <Compile Include="GameLogic\States\EndGameState.cs" />
+    <Compile Include="GameLogic\States\Common\State.cs" />
+    <Compile Include="GameLogic\States\InitializeGameState.cs" />
+    <Compile Include="GameLogic\States\PlayerInitializationState.cs" />
+    <Compile Include="GameLogic\States\PlayGameState.cs" />
+    <Compile Include="GameLogic\States\RestartGameState.cs" />
     <Compile Include="Common\Globals.cs" />
     <Compile Include="HangmanStartPoint.cs" />
     <Compile Include="Importers\Common\IPlayesImporter.cs" />
@@ -80,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Commands\CommandsDiagram.cd" />
     <None Include="v2.1.cd" />
   </ItemGroup>
   <ItemGroup />

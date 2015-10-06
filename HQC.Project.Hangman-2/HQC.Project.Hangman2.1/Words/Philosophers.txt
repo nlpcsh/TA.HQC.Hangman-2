@@ -1,0 +1,10 @@
+socrates
+aristotle
+confucius
+hippocrates
+protagoras
+descartes
+nietzsche
+parmenides
+empedocles
+leucippus

@@ -40,6 +40,7 @@ namespace HQC.Project.Hangman
 
         private static void Main(string[] args)
         {
+            Start(new ConsoleLogger(), new CommandFactory());
         }
     }
 }

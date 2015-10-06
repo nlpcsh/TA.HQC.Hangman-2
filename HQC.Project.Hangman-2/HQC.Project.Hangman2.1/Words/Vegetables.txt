@@ -1,0 +1,10 @@
+carrot
+cucumber
+potato
+eggplant
+beans
+onion
+garlic
+broccoli
+turnip
+cabbage

@@ -1,0 +1,10 @@
+elephant
+wolf
+dolphin
+butterfly
+stork
+crocodile
+kangaroo
+cheetah
+snake
+hamster

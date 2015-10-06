@@ -1,0 +1,10 @@
+constellation
+planet
+meteorite
+supernova
+asteroid
+universe
+satellite
+telescope
+comet
+extraterrestrial
