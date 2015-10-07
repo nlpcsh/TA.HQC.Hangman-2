@@ -1,4 +1,4 @@
-﻿// <copyright file="Command.cs" company="PlaceholderCompany">
+﻿// <copyright file="GameCommand.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 

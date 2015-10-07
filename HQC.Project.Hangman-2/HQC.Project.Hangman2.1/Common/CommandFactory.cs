@@ -36,7 +36,7 @@ namespace HQC.Project.Hangman.Common
         /// <param name="commandAsString">Command from user</param>
         /// <param name="logger">Takes logger(where will print data)</param>
         /// <param name="commandTypes">All in menu game commands</param>
-        /// <returns></returns>
+        /// <returns>Instance ot command</returns>
         public ICommand GetMenuCommand(string commandAsString, ILogger logger, IDictionary<string, Type> commandTypes)
         {
             var typeCommand = commandTypes[commandAsString];

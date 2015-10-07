@@ -75,7 +75,7 @@ namespace HQC.Project.Hangman.Players
         }
 
         /// <summary>
-        /// Player's score. Makes check if score is negative value. 
+        /// Player's score. Makes check if score is negative value.
         /// </summary>
         public int Score
         {

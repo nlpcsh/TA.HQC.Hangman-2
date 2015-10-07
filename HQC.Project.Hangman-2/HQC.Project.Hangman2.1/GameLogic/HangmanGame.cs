@@ -1,4 +1,4 @@
-﻿// <copyright file="GameEngine.cs" company="PlaceholderCompany">
+﻿// <copyright file="HangmanGame.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -64,7 +64,7 @@ namespace HQC.Project.Hangman.GameLogic
         /// Factory of commands.
         /// </summary>
         public CommandFactory CommandFactory { get; private set; }
-        
+
         /// <summary>
         /// Current command that player execute.
         /// </summary>

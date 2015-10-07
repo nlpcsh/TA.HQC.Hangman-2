@@ -7,10 +7,10 @@ namespace HQC.Project.Hangman.GameScoreBoard
     using System.IO;
     using System.Linq;
     using HQC.Project.Hangman.Common;
+    using HQC.Project.Hangman.Exporters;
     using HQC.Project.Hangman.Importers;
     using HQC.Project.Hangman.Importers.Common;
     using HQC.Project.Hangman.Players.Common;
-    using HQC.Project.Hangman2._1.Exporters;
 
     /// <summary>
     /// Holds information about players and their scores. Can't be inherit.
@@ -39,9 +39,9 @@ namespace HQC.Project.Hangman.GameScoreBoard
                     {
                         if (scoreBoardInstance == null)
                         {
-                            scoreBoardInstance = new ScoreBoard(); 
+                            scoreBoardInstance = new ScoreBoard();
                         }
-                    }               
+                    }
                 }
 
                 return scoreBoardInstance;
@@ -60,7 +60,7 @@ namespace HQC.Project.Hangman.GameScoreBoard
         }
 
         /// <summary>
-        /// Takes players with best scores from file. 
+        /// Takes players with best scores from file.
         /// </summary>
         /// <param name="filename">Path to file.</param>
         public void LoadTopPlayers(string filename)

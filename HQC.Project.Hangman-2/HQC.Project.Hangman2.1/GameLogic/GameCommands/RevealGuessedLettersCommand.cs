@@ -1,4 +1,8 @@
-﻿namespace HQC.Project.Hangman.GameLogic.GameCommands
+﻿// <copyright file="RevealGuessedLettersCommand.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
     using System.Linq;
     using System.Text;
@@ -6,12 +10,12 @@
     using HQC.Project.Hangman.Common;
 
     /// <summary>
-    /// This command reveal guessed letters. 
+    /// This command reveal guessed letters.
     /// </summary>
     public class RevealGuessedLettersCommand : GameCommand
     {
         /// <summary>
-        /// ?Initializes a new instance of the <see cref="RevealGuessedLettersCommand"/> class.
+        /// Initializes a new instance of the <see cref="RevealGuessedLettersCommand"/> class.
         /// </summary>
         /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public RevealGuessedLettersCommand(HangmanGame game)

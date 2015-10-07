@@ -40,7 +40,7 @@ namespace HQC.Project.Hangman.UI.Common
         void PrintHangman(int playerLives);
 
         /// <summary>
-        /// Split game field on two parts. 
+        /// Split game field on two parts.
         /// </summary>
         void PrintVerticalMiddleBorder();
 
@@ -63,6 +63,7 @@ namespace HQC.Project.Hangman.UI.Common
         /// <summary>
         /// Print all things like menu or categories or rules.
         /// </summary>
+        /// <param name="options">Option to print</param>
         void Print(IList<string> options);
 
         /// <summary>

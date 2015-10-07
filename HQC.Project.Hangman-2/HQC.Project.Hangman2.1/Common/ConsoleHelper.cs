@@ -12,7 +12,7 @@ namespace HQC.Project.Hangman.Common
     public static class ConsoleHelper
     {
         /// <summary>
-        /// Clear range of row on console 
+        /// Clear range of row on console
         /// </summary>
         /// <param name="startCol">From where</param>
         /// <param name="endCol">to where</param>

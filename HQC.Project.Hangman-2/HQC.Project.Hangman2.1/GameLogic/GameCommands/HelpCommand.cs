@@ -24,11 +24,11 @@ namespace HQC.Project.Hangman.GameLogic.GameCommands
         }
 
         /// <summary>
-        /// Open guess letter to user. 
+        /// Open guess letter to user.
         /// </summary>
         public override void Execute()
         {
-            if (Game.Player.Score >= Globals.HelpNeededPoints)
+            if (this.Game.Player.Score >= Globals.HelpNeededPoints)
             {
                 char firstUnrevealedLetter = '$';
 

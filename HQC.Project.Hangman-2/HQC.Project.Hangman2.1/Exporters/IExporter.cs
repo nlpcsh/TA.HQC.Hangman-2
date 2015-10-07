@@ -1,4 +1,8 @@
-﻿namespace HQC.Project.Hangman2._1.Exporters
+﻿// <copyright file="IExporter.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman.Exporters
 {
     /// <summary>
     /// Responsible for exporting data.

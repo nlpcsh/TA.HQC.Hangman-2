@@ -9,7 +9,7 @@ namespace HQC.Project.Hangman2.Commands
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameScoreBoard;
     using HQC.Project.Hangman.Menu.MenuCommands;
-    using HQC.Project.Hangman.UI.Common;    
+    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// Show top 5 players.

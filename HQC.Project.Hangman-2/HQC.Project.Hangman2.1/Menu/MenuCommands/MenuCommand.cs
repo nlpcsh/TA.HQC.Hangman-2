@@ -1,4 +1,8 @@
-﻿namespace HQC.Project.Hangman.Menu.MenuCommands
+﻿// <copyright file="MenuCommand.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman.Menu.MenuCommands
 {
     using HQC.Project.Hangman.Contracts;
     using HQC.Project.Hangman.UI.Common;

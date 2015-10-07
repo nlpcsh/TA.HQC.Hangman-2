@@ -5,19 +5,19 @@
 namespace HQC.Project.Hangman.GameLogic.States
 {
     using System;
+    using System.Threading;
     using HQC.Project.Hangman;
+    using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameLogic.States;
     using HQC.Project.Hangman.GameLogic.States.Common;
-    using HQC.Project.Hangman.Common;
-    using System.Threading;
 
     /// <summary>
-    /// Start new game if player still want to play or redirect to menu. 
+    /// Start new game if player still want to play or redirect to menu.
     /// </summary>
     public class RestartGameState : State
     {
         /// <summary>
-        /// Start new game if player still want to play or redirect to menu. 
+        /// Start new game if player still want to play or redirect to menu.
         /// </summary>
         /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
@@ -35,7 +35,7 @@ namespace HQC.Project.Hangman.GameLogic.States
                 game.State = new ChooseCategoryState();
                 game.State.Play(game);
             }
-            else if(playAgainYesNo=='n')
+            else if (playAgainYesNo == 'n')
             {
                 HangmanStartPoint.Main();
             }

@@ -1,4 +1,8 @@
-﻿namespace HQC.Project.Hangman2._1.Exporters
+﻿// <copyright file="FileExporter.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace HQC.Project.Hangman.Exporters
 {
     using System.IO;
     using System.Linq;
@@ -13,10 +17,10 @@
         private ImportTopPlayersFromFile players;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImportTopPlayersFromFile"/> class.
+        /// Initializes a new instance of the <see cref="FileExporter"/> class.
         /// </summary>
         /// <param name="players">Players with top scores that have to be written in file.</param>
-        public FileExporter(ImportTopPlayersFromFile players) 
+        public FileExporter(ImportTopPlayersFromFile players)
         {
             this.players = players;
         }

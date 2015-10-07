@@ -4,7 +4,6 @@
 
 namespace HQC.Project.Hangman2.Commands
 {
-
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameLogic;
     using HQC.Project.Hangman.GameLogic.States;

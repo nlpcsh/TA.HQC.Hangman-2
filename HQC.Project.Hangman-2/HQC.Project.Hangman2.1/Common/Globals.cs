@@ -60,11 +60,7 @@ namespace HQC.Project.Hangman.Common
         public const int HelpNeededPoints = 50;
 
         // Game messages
-
-        /// <summary>
-        /// Contains all in menu commands
-        /// </summary>
-        public static readonly IDictionary<string, Type> MenuCommandTypesValue = new Dictionary<string, Type>()
+        private static readonly IDictionary<string, Type> MenuCommandTypesValueValue = new Dictionary<string, Type>()
         {
              { "exit", typeof(ExitCommand) },
              { "scores", typeof(TopCommand) },
@@ -72,24 +68,69 @@ namespace HQC.Project.Hangman.Common
              { "play", typeof(PlayCommand) }
         };
 
-        /// <summary>
-        /// Contains all in game commands
-        /// </summary>
-        public static readonly IDictionary<string, Type> CommandTypesValue = new Dictionary<string, Type>()
+        private static readonly IDictionary<string, Type> CommandTypesValueValue = new Dictionary<string, Type>()
         {
              { "help", typeof(HelpCommand) },
              { "restart", typeof(RestartGameCommand) },
              { "revealGuessedLetters", typeof(RevealGuessedLettersCommand) }
         };
 
+        private static int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;
+
+        private static int leftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
+
+        /// <summary>
+        /// Contains all in menu commands
+        /// </summary>
+        public static IDictionary<string, Type> MenuCommandTypesValue
+        {
+            get
+            {
+                return MenuCommandTypesValueValue;
+            }
+        }
+
+        /// <summary>
+        /// Contains all in game commands
+        /// </summary>
+        public static IDictionary<string, Type> CommandTypesValue
+        {
+            get
+            {
+                return CommandTypesValueValue;
+            }
+        }
+
         /// <summary>
         /// Holds column position used from ILogger to clear console when menu have to show off
         /// </summary>
-        public static int leftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
+        public static int LeftPositionCommandInput
+        {
+            get
+            {
+                return leftPositionCommandInput;
+            }
+
+            set
+            {
+                leftPositionCommandInput = value;
+            }
+        }
 
         /// <summary>
         ///  Holds row position used from ILogger to clear console when menu have to show off
         /// </summary>
-        public static int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;
+        public static int TopPositionCommandInput
+        {
+            get
+            {
+                return topPositionCommandInput;
+            }
+
+            set
+            {
+                topPositionCommandInput = value;
+            }
+        }
     }
 }

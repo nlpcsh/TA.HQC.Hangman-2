@@ -12,12 +12,12 @@ namespace HQC.Project.Hangman.GameLogic.States
     using HQC.Project.Hangman2.GameStates;
 
     /// <summary>
-    /// Read and execute player commands while player wins or lose the game. 
+    /// Read and execute player commands while player wins or lose the game.
     /// </summary>
     public class PlayGameState : State
     {
         /// <summary>
-        /// Read and execute player commands while player wins or lose the game. 
+        /// Read and execute player commands while player wins or lose the game.
         /// </summary>
         /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
@@ -55,8 +55,8 @@ namespace HQC.Project.Hangman.GameLogic.States
                 game.Logger.PrintUsedLetters(game.Player.WrongLetters);
                 game.Logger.PrintHangman(game.Player.Lives);
 
-                ConsoleHelper.ClearConsoleInRange(Globals.leftPositionCommandInput, Globals.leftPositionCommandInput + game.CurrentCommand.Length, Globals.topPositionCommandInput);
-                ConsoleHelper.ClearConsoleInRange((Console.WindowWidth / 2) + 1, Console.WindowWidth - 1, Globals.topPositionCommandInput + 2);
+                ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + game.CurrentCommand.Length, Globals.TopPositionCommandInput);
+                ConsoleHelper.ClearConsoleInRange((Console.WindowWidth / 2) + 1, Console.WindowWidth - 1, Globals.TopPositionCommandInput + 2);
 
                 if (game.Player.Lives == 0)
                 {

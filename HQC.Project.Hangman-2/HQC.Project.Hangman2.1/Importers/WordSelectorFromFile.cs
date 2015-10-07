@@ -41,10 +41,11 @@ namespace HQC.Project.Hangman.Importers
 
             set
             {
-                if (!IsValidFilename(value))
+                if (!this.IsValidFilename(value))
                 {
                     throw new ArgumentException("Invalid file path!");
                 }
+
                 this.fileName = value;
             }
         }
@@ -55,7 +56,7 @@ namespace HQC.Project.Hangman.Importers
         public string RandomWord { get; set; }
 
         /// <summary>
-        /// Performs algorithm for selecting random word from file. 
+        /// Performs algorithm for selecting random word from file.
         /// </summary>
         /// <returns>Random word from file.</returns>
         public string SelectRandomWord()
@@ -96,10 +97,11 @@ namespace HQC.Project.Hangman.Importers
         private bool IsValidFilename(string filePath)
         {
             bool isContainsABadCharacter = filePath.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0;
-            if (isContainsABadCharacter) 
-            { 
-                return true; 
+            if (isContainsABadCharacter)
+            {
+                return true;
             }
+
             return false;
         }
     }

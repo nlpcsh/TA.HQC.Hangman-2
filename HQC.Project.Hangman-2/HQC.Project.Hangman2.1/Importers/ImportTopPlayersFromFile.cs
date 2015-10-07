@@ -1,4 +1,4 @@
-﻿// <copyright file="ImportTopPlayers.cs" company="PlaceholderCompany">
+﻿// <copyright file="ImportTopPlayersFromFile.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -28,7 +28,7 @@ namespace HQC.Project.Hangman.Importers
         }
 
         /// <summary>
-        /// Collection of <see cref="Iplayer"/>
+        /// Collection of <see cref="IPlayer"/>
         /// </summary>
         public IList<IPlayer> TopPlayers { get; set; }
 

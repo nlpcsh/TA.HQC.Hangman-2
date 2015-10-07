@@ -28,10 +28,10 @@ namespace HQC.Project.Hangman.Common
         public const string PressAnyKeyMessage = "Press any key to continue....";
 
         /// <summary>
-        /// Contains header of Categories 
+        /// Contains header of Categories
         /// </summary>
         public const string Categories = "CATEGORIES";
-        
+
         /// <summary>
         /// Contains Top 5 players message
         /// </summary>
@@ -43,7 +43,7 @@ namespace HQC.Project.Hangman.Common
         public const string WinGameMessage = "You won! Your score is {0}";
 
         /// <summary>
-        /// Contains secret words message  
+        /// Contains secret words message
         /// </summary>
         public const string SecretWord = "The secret word is: ";
 
@@ -51,14 +51,14 @@ namespace HQC.Project.Hangman.Common
         /// Contains wrong command message
         /// </summary>
         public const string WrongCommand = "Wrong command, please try again!";
-        
+
         /// <summary>
         /// Contains enter letters message
         /// </summary>
         public const string EnterLetterMessage = "Please enter a letter:";
 
         /// <summary>
-        /// Contains enter name message 
+        /// Contains enter name message
         /// </summary>
         public const string EnterNameMessage = "Please enter your name: ";
 
@@ -73,19 +73,16 @@ namespace HQC.Project.Hangman.Common
         public const string RevealLetterMessage = "OK, I reveal for you the next letter {0}.";
 
         /// <summary>
-        /// Contains play again message 
+        /// Contains play again message
         /// </summary>
         public const string PlayAgainMessage = "Want to play again? y/n: ";
 
         /// <summary>
-        /// Contains message for needed points to use help option 
+        /// Contains message for needed points to use help option
         /// </summary>
         public const string CantUseHelp = "You don't have {0} points!";
 
-        /// <summary>
-        /// Contains rules on the game
-        /// </summary>
-        public static readonly List<string> rulesInfo = new List<string>()
+        private static readonly List<string> RulesInfoValue = new List<string>()
         {
             "Welcome to Hangman game!",
             "Rules are simple: guess secret word and keep your head on your shoulders :)",
@@ -97,10 +94,7 @@ namespace HQC.Project.Hangman.Common
             Messages.PressAnyKeyMessage
         };
 
-        /// <summary>
-        /// Contains all menu options
-        /// </summary>
-        public static readonly List<string> menuOptions = new List<string>()
+        private static readonly List<string> MenuOptionsValue = new List<string>()
         {
             "MENU:",
             "------",
@@ -111,10 +105,7 @@ namespace HQC.Project.Hangman.Common
             Messages.EnterChoiceMessage
         };
 
-        /// <summary>
-        /// Contains game title array
-        /// </summary>
-        public static readonly List<string> gameTitle = new List<string>()
+        private static readonly List<string> GameTitleValue = new List<string>()
         {
             "00  00     000     00    00  0000   00     00     000     00    00",
             "00  00    00 00    0000  00 00      0000 0000    00 00    0000  00",
@@ -124,5 +115,38 @@ namespace HQC.Project.Hangman.Common
             new string('_', Console.BufferWidth),
             new string('-', Console.BufferWidth)
         };
+
+        /// <summary>
+        /// Contains rules on the game
+        /// </summary>
+        public static List<string> RulesInfo
+        {
+            get
+            {
+                return RulesInfoValue;
+            }
+        }
+
+        /// <summary>
+        /// Contains all menu options
+        /// </summary>
+        public static List<string> MenuOptions
+        {
+            get
+            {
+                return MenuOptionsValue;
+            }
+        }
+
+        /// <summary>
+        /// Contains game title array
+        /// </summary>
+        public static List<string> GameTitle
+        {
+            get
+            {
+                return GameTitleValue;
+            }
+        }
     }
 }

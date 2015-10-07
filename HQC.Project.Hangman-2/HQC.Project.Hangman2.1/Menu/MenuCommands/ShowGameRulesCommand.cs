@@ -28,7 +28,7 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            this.Logger.Print(Messages.rulesInfo);
+            this.Logger.Print(Messages.RulesInfo);
             Console.ReadKey();
         }
     }

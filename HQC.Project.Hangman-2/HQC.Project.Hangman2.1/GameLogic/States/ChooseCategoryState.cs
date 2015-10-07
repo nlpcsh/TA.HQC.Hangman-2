@@ -25,7 +25,7 @@ namespace HQC.Project.Hangman.GameLogic.States
         public override void Play(HangmanGame game)
         {
             var contentReader = new FolderContentReader();
-            var categoriesToList = GetAllCategories(contentReader);
+            var categoriesToList = this.GetAllCategories(contentReader);
             game.Logger.Print(categoriesToList);
 
             string chosenCategory = Console.ReadLine().Trim().ToLower();
@@ -37,7 +37,7 @@ namespace HQC.Project.Hangman.GameLogic.States
             }
             else
             {
-                Console.SetCursorPosition(Console.WindowWidth / 2 - Messages.WrongCommand.Length / 2, Console.WindowHeight - 2);
+                Console.SetCursorPosition((Console.WindowWidth / 2) - (Messages.WrongCommand.Length / 2), Console.WindowHeight - 2);
                 Console.WriteLine(Messages.WrongCommand);
                 Thread.Sleep(500);
                 this.Play(game);
@@ -50,8 +50,8 @@ namespace HQC.Project.Hangman.GameLogic.States
         /// <summary>
         /// Get all categories from .txt file
         /// </summary>
-        /// <param name="contentReader"></param>
-        /// <returns></returns>
+        /// <param name="contentReader">All files in this direcory</param>
+        /// <returns>List with all categories in content readee</returns>
         private IList<string> GetAllCategories(FolderContentReader contentReader)
         {
             var categories = contentReader.Categories;
@@ -71,8 +71,8 @@ namespace HQC.Project.Hangman.GameLogic.States
         /// <summary>
         /// Transform categories to lower case letters
         /// </summary>
-        /// <param name="categories"></param>
-        /// <returns>ICollection</returns>
+        /// <param name="categories">All categories</param>
+        /// <returns>ICollection with all categories with small letters</returns>
         private ICollection<string> CategoriesToLower(string[] categories)
         {
             var categoriesToLower = new List<string>();

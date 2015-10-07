@@ -1,11 +1,10 @@
-﻿// <copyright file="Hangman.cs" company="PlaceholderCompany">
+﻿// <copyright file="HangmanStartPoint.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
 namespace HQC.Project.Hangman
 {
     using System;
-    
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.UI;
     using HQC.Project.Hangman.UI.Common;
@@ -22,12 +21,12 @@ namespace HQC.Project.Hangman
         /// <param name="commandFactory">Command to execute.</param>
         public static void Start(ILogger logger, CommandFactory commandFactory)
         {
-            Console.WindowHeight = Messages.gameTitle.Count + HangmanPattern.Patterns[0].Length + 2;
+            Console.WindowHeight = Messages.GameTitle.Count + HangmanPattern.Patterns[0].Length + 2;
 
             while (true)
             {
                 Console.Clear();
-                logger.Print(Messages.menuOptions);
+                logger.Print(Messages.MenuOptions);
 
                 string commandToExecute = Console.ReadLine().Trim().ToLower();
 
@@ -43,6 +42,9 @@ namespace HQC.Project.Hangman
             }
         }
 
+        /// <summary>
+        /// Entry point
+        /// </summary>
         internal static void Main()
         {
             Start(new ConsoleLogger(), new CommandFactory());
