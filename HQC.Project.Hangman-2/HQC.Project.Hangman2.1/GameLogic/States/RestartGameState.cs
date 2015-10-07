@@ -12,14 +12,14 @@ namespace HQC.Project.Hangman.GameLogic.States
     using System.Threading;
 
     /// <summary>
-    /// Start new game if player still want to play or redirect to menu 
+    /// Start new game if player still want to play or redirect to menu. 
     /// </summary>
     public class RestartGameState : State
     {
         /// <summary>
-        /// Start new game if player still want to play or redirect to menu 
+        /// Start new game if player still want to play or redirect to menu. 
         /// </summary>
-        /// <param name="game">HangmanGame</param>
+        /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
         {
             Console.Clear();

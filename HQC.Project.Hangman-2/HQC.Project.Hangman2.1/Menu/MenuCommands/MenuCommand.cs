@@ -11,7 +11,7 @@
         /// <summary>
         /// ???
         /// </summary>
-        /// <param name="logger">???</param>
+        /// <param name="logger">ILogger</param>
         public MenuCommand(ILogger logger)
         {
             this.Logger = logger;

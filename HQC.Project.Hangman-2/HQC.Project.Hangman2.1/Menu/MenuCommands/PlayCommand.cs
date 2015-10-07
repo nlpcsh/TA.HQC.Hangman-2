@@ -15,21 +15,21 @@ namespace HQC.Project.Hangman2.Commands
     using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
-    /// ???
+    /// Play command starts the game.
     /// </summary>
     public class PlayCommand : MenuCommand
     {
        /// <summary>
-       /// ???
+        /// Initializes a new instance of the <see cref="PlayCommand"/> class.
        /// </summary>
-       /// <param name="logger">???</param>
+        /// <param name="logger">ILogger that prints massages.</param>
         public PlayCommand(ILogger logger)
             : base(logger)
         {
         }
 
         /// <summary>
-        /// ???
+        /// Executes play command and starts the game.
         /// </summary>
         public override void Execute()
         {

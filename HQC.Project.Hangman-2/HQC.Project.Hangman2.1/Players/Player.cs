@@ -34,8 +34,8 @@ namespace HQC.Project.Hangman.Players
         /// <summary>
         /// Initializes a new instance of the <see cref="Player"/> class.
         /// </summary>
-        /// <param name="playerName">???</param>
-        /// <param name="score">???</param>
+        /// <param name="playerName">Player's name in game.</param>
+        /// <param name="score">Player's score in game.</param>
         public Player(string playerName, int score)
             : this()
         {
@@ -44,17 +44,17 @@ namespace HQC.Project.Hangman.Players
         }
 
         /// <summary>
-        /// ???
+        /// Hidden word that player should guess.
         /// </summary>
         public string HiddenWord { get; set; }
 
         /// <summary>
-        /// ???
+        /// Word that player should guess.
         /// </summary>
         public string Word { get; set; }
 
         /// <summary>
-        /// ???
+        /// Player's name. Makes check for name length.
         /// </summary>
         public string Name
         {
@@ -75,7 +75,7 @@ namespace HQC.Project.Hangman.Players
         }
 
         /// <summary>
-        /// ???
+        /// Player's score. Makes check if score is negative value. 
         /// </summary>
         public int Score
         {
@@ -96,20 +96,20 @@ namespace HQC.Project.Hangman.Players
         }
 
         /// <summary>
-        /// ???
+        /// Player's lives.
         /// </summary>
         public int Lives { get; set; }
 
         /// <summary>
-        /// ???
+        /// Collection of wrong letters that player insert.
         /// </summary>
         public ISet<char> WrongLetters { get; set; }
 
         /// <summary>
-        /// ???
+        /// Compares two players scores.
         /// </summary>
-        /// <param name="otherPlayer">???</param>
-        /// <returns>???</returns>
+        /// <param name="otherPlayer">The player with whom compares current player.</param>
+        /// <returns>Convention of returned values on comparing(1, 0, -1).</returns>
         public int Compare(IPlayer otherPlayer)
         {
             if (this.Score <= otherPlayer.Score)

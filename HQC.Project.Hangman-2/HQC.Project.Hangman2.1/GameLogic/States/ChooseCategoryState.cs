@@ -19,9 +19,9 @@ namespace HQC.Project.Hangman.GameLogic.States
     public class ChooseCategoryState : State
     {
         /// <summary>
-        /// initializes category choosing
+        /// Initializes category choosing.
         /// </summary>
-        /// <param name="game">An instance of HangmanGame</param>
+        /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
         {
             var contentReader = new FolderContentReader();

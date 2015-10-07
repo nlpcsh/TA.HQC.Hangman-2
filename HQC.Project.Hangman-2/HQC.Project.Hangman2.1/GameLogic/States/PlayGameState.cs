@@ -12,14 +12,14 @@ namespace HQC.Project.Hangman.GameLogic.States
     using HQC.Project.Hangman2.GameStates;
 
     /// <summary>
-    /// Read and execute player commands while player wins or lose the game 
+    /// Read and execute player commands while player wins or lose the game. 
     /// </summary>
     public class PlayGameState : State
     {
         /// <summary>
-        /// Read and execute player commands while player wins or lose the game 
+        /// Read and execute player commands while player wins or lose the game. 
         /// </summary>
-        /// <param name="game">HangmanGame</param>
+        /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
         {
             while (game.Player.HiddenWord.Contains("_"))

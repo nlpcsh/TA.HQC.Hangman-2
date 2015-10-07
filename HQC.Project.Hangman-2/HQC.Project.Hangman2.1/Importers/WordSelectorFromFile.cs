@@ -10,7 +10,7 @@ namespace HQC.Project.Hangman.Importers
     using HQC.Project.Hangman.Importers.Common;
 
     /// <summary>
-    /// ???
+    /// Responsible for exporting word from file.
     /// </summary>
     public class WordSelectorFromFile : IWordsImporter
     {
@@ -22,7 +22,7 @@ namespace HQC.Project.Hangman.Importers
         /// <summary>
         /// Initializes a new instance of the <see cref="WordSelectorFromFile"/> class.
         /// </summary>
-        /// <param name="fileName">???</param>
+        /// <param name="fileName">Path to file with words.</param>
         public WordSelectorFromFile(string fileName)
         {
             this.FileName = fileName;
@@ -30,7 +30,7 @@ namespace HQC.Project.Hangman.Importers
         }
 
         /// <summary>
-        /// ???
+        /// File name. Makes check if file name is valid.
         /// </summary>
         public string FileName
         {
@@ -41,19 +41,23 @@ namespace HQC.Project.Hangman.Importers
 
             set
             {
+                if (!IsValidFilename(value))
+                {
+                    throw new ArgumentException("Invalid file path!");
+                }
                 this.fileName = value;
             }
         }
 
         /// <summary>
-        /// ???
+        /// Random word.
         /// </summary>
         public string RandomWord { get; set; }
 
         /// <summary>
-        /// ???
+        /// Performs algorithm for selecting random word from file. 
         /// </summary>
-        /// <returns>???</returns>
+        /// <returns>Random word from file.</returns>
         public string SelectRandomWord()
         {
             this.inputFileStream = new FileStream(this.FileName, FileMode.Open);
@@ -87,6 +91,16 @@ namespace HQC.Project.Hangman.Importers
         private double GetRandomNumber()
         {
             return random.NextDouble();
+        }
+
+        private bool IsValidFilename(string filePath)
+        {
+            bool isContainsABadCharacter = filePath.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0;
+            if (isContainsABadCharacter) 
+            { 
+                return false; 
+            }
+            return true;
         }
     }
 }

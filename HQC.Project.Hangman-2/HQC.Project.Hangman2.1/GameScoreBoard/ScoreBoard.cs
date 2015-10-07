@@ -13,7 +13,7 @@ namespace HQC.Project.Hangman.GameScoreBoard
     using HQC.Project.Hangman2._1.Exporters;
 
     /// <summary>
-    /// ???
+    /// Holds information about players and their scores. Can't be inherit.
     /// </summary>
     public sealed class ScoreBoard
     {
@@ -27,7 +27,7 @@ namespace HQC.Project.Hangman.GameScoreBoard
         }
 
         /// <summary>
-        /// ???
+        /// Creates only one instance of class. This is implementation of Singleton Pattern.
         /// </summary>
         public static ScoreBoard Instance
         {
@@ -49,7 +49,7 @@ namespace HQC.Project.Hangman.GameScoreBoard
         }
 
         /// <summary>
-        /// ???
+        /// Gets players with top scores. Can not set them via property.
         /// </summary>
         public ImportTopPlayersFromFile ScoreBoardTable
         {
@@ -60,18 +60,18 @@ namespace HQC.Project.Hangman.GameScoreBoard
         }
 
         /// <summary>
-        /// ???
+        /// Takes players with best scores from file. 
         /// </summary>
-        /// <param name="filename">???</param>
+        /// <param name="filename">Path to file.</param>
         public void LoadTopPlayers(string filename)
         {
             this.scoreBoardTable = new ImportTopPlayersFromFile(filename);
         }
 
         /// <summary>
-        /// ???
+        /// Puts current player in score board. Determines position comparing player's scores with other entries in score board.
         /// </summary>
-        /// <param name="player">???</param>
+        /// <param name="player">Current players that plays the game.</param>
         public void PlacePlayerInScoreBoard(IPlayer player)
         {
             this.LoadTopPlayers(Globals.BestScoresPath);

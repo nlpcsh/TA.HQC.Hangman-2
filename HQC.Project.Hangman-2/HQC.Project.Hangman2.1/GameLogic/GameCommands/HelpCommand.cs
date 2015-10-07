@@ -10,21 +10,21 @@ namespace HQC.Project.Hangman.GameLogic.GameCommands
     using HQC.Project.Hangman2;
 
     /// <summary>
-    /// Help command help to user for guess a letter
+    /// Help command help to user for guess a letter.
     /// </summary>
     public class HelpCommand : GameCommand
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="HelpCommand"/> class.
         /// </summary>
-        /// <param name="currentGame">???</param>
+        /// <param name="currentGame">Instance of <see cref="HangmanGame"/> class.</param>
         public HelpCommand(HangmanGame currentGame)
             : base(currentGame)
         {
         }
 
         /// <summary>
-        /// Open guess letter to user 
+        /// Open guess letter to user. 
         /// </summary>
         public override void Execute()
         {

@@ -12,7 +12,7 @@ namespace HQC.Project.Hangman.Importers
     using HQC.Project.Hangman.Players.Common;
 
     /// <summary>
-    /// ???
+    /// Import players from file with top players.
     /// </summary>
     public class ImportTopPlayersFromFile : IPlayesImporter
     {
@@ -21,22 +21,22 @@ namespace HQC.Project.Hangman.Importers
         /// <summary>
         /// Initializes a new instance of the <see cref="ImportTopPlayersFromFile"/> class.
         /// </summary>
-        /// <param name="fileName">???</param>
+        /// <param name="fileName">Path to file with top players.</param>
         public ImportTopPlayersFromFile(string fileName)
         {
             this.TopPlayers = this.ImportPlayers(fileName);
         }
 
         /// <summary>
-        /// ???
+        /// Collection of <see cref="Iplayer"/>
         /// </summary>
         public IList<IPlayer> TopPlayers { get; set; }
 
         /// <summary>
-        /// ???
+        /// Reads file with top players and add entries in collection of players.
         /// </summary>
-        /// <param name="fileName">???</param>
-        /// <returns>???</returns>
+        /// <param name="fileName">Path to file with top players.</param>
+        /// <returns>Return collection with top players.</returns>
         public IList<IPlayer> ImportPlayers(string fileName)
         {
             var scoreBoardTable = new Player[Globals.ScoreBoardSize];

@@ -19,7 +19,7 @@ namespace HQC.Project.Hangman.GameLogic.States
         /// <summary>
         /// Pu initial lives to player and select new play word
         /// </summary>
-        /// <param name="game">???</param>
+        /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
         {
             Console.Clear();

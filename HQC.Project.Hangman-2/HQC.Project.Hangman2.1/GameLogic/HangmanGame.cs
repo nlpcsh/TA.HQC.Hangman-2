@@ -36,42 +36,42 @@ namespace HQC.Project.Hangman.GameLogic
         }
 
         /// <summary>
-        /// ???
+        /// State of game.
         /// </summary>
         public State State { get; set; }
 
         /// <summary>
-        /// ???
+        /// Word that player should guess.
         /// </summary>
         public WordSelectorFromFile WordSelect { get; set; }
 
         /// <summary>
-        /// ???
+        /// Current player in game.
         /// </summary>
         public IPlayer Player { get; set; }
 
         /// <summary>
-        /// ???
+        /// Game score board. This is only one instance.
         /// </summary>
         public ScoreBoard Scores { get; set; }
 
         /// <summary>
-        /// ???
+        /// Logger that display messages.
         /// </summary>
         public ILogger Logger { get; private set; }
 
         /// <summary>
-        /// ???
+        /// Factory of commands.
         /// </summary>
         public CommandFactory CommandFactory { get; private set; }
         
         /// <summary>
-        /// 
+        /// Current command that player execute.
         /// </summary>
         public string CurrentCommand { get; set; }
 
         /// <summary>
-        /// ???
+        /// Start game.
         /// </summary>
         internal void StartGame()
         {

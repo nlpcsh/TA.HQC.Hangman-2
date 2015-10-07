@@ -29,31 +29,31 @@
         </member>
         <member name="T:HQC.Project.Hangman2._1.Exporters.FileExporter">
             <summary>
-            ???
+            Responsible for exporting data in file.
             </summary>
         </member>
         <member name="T:HQC.Project.Hangman2._1.Exporters.IExporter">
             <summary>
-            ???
+            Responsible for exporting data.
             </summary>
         </member>
         <member name="M:HQC.Project.Hangman2._1.Exporters.IExporter.Save(System.String)">
             <summary>
-            ???
+            Saves data.
             </summary>
-            <param name="name">???</param>
+            <param name="name">Path to place where data will be exported.</param>
         </member>
         <member name="M:HQC.Project.Hangman2._1.Exporters.FileExporter.#ctor(HQC.Project.Hangman.Importers.ImportTopPlayersFromFile)">
             <summary>
-            ???
+            Initializes a new instance of the <see cref="T:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile"/> class.
             </summary>
-            <param name="players">???</param>
+            <param name="players">Players with top scores that have to be written in file.</param>
         </member>
         <member name="M:HQC.Project.Hangman2._1.Exporters.FileExporter.Save(System.String)">
             <summary>
-            ???
+            Order players descending by their scores and saves them in file.
             </summary>
-            <param name="filename">???</param>
+            <param name="filename">Path to file.</param>
         </member>
         <member name="T:HQC.Project.Hangman.GameLogic.GameCommands.GameCommand">
             <summary>
@@ -359,14 +359,14 @@
         </member>
         <member name="T:HQC.Project.Hangman.Importers.Common.IWordsImporter">
             <summary>
-            ???
+            Responsible for importing words.
             </summary>
         </member>
         <member name="M:HQC.Project.Hangman.Importers.Common.IWordsImporter.SelectRandomWord">
             <summary>
-            ???
+            Imports word on random algorithm.
             </summary>
-            <returns>???</returns>
+            <returns>Random word.</returns>
         </member>
         <member name="T:HQC.Project.Hangman.GameLogic.States.ChooseCategoryState">
             <summary>
@@ -551,37 +551,37 @@
         </member>
         <member name="T:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile">
             <summary>
-            ???
+            Import players from file with top players.
             </summary>
         </member>
         <member name="T:HQC.Project.Hangman.Importers.Common.IPlayesImporter">
             <summary>
-            ???
+            Responsible for importing players.
             </summary>
         </member>
         <member name="M:HQC.Project.Hangman.Importers.Common.IPlayesImporter.ImportPlayers(System.String)">
             <summary>
-            ???
+            Imports players.
             </summary>
-            <param name="name">???</param>
-            <returns>???</returns>
+            <param name="name">Place from where data will be imported.</param>
+            <returns>Collection of <see cref="T:HQC.Project.Hangman.Players.Common.IPlayer"/> interface.</returns>
         </member>
         <member name="M:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile"/> class.
             </summary>
-            <param name="fileName">???</param>
+            <param name="fileName">Path to file with top players.</param>
         </member>
         <member name="M:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile.ImportPlayers(System.String)">
             <summary>
-            ???
+            Reads file with top players and add entries in collection of players.
             </summary>
-            <param name="fileName">???</param>
-            <returns>???</returns>
+            <param name="fileName">Path to file with top players.</param>
+            <returns>Return collection with top players.</returns>
         </member>
         <member name="P:HQC.Project.Hangman.Importers.ImportTopPlayersFromFile.TopPlayers">
             <summary>
-            ???
+            Collection of <see cref="!:Iplayer"/>
             </summary>
         </member>
         <member name="T:HQC.Project.Hangman.GameLogic.HangmanGame">
@@ -821,29 +821,29 @@
         </member>
         <member name="T:HQC.Project.Hangman.GameScoreBoard.ScoreBoard">
             <summary>
-            ???
+            Holds information about players and their scores. Can't be inherit.
             </summary>
         </member>
         <member name="M:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.LoadTopPlayers(System.String)">
             <summary>
-            ???
+            Takes players with best scores from file. 
             </summary>
-            <param name="filename">???</param>
+            <param name="filename">Path to file.</param>
         </member>
         <member name="M:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.PlacePlayerInScoreBoard(HQC.Project.Hangman.Players.Common.IPlayer)">
             <summary>
-            ???
+            Puts current player in score board. Determines position comparing player's scores with other entries in score board.
             </summary>
-            <param name="player">???</param>
+            <param name="player">Current players that plays the game.</param>
         </member>
         <member name="P:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.Instance">
             <summary>
-            ???
+            Creates only one instance of class. This is implementation of Singleton Pattern.
             </summary>
         </member>
         <member name="P:HQC.Project.Hangman.GameScoreBoard.ScoreBoard.ScoreBoardTable">
             <summary>
-            ???
+            Gets players with top scores. Can not set them via property.
             </summary>
         </member>
         <member name="T:HQC.Project.Hangman.Players.Player">
@@ -902,29 +902,29 @@
         </member>
         <member name="T:HQC.Project.Hangman.Importers.WordSelectorFromFile">
             <summary>
-            ???
+            Responsible for exporting word from file.
             </summary>
         </member>
         <member name="M:HQC.Project.Hangman.Importers.WordSelectorFromFile.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:HQC.Project.Hangman.Importers.WordSelectorFromFile"/> class.
             </summary>
-            <param name="fileName">???</param>
+            <param name="fileName">Path to file with words.</param>
         </member>
         <member name="M:HQC.Project.Hangman.Importers.WordSelectorFromFile.SelectRandomWord">
             <summary>
-            ???
+            Performs algorithm for selecting random word from file. 
             </summary>
-            <returns>???</returns>
+            <returns>Random word from file.</returns>
         </member>
         <member name="P:HQC.Project.Hangman.Importers.WordSelectorFromFile.FileName">
             <summary>
-            ???
+            Gets and sets file name. Before sets file name check if it's valid.
             </summary>
         </member>
         <member name="P:HQC.Project.Hangman.Importers.WordSelectorFromFile.RandomWord">
             <summary>
-            ???
+            Gets ands sets random word.
             </summary>
         </member>
     </members>

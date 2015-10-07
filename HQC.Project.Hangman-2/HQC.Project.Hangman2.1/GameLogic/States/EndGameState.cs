@@ -17,9 +17,9 @@ namespace HQC.Project.Hangman2.GameStates
     public class EndGameState : State
     {
         /// <summary>
-        /// Save player score and change game state to restart
+        /// Save player score and change game state to restart.
         /// </summary>
-        /// <param name="game">HangmanGame</param>
+        /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
         {
             game.Logger.PrintMessage(string.Format(Messages.WinGameMessage, game.Player.Score));

@@ -12,21 +12,21 @@ namespace HQC.Project.Hangman2.Commands
     using HQC.Project.Hangman.UI.Common;    
 
     /// <summary>
-    /// Show top 5 players
+    /// Show top 5 players.
     /// </summary>
     public class TopCommand : MenuCommand
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TopCommand"/> class.
         /// </summary>
-        /// <param name="logger">???</param>
+        /// <param name="logger">ILogger that prints massages.</param>
         public TopCommand(ILogger logger)
             : base(logger)
         {
         }
 
         /// <summary>
-        /// Show top 5 players
+        /// Show top 5 players.
         /// </summary>
         public override void Execute()
         {

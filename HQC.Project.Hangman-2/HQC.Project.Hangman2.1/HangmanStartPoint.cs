@@ -16,10 +16,10 @@ namespace HQC.Project.Hangman
     public class HangmanStartPoint
     {
         /// <summary>
-        /// ???
+        /// Prepares console, print menu, take command from user, check if is right and execute it.
         /// </summary>
-        /// <param name="logger">???</param>
-        /// <param name="commandFactory">???</param>
+        /// <param name="logger">ILogger that prints massages.</param>
+        /// <param name="commandFactory">Command to execute.</param>
         public static void Start(ILogger logger, CommandFactory commandFactory)
         {
             Console.WindowHeight = Messages.gameTitle.Count + HangmanPattern.Patterns[0].Length + 2;

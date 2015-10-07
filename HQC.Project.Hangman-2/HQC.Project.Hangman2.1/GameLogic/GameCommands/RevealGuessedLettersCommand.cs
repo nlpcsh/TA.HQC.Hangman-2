@@ -6,21 +6,21 @@
     using HQC.Project.Hangman.Common;
 
     /// <summary>
-    /// This command reveal guessed letters 
+    /// This command reveal guessed letters. 
     /// </summary>
     public class RevealGuessedLettersCommand : GameCommand
     {
         /// <summary>
         /// ?Initializes a new instance of the <see cref="RevealGuessedLettersCommand"/> class.
         /// </summary>
-        /// <param name="game">???</param>
+        /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public RevealGuessedLettersCommand(HangmanGame game)
             : base(game)
         {
         }
 
         /// <summary>
-        /// Open guessed letter to user
+        /// Open guessed letter to user.
         /// </summary>
         public override void Execute()
         {

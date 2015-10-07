@@ -8,15 +8,15 @@ namespace HQC.Project.Hangman.Importers.Common
     using HQC.Project.Hangman.Players.Common;
 
     /// <summary>
-    /// ???
+    /// Responsible for importing players.
     /// </summary>
     public interface IPlayesImporter
     {
         /// <summary>
-        /// ???
+        /// Imports players.
         /// </summary>
-        /// <param name="name">???</param>
-        /// <returns>???</returns>
+        /// <param name="name">Place from where data will be imported.</param>
+        /// <returns>Collection of <see cref="IPlayer"/> interface.</returns>
         IList<IPlayer> ImportPlayers(string name);
     }
 }
