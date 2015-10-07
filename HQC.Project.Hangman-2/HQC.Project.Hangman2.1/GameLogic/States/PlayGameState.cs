@@ -55,7 +55,7 @@ namespace HQC.Project.Hangman.GameLogic.States
                 game.Logger.PrintUsedLetters(game.Player.WrongLetters);
                 game.Logger.PrintHangman(game.Player.Lives);
 
-                ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + game.CurrentCommand.Length, Globals.TopPositionCommandInput);
+                ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + game.CurrentCommand.Length + 2, Globals.TopPositionCommandInput);
                 ConsoleHelper.ClearConsoleInRange((Console.WindowWidth / 2) + 1, Console.WindowWidth - 1, Globals.TopPositionCommandInput + 2);
 
                 if (game.Player.Lives == 0)

@@ -41,6 +41,7 @@ namespace HQC.Project.Hangman.GameLogic.GameCommands
                     }
                 }
 
+                this.Game.CurrentCommand = firstUnrevealedLetter.ToString();
                 var command = this.Game.CommandFactory.GetGameCommand("revealGuessedLetters", this.Game, Globals.CommandTypesValue);
                 command.Execute();
                 this.Game.Player.Score -= Globals.HelpNeededPoints;
