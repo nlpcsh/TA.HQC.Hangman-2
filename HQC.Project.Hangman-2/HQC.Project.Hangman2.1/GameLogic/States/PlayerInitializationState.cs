@@ -27,7 +27,7 @@ namespace HQC.Project.Hangman.GameLogic.States
             string name = Console.ReadLine();
             var playerName = string.IsNullOrWhiteSpace(name) ? "unknown" : name;
             game.Player.Name = playerName;
-            game.Player.Score = 0;
+            game.Player.Score = 50;
 
             game.State = new ChooseCategoryState();
             game.State.Play(game);
