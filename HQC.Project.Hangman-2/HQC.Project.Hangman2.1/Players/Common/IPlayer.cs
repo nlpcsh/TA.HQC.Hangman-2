@@ -40,12 +40,5 @@ namespace HQC.Project.Hangman.Players.Common
         /// Hidden word.
         /// </summary>
         string HiddenWord { get; set; }
-
-        /// <summary>
-        /// Compares two objects.
-        /// </summary>
-        /// <param name="otherPlayer">The object with whom compares current object.</param>
-        /// <returns>Convention of returned values on comparing(1, 0, -1).</returns>
-        int Compare(IPlayer otherPlayer);
     }
 }

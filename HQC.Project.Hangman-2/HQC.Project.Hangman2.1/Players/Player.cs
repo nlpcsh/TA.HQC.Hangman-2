@@ -104,23 +104,5 @@ namespace HQC.Project.Hangman.Players
         /// Collection of wrong letters that player insert.
         /// </summary>
         public ISet<char> WrongLetters { get; set; }
-
-        /// <summary>
-        /// Compares two players scores.
-        /// </summary>
-        /// <param name="otherPlayer">The player with whom compares current player.</param>
-        /// <returns>Convention of returned values on comparing(1, 0, -1).</returns>
-        public int Compare(IPlayer otherPlayer)
-        {
-            if (this.Score <= otherPlayer.Score)
-            {
-                return -1;
-            }
-            else
-            {
-                //// the newer one replaces the older
-                return 1;
-            }
-        }
     }
 }
