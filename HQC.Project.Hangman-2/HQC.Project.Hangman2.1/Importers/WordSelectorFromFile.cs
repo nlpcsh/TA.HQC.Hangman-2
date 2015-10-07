@@ -98,9 +98,9 @@ namespace HQC.Project.Hangman.Importers
             bool isContainsABadCharacter = filePath.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0;
             if (isContainsABadCharacter) 
             { 
-                return false; 
+                return true; 
             }
-            return true;
+            return false;
         }
     }
 }
