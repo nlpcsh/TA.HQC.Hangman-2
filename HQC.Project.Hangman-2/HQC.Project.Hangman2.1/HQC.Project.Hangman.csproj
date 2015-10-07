@@ -107,7 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
     <None Include="v2.1.cd" />
   </ItemGroup>
   <ItemGroup>
