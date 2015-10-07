@@ -4,12 +4,12 @@
     using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
-    /// ???
+    /// Represents menu commands
     /// </summary>
     public abstract class MenuCommand : ICommand
     {
         /// <summary>
-        /// ???
+        /// Initializes a new instance of the <see cref="MenuCommand"/> class.
         /// </summary>
         /// <param name="logger">ILogger</param>
         public MenuCommand(ILogger logger)
@@ -18,12 +18,12 @@
         }
 
         /// <summary>
-        /// ???
+        /// Print massages
         /// </summary>
         public ILogger Logger { get; set; }
 
         /// <summary>
-        /// ???
+        /// Execute command
         /// </summary>
         public abstract void Execute();
     }

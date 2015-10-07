@@ -7,7 +7,7 @@ namespace HQC.Project.Hangman.UI.Common
     using System.Collections.Generic;
 
     /// <summary>
-    /// ???
+    /// Interface for logging messages.
     /// </summary>
     public interface ILogger
     {

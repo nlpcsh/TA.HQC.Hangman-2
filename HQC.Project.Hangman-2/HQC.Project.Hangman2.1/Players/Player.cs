@@ -11,7 +11,7 @@ namespace HQC.Project.Hangman.Players
     using HQC.Project.Hangman.Players.Common;
 
     /// <summary>
-    /// ???
+    /// Represents player in the game
     /// </summary>
     public class Player : IPlayer
     {

@@ -25,17 +25,17 @@ namespace HQC.Project.Hangman.Common
         public const int ScoreToAdd = 10;
 
         /// <summary>
-        /// ???
+        /// Last position in score board
         /// </summary>
         public const int LastPositionInScoreBoard = 4;
 
         /// <summary>
-        /// ???
+        /// Default value for fill position in score board
         /// </summary>
         public const string FreePositionInScoreBoars = "unknown-0";
 
         /// <summary>
-        /// ???
+        /// Default value for missing player
         /// </summary>
         public const string NoPlayer = "No Player";
 

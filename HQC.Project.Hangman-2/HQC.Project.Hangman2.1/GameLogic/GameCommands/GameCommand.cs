@@ -15,7 +15,7 @@ namespace HQC.Project.Hangman.GameLogic.GameCommands
         /// <summary>
         /// Initializes a new instance of the <see cref="GameCommand"/> class.
         /// </summary>
-        /// <param name="currentGame">???</param>
+        /// <param name="currentGame">Instance of <see cref="HangmanGame"/> class.???</param>
         public GameCommand(HangmanGame currentGame)
         {
             this.Game = currentGame;

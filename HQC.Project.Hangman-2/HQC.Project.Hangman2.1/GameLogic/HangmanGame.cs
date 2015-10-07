@@ -12,7 +12,7 @@ namespace HQC.Project.Hangman.GameLogic
     using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
-    /// ???
+    /// Represents Hangman game
     /// </summary>
     public class HangmanGame
     {

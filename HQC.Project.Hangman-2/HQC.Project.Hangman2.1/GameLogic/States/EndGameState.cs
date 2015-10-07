@@ -12,7 +12,7 @@ namespace HQC.Project.Hangman2.GameStates
     using HQC.Project.Hangman.GameScoreBoard;
 
     /// <summary>
-    /// ???
+    /// Represents end game state
     /// </summary>
     public class EndGameState : State
     {
