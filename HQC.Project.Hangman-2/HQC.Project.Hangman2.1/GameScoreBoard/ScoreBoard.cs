@@ -77,19 +77,20 @@ namespace HQC.Project.Hangman.GameScoreBoard
             this.LoadTopPlayers(Globals.BestScoresPath);
             int emptyPosition = this.GetFirstFreePosition();
 
-            if (this.scoreBoardTable.TopPlayers[emptyPosition] == null || player.Score <= this.scoreBoardTable.TopPlayers[emptyPosition].Score)
+            if (this.scoreBoardTable.TopPlayers[emptyPosition] == null || player.Score >= this.scoreBoardTable.TopPlayers[emptyPosition].Score)
             {
                 this.scoreBoardTable.TopPlayers[emptyPosition] = player;
-
-                for (int i = emptyPosition; i > 0; i--)
+                System.Console.WriteLine(emptyPosition);
+                        
+                for (int i = 0; i < emptyPosition; i++)
                 {
                     IPlayer firstPlayer = this.scoreBoardTable.TopPlayers[i];
-                    IPlayer secondPlayer = this.scoreBoardTable.TopPlayers[i - 1];
+                    IPlayer secondPlayer = this.scoreBoardTable.TopPlayers[i + 1];
 
-                    if (firstPlayer.Compare(secondPlayer) < 0)
+                    if (firstPlayer.Score < secondPlayer.Score)
                     {
                         this.scoreBoardTable.TopPlayers[i] = secondPlayer;
-                        this.scoreBoardTable.TopPlayers[i - 1] = firstPlayer;
+                        this.scoreBoardTable.TopPlayers[i + 1] = firstPlayer;
                     }
                 }
             }

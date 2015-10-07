@@ -33,7 +33,7 @@ namespace HQC.Project.Hangman.Exporters
         {
             using (var writer = new StreamWriter(filename))
             {
-                var sortedScores = this.players.TopPlayers.OrderBy(x => x.Score);
+                var sortedScores = this.players.TopPlayers.OrderByDescending(x => x.Score);
 
                 foreach (var score in sortedScores)
                 {
