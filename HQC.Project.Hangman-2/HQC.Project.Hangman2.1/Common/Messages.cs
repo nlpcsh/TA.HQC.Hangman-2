@@ -23,7 +23,7 @@ namespace HQC.Project.Hangman.Common
         public const string EnterChoiceMessage = "Enter your choice:";
 
         /// <summary>
-        /// Contains Press any key to contionue message
+        /// Contains Press any key to continue message
         /// </summary>
         public const string PressAnyKeyMessage = "Press any key to continue....";
 
@@ -63,7 +63,7 @@ namespace HQC.Project.Hangman.Common
         public const string EnterNameMessage = "Please enter your name: ";
 
         /// <summary>
-        /// Contains used lettes message
+        /// Contains used letters message
         /// </summary>
         public const string UsedLettersMessage = "Used letter:";
 

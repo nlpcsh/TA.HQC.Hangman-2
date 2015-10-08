@@ -30,8 +30,8 @@ namespace HQC.Project.Hangman.Common
         /// <summary>
         /// Clean console set limits
         /// </summary>
-        /// <param name="startCol">From which collumn</param>
-        /// <param name="endCol">To which collumn</param>
+        /// <param name="startCol">From which column</param>
+        /// <param name="endCol">To which column</param>
         /// <param name="startRow">From which row</param>
         /// <param name="endRow">To which row</param>
         public static void ClearConsoleInRange(int startCol, int endCol, int startRow, int endRow)

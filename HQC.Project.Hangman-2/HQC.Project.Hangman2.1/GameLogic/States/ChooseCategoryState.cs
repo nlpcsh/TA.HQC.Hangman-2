@@ -50,8 +50,8 @@ namespace HQC.Project.Hangman.GameLogic.States
         /// <summary>
         /// Get all categories from .txt file
         /// </summary>
-        /// <param name="contentReader">All files in this direcory</param>
-        /// <returns>List with all categories in content readee</returns>
+        /// <param name="contentReader">All files in this directory</param>
+        /// <returns>List with all categories in content reader</returns>
         private IList<string> GetAllCategories(FolderContentReader contentReader)
         {
             var categories = contentReader.Categories;
