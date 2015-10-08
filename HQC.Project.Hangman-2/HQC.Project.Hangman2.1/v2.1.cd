@@ -1,212 +1,270 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="HQC.Project.Hangman.CommandManager">
-    <Position X="12.25" Y="4.75" Width="1.5" />
+  <Class Name="HQC.Project.Hangman.Common.CommandFactory" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAAA=</HashCode>
-      <FileName>CommandManager.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\CommandFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HQC.Project.Hangman.ConsoleLogger" BaseTypeListCollapsed="true">
-    <Position X="16.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ConsoleLogger.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="HQC.Project.Hangman.GameEngine">
-    <Position X="4.5" Y="7.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAEAAgAIAAAwAAAAAAAAABAAAAABAAAAABAAAAAA=</HashCode>
-      <FileName>GameEngine.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman.Globals">
-    <Position X="21.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAIIAgQCAAIAIAAAAAAAMAgIgAAAAAIBBAAA=</HashCode>
-      <FileName>Globals.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman.Hangman">
-    <Position X="14.75" Y="5.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Hangman.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman.Player">
-    <Position X="0.5" Y="7.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAQAAAIAgAAAAIAAAAQAAAAEBAACAABAAAAAAAA=</HashCode>
-      <FileName>Player.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="HQC.Project.Hangman.Printer">
-    <Position X="20" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>BAAQAAAAAAIAAAgAAAgAAAAAAIAAQAwAAAAAAAAACQA=</HashCode>
-      <FileName>Printer.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman.WordGuesser">
-    <Position X="2.5" Y="7.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAEAAEAAAAAAAAALgAACAQAAAAAAAAAAACAAAAEAAQQ=</HashCode>
-      <FileName>WordGuesser.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman.WordSelectorFromFile">
-    <Position X="6.5" Y="7.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAgAAAAAAAABQAAAAAAAAAAAEAAAAAAAEEQAAABAAAA=</HashCode>
-      <FileName>WordSelectorFromFile.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.Commands.Common.Command">
-    <Position X="6.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Commands\Common\Command.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="HQC.Project.Hangman2.Commands.ExitCommand">
-    <Position X="2.75" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Commands\ExitCommand.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.Commands.PlayCommand">
-    <Position X="4.5" Y="2.75" Width="1.5" />
-    <InheritanceLine Type="HQC.Project.Hangman2.Commands.Common.Command" FixedToPoint="true">
-      <Path>
-        <Point X="7.25" Y="2.247" />
-        <Point X="7.25" Y="2.375" />
-        <Point X="5.188" Y="2.375" />
-        <Point X="5.188" Y="2.75" />
-      </Path>
-    </InheritanceLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Commands\GuessLetterCommand.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.Commands.HelpCommand">
-    <Position X="8.75" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Commands\HelpCommand.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.Commands.OptionCommand">
-    <Position X="10.5" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Commands\OptionCommand.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.Commands.RestartCommand">
-    <Position X="12.25" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Commands\RestartCommand.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.Commands.TopCommand">
-    <Position X="1" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Commands\TopCommand.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.Common.ConsoleHelper">
-    <Position X="16.5" Y="0.5" Width="1.5" />
+  <Class Name="HQC.Project.Hangman.Common.ConsoleHelper">
+    <Position X="18.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Common\ConsoleHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HQC.Project.Hangman2.Common.HangmanPattern">
-    <Position X="14.75" Y="4.25" Width="1.5" />
+  <Class Name="HQC.Project.Hangman.Common.Globals">
+    <Position X="20.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAAIABACAAAAYAAAAAAAEAAYCAEkAAQChAAA=</HashCode>
+      <FileName>Common\Globals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.Common.HangmanPattern">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Common\HangmanPattern.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HQC.Project.Hangman.Common.Validator">
-    <Position X="18.25" Y="0.5" Width="1.5" />
+  <Class Name="HQC.Project.Hangman.Common.Messages">
+    <Position X="22" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAABAAQAAAAAAA=</HashCode>
-      <FileName>Common\Validator.cs</FileName>
+      <HashCode>AAAAEAAAQAAAAQIAAIAxAAAAAgAJcwAAAgAAA4AAAAA=</HashCode>
+      <FileName>Common\Messages.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HQC.Project.Hangman2.GameStates.EndGameState">
-    <Position X="7.5" Y="6" Width="1.5" />
+  <Class Name="HQC.Project.Hangman.Exporters.FileExporter" BaseTypeListCollapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
-      <FileName>GameStates\EndGameState.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.GameStates.GameState">
-    <Position X="4.25" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
-      <FileName>GameStates\GameState.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.GameStates.InitializeGameState">
-    <Position X="0.75" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
-      <FileName>GameStates\InitializeGameState.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.GameStates.PlayGameState">
-    <Position X="2.75" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
-      <FileName>GameStates\PlayGameState.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman2.GameStates.RestartGameState">
-    <Position X="5.5" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
-      <FileName>GameStates\RestartGameState.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="HQC.Project.Hangman.ScoreBoard" BaseTypeListCollapsed="true">
-    <Position X="8.5" Y="7.5" Width="2" />
-    <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAACCAAACAAAAAkAAAQIAQAgAAAACAAA=</HashCode>
-      <FileName>GameScoreBoard\ScoreBoard.cs</FileName>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Exporters\FileExporter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Interface Name="HQC.Project.Hangman2.Commands.Common.ICommand">
-    <Position X="9" Y="0.5" Width="1.5" />
+  <Class Name="HQC.Project.Hangman.GameLogic.GameCommands.GameCommand">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\GameCommands\GameCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.GameCommands.HelpCommand">
+    <Position X="0.75" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Commands\Common\ICommand.cs</FileName>
+      <FileName>GameLogic\GameCommands\HelpCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.GameCommands.RestartGameCommand">
+    <Position X="3" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\GameCommands\RestartGameCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.GameCommands.RevealGuessedLettersCommand">
+    <Position X="5.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>GameLogic\GameCommands\RevealGuessedLettersCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.GameCommands.StartGameCommand">
+    <Position X="7.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\GameCommands\StartGameCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.HangmanGame">
+    <Position X="16" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAIAAAgAAAAAAAAgAEAAAABAAAAABQAAAAA=</HashCode>
+      <FileName>GameLogic\HangmanGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.States.ChooseCategoryState">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\States\ChooseCategoryState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.States.InitializeGameState">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\States\InitializeGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.States.PlayerInitializationState">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\States\PlayerInitializationState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.States.PlayGameState">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\States\PlayGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.States.RestartGameState">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\States\Common\RestartGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameLogic.States.Common.State" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\States\Common\State.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.GameStates.EndGameState">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\States\EndGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.GameScoreBoard.ScoreBoard">
+    <Position X="12" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAEAAAAAAAAAAAAgAAkQAAAIAQAAAAAACAAA=</HashCode>
+      <FileName>GameScoreBoard\ScoreBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.HangmanStartPoint">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>HangmanStartPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.Importers.FolderContentReader">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Importers\FolderContentReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.Importers.ImportTopPlayersFromFile" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAABAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Importers\ImportTopPlayersFromFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HQC.Project.Hangman.Importers.WordSelectorFromFile" BaseTypeListCollapsed="true">
+    <Position X="14" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAABQAAAAAAAAAAAEAAAAAAAEEQAAABBAAA=</HashCode>
+      <FileName>Importers\WordSelectorFromFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.ExitCommand">
+    <Position X="0.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\MenuCommands\ExitCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.PlayCommand">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\MenuCommands\PlayCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.ShowGameRulesCommand">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\MenuCommands\ShowGameRulesCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman2.Commands.TopCommand">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\MenuCommands\TopCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HQC.Project.Hangman.Menu.MenuCommands.MenuCommand">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\MenuCommands\MenuCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HQC.Project.Hangman.Players.Player" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAIABAgAAAAIAQQAAAAEBAACAAAAAAAAAAA=</HashCode>
+      <FileName>Players\Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HQC.Project.Hangman.UI.ConsoleLogger" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAQAACAAAIAAAgAAAgAAAAAAIAAQAwAAAAAAAAEACA=</HashCode>
+      <FileName>UI\ConsoleLogger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="HQC.Project.Hangman.Contracts.ICommand">
+    <Position X="10.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\ICommand.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="HQC.Project.Hangman.Interfaces.ILogger">
-    <Position X="10.75" Y="0.5" Width="1.5" />
+  <Interface Name="HQC.Project.Hangman.Exporters.IExporter">
+    <Position X="12.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\ILogger.cs</FileName>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exporters\IExporter.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="HQC.Project.Hangman.CommandEnum">
-    <Position X="12.25" Y="7.25" Width="1.5" />
+  <Interface Name="HQC.Project.Hangman.Importers.Common.IPlayesImporter">
+    <Position X="16.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAIAAAAAAAAAAAAAAAIAAAAIAAAAABAAAA=</HashCode>
-      <FileName>ComandEnum.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Importers\Common\IPlayesImporter.cs</FileName>
     </TypeIdentifier>
-  </Enum>
+  </Interface>
+  <Interface Name="HQC.Project.Hangman.Importers.Common.IWordsImporter">
+    <Position X="14.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Importers\Common\IWordsImporter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HQC.Project.Hangman.Players.Common.IPlayer">
+    <Position X="20" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAgAAAAAAQQAAAAABAACAAAAAAAAAAA=</HashCode>
+      <FileName>Players\Common\IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HQC.Project.Hangman.UI.Common.ILogger">
+    <Position X="18.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAQAACAAAIAAAgAAAgAAAAAAIAAQAwAAAAAAAAEAAA=</HashCode>
+      <FileName>UI\Common\ILogger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

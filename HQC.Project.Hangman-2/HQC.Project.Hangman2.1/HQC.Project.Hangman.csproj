@@ -86,7 +86,7 @@
     <Compile Include="GameLogic\States\InitializeGameState.cs" />
     <Compile Include="GameLogic\States\PlayerInitializationState.cs" />
     <Compile Include="GameLogic\States\PlayGameState.cs" />
-    <Compile Include="GameLogic\States\RestartGameState.cs" />
+    <Compile Include="GameLogic\States\Common\RestartGameState.cs" />
     <Compile Include="Common\Globals.cs" />
     <Compile Include="HangmanStartPoint.cs" />
     <Compile Include="Importers\Common\IPlayesImporter.cs" />
