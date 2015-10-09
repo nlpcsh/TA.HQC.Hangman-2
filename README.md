@@ -66,10 +66,14 @@ Refactoring Documentation for Project “Hangman 2”
     -   Improved display top player's scores (show in descending order)
     -   Improved game UI
     -   Input validation
+    -   Give Player possibility to choose word from different categories
 
 4.  Implemented **design patterns**:
     -   **Singleton** Pattern for `ScoreBoard` (thread save)
     -   **Strategy** Pattern for output messages (OCR, DI)
     -   **Strategy** Pattern for selecting word via `IWordsImporter` interface
     -   **Strategy** Pattern for importing player via `IPlayerImporter` interface
+    -   **State** Pattern for game logic via `IState` interface and its child classes
+    -   **Abstract Factory** Pattern for creating commands via `ICommandFactory` interface
+    -   **Command** Pattern to execute user commands via `ICommand` interface and its child classes
 
