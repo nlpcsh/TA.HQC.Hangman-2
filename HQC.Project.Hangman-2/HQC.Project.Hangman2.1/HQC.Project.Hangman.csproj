@@ -7,7 +7,7 @@
     <ProjectGuid>{D0D5B78E-B338-4FFF-85DF-7799E37DE4B0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HQC.Project.Hangman2._1</RootNamespace>
+    <RootNamespace>HQC.Project.Hangman</RootNamespace>
     <AssemblyName>HQC.Project.Hangman2.1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
