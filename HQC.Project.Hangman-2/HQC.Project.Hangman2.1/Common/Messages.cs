@@ -19,7 +19,7 @@ namespace HQC.Project.Hangman.Common
         /// <summary>
         /// Contains enter choice message
         /// </summary>
-        public const string EnterChoiceMessage = "Enter your choice:";
+        public const string EnterChoiceMessage = "Enter your choice: ";
 
         /// <summary>
         /// Contains Press any key to continue message
@@ -39,12 +39,12 @@ namespace HQC.Project.Hangman.Common
         /// <summary>
         /// Contains header of Categories
         /// </summary>
-        public const string Categories = "CATEGORIES";
+        public const string Categories = " CATEGORIES ";
 
         /// <summary>
         /// Contains Top 5 players message
         /// </summary>
-        public const string BestScores = "Top 5 players";
+        public const string BestScores = " Top 5 players ";
 
         /// <summary>
         ///  Contains Win game message
@@ -64,7 +64,7 @@ namespace HQC.Project.Hangman.Common
         /// <summary>
         /// Contains enter letters message
         /// </summary>
-        public const string EnterLetterMessage = "Please enter a letter:";
+        public const string EnterLetterMessage = "Please enter a letter: ";
 
         /// <summary>
         /// Contains enter name message
@@ -93,8 +93,8 @@ namespace HQC.Project.Hangman.Common
 
         private static readonly List<string> RulesInfoValue = new List<string>()
         {
-            "Welcome to Hangman game!",
-            "Rules are simple: guess secret word and keep your head on your shoulders :)",
+            " Welcome to Hangman game! ",
+            " Rules are simple: guess secret word and keep your head on your shoulders :) ",
             "You can open secret word letter by letter or ",
             "guess whole word with one shot and double closed letters as bonus to your score.",
             "If you are in trouble (and have 50 or more points) you can ask for help ",
@@ -105,24 +105,24 @@ namespace HQC.Project.Hangman.Common
 
         private static readonly List<string> MenuOptionsValue = new List<string>()
         {
-            "MENU:",
+            " MENU: ",
             "------",
-            "PLAY",
-            "RULES",
-            "SCORES",
-            "EXIT",
+            " PLAY",
+            " RULES",
+            " SCORES",
+            " EXIT",
             Messages.EnterChoiceMessage
         };
 
         private static readonly List<string> GameTitleValue = new List<string>()
         {
-            "",
+            " ",
             "00  00     000     00    00  0000   00     00     000     00    00",
             "00  00    00 00    0000  00 00      0000 0000    00 00    0000  00",
             "000000   0000000   00 00 00 00 0000 00 000 00   0000000   00 00 00",
             "00  00  00     00  00   000 00   00 00  0  00  00     00  00   000",
             "00  00 00       00 00    00  00000  00     00 00       00 00    00",
-            ""
+            " "
         };
 
         /// <summary>
