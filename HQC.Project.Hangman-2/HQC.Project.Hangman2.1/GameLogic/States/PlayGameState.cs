@@ -23,7 +23,9 @@ namespace HQC.Project.Hangman.GameLogic.States
         {
             while (game.Player.HiddenWord.Contains("_"))
             {
-                game.CurrentCommand = game.UI.ReadLine();
+                //System.Console.SetCursorPosition(50, 10);
+
+                game.CurrentCommand = game.UI.ReadKeyInput();
 
                 if (game.CurrentCommand.Length == 1)
                 {

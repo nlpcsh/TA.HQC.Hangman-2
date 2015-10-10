@@ -18,7 +18,7 @@ namespace HQC.Project.Hangman2.Commands
         /// <summary>
         /// Initializes a new instance of the <see cref="TopCommand"/> class.
         /// </summary>
-        /// <param name="ui">ILogger that prints massages.</param>
+        /// <param name="ui">IUI that prints massages.</param>
         public TopCommand(IUI ui)
             : base(ui)
         {

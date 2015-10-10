@@ -16,9 +16,9 @@ namespace HQC.Project.Hangman2.Commands
         /// <summary>
         /// Initializes a new instance of the <see cref="ShowGameRulesCommand"/> class.
         /// </summary>
-        /// <param name="logger">ILogger that prints massages.</param>
-        public ShowGameRulesCommand(IUI logger)
-            : base(logger)
+        /// <param name="ui">IUI that prints massages.</param>
+        public ShowGameRulesCommand(IUI ui)
+            : base(ui)
         {
         }
 

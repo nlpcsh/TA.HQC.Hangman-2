@@ -19,7 +19,6 @@ namespace HQC.Project.Hangman.GameLogic.States
         {
             game.UI.Print("Title", "Title");
             game.UI.Print("GameInit", "GameInit");
-
             string name = game.UI.ReadLine();
             var playerName = string.IsNullOrWhiteSpace(name) ? "unknown" : name;
             game.Player.Name = playerName;

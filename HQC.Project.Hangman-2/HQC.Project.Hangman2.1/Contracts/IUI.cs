@@ -47,5 +47,11 @@
         /// </summary>
         /// <returns></returns>
         char ReadKey();
+
+        /// <summary>
+        /// Reads input key from user
+        /// </summary>
+        /// <returns></returns>
+        string ReadKeyInput();
     }
 }

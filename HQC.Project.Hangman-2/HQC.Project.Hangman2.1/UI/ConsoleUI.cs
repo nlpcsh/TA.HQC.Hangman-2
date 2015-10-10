@@ -15,8 +15,8 @@ namespace HQC.Project.Hangman.UI
     /// </summary>
     public class ConsoleUI : IUI
     {
-        private int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;
-        private int leftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
+        private readonly int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;
+        private readonly int leftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
 
         /// <summary>
         /// Initialize Console method
@@ -32,6 +32,7 @@ namespace HQC.Project.Hangman.UI
         public void ReInitizlize()
         {
             Console.Clear();
+            //Console.SetCursorPosition(Console.WindowHeight + 2, Console.WindowHeight + 2);
             this.Print(Messages.MenuOptions);
         }
 
@@ -266,7 +267,7 @@ namespace HQC.Project.Hangman.UI
         /// Read user input.
         /// </summary>
         /// <returns>What user is write to lower case.</returns>
-        public string ReadInput()
+        public string ReadKeyInput()
         {
             Console.SetCursorPosition(this.leftPositionCommandInput, this.topPositionCommandInput);
             var input = Console.ReadLine();

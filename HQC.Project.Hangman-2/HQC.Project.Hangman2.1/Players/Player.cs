@@ -6,8 +6,6 @@ namespace HQC.Project.Hangman.Players
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using HQC.Project.Hangman.Players.Common;
 
     /// <summary>

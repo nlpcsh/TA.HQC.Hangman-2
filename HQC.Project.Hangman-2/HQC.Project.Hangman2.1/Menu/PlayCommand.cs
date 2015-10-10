@@ -21,9 +21,9 @@ namespace HQC.Project.Hangman2.Commands
        /// <summary>
         /// Initializes a new instance of the <see cref="PlayCommand"/> class.
        /// </summary>
-        /// <param name="logger">ILogger that prints massages.</param>
-        public PlayCommand(IUI logger)
-            : base(logger)
+        /// <param name="ui">IUI that prints massages.</param>
+        public PlayCommand(IUI ui)
+            : base(ui)
         {
         }
 
@@ -35,9 +35,9 @@ namespace HQC.Project.Hangman2.Commands
             var wordSelector = new WordSelectorFromFile("../../Words/Random.txt");
             var scores = ScoreBoard.Instance;
             var player = new Player();
-            var caommandFactory = new CommandFactory();
+            var commandFactory = new CommandFactory();
 
-            var game = new HangmanGame(this.UI, new PlayerInitializationState(), wordSelector, scores, player, caommandFactory);
+            var game = new HangmanGame(this.UI, new PlayerInitializationState(), wordSelector, scores, player, commandFactory);
             game.StartGame();
         }
     }
