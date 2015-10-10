@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.Commands
+namespace HQC.Project.Hangman.Commands
 {
     using System.Collections.Generic;
     using Hangman.Contracts;

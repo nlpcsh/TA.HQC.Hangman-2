@@ -4,7 +4,6 @@
 
 namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
-    using HQC.Project.Hangman;
     using HQC.Project.Hangman.Contracts;
 
     /// <summary>

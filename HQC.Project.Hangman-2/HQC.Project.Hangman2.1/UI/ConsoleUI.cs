@@ -107,7 +107,7 @@ namespace HQC.Project.Hangman.UI
         /// <param name="letters">All used letters by user.</param>
         public void Print(ISet<char> letters)
         {
-            var leftMessage = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.UsedLettersMessage.Length / 2) ;
+            var leftMessage = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.UsedLettersMessage.Length / 2);
             var topMessage = (Console.WindowHeight / 2) + (Console.WindowHeight / 4);
 
             Console.SetCursorPosition(leftMessage, topMessage);
@@ -174,7 +174,7 @@ namespace HQC.Project.Hangman.UI
         /// <param name="message">Message to print.</param>
         public void PrintMessage(string message)
         {
-            Console.SetCursorPosition(this.leftPositionCommandInput - (message.Length / 2), this.topPositionCommandInput );
+            Console.SetCursorPosition(this.leftPositionCommandInput - (message.Length / 2), this.topPositionCommandInput);
             Console.WriteLine(message);
             Console.SetCursorPosition(this.leftPositionCommandInput, Console.CursorTop);
             Thread.Sleep(1000);
