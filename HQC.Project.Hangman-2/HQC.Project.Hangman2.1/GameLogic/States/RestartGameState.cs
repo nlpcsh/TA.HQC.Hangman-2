@@ -4,11 +4,9 @@
 
 namespace HQC.Project.Hangman.GameLogic.States
 {
-    using System;
     using System.Threading;
     using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.GameLogic.States;
     using HQC.Project.Hangman.GameLogic.States.Common;
 
     /// <summary>
@@ -22,13 +20,11 @@ namespace HQC.Project.Hangman.GameLogic.States
         /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
         {
-            Console.Clear();
-            game.Logger.PrintGameTitle();
+            game.UI.Print("Title", "Title");
 
-            Console.Write(Messages.PlayAgainMessage);
-            char playAgainYesNo = Console.ReadKey().KeyChar;
+            game.UI.Print(Messages.PlayAgainMessage, "Message");
 
-            Console.WriteLine();
+            char playAgainYesNo = game.UI.ReadKey();
 
             if (playAgainYesNo == 'y')
             {
@@ -41,7 +37,7 @@ namespace HQC.Project.Hangman.GameLogic.States
             }
             else
             {
-                Console.WriteLine(Messages.WrongCommand);
+                game.UI.Print(Messages.WrongCommand, "Message");
                 Thread.Sleep(500);
                 this.Play(game);
             }

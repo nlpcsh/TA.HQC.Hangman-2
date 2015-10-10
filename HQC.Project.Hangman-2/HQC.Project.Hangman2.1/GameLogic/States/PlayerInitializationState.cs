@@ -4,9 +4,6 @@
 
 namespace HQC.Project.Hangman.GameLogic.States
 {
-    using System;
-    using HQC.Project.Hangman;
-    using HQC.Project.Hangman.GameLogic.States;
     using HQC.Project.Hangman.GameLogic.States.Common;
 
     /// <summary>
@@ -20,11 +17,10 @@ namespace HQC.Project.Hangman.GameLogic.States
         /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
         {
-            Console.Clear();
-            game.Logger.PrintGameTitle();
-            game.Logger.PrintGameInitialization();
+            game.UI.Print("Title", "Title");
+            game.UI.Print("GameInit", "GameInit");
 
-            string name = Console.ReadLine();
+            string name = game.UI.ReadLine();
             var playerName = string.IsNullOrWhiteSpace(name) ? "unknown" : name;
             game.Player.Name = playerName;
             game.Player.Score = 50;

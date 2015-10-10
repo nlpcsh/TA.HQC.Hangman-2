@@ -4,11 +4,10 @@
 
 namespace HQC.Project.Hangman
 {
-    using System;
+    using Contracts;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.UI;
-    using HQC.Project.Hangman.UI.Common;
-
+ 
     /// <summary>
     /// Start point to the game
     /// </summary>
@@ -17,27 +16,26 @@ namespace HQC.Project.Hangman
         /// <summary>
         /// Prepares console, print menu, take command from user, check if is right and execute it.
         /// </summary>
-        /// <param name="logger">ILogger that prints massages.</param>
+        /// <param name="console">ILogger that prints massages.</param>
         /// <param name="commandFactory">Command to execute.</param>
-        public static void Start(ILogger logger, CommandFactory commandFactory)
+        public static void Start(IUI console, CommandFactory commandFactory)
         {
-            Console.WindowHeight = Messages.GameTitle.Count + HangmanPattern.Patterns[0].Length + 2;
+            console.Initialize();
 
             while (true)
             {
-                Console.Clear();
-                logger.Print(Messages.MenuOptions);
+                console.ReInitizlize();
 
-                string commandToExecute = Console.ReadLine().Trim().ToLower();
+                string commandToExecute = console.ReadLine();  
 
                 if (Globals.MenuCommandTypesValue.ContainsKey(commandToExecute))
                 {
-                    var command = commandFactory.GetMenuCommand(commandToExecute, logger, Globals.MenuCommandTypesValue);
+                    var command = commandFactory.GetMenuCommand(commandToExecute, console, Globals.MenuCommandTypesValue);
                     command.Execute();
                 }
                 else
                 {
-                    logger.PrintMessage("Wrong command!");
+                    console.Print(Messages.WrongMessage, "Message");
                 }
             }
         }
@@ -47,7 +45,7 @@ namespace HQC.Project.Hangman
         /// </summary>
         internal static void Main()
         {
-            Start(new ConsoleLogger(), new CommandFactory());
+            Start(new ConsoleUI(), new CommandFactory());
         }
     }
 }

@@ -4,12 +4,12 @@
 
 namespace HQC.Project.Hangman.GameLogic
 {
+    using Contracts;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameLogic.States.Common;
     using HQC.Project.Hangman.GameScoreBoard;
     using HQC.Project.Hangman.Importers;
     using HQC.Project.Hangman.Players.Common;
-    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// Represents Hangman game
@@ -19,19 +19,19 @@ namespace HQC.Project.Hangman.GameLogic
         /// <summary>
         /// Initializes a new instance of the <see cref="HangmanGame"/> class.
         /// </summary>
-        /// <param name="logger">Used to draw on console</param>
+        /// <param name="ui">Used to draw on console</param>
         /// <param name="state">Holds different states while game is running</param>
         /// <param name="wordselector">Select words from .txt file</param>
         /// <param name="scoreboard">Holds best scores from games</param>
         /// <param name="player">Holds information for user</param>
         /// <param name="commandCreator">Returns command from user</param>
-        public HangmanGame(ILogger logger, State state, WordSelectorFromFile wordselector, ScoreBoard scoreboard, IPlayer player, CommandFactory commandCreator)
+        public HangmanGame(IUI ui, State state, WordSelectorFromFile wordselector, ScoreBoard scoreboard, IPlayer player, CommandFactory commandCreator)
         {
             this.WordSelect = wordselector;
             this.Scores = scoreboard;
             this.State = state;
             this.Player = player;
-            this.Logger = logger;
+            this.UI = ui;
             this.CommandFactory = commandCreator;
         }
 
@@ -58,7 +58,7 @@ namespace HQC.Project.Hangman.GameLogic
         /// <summary>
         /// Logger that display messages.
         /// </summary>
-        public ILogger Logger { get; private set; }
+        public IUI UI { get; private set; }
 
         /// <summary>
         /// Factory of commands.

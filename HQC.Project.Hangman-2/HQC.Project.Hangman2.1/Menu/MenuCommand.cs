@@ -5,7 +5,6 @@
 namespace HQC.Project.Hangman.Menu.MenuCommands
 {
     using HQC.Project.Hangman.Contracts;
-    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// Represents menu commands
@@ -15,16 +14,16 @@ namespace HQC.Project.Hangman.Menu.MenuCommands
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuCommand"/> class.
         /// </summary>
-        /// <param name="logger">ILogger</param>
-        public MenuCommand(ILogger logger)
+        /// <param name="ui">IUI</param>
+        public MenuCommand(IUI ui)
         {
-            this.Logger = logger;
+            this.UI = ui;
         }
 
         /// <summary>
         /// Print massages
         /// </summary>
-        public ILogger Logger { get; set; }
+        public IUI UI { get; set; }
 
         /// <summary>
         /// Execute command

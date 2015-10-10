@@ -26,7 +26,7 @@ namespace HQC.Project.Hangman.GameLogic.States
         {
             var contentReader = new FolderContentReader();
             var categoriesToList = this.GetAllCategories(contentReader);
-            game.Logger.Print(categoriesToList);
+            game.UI.Print(categoriesToList);
 
             string chosenCategory = Console.ReadLine().Trim().ToLower();
             bool categoryExists = this.CategoriesToLower(contentReader.Categories).Contains(chosenCategory.ToLower());

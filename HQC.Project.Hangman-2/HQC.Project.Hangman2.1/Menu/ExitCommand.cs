@@ -4,10 +4,8 @@
 
 namespace HQC.Project.Hangman2.Commands
 {
-    using System;
-    using HQC.Project.Hangman;
+    using Hangman.Contracts;
     using HQC.Project.Hangman.Menu.MenuCommands;
-    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// Exit the game.
@@ -17,9 +15,9 @@ namespace HQC.Project.Hangman2.Commands
         /// <summary>
         /// Initializes a new instance of the <see cref="ExitCommand"/> class.
         /// </summary>
-        /// <param name="logger">ILogger that prints massages.</param>
-        public ExitCommand(ILogger logger)
-            : base(logger)
+        /// <param name="ui">IUI that prints massages.</param>
+        public ExitCommand(IUI ui)
+            : base(ui)
         {
         }
 
@@ -28,8 +26,7 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            this.Logger.PrintGoodBuyMessage();
-            Environment.Exit(0);
+            this.UI.Print("GoodBuy", "GoodBuy");
         }
     }
 }

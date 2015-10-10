@@ -6,7 +6,6 @@ namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
     using System.Linq;
     using System.Text;
-    using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
 
     /// <summary>

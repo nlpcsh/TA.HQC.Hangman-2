@@ -4,13 +4,12 @@
 
 namespace HQC.Project.Hangman.Common
 {
-    using System;
     using System.Collections.Generic;
 
     /// <summary>
     /// Contains all game messages
     /// </summary>
-    public class Messages
+    public partial class Messages
     {
         /// <summary>
         /// Contains Good buy message
@@ -26,6 +25,16 @@ namespace HQC.Project.Hangman.Common
         /// Contains Press any key to continue message
         /// </summary>
         public const string PressAnyKeyMessage = "Press any key to continue....";
+
+        /// <summary>
+        /// Message for wrong command input
+        /// </summary>
+        public const string WrongMessage = "Wrong command!";
+
+        /// <summary>
+        /// Message for wrong input
+        /// </summary>
+        public const string WrongInputMessage = "Wrong input, please try again!";
 
         /// <summary>
         /// Contains header of Categories
@@ -111,9 +120,7 @@ namespace HQC.Project.Hangman.Common
             "00  00    00 00    0000  00 00      0000 0000    00 00    0000  00",
             "000000   0000000   00 00 00 00 0000 00 000 00   0000000   00 00 00",
             "00  00  00     00  00   000 00   00 00  0  00  00     00  00   000",
-            "00  00 00       00 00    00  00000  00     00 00       00 00    00",
-            new string('_', Console.BufferWidth),
-            new string('-', Console.BufferWidth)
+            "00  00 00       00 00    00  00000  00     00 00       00 00    00"
         };
 
         /// <summary>

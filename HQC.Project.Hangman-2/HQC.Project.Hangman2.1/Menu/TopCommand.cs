@@ -4,12 +4,11 @@
 
 namespace HQC.Project.Hangman2.Commands
 {
-    using System;
     using System.Collections.Generic;
+    using Hangman.Contracts;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameScoreBoard;
     using HQC.Project.Hangman.Menu.MenuCommands;
-    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// Show top 5 players.
@@ -19,9 +18,9 @@ namespace HQC.Project.Hangman2.Commands
         /// <summary>
         /// Initializes a new instance of the <see cref="TopCommand"/> class.
         /// </summary>
-        /// <param name="logger">ILogger that prints massages.</param>
-        public TopCommand(ILogger logger)
-            : base(logger)
+        /// <param name="ui">ILogger that prints massages.</param>
+        public TopCommand(IUI ui)
+            : base(ui)
         {
         }
 
@@ -53,8 +52,8 @@ namespace HQC.Project.Hangman2.Commands
             }
 
             topPlayersToList.Add(Messages.PressAnyKeyMessage);
-            this.Logger.Print(topPlayersToList);
-            Console.ReadKey();
+            this.UI.Print(topPlayersToList);
+            this.UI.ReadKey();
         }
     }
 }

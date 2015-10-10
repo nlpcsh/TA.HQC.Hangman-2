@@ -4,12 +4,9 @@
 
 namespace HQC.Project.Hangman.Common
 {
-    using System;
     using System.Collections.Generic;
-    using HQC.Project.Hangman;
     using HQC.Project.Hangman.Contracts;
     using HQC.Project.Hangman.GameLogic;
-    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// Make easy create command by factory pattern
@@ -23,10 +20,10 @@ namespace HQC.Project.Hangman.Common
         /// <param name="game">An instance of HangmanGame</param>
         /// <param name="commandTypes">All in game commands</param>
         /// <returns>all possible in game commands</returns>
-        public ICommand GetGameCommand(string commandAsString, HangmanGame game, IDictionary<string, Type> commandTypes)
+        public ICommand GetGameCommand(string commandAsString, HangmanGame game, IDictionary<string, System.Type> commandTypes)
         {
             var typeCommand = commandTypes[commandAsString];
-            var command = (ICommand)Activator.CreateInstance(typeCommand, game);
+            var command = (ICommand)System.Activator.CreateInstance(typeCommand, game);
             return command;
         }
 
@@ -34,13 +31,13 @@ namespace HQC.Project.Hangman.Common
         /// All possible menu game command
         /// </summary>
         /// <param name="commandAsString">Command from user</param>
-        /// <param name="logger">Takes logger(where will print data)</param>
+        /// <param name="ui">Takes UI(where will print data)</param>
         /// <param name="commandTypes">All in menu game commands</param>
         /// <returns>Instance of command</returns>
-        public ICommand GetMenuCommand(string commandAsString, ILogger logger, IDictionary<string, Type> commandTypes)
+        public ICommand GetMenuCommand(string commandAsString, IUI ui, IDictionary<string, System.Type> commandTypes)
         {
             var typeCommand = commandTypes[commandAsString];
-            var command = (ICommand)Activator.CreateInstance(typeCommand, logger);
+            var command = (ICommand)System.Activator.CreateInstance(typeCommand, ui);
             return command;
         }
     }

@@ -4,6 +4,7 @@
 
 namespace HQC.Project.Hangman2.Commands
 {
+    using Hangman.Contracts;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameLogic;
     using HQC.Project.Hangman.GameLogic.States;
@@ -11,7 +12,6 @@ namespace HQC.Project.Hangman2.Commands
     using HQC.Project.Hangman.Importers;
     using HQC.Project.Hangman.Menu.MenuCommands;
     using HQC.Project.Hangman.Players;
-    using HQC.Project.Hangman.UI.Common;
 
     /// <summary>
     /// Play command starts the game.
@@ -22,7 +22,7 @@ namespace HQC.Project.Hangman2.Commands
         /// Initializes a new instance of the <see cref="PlayCommand"/> class.
        /// </summary>
         /// <param name="logger">ILogger that prints massages.</param>
-        public PlayCommand(ILogger logger)
+        public PlayCommand(IUI logger)
             : base(logger)
         {
         }
@@ -37,7 +37,7 @@ namespace HQC.Project.Hangman2.Commands
             var player = new Player();
             var caommandFactory = new CommandFactory();
 
-            var game = new HangmanGame(this.Logger, new PlayerInitializationState(), wordSelector, scores, player, caommandFactory);
+            var game = new HangmanGame(this.UI, new PlayerInitializationState(), wordSelector, scores, player, caommandFactory);
             game.StartGame();
         }
     }

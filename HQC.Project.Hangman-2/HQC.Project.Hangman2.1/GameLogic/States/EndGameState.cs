@@ -4,7 +4,6 @@
 
 namespace HQC.Project.Hangman2.GameStates
 {
-    using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameLogic;
     using HQC.Project.Hangman.GameLogic.States;
@@ -22,8 +21,8 @@ namespace HQC.Project.Hangman2.GameStates
         /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
         {
-            game.Logger.PrintMessage(string.Format(Messages.WinGameMessage, game.Player.Score));
-            game.Logger.PrintSecretWord(game.Player.HiddenWord);
+            game.UI.Print(string.Format(Messages.WinGameMessage, game.Player.Score), "Message");
+            game.UI.Print(game.Player.HiddenWord, "SecretWord");
 
             ScoreBoard.Instance.PlacePlayerInScoreBoard(game.Player);
 

@@ -4,7 +4,6 @@
 
 namespace HQC.Project.Hangman.Common
 {
-    using System;
     using System.Collections.Generic;
 
     /// <summary>

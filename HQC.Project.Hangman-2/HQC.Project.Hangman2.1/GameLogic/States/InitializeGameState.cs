@@ -4,12 +4,9 @@
 
 namespace HQC.Project.Hangman.GameLogic.States
 {
-    using System;
     using System.Collections.Generic;
 
-    using HQC.Project.Hangman;
     using HQC.Project.Hangman.GameLogic.States.Common;
-    using HQC.Project.Hangman2.GameStates;
 
     /// <summary>
     /// State of game when put initial lives to player and select new play word
@@ -17,23 +14,22 @@ namespace HQC.Project.Hangman.GameLogic.States
     public class InitializeGameState : State
     {
         /// <summary>
-        /// Pu initial lives to player and select new play word
+        /// Put initial lives to player and select new play word
         /// </summary>
         /// <param name="game">Instance of <see cref="HangmanGame"/> class.</param>
         public override void Play(HangmanGame game)
         {
-            Console.Clear();
             game.Player.Lives = 7;
             game.Player.WrongLetters = new HashSet<char>();
             game.Player.Word = game.WordSelect.SelectRandomWord();
             game.Player.HiddenWord = new string('_', game.Player.Word.Length);
 
-            game.Logger.PrintGameTitle();
-            game.Logger.PrintVerticalMiddleBorder();
-            game.Logger.PrintHangman(game.Player.Lives);
-            game.Logger.PrintSecretWord(game.Player.HiddenWord);
-            game.Logger.PrintUsedLetters(game.Player.WrongLetters);
-            game.Logger.PrintEnterCommandMessage();
+            game.UI.Print("Title", "Title");
+            game.UI.Print("|", "MiddleBorder");
+            game.UI.Print(game.Player.Lives.ToString(), "Lives");
+            game.UI.Print(game.Player.HiddenWord, "SecretWord");
+            game.UI.Print(game.Player.WrongLetters);
+            game.UI.Print(string.Empty, "EnterCommand");
 
             game.State = new PlayGameState();
             game.State.Play(game);

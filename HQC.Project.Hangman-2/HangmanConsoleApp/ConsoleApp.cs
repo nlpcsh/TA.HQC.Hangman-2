@@ -11,7 +11,7 @@
     {
         private static void Main(string[] args)
         {
-            HangmanStartPoint.Start(new ConsoleLogger(), new CommandFactory());
+            HangmanStartPoint.Start(new ConsoleUI(), new CommandFactory());
         }
     }
 }

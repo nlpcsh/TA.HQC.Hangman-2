@@ -4,10 +4,7 @@
 
 namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
-    using HQC.Project.Hangman;
-    using HQC.Project.Hangman.GameLogic.GameCommands;
     using HQC.Project.Hangman.GameLogic.States;
-    using HQC.Project.Hangman2.GameStates;
 
     /// <summary>
     /// Command for starting the game.

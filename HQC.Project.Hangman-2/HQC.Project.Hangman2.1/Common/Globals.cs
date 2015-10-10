@@ -75,10 +75,6 @@ namespace HQC.Project.Hangman.Common
              { "revealGuessedLetters", typeof(RevealGuessedLettersCommand) }
         };
 
-        private static int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 2;
-
-        private static int leftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
-
         /// <summary>
         /// Contains all in menu commands
         /// </summary>
@@ -98,38 +94,6 @@ namespace HQC.Project.Hangman.Common
             get
             {
                 return CommandTypesValueValue;
-            }
-        }
-
-        /// <summary>
-        /// Holds column position used from ILogger to clear console when menu have to show off
-        /// </summary>
-        public static int LeftPositionCommandInput
-        {
-            get
-            {
-                return leftPositionCommandInput;
-            }
-
-            set
-            {
-                leftPositionCommandInput = value;
-            }
-        }
-
-        /// <summary>
-        ///  Holds row position used from ILogger to clear console when menu have to show off
-        /// </summary>
-        public static int TopPositionCommandInput
-        {
-            get
-            {
-                return topPositionCommandInput;
-            }
-
-            set
-            {
-                topPositionCommandInput = value;
             }
         }
     }

@@ -4,7 +4,6 @@
 
 namespace HQC.Project.Hangman.GameLogic.States
 {
-    using System;
     using System.Linq;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.GameLogic.States.Common;
@@ -24,7 +23,7 @@ namespace HQC.Project.Hangman.GameLogic.States
         {
             while (game.Player.HiddenWord.Contains("_"))
             {
-                game.CurrentCommand = game.Logger.ReadInput();
+                game.CurrentCommand = game.UI.ReadLine();
 
                 if (game.CurrentCommand.Length == 1)
                 {
@@ -48,15 +47,13 @@ namespace HQC.Project.Hangman.GameLogic.States
                 }
                 else
                 {
-                    game.Logger.PrintMessage("Wrong input, please try again!");
+                    game.UI.Print(Messages.WrongInputMessage, "Message");
                 }
 
-                game.Logger.PrintSecretWord(game.Player.HiddenWord);
-                game.Logger.PrintUsedLetters(game.Player.WrongLetters);
-                game.Logger.PrintHangman(game.Player.Lives);
-
-                ConsoleHelper.ClearConsoleInRange(Globals.LeftPositionCommandInput, Globals.LeftPositionCommandInput + game.CurrentCommand.Length + 2, Globals.TopPositionCommandInput);
-                ConsoleHelper.ClearConsoleInRange((Console.WindowWidth / 2) + 1, Console.WindowWidth - 1, Globals.TopPositionCommandInput + 2);
+                game.UI.Print(game.Player.HiddenWord, "SecretWord");
+                game.UI.Print(game.Player.WrongLetters);
+                game.UI.Print(game.Player.Lives.ToString(), "Lives");
+                game.UI.Print((game.CurrentCommand.Length + 2).ToString(), "Clean");
 
                 if (game.Player.Lives == 0)
                 {

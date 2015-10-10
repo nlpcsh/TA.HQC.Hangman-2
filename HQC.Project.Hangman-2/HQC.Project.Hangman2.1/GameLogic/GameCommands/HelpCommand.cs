@@ -4,10 +4,7 @@
 
 namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
-    using HQC.Project.Hangman;
     using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.GameLogic.GameCommands;
-    using HQC.Project.Hangman2;
 
     /// <summary>
     /// Help command help to user for guess a letter.
@@ -45,12 +42,12 @@ namespace HQC.Project.Hangman.GameLogic.GameCommands
                 var command = this.Game.CommandFactory.GetGameCommand("revealGuessedLetters", this.Game, Globals.CommandTypesValue);
                 command.Execute();
                 this.Game.Player.Score -= Globals.HelpNeededPoints;
-                this.Game.Logger.PrintMessage(string.Format(Messages.RevealLetterMessage, firstUnrevealedLetter));
-                this.Game.Logger.PrintSecretWord(this.Game.Player.HiddenWord);
+                this.Game.UI.Print(string.Format(Messages.RevealLetterMessage, firstUnrevealedLetter), "Message");
+                this.Game.UI.Print(this.Game.Player.HiddenWord, "SecretWord");
             }
             else
             {
-                this.Game.Logger.PrintMessage(string.Format(Messages.CantUseHelp, Globals.HelpNeededPoints));
+                this.Game.UI.Print(string.Format(Messages.CantUseHelp, Globals.HelpNeededPoints), "Message");
             }
         }
     }

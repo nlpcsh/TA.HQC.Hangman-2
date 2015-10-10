@@ -4,11 +4,10 @@
 
 namespace HQC.Project.Hangman2.Commands
 {
-    using System;
+    using Hangman.Contracts;
     using HQC.Project.Hangman.Common;
     using HQC.Project.Hangman.Menu.MenuCommands;
-    using HQC.Project.Hangman.UI.Common;
-
+ 
     /// <summary>
     /// Show on user game rules.
     /// </summary>
@@ -18,7 +17,7 @@ namespace HQC.Project.Hangman2.Commands
         /// Initializes a new instance of the <see cref="ShowGameRulesCommand"/> class.
         /// </summary>
         /// <param name="logger">ILogger that prints massages.</param>
-        public ShowGameRulesCommand(ILogger logger)
+        public ShowGameRulesCommand(IUI logger)
             : base(logger)
         {
         }
@@ -28,8 +27,8 @@ namespace HQC.Project.Hangman2.Commands
         /// </summary>
         public override void Execute()
         {
-            this.Logger.Print(Messages.RulesInfo);
-            Console.ReadKey();
+            this.UI.Print(Messages.RulesInfo);
+            this.UI.ReadKey();
         }
     }
 }
