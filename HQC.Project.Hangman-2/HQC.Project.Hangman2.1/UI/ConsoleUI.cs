@@ -31,7 +31,7 @@ namespace HQC.Project.Hangman.UI
         private int leftPositionCommandInput;
 
         /// <summary>
-        /// ConsoleUI constrictors set some properties
+        /// ConsoleUI's constrictor set some properties
         /// </summary>
         public ConsoleUI()
         {
@@ -113,7 +113,7 @@ namespace HQC.Project.Hangman.UI
 
             private set
             {
-                if (value <= (Console.WindowWidth / 2) + 1)
+                if (value <= Console.WindowWidth / 2)
                 {
                     throw new ArgumentException("Printed Message is more than necessary symbols!");
                 }

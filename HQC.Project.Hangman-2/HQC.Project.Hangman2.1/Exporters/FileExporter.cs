@@ -6,8 +6,8 @@ namespace HQC.Project.Hangman.Exporters
 {
     using System.IO;
     using System.Linq;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.Importers;
+    using Common;
+    using Importers;
 
     /// <summary>
     /// Responsible for exporting data in file.

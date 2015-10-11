@@ -22,13 +22,12 @@ namespace HQC.Project.Hangman.GameLogic
         /// <param name="ui">Used to draw on console</param>
         /// <param name="state">Holds different states while game is running</param>
         /// <param name="wordselector">Select words from .txt file</param>
-        /// <param name="scoreboard">Holds best scores from games</param>
         /// <param name="player">Holds information for user</param>
         /// <param name="commandCreator">Returns command from user</param>
-        public HangmanGame(IUI ui, State state, WordSelectorFromFile wordselector, ScoreBoard scoreboard, IPlayer player, CommandFactory commandCreator)
+        public HangmanGame(IUI ui, State state, WordSelectorFromFile wordselector, IPlayer player, CommandFactory commandCreator)
         {
             this.WordSelect = wordselector;
-            this.Scores = scoreboard;
+            this.Scores = ScoreBoard.Instance;
             this.State = state;
             this.Player = player;
             this.UI = ui;

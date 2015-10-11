@@ -8,7 +8,6 @@ namespace HQC.Project.Hangman.Commands
     using Contracts;
     using GameLogic;
     using GameLogic.States;
-    using GameScoreBoard;
     using Importers;
     using Menu.MenuCommands;
     using Players;
@@ -33,11 +32,10 @@ namespace HQC.Project.Hangman.Commands
         public override void Execute()
         {
             var wordSelector = new WordSelectorFromFile("../../Words/Random.txt");
-            var scores = ScoreBoard.Instance;
             var player = new Player();
             var commandFactory = new CommandFactory();
 
-            var game = new HangmanGame(this.UI, new PlayerInitializationState(), wordSelector, scores, player, commandFactory);
+            var game = new HangmanGame(this.UI, new PlayerInitializationState(), wordSelector, player, commandFactory);
             game.StartGame();
         }
     }

@@ -14,7 +14,7 @@ namespace HQC.Project.Hangman.GameScoreBoard
     /// </summary>
     public sealed class ScoreBoard
     {
-        private static volatile ScoreBoard scoreBoardInstance;
+        private static readonly System.Lazy<ScoreBoard> lazy = new System.Lazy<ScoreBoard>(() => new ScoreBoard());
         private static object syncLock = new object();
         private ImportTopPlayersFromFile scoreBoardTable;
         private IExporter export;
@@ -30,18 +30,7 @@ namespace HQC.Project.Hangman.GameScoreBoard
         {
             get
             {
-                if (scoreBoardInstance == null)
-                {
-                    lock (syncLock)
-                    {
-                        if (scoreBoardInstance == null)
-                        {
-                            scoreBoardInstance = new ScoreBoard();
-                        }
-                    }
-                }
-
-                return scoreBoardInstance;
+                return lazy.Value;
             }
         }
 
@@ -77,7 +66,7 @@ namespace HQC.Project.Hangman.GameScoreBoard
             if (this.scoreBoardTable.TopPlayers[emptyPosition] == null || player.Score >= this.scoreBoardTable.TopPlayers[emptyPosition].Score)
             {
                 this.scoreBoardTable.TopPlayers[emptyPosition] = player;
-                System.Console.WriteLine(emptyPosition);
+                //System.Console.WriteLine(emptyPosition);
                         
                 for (int i = 0; i < emptyPosition; i++)
                 {

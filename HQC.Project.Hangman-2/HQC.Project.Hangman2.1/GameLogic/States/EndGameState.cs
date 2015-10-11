@@ -8,7 +8,6 @@ namespace HQC.Project.Hangman.GameStates
     using GameLogic;
     using GameLogic.States;
     using GameLogic.States.Common;
-    using GameScoreBoard;
 
     /// <summary>
     /// Represents end game state
@@ -23,8 +22,7 @@ namespace HQC.Project.Hangman.GameStates
         {
             game.UI.Print(string.Format(Messages.WinGameMessage, game.Player.Score), "Message");
             game.UI.Print(game.Player.HiddenWord, "SecretWord");
-
-            ScoreBoard.Instance.PlacePlayerInScoreBoard(game.Player);
+            game.Scores.PlacePlayerInScoreBoard(game.Player);
 
             game.State = new RestartGameState();
             game.State.Play(game);
