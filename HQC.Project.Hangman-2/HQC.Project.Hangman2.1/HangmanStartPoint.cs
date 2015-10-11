@@ -4,9 +4,9 @@
 
 namespace HQC.Project.Hangman
 {
+    using Common;
     using Contracts;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.UI;
+    using UI;
  
     /// <summary>
     /// Start point to the game
@@ -16,26 +16,26 @@ namespace HQC.Project.Hangman
         /// <summary>
         /// Prepares console, print menu, take command from user, check if is right and execute it.
         /// </summary>
-        /// <param name="console">ILogger that prints massages.</param>
+        /// <param name="ui">IUI that prints massages.</param>
         /// <param name="commandFactory">Command to execute.</param>
-        public static void Start(IUI console, CommandFactory commandFactory)
+        public static void Start(IUI ui, CommandFactory commandFactory)
         {
-            console.Initialize();
+            ui.Initialize();
 
             while (true)
             {
-                console.ReInitizlize();
+                ui.ReInitizlize();
 
-                string commandToExecute = console.ReadLine();  
+                string commandToExecute = ui.ReadLine();  
 
                 if (Globals.MenuCommandTypesValue.ContainsKey(commandToExecute))
                 {
-                    var command = commandFactory.GetMenuCommand(commandToExecute, console, Globals.MenuCommandTypesValue);
+                    var command = commandFactory.GetMenuCommand(commandToExecute, ui, Globals.MenuCommandTypesValue);
                     command.Execute();
                 }
                 else
                 {
-                    console.Print(Messages.WrongMessage, "Message");
+                    ui.Print(Messages.WrongMessage, "Message");
                 }
             }
         }

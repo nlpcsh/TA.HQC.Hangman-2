@@ -4,9 +4,9 @@
 
 namespace HQC.Project.Hangman.Commands
 {
-    using Hangman.Contracts;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.Menu.MenuCommands;
+    using Common;
+    using Contracts;
+    using Menu.MenuCommands;
  
     /// <summary>
     /// Show on user game rules.

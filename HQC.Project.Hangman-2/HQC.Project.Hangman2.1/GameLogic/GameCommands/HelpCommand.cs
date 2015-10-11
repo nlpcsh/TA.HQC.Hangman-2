@@ -4,7 +4,7 @@
 
 namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
-    using HQC.Project.Hangman.Common;
+    using Common;
 
     /// <summary>
     /// Help command help to user for guess a letter.

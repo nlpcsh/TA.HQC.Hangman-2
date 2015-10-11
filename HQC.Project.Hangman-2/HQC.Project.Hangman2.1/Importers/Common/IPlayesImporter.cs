@@ -5,7 +5,7 @@
 namespace HQC.Project.Hangman.Importers.Common
 {
     using System.Collections.Generic;
-    using HQC.Project.Hangman.Players.Common;
+    using Players.Common;
 
     /// <summary>
     /// Responsible for importing players.

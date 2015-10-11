@@ -4,7 +4,7 @@
 
 namespace HQC.Project.Hangman.GameLogic.States
 {
-    using HQC.Project.Hangman.GameLogic.States.Common;
+    using Common;
 
     /// <summary>
     /// Initialize player if user don't set name, player name is equal to unknown.

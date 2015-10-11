@@ -6,8 +6,8 @@ namespace HQC.Project.Hangman.Importers
 {
     using System;
     using System.IO;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.Importers.Common;
+
+    using Common;
 
     /// <summary>
     /// Responsible for exporting word from file.
@@ -68,7 +68,6 @@ namespace HQC.Project.Hangman.Importers
             // determine extent of source file
             long lastPos = this.streamReader.BaseStream.Seek(0, SeekOrigin.End);
 
-            // generate a random position
             double randomNumber = this.GetRandomNumber();
             long randomPositionFromFile = (long)(randomNumber * lastPos);
 
@@ -79,9 +78,9 @@ namespace HQC.Project.Hangman.Importers
 
             this.streamReader.BaseStream.Seek(randomPositionFromFile, SeekOrigin.Begin);
 
-            randomWord = this.streamReader.ReadLine(); // consume curr partial line
-            randomWord = this.streamReader.ReadLine(); // this will be a full line
-            this.streamReader.DiscardBufferedData(); // magic
+            randomWord = this.streamReader.ReadLine();
+            randomWord = this.streamReader.ReadLine();
+            this.streamReader.DiscardBufferedData();
 
             this.streamReader.Close();
             this.inputFileStream.Close();

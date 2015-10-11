@@ -5,8 +5,8 @@
 namespace HQC.Project.Hangman.Common
 {
     using System.Collections.Generic;
-    using HQC.Project.Hangman.Contracts;
-    using HQC.Project.Hangman.GameLogic;
+    using Contracts;
+    using GameLogic;
 
     /// <summary>
     /// Make easy create command by factory pattern

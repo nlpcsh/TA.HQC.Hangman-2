@@ -4,14 +4,11 @@
 
 namespace HQC.Project.Hangman.GameLogic.States
 {
-    using System;
     using System.Collections.Generic;
-    using System.Threading;
 
-    using HQC.Project.Hangman;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.GameLogic.States.Common;
-    using HQC.Project.Hangman.Importers;
+    using Common;
+    using Hangman.Common;
+    using Importers;
 
     /// <summary>
     /// This class initializes a state in the game, where you can choose category of words. In case you choose an invalid category, the category "Random" is automatically chosen.
@@ -25,11 +22,13 @@ namespace HQC.Project.Hangman.GameLogic.States
         public override void Play(HangmanGame game)
         {
             var contentReader = new FolderContentReader();
-            var categoriesToList = this.GetAllCategories(contentReader);
+            string[] categoriesToList = contentReader.GetCategories(Globals.CategoriesPath, "*" + Globals.FileExtension);
             game.UI.Print(categoriesToList);
+            game.UI.Print(Messages.EnterChoiceMessage, "NewLine");
 
-            string chosenCategory = Console.ReadLine().Trim().ToLower();
-            bool categoryExists = this.CategoriesToLower(contentReader.Categories).Contains(chosenCategory.ToLower());
+            string chosenCategory = game.UI.ReadLine();
+
+            bool categoryExists = this.CategoriesToLower(categoriesToList).Contains(chosenCategory.ToLower());
 
             if (categoryExists)
             {
@@ -37,35 +36,13 @@ namespace HQC.Project.Hangman.GameLogic.States
             }
             else
             {
-                Console.SetCursorPosition((Console.WindowWidth / 2) - (Messages.WrongCommand.Length / 2), Console.WindowHeight - 2);
-                Console.WriteLine(Messages.WrongCommand);
-                Thread.Sleep(500);
+                game.UI.Print(Messages.WrongCommand, "NewLine");
+
                 this.Play(game);
             }
 
             game.State = new InitializeGameState();
             game.State.Play(game);
-        }
-
-        /// <summary>
-        /// Get all categories from .txt file
-        /// </summary>
-        /// <param name="contentReader">All files in this directory</param>
-        /// <returns>List with all categories in content reader</returns>
-        private IList<string> GetAllCategories(FolderContentReader contentReader)
-        {
-            var categories = contentReader.Categories;
-            var categoriesToList = new List<string>();
-
-            categoriesToList.Add(Messages.Categories);
-            for (int i = 0; i < categories.Length; i++)
-            {
-                categoriesToList.Add(categories[i]);
-            }
-
-            categoriesToList.Add(Messages.EnterChoiceMessage);
-
-            return categoriesToList;
         }
 
         /// <summary>

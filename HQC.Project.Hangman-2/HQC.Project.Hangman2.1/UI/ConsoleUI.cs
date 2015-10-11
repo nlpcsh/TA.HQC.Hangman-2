@@ -7,8 +7,8 @@ namespace HQC.Project.Hangman.UI
     using System;
     using System.Collections.Generic;
     using System.Threading;
+    using Common;
     using Contracts;
-    using HQC.Project.Hangman.Common;
 
     /// <summary>
     /// Print messages on console.
@@ -52,6 +52,9 @@ namespace HQC.Project.Hangman.UI
                     break;
                 case "Message":
                     this.PrintMessage(message);
+                    break;
+                case "NewLine":
+                    this.PrintLine(message);
                     break;
                 case "SecretWord":
                     this.PrintSecretWord(message);
@@ -117,7 +120,7 @@ namespace HQC.Project.Hangman.UI
             var leftLetters = Console.WindowWidth - (Console.WindowWidth / 4) - (lettersAsString.Length / 2);
             var topLetters = topMessage + 2;
 
-            Console.SetCursorPosition(leftLetters + 4, topLetters);
+            Console.SetCursorPosition(leftLetters, topLetters);
             Console.WriteLine(lettersAsString);
         }
 
@@ -137,6 +140,17 @@ namespace HQC.Project.Hangman.UI
         public char ReadKey()
         {
             return Console.ReadKey().KeyChar;
+        }
+
+        /// <summary>
+        /// Prints message on the next line in the console
+        /// </summary>
+        /// <param name="message"></param>
+        public void PrintLine(string message)
+        {
+            Console.WriteLine();
+            Console.SetCursorPosition((Console.WindowWidth / 2) - (message.Length / 2), Console.CursorTop + 1);
+            Console.Write(message);
         }
 
         /// <summary>
@@ -270,8 +284,8 @@ namespace HQC.Project.Hangman.UI
         public string ReadKeyInput()
         {
             Console.SetCursorPosition(this.leftPositionCommandInput, this.topPositionCommandInput + 2);
-            var input = Console.ReadLine();
-            return input.ToLower();
+            var input = Console.ReadLine().ToLower();
+            return input;
         }
     }
 }

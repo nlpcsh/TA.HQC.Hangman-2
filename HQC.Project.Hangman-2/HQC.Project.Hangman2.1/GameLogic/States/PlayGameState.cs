@@ -5,10 +5,11 @@
 namespace HQC.Project.Hangman.GameLogic.States
 {
     using System.Linq;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.GameLogic.States.Common;
-    using HQC.Project.Hangman.Players.Common;
-    using HQC.Project.Hangman2.GameStates;
+
+    using Common;
+    using GameStates;
+    using Hangman.Common;
+    using Players.Common;
 
     /// <summary>
     /// Read and execute player commands while player wins or lose the game.
@@ -23,7 +24,7 @@ namespace HQC.Project.Hangman.GameLogic.States
         {
             while (game.Player.HiddenWord.Contains("_"))
             {
-                game.CurrentCommand = game.UI.ReadKeyInput();
+                game.CurrentCommand = game.UI.ReadLine();
 
                 if (game.CurrentCommand.Length == 1)
                 {

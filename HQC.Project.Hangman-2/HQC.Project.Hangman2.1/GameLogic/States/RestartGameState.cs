@@ -4,11 +4,10 @@
 
 namespace HQC.Project.Hangman.GameLogic.States
 {
-    using System.Threading;
-    using HQC.Project.Hangman;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.GameLogic.States.Common;
-
+    using Common;
+    using Hangman;
+    using Hangman.Common;
+ 
     /// <summary>
     /// Start new game if player still want to play or redirect to menu.
     /// </summary>
@@ -38,7 +37,6 @@ namespace HQC.Project.Hangman.GameLogic.States
             else
             {
                 game.UI.Print(Messages.WrongCommand, "Message");
-                Thread.Sleep(500);
                 this.Play(game);
             }
         }

@@ -4,10 +4,10 @@
 
 namespace HQC.Project.Hangman.GameScoreBoard
 {
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.Exporters;
-    using HQC.Project.Hangman.Importers;
-    using HQC.Project.Hangman.Players.Common;
+    using Common;
+    using Exporters;
+    using Importers;
+    using Players.Common;
 
     /// <summary>
     /// Holds information about players and their scores. Can't be inherit.

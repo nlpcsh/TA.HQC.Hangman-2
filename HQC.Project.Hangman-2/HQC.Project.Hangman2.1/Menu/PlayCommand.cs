@@ -4,14 +4,14 @@
 
 namespace HQC.Project.Hangman.Commands
 {
-    using Hangman.Contracts;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.GameLogic;
-    using HQC.Project.Hangman.GameLogic.States;
-    using HQC.Project.Hangman.GameScoreBoard;
-    using HQC.Project.Hangman.Importers;
-    using HQC.Project.Hangman.Menu.MenuCommands;
-    using HQC.Project.Hangman.Players;
+    using Common;
+    using Contracts;
+    using GameLogic;
+    using GameLogic.States;
+    using GameScoreBoard;
+    using Importers;
+    using Menu.MenuCommands;
+    using Players;
 
     /// <summary>
     /// Play command starts the game.

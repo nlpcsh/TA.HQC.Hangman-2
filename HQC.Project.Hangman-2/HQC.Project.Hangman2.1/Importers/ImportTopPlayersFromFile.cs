@@ -6,10 +6,11 @@ namespace HQC.Project.Hangman.Importers
 {
     using System.Collections.Generic;
     using System.IO;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.Importers.Common;
-    using HQC.Project.Hangman.Players;
-    using HQC.Project.Hangman.Players.Common;
+
+    using Common;
+    using Hangman.Common;
+    using Players;
+    using Players.Common;
 
     /// <summary>
     /// Import players from file with top players.

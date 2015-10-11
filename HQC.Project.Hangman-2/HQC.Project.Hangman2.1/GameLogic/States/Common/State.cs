@@ -4,8 +4,6 @@
 
 namespace HQC.Project.Hangman.GameLogic.States.Common
 {
-    using HQC.Project.Hangman;
-
     /// <summary>
     /// Represents state of the game
     /// </summary>

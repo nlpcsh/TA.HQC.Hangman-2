@@ -6,7 +6,7 @@ namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
     using System.Linq;
     using System.Text;
-    using HQC.Project.Hangman.Common;
+    using Common;
 
     /// <summary>
     /// This command reveal guessed letters.

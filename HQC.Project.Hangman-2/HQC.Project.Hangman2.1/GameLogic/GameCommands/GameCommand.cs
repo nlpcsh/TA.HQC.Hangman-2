@@ -4,7 +4,7 @@
 
 namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
-    using HQC.Project.Hangman.Contracts;
+    using Contracts;
 
     /// <summary>
     /// This is the base abstract class for all commands.

@@ -7,8 +7,6 @@ namespace HQC.Project.Hangman.Importers
     using System.IO;
     using System.Linq;
 
-    using HQC.Project.Hangman.Common;
-
     /// <summary>
     /// This class reads the files in the given directory with the given extension
     /// </summary>
@@ -24,19 +22,19 @@ namespace HQC.Project.Hangman.Importers
         /// <summary>
         /// Return an array with string, containing only the names of the files, without their extensions
         /// </summary>
-        public string[] Categories
+        public string[] GetCategories(string filesPath, string filesExtentions)
         {
-            get
+            try
             {
-                return this.GetCategories();
-            }
-        }
-
-        private string[] GetCategories()
-        {
-            return Directory.GetFiles(Globals.CategoriesPath, "*" + Globals.FileExtension)
+                string[] categories = Directory.GetFiles(filesPath, filesExtentions)
                 .Select(path => Path.GetFileNameWithoutExtension(path))
                 .ToArray();
+                return categories;
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                throw;
+            }
         }
     }
 }

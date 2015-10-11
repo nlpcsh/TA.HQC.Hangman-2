@@ -6,7 +6,7 @@ namespace HQC.Project.Hangman.Players
 {
     using System;
     using System.Collections.Generic;
-    using HQC.Project.Hangman.Players.Common;
+    using Common;
 
     /// <summary>
     /// Represents player in the game

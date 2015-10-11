@@ -4,7 +4,7 @@
 
 namespace HQC.Project.Hangman.GameLogic.GameCommands
 {
-    using HQC.Project.Hangman.GameLogic.States;
+    using States;
 
     /// <summary>
     /// Restart the game.

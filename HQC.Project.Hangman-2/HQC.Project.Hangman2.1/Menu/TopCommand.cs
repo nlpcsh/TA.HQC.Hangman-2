@@ -5,10 +5,10 @@
 namespace HQC.Project.Hangman.Commands
 {
     using System.Collections.Generic;
-    using Hangman.Contracts;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.GameScoreBoard;
-    using HQC.Project.Hangman.Menu.MenuCommands;
+    using Common;
+    using Contracts;
+    using GameScoreBoard;
+    using Menu.MenuCommands;
 
     /// <summary>
     /// Show top 5 players.

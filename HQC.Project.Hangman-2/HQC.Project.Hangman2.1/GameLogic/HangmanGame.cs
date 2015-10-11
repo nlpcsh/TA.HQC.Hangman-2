@@ -4,12 +4,12 @@
 
 namespace HQC.Project.Hangman.GameLogic
 {
+    using Common;
     using Contracts;
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.GameLogic.States.Common;
-    using HQC.Project.Hangman.GameScoreBoard;
-    using HQC.Project.Hangman.Importers;
-    using HQC.Project.Hangman.Players.Common;
+    using GameScoreBoard;
+    using Importers;
+    using Players.Common;
+    using States.Common;
 
     /// <summary>
     /// Represents Hangman game

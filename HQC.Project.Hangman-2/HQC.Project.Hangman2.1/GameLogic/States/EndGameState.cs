@@ -2,13 +2,13 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace HQC.Project.Hangman2.GameStates
+namespace HQC.Project.Hangman.GameStates
 {
-    using HQC.Project.Hangman.Common;
-    using HQC.Project.Hangman.GameLogic;
-    using HQC.Project.Hangman.GameLogic.States;
-    using HQC.Project.Hangman.GameLogic.States.Common;
-    using HQC.Project.Hangman.GameScoreBoard;
+    using Common;
+    using GameLogic;
+    using GameLogic.States;
+    using GameLogic.States.Common;
+    using GameScoreBoard;
 
     /// <summary>
     /// Represents end game state

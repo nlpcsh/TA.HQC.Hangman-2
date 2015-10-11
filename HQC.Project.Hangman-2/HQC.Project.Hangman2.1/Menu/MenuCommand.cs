@@ -4,7 +4,7 @@
 
 namespace HQC.Project.Hangman.Menu.MenuCommands
 {
-    using HQC.Project.Hangman.Contracts;
+    using Contracts;
 
     /// <summary>
     /// Represents menu commands

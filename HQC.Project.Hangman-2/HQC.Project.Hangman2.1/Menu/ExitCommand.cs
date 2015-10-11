@@ -4,8 +4,8 @@
 
 namespace HQC.Project.Hangman.Commands
 {
-    using Hangman.Contracts;
-    using HQC.Project.Hangman.Menu.MenuCommands;
+    using Contracts;
+    using Menu.MenuCommands;
 
     /// <summary>
     /// Exit the game.

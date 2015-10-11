@@ -6,7 +6,7 @@ namespace HQC.Project.Hangman.GameLogic.States
 {
     using System.Collections.Generic;
 
-    using HQC.Project.Hangman.GameLogic.States.Common;
+    using Common;
 
     /// <summary>
     /// State of game when put initial lives to player and select new play word

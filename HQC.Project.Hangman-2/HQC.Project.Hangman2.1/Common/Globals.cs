@@ -6,8 +6,8 @@ namespace HQC.Project.Hangman.Common
 {
     using System;
     using System.Collections.Generic;
-    using HQC.Project.Hangman.Commands;
-    using HQC.Project.Hangman.GameLogic.GameCommands;
+    using Commands;
+    using GameLogic.GameCommands;
 
     /// <summary>
     /// Keeps all constants used in the game
