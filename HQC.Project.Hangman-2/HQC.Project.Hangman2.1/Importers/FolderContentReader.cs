@@ -33,7 +33,7 @@ namespace HQC.Project.Hangman.Importers
             }
             catch (DirectoryNotFoundException e)
             {
-                throw;
+                throw new DirectoryNotFoundException();
             }
         }
     }
