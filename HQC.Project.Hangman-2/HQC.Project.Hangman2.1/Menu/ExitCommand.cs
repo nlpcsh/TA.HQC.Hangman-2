@@ -27,6 +27,7 @@ namespace HQC.Project.Hangman.Commands
         public override void Execute()
         {
             this.UI.Print("GoodBuy", "GoodBuy");
+            System.Environment.Exit(0);
         }
     }
 }

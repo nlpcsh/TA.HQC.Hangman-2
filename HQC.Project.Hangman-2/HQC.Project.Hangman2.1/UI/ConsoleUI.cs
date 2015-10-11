@@ -11,35 +11,41 @@ namespace HQC.Project.Hangman.UI
     using Contracts;
 
     /// <summary>
-    /// Print messages on console.
+    /// Print messages on the console UI.
     /// </summary>
     public class ConsoleUI : IUI
     {
         private readonly int initialConsoleHeight = Messages.GameTitle.Count + HangmanPattern.Patterns[0].Length + 8;
-
         private readonly int topOptionsPrint = Messages.GameTitle.Count + 4;
-
-        private readonly int topGuessedLetters = (Console.WindowHeight / 2) + (Console.WindowHeight / 4) + 8;
-        private readonly int topSecretWord = Console.WindowHeight / 2 + 6;
-
-        private readonly int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 4;
-        private readonly int leftPositionCommandInput = Console.WindowWidth - (Console.WindowWidth / 4);
+        private readonly int topGuessedLetters = (Console.WindowHeight / 2) + (Console.WindowHeight / 4) + 10;
+        private readonly int topSecretWord = (Console.WindowHeight / 2) + 8;
+        private readonly int topPositionCommandInput = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 6;
+        private readonly int topPositionEnterCommandMsg = (Console.WindowHeight / 2) - (Console.WindowHeight / 4) + 8;
+        private readonly int topHangman = Messages.GameTitle.Count + 3;
+        private readonly int topVerticalLine = Messages.GameTitle.Count + 1;
+        private readonly int leftSideCenterPoint = Console.WindowWidth - (Console.WindowWidth / 4);
 
         private int leftMessageGuessedLetters;
         private int leftGuessegLetters;
         private int leftPositionSecretWord;
+        private int leftPositionCommandInput;
 
+        /// <summary>
+        /// ConsoleUI constrictors set some properties
+        /// </summary>
         public ConsoleUI()
         {
             this.LeftMessageGuessedLetters = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.UsedLettersMessage.Length / 2);
-
         }
 
+        /// <summary>
+        /// Property for left start position of the secret word
+        /// </summary>
         public int LeftPositionSecretWord
         {
             get
             {
-                return leftPositionSecretWord;
+                return this.leftPositionSecretWord;
             }
 
             private set
@@ -48,10 +54,14 @@ namespace HQC.Project.Hangman.UI
                 {
                     throw new ArgumentException("Secret word letters are more than necessary symbols!");
                 }
-                leftPositionSecretWord = value;
+
+                this.leftPositionSecretWord = value;
             }
         }
 
+        /// <summary>
+        /// Property for left start position of the guessed letters
+        /// </summary>
         public int LeftGuessedLetters
         {
             get
@@ -65,10 +75,14 @@ namespace HQC.Project.Hangman.UI
                 {
                     throw new ArgumentException("Guessed letters are more than necessary symbols!");
                 }
+
                 this.leftGuessegLetters = value;
             }
         }
 
+        /// <summary>
+        /// Property for left start position of the message for guessed letters
+        /// </summary>
         public int LeftMessageGuessedLetters
         {
             get
@@ -82,10 +96,31 @@ namespace HQC.Project.Hangman.UI
                 {
                     throw new ArgumentException("Message of the used letters is more than necessary symbols!");
                 }
+
                 this.leftMessageGuessedLetters = value;
             }
         }
 
+        /// <summary>
+        /// Property for left start position of the users command input
+        /// </summary>
+        public int LeftPositionCommandInput
+        {
+            get
+            {
+                return this.leftPositionCommandInput;
+            }
+
+            private set
+            {
+                if (value <= (Console.WindowWidth / 2) + 1)
+                {
+                    throw new ArgumentException("Printed Message is more than necessary symbols!");
+                }
+
+                this.leftPositionCommandInput = value;
+            }
+        }
 
         /// <summary>
         /// Initialize Console method
@@ -158,7 +193,7 @@ namespace HQC.Project.Hangman.UI
 
             for (int i = 0; i < options.Count; i++)
             {
-                Console.SetCursorPosition(Console.WindowWidth / 2 - (options[i].Length / 2), this.topOptionsPrint + (2 * i));
+                Console.SetCursorPosition((Console.WindowWidth / 2) - (options[i].Length / 2), this.topOptionsPrint + (2 * i));
 
                 if (i == options.Count - 1)
                 {
@@ -243,7 +278,6 @@ namespace HQC.Project.Hangman.UI
             var top = Console.WindowHeight / 2;
             Console.SetCursorPosition(left, top);
             Console.WriteLine(Messages.GoodBuy);
-            Environment.Exit(0);
         }
 
         /// <summary>
@@ -252,9 +286,9 @@ namespace HQC.Project.Hangman.UI
         /// <param name="message">Message to print.</param>
         public void PrintMessage(string message)
         {
-            Console.SetCursorPosition(this.leftPositionCommandInput - (message.Length / 2), this.topPositionCommandInput);
-            Console.WriteLine(message);
-            Console.SetCursorPosition(this.leftPositionCommandInput, this.topPositionCommandInput);
+            this.LeftPositionCommandInput = this.leftSideCenterPoint - (message.Length / 2);
+            Console.SetCursorPosition(this.LeftPositionCommandInput, this.topPositionCommandInput);
+            Console.Write(message);
             Thread.Sleep(1000);
         }
 
@@ -280,9 +314,8 @@ namespace HQC.Project.Hangman.UI
         public void PrintHangman(int playerLives)
         {
             var playerPattern = HangmanPattern.Patterns[playerLives];
-            var heigth = Messages.GameTitle.Count + 3;
 
-            Console.SetCursorPosition(1, heigth);
+            Console.SetCursorPosition(1, this.topHangman);
             for (int i = 0; i < playerPattern.Length; i++)
             {
                 Console.WriteLine(playerPattern[i]);
@@ -294,11 +327,9 @@ namespace HQC.Project.Hangman.UI
         /// </summary>
         public void PrintVerticalMiddleBorder()
         {
-            var width = Console.WindowWidth / 2;
-
-            for (int i = 8; i < Console.WindowHeight - 1; i++)
+            for (int i = this.topVerticalLine; i < Console.WindowHeight - 1; i++)
             {
-                Console.SetCursorPosition(width, i);
+                Console.SetCursorPosition(Console.WindowWidth / 2, i);
                 Console.WriteLine("|");
             }
         }
@@ -308,10 +339,9 @@ namespace HQC.Project.Hangman.UI
         /// </summary>
         public void PrintEnterCommandMessage()
         {
-            var left = Console.WindowWidth - (Console.WindowWidth / 4) - (Messages.EnterLetterMessage.Length / 2);
-            var top = Messages.GameTitle.Count + 4;
+            this.LeftPositionCommandInput = this.leftSideCenterPoint - (Messages.EnterLetterMessage.Length / 2);
 
-            Console.SetCursorPosition(left, top);
+            Console.SetCursorPosition(this.LeftPositionCommandInput, this.topPositionEnterCommandMsg);
             Console.WriteLine(Messages.EnterLetterMessage);
         }
 
@@ -344,7 +374,8 @@ namespace HQC.Project.Hangman.UI
         /// <returns>What user is write to lower case.</returns>
         public string ReadKeyInput()
         {
-            Console.SetCursorPosition(this.leftPositionCommandInput, this.topPositionCommandInput + 2);
+            ConsoleHelper.ClearConsoleInRange(this.leftSideCenterPoint, this.leftSideCenterPoint + (Console.WindowWidth / 4) - 1, this.topPositionEnterCommandMsg + 2);
+            Console.SetCursorPosition(this.leftSideCenterPoint, this.topPositionEnterCommandMsg + 2);
             var input = Console.ReadLine().ToLower();
             return input;
         }

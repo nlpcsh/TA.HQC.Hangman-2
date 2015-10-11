@@ -31,9 +31,9 @@ namespace HQC.Project.Hangman.Importers
                 .ToArray();
                 return categories;
             }
-            catch (DirectoryNotFoundException e)
+            catch (DirectoryNotFoundException)
             {
-                throw new DirectoryNotFoundException();
+                throw new DirectoryNotFoundException("Category files are not set properly!");
             }
         }
     }
