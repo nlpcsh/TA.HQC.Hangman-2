@@ -69,7 +69,8 @@ Refactoring Documentation for Project “Hangman 2”
     -   Give Player possibility to choose word from different categories
 
 4.  Implemented **design patterns**:
-    -   **Singleton** Pattern for `ScoreBoard` (thread save)
+    -   **Singleton** Pattern for `ScoreBoard` (not thread save)
+    -   **Lazy Initialization** for `ScoreBoard`
     -   **Strategy** Pattern for output messages (OCR, DI)
     -   **Strategy** Pattern for selecting word via `IWordsImporter` interface
     -   **Strategy** Pattern for importing player via `IPlayerImporter` interface
