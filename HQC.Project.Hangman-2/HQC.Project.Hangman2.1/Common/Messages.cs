@@ -105,8 +105,8 @@ namespace HQC.Project.Hangman.Common
 
         private static readonly List<string> MenuOptionsValue = new List<string>()
         {
-            " MENU: ",
-            "------",
+            "MENU:",
+            "-------",
             " PLAY",
             " RULES",
             " SCORES",

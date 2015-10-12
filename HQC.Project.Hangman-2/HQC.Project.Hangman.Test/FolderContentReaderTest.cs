@@ -34,7 +34,7 @@
         public void ExpectToThrowWhenWrongPathToCathegoryListIsProvided()
         {
             var contentReader = new FolderContentReader();
-            var categoriesList = contentReader.GetCategories(Globals.CategoriesPath, "*" + Globals.FileExtension);
+            var categoriesList = contentReader.GetCategories("wrong path" + Globals.CategoriesPath, "*" + Globals.FileExtension);
         }
     }
 }

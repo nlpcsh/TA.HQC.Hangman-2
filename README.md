@@ -40,6 +40,7 @@ Refactoring Documentation for Project “Hangman 2”
     -   Add interface `IExporter` and class `FileExporter`
     -   Move `SaveToTxtFile()` method in `FileExporter` class
     -   Remove `Compare()` method from `Player` class.
+
 2.  **Reformatted** the source code:
 	-   General refactoring of class `WorldInitializator`
 		- Removed all unneeded empty lines, e.g. in the method all methods inside.
@@ -59,13 +60,14 @@ Refactoring Documentation for Project “Hangman 2”
 		-   `LastPositionInScoreBoard = 4`
 		-   `FreePositionInScoreBoars = "unknown-0"`
 		-   `NoPlayer = "No Player"`.
+
 3.  Game **features**:
-    -   Make commands insensitive
+    -   Make commands case insensitive
     -   Add command "wrong" in commands
     -   Add WPF app(only UI for now)
     -   Improved display top player's scores (show in descending order)
-    -   Improved game UI
-    -   Input validation
+    -   Improved game console UI
+    -   Input validation 
     -   Give Player possibility to choose word from different categories
 
 4.  Implemented **design patterns**:
@@ -78,3 +80,6 @@ Refactoring Documentation for Project “Hangman 2”
     -   **Abstract Factory** Pattern for creating commands via `ICommandFactory` interface
     -   **Command** Pattern to execute user commands via `ICommand` interface and its child classes
 
+5.  Project documentation in HTML format
+
+6.  Unit testing of the game input

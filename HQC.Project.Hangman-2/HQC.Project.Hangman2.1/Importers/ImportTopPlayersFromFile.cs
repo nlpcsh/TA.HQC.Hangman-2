@@ -41,34 +41,55 @@ namespace HQC.Project.Hangman.Importers
         public IList<IPlayer> ImportPlayers(string fileName)
         {
             var scoreBoardTable = new Player[Globals.ScoreBoardSize];
-            using (var reader = new StreamReader(fileName))
+
+            try
             {
-                var score = reader.ReadLine();
-                var index = 0;
-
-                while (score != null)
+                using (var reader = new StreamReader(fileName))
                 {
-                    string playerName;
-                    int playerScore;
+                    var score = reader.ReadLine();
+                    var index = 0;
 
-                    if (score == Globals.FreePositionInScoreBoars)
+                    while (score != null)
                     {
-                        playerName = "No Player";
-                        playerScore = int.MaxValue;
-                    }
-                    else
-                    {
-                        var separateScore = score.Split('-');
-                        playerName = separateScore[0].Trim();
-                        playerScore = int.Parse(separateScore[1]);
-                    }
+                        string playerName;
+                        int playerScore;
 
-                    scoreBoardTable[index] = new Player(playerName, playerScore);
-                    score = reader.ReadLine();
-                    index++;
+                        if (score == Globals.FreePositionInScoreBoars)
+                        {
+                            playerName = "No Player";
+                            playerScore = int.MaxValue;
+                        }
+                        else
+                        {
+                            var separateScore = score.Split('^');
+                            playerName = separateScore[0].Trim();
+
+                            if (separateScore.Length == 1)
+                            {
+                                throw new System.ArgumentException("Score tables format is wrong!");
+                            }
+
+                            if (int.TryParse(separateScore[1], out playerScore))
+                            {
+                                playerScore = int.Parse(separateScore[1]);
+                            }
+                            else
+                            {
+                                throw new System.ArgumentException("Score is not a number!");
+                            }
+                        }
+
+                        scoreBoardTable[index] = new Player(playerName, playerScore);
+                        score = reader.ReadLine();
+                        index++;
+                    }
                 }
             }
-
+            catch (FileNotFoundException)
+            {
+                throw new FileNotFoundException("Top score file is not present!");
+            }
+            
             for (int i = 0; i < Globals.ScoreBoardSize; i++)
             {
                 if (scoreBoardTable[i] == null)
