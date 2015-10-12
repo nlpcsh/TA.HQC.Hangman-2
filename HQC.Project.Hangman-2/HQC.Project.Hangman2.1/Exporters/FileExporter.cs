@@ -43,7 +43,7 @@ namespace HQC.Project.Hangman.Exporters
                     }
                     else
                     {
-                        writer.WriteLine(score.Name + "-" + score.Score);
+                        writer.WriteLine(score.Name + "^" + score.Score);
                     }
                 }
             }

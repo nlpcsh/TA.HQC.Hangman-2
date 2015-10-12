@@ -22,11 +22,8 @@ namespace HQC.Project.Hangman.Importers
         /// <summary>
         /// Initializes a new instance of the <see cref="WordSelectorFromFile"/> class.
         /// </summary>
-        /// <param name="fileName">Path to file with words.</param>
-        public WordSelectorFromFile(string fileName)
+        public WordSelectorFromFile()
         {
-            this.FileName = fileName;
-            this.RandomWord = this.SelectRandomWord();
         }
 
         /// <summary>
@@ -46,14 +43,14 @@ namespace HQC.Project.Hangman.Importers
                     throw new ArgumentException("Invalid file path!");
                 }
 
+                if (!File.Exists(value))
+                {
+                    throw new ArgumentException("Category secret word file don't exist!");
+                }
+
                 this.fileName = value;
             }
         }
-
-        /// <summary>
-        /// Random word.
-        /// </summary>
-        public string RandomWord { get; set; }
 
         /// <summary>
         /// Performs algorithm for selecting random word from file.
@@ -61,29 +58,31 @@ namespace HQC.Project.Hangman.Importers
         /// <returns>Random word from file.</returns>
         public string SelectRandomWord()
         {
-            this.inputFileStream = new FileStream(this.FileName, FileMode.Open);
-            this.streamReader = new StreamReader(this.inputFileStream);
             string randomWord = string.Empty;
 
-            // determine extent of source file
-            long lastPos = this.streamReader.BaseStream.Seek(0, SeekOrigin.End);
-
-            double randomNumber = this.GetRandomNumber();
-            long randomPositionFromFile = (long)(randomNumber * lastPos);
-
-            if (randomNumber >= 0.99)
+            using (this.inputFileStream = new FileStream(this.FileName, FileMode.Open))
             {
-                randomPositionFromFile -= 1024; // if near the end, back up a bit
+                this.streamReader = new StreamReader(this.inputFileStream);
+
+                // determine extent of source file
+                long lastPos = this.streamReader.BaseStream.Seek(0, SeekOrigin.End);
+
+                double randomNumber = this.GetRandomNumber();
+                long randomPositionFromFile = (long)(randomNumber * lastPos);
+
+                if (randomNumber >= 0.99)
+                {
+                    randomPositionFromFile -= 1024; // if near the end, back up a bit
+                }
+
+                this.streamReader.BaseStream.Seek(randomPositionFromFile, SeekOrigin.Begin);
+
+                randomWord = this.streamReader.ReadLine();
+                randomWord = this.streamReader.ReadLine();
+                this.streamReader.DiscardBufferedData();
+
+                this.streamReader.Close();
             }
-
-            this.streamReader.BaseStream.Seek(randomPositionFromFile, SeekOrigin.Begin);
-
-            randomWord = this.streamReader.ReadLine();
-            randomWord = this.streamReader.ReadLine();
-            this.streamReader.DiscardBufferedData();
-
-            this.streamReader.Close();
-            this.inputFileStream.Close();
 
             return randomWord;
         }
@@ -95,8 +94,8 @@ namespace HQC.Project.Hangman.Importers
 
         private bool IsValidFilename(string filePath)
         {
-            bool isContainsABadCharacter = filePath.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0;
-            if (isContainsABadCharacter)
+            bool containsABadCharacter = filePath.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0;
+            if (containsABadCharacter)
             {
                 return true;
             }

@@ -55,6 +55,7 @@
     <Compile Include="ImportTopPlayersFromFileTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FolderContentReaderTest.cs" />
+    <Compile Include="WordSelectorFromFileTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HQC.Project.Hangman2.1\HQC.Project.Hangman.csproj">

@@ -31,7 +31,7 @@ namespace HQC.Project.Hangman.Commands
         /// </summary>
         public override void Execute()
         {
-            var wordSelector = new WordSelectorFromFile("../../Words/Random.txt");
+            var wordSelector = new WordSelectorFromFile();
             var player = new Player();
             var commandFactory = new CommandFactory();
 
